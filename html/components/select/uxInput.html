@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- shoelace -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- shoelace Light & Dark Theme -->
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <!-- component css -->
+    <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <div class="section">
+            <h3 class="componentTitle">UX - input</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>Range - Input</h5>
+                    <br/>
+                    <p style="padding-left: 1rem;">
+                        label : 상단 텍스트 <br/>
+                        help-text : 하단 텍스트 <br/>
+                        min : 최솟값 <br/>
+                        max : 최댓값 <br/>
+                        step : 단위 <br/>
+                    </p>
+                    <br/>
+                    <sl-range
+                    label="속성 Test Range"
+                    help-text="1단위 씩 증가합니다."
+                    min="0"
+                    max="100"
+                    step="1"
+                    style="
+                      --track-color-active: var(--sl-color-primary-500);
+                      --track-color-inactive: var(--sl-color-primary-200);
+                    "
+                    ></sl-range>
+                </div>
+
+                <div>
+                    <h5>좌우 Range</h5>
+                    <br/>
+                    <p style="padding-left: 1rem;">
+                        min : 최솟값 +꼭지점 <br/>
+                        max : 최댓값 -꼭지점 <br/>
+                        --track-active-offset: 50% 추가 필요 <br/>
+                    </p>
+                    <br/>
+                    <sl-range
+                    label="속성 Test Range"
+                    help-text="1단위 씩 증가합니다."
+                    min="-100"
+                    max="100"
+                    step="1"
+                    style="
+                      --track-color-active: var(--sl-color-primary-500);
+                      --track-color-inactive: var(--sl-color-primary-200);
+                      --track-active-offset: 50%;
+                    "
+                    ></sl-range>
+                </div>
+
+                <div>
+                    <h5>Range - 커스텀 ToolTip</h5>
+                    <sl-range 
+                    id="range-with-custom-formatter"
+                    min="0" 
+                    max="100" 
+                    step="1" 
+                    style="
+                      --track-color-active: var(--sl-color-primary-500);
+                      --track-color-inactive: var(--sl-color-primary-200);
+                    "
+                    ></sl-range>
+
+                    <script>
+                    const range = document.getElementById('range-with-custom-formatter');
+                    range.tooltipFormatter = value => `Total - ${value}%`;
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

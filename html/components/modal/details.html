@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- shoelace -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- shoelace Light & Dark Theme -->
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <!-- component css -->
+    <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <div class="section">
+            <h3 class="componentTitle">아코디언 - Details</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기본 Details</h5>
+
+                    <sl-details summary="summary 라는 속성으로 처음 노출되는 텍스트를 보여줍니다.">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </sl-details>
+                </div>
+
+                <div>
+                    <h5>Custom Size Details</h5>
+
+                    <sl-details summary="Size 와 Padding 넣어주기 - CSS 이용" 
+                    class="sl-detail-20rem"
+                    >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </sl-details>
+                </div>
+
+                <div>
+                    <h5>Disabled Details</h5>
+
+                    <sl-details summary="비활성화 sl-details는 disabled속성을 추가해준다" disabled>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, quos.
+                    </sl-details>
+                </div>
+
+                <div>
+                    <h5>Details 아이콘 Customizing</h5>
+
+                    <sl-details class="custom-icon-details" summary="우측 아이콘을 바꿔주었습니다. + CSS">
+                        <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+                        <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+
+                        icon에 사용된 slot을 확인!
+                    </sl-details>
+                </div>
+
+                <div>
+                    <h5>그룹 Details - 하나만 열려있게 하기위해선 JS 필요</h5>
+
+                    <div id="container"> <!-- 임의의 container필요 -->
+                        <sl-details summary="First" open>   <!-- 초기값 open -->
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </sl-details>
+
+                          <sl-details summary="Second">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </sl-details>
+
+                        <sl-details summary="Third">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </sl-details>
+                    </div>
+
+                    <script>
+                        const container = document.getElementById("container");
+
+                        container.addEventListener("sl-show", (e) => {
+                            if(e.target.localName === 'sl-details'){
+                                [...container.querySelectorAll('sl-details')].map(item => item.open = e.target === item)
+                            }
+                        })
+                        
+                    </script>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -68,3 +68,21 @@ sl-dialog::part(panel){
     max-width: 100%;
     text-wrap: wrap;
 }
+
+
+/* Details - 아코디언 */
+sl-details::part(content){
+    text-wrap: wrap;
+}
+
+sl-details.sl-detail-20rem{
+    width: 20rem;
+}
+sl-details.sl-detail-20rem::part(header),
+sl-details.sl-detail-20rem::part(content){
+    padding: 2rem;
+}
+
+.custom-icon-details::part(summary-icon) {
+    rotate: none;
+}
