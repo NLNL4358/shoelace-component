@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!-- shoelace -->
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+
+        <!-- component css -->
+        <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <!-- 셀렉트 -->
+        <div class="section">
+            <h3 class="componentTitle">Radio</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>Radio</h5>
+                    <div style="display: flex; gap: 2rem">
+                        <sl-radio-group id="radio" label="Select an option" name="a">
+                            <sl-radio value="1">Option 1</sl-radio>
+                            <sl-radio value="2">Option 2</sl-radio>
+                            <sl-radio value="3">Option 3</sl-radio>
+                        </sl-radio-group>
+    
+                        <p>Value 가져오기 </p>
+                        <p id="radio-value"></p>
+                    </div>
+
+                    <script>
+                        const radio = document.getElementById("radio");
+                        const radioValue = document.getElementById("radio-value");
+
+                        radio?.addEventListener("sl-change", (e) => {
+                            radioValue.innerHTML = e.target.value;
+                        })
+                    </script>
+                </div>
+
+                <div>
+                    <h5>초기값 Radio</h5>
+                    <sl-radio-group label="Select an option" name="a" value="3">
+                        <sl-radio value="1">Option 1</sl-radio>
+                        <sl-radio value="2">Option 2</sl-radio>
+                        <sl-radio value="3">Option 3</sl-radio>
+                      </sl-radio-group>
+                </div>
+
+                
+                <div>
+                    <h5>Radio Color</h5>
+                    <sl-radio-group class="red-color-radio" label="CSS에서 ::part(control--checked) 선택자를 사용하여야함!!"  name="a" value="1" >
+                        <sl-radio value="1">Option 1</sl-radio>
+                        <sl-radio value="2">Option 2</sl-radio>
+                        <sl-radio value="3">Option 3</sl-radio>
+                    </sl-radio-group>
+                </div>
+
+                <div>
+                    <h5>Radio Button Color</h5>
+                    <sl-radio-group class="red-color-radio-button" label="CSS에서 ::part(button) 선택자를 사용하여야함!!" help-text="Select an option that makes you proud." name="a" value="1">
+                        <sl-radio-button value="1">Option 1</sl-radio-button>
+                        <sl-radio-button value="2">Option 2</sl-radio-button>
+                        <sl-radio-button value="3">Option 3</sl-radio-button>
+                      </sl-radio-group>
+                </div>
+
+                <div>
+                    <h5>Disabled</h5>
+                    <sl-radio-group label="Select an option" name="a" value="1">
+                        <sl-radio value="1">Option 1</sl-radio>
+                        <sl-radio value="2" disabled>Option 2</sl-radio>
+                        <sl-radio value="3">Option 3</sl-radio>
+                      </sl-radio-group>
+                </div>
+
+                <div>
+                    <h5>도움말</h5>
+                    <sl-radio-group label="Select an option" help-text="이곳에 help-text를 입력하여 설명을 도울 수 있어요" name="a" value="1">
+                        <sl-radio value="1">Option 1</sl-radio>
+                        <sl-radio value="2">Option 2</sl-radio>
+                        <sl-radio value="3">Option 3</sl-radio>
+                      </sl-radio-group>
+                </div>
+
+                <div>
+                    <h5>버튼식 Radio</h5>
+                    <sl-radio-group label="Select an option" help-text="Select an option that makes you proud." name="a" value="1">
+                        <sl-radio-button value="1">Option 1</sl-radio-button>
+                        <sl-radio-button value="2">Option 2</sl-radio-button>
+                        <sl-radio-button value="3">Option 3</sl-radio-button>
+                      </sl-radio-group>
+                </div>
+
+                <div>
+                    <h5>Pill 버튼식 Radio</h5>
+                    <sl-radio-group size="small" label="Select an option" name="a" value="1">
+                        <sl-radio-button pill value="1">Option 1</sl-radio-button>
+                        <sl-radio-button pill value="2">Option 2</sl-radio-button>
+                        <sl-radio-button pill value="3">Option 3</sl-radio-button>
+                      </sl-radio-group>
+                      
+                      <br />
+                      
+                      <sl-radio-group size="medium" label="Select an option" name="a" value="2">
+                        <sl-radio-button pill value="1">Option 1</sl-radio-button>
+                        <sl-radio-button pill value="2">Option 2</sl-radio-button>
+                        <sl-radio-button pill value="3">Option 3</sl-radio-button>
+                      </sl-radio-group>
+                      
+                      <br />
+                      
+                      <sl-radio-group size="large" label="Select an option" name="a" value="3">
+                        <sl-radio-button pill value="1">Option 1</sl-radio-button>
+                        <sl-radio-button pill value="2">Option 2</sl-radio-button>
+                        <sl-radio-button pill value="3">Option 3</sl-radio-button>
+                      </sl-radio-group>
+                </div>
+
+                <div>
+                    <h5>Prefix Suffix Icons</h5>
+                    <sl-radio-group label="Select an option" name="a" value="1">
+                        <sl-radio-button value="1">
+                          <sl-icon slot="prefix" name="archive"></sl-icon>
+                          Option 1
+                        </sl-radio-button>
+                      
+                        <sl-radio-button value="2">
+                          <sl-icon slot="suffix" name="bag"></sl-icon>
+                          Option 2
+                        </sl-radio-button>
+                      
+                        <sl-radio-button value="3">
+                          <sl-icon slot="prefix" name="gift"></sl-icon>
+                          <sl-icon slot="suffix" name="cart"></sl-icon>
+                          Option 3
+                        </sl-radio-button>
+                      </sl-radio-group>
+                </div>
+
+                <div>
+                    <h5>Button With Icons</h5>
+                    <sl-radio-group label="Select an option" name="a" value="neutral">
+                        <sl-radio-button value="angry">
+                          <sl-icon name="emoji-angry" label="Angry"></sl-icon>
+                        </sl-radio-button>
+                      
+                        <sl-radio-button value="sad">
+                          <sl-icon name="emoji-frown" label="Sad"></sl-icon>
+                        </sl-radio-button>
+                      
+                        <sl-radio-button value="neutral">
+                          <sl-icon name="emoji-neutral" label="Neutral"></sl-icon>
+                        </sl-radio-button>
+                      
+                        <sl-radio-button value="happy">
+                          <sl-icon name="emoji-smile" label="Happy"></sl-icon>
+                        </sl-radio-button>
+                      
+                        <sl-radio-button value="laughing">
+                          <sl-icon name="emoji-laughing" label="Laughing"></sl-icon>
+                        </sl-radio-button>
+                      </sl-radio-group>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

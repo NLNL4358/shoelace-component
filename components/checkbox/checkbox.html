@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!-- shoelace -->
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <!-- 셀렉트 -->
+        <div class="section">
+            <h3 class="componentTitle"></h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기초적인 CheckBox</h5>
+                    <sl-checkbox>Checkbox</sl-checkbox>
+                </div>
+
+                <div>
+                    <h5>Checked CheckBox</h5>
+                    <sl-checkbox checked>Checkbox</sl-checkbox>
+                </div>
+
+                <div>
+                    <h5>Disabled CheckBox</h5>
+                    <sl-checkbox disabled>Checkbox</sl-checkbox>
+                </div>
+
+                <div>
+                    <h5>Help Text CheckBox</h5>
+                    <sl-checkbox help-text="What should the user know about the checkbox?">Label</sl-checkbox>
+                </div>
+
+                <div>
+                    <h5>체크박스 사이즈 조절 CheckBox</h5>
+                    <sl-checkbox size="small">Small</sl-checkbox>
+                    <sl-checkbox size="medium">Medium</sl-checkbox>
+                    <sl-checkbox size="large">Large</sl-checkbox>
+                </div>
+                
+                <div>
+                    <h5>체크박스 사이즈 CSS 조절 CheckBox</h5>
+                    <sl-checkbox class="x1">Checkbox</sl-checkbox>
+                    <sl-checkbox class="x2">Checkbox</sl-checkbox>
+                    <sl-checkbox class="x3">Checkbox</sl-checkbox>
+                </div>
+
+                <div>
+                    <h5>form 안에 있는 checkbox</h5>
+                    <form class="custom-validity">
+                        <sl-checkbox>Check me</sl-checkbox>
+                        <br />
+                        <sl-button type="submit" variant="primary" style="margin-top: 1rem;">Submit</sl-button>
+                      </form>
+                      <script>
+                        const form = document.querySelector('.custom-validity');
+                        const checkbox = form.querySelector('sl-checkbox');
+                        const errorMessage = `Don't forget to check me!`;
+                      
+                        // Set initial validity as soon as the element is defined
+                        customElements.whenDefined('sl-checkbox').then(async () => {
+                          await checkbox.updateComplete;
+                          checkbox.setCustomValidity(errorMessage);
+                        });
+                      
+                        // Update validity on change
+                        checkbox.addEventListener('sl-change', () => {
+                          checkbox.setCustomValidity(checkbox.checked ? '' : errorMessage);
+                        });
+                      
+                        // Handle submit
+                        form.addEventListener('submit', event => {
+                          event.preventDefault();
+                          alert('All fields are valid!');
+                        });
+                      </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

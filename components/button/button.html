@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>버튼</title>
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 버튼 -->
+            <div class="section">
+                <h3 class="componentTitle">버튼</h3>
+                <div class="componentWrap">
+                    <div class="">
+                        <h5>기초적인 버튼</h5>
+                        <sl-button>Simple</sl-button>
+                    </div>
+                    <div class="">
+                        <h5>컬러 버튼</h5>
+                        <sl-button variant="default">Default</sl-button>
+                        <sl-button variant="primary">Primary</sl-button>
+                        <sl-button variant="success">Success</sl-button>
+                        <sl-button variant="neutral">Neutral</sl-button>
+                        <sl-button variant="warning">Warning</sl-button>
+                        <sl-button variant="danger">Danger</sl-button>
+                    </div>
+                    <div class="">
+                        <h5>아웃라인 버튼</h5>
+                        <sl-button variant="default" outline>Default</sl-button>
+                        <sl-button variant="primary" outline>Primary</sl-button>
+                        <sl-button variant="success" outline>Success</sl-button>
+                        <sl-button variant="neutral" outline>Neutral</sl-button>
+                        <sl-button variant="warning" outline>Warning</sl-button>
+                        <sl-button variant="danger" outline>Danger</sl-button>
+                    </div>
+                    <div class="">
+                        <h5>모양 버튼</h5>
+                        <sl-button pill>pill</sl-button>
+                        <sl-button variant="default" circle>
+                            <sl-icon name="gear" label="Settings"></sl-icon>
+                        </sl-button>
+                    </div>
+                    <div class="">
+                        <h5>텍스트 버튼</h5>
+                        <sl-button variant="text" size="small">Text</sl-button>
+                        <sl-button variant="text" size="medium">Text</sl-button>
+                        <sl-button variant="text" size="large">Text</sl-button>
+                    </div>
+                    <div class="">
+                        <h5>링크 버튼</h5>
+                        <sl-button
+                            href="https://www.naver.com/"
+                            variant="success"
+                            >Naver</sl-button
+                        >
+                        <sl-button
+                            href="https://www.google.com/"
+                            variant="primary"
+                            target="_blank"
+                            >Google</sl-button
+                        >
+                        <sl-button
+                            href="/assets/images/wordmark.svg"
+                            download="shoelace.svg"
+                            >Download</sl-button
+                        >
+                        <sl-button href="https://example.com/" disabled
+                            >Disabled</sl-button
+                        >
+                    </div>
+                    <div class="">
+                        <h5>카피 버튼</h5>
+                        <sl-copy-button value="복사할 값을 이곳에 넣는다">
+                            <sl-icon slot="copy-icon" name="clipboard"></sl-icon>
+                            <sl-icon slot="success-icon" name="clipboard-check"></sl-icon>
+                            <sl-icon slot="error-icon" name="clipboard-x"></sl-icon>
+                        </sl-copy-button>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

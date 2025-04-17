@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css">
+    </head>
+    <body>
+        <body class="outer">
+            <div class="inner">
+                <!-- 셀렉트 -->
+                <div class="section">
+                    <h3 class="componentTitle">셀렉트 - 옵션</h3>
+                    <div class="componentWrap">
+                        <div>
+                            <h5>기초적인 Select</h5>
+                            <div style="display: flex; gap: 2rem">
+                                <sl-select
+                                    id="select"
+                                >
+                                    <sl-option value="option-1">Option 1</sl-option>
+                                    <sl-option value="option-2">Option 2</sl-option>
+                                    <sl-option value="option-3">Option 3</sl-option>
+                                </sl-select>
+
+                                <p>선택 value 가져오기</p>
+                                <p id="select-value"></p>
+
+                                <script>
+                                    const select = document.getElementById('select');
+                                    const selectValue = document.getElementById('select-value');
+
+                                    /* 특이하게 shoelace에서는 sl-change 라는 이벤트를 감지한다. */
+                                    select.addEventListener('sl-change', (e) => {
+                                        selectValue.innerText = e.target.value;
+                                    });
+
+                                </script>
+                            </div>
+                        </div>
+                        <div >
+                            <h5>라벨</h5>
+                            <sl-select label="input label here.">
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+                        </div>
+                        <div>
+                            <h5>하단 도움 문구 (help-text)</h5>
+                            <sl-select
+                                label="Experience"
+                                help-text="Please tell us your skill level."
+                            >
+                                <sl-option value="1">Novice</sl-option>
+                                <sl-option value="2">Intermediate</sl-option>
+                                <sl-option value="3">Advanced</sl-option>
+                            </sl-select>
+                        </div>
+                        <div>
+                            <h5>플레이스홀더 (placeholder)</h5>
+                            <sl-select placeholder="플레이스홀더">
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+                        </div>
+                        <div>
+                            <h5>아이콘 prefix & suffix</h5>
+                            <sl-select label="Select one">
+                                <sl-option value="option-1">
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="envelope"
+                                        style="padding-right: 0.7rem"
+                                    ></sl-icon>
+                                    Email
+                                    <sl-icon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></sl-icon>
+                                </sl-option>
+
+                                <sl-option value="option-2">
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="telephone"
+                                        style="padding-right: 0.7rem"
+                                    ></sl-icon>
+                                    Phone
+                                    <sl-icon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></sl-icon>
+                                </sl-option>
+
+                                <sl-option value="option-3">
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="chat-dots"
+                                        style="padding-right: 0.7rem"
+                                    ></sl-icon>
+                                    Chat
+                                    <sl-icon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></sl-icon>
+                                </sl-option>
+                            </sl-select>
+                        </div>
+
+                        <div>
+                            <h5 style=" color : var(--sl-color-red-500)">Select Color 바꾸기</h5>
+
+                            <sl-select
+                            class="red-select"
+                            label="Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! ">
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

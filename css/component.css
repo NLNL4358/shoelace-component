@@ -1,0 +1,70 @@
+
+/* Radio */
+sl-radio{
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.red-color-radio ::part(control--checked){
+    /* 선택된 Radio */
+    background-color: var(--sl-color-red-500);
+    border-color: var(--sl-color-red-500);
+}
+
+.red-color-radio-button sl-radio-button:hover::part(button){
+    /* hover된 Radio Button*/
+    background-color: var(--sl-color-red-200);
+    border-color: var(--sl-color-red-200);
+}
+
+.red-color-radio-button ::part(button--checked),
+.red-color-radio-button sl-radio-button:hover::part(button--checked){
+    /* 선택된 Radio Button*/
+    background-color: var(--sl-color-red-500);
+    border-color: var(--sl-color-red-500);
+}
+
+/* CheckBox */
+sl-checkbox::part(base){
+    align-items: center;
+}
+
+sl-checkbox.x1::part(control){
+    width: 1rem;
+    height: 1rem;
+}
+sl-checkbox.x2::part(control){
+    width: 2rem;
+    height: 2rem;
+}
+sl-checkbox.x3::part(control){
+    width: 3rem;
+    height: 3rem;
+}
+
+
+/* Select */
+.red-select sl-option::part(base):hover{
+    /* hover된 option */
+    background-color: var(--sl-color-red-200);
+}
+.red-select sl-option[tabindex="0"]::part(base),
+.red-select sl-option[tabindex="0"]::part(base):hover {
+    /* 선택된 option */
+    background-color: var(--sl-color-red-500);
+}
+
+
+/* dialog */
+sl-dialog::part(panel){
+    width: fit-content;
+}
+
+.dialogInner{
+    padding: 0 1rem;
+    max-width: 80vw;
+}
+.dialogInner *{
+    max-width: 100%;
+    text-wrap: wrap;
+}

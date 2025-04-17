@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+            
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+</head>
+<body class="outer">
+    <div class="inner">
+        <!-- 셀렉트 -->
+        <div class="section">
+            <h3 class="componentTitle">인풋</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기본 인풋</h5>
+                    <sl-input id="sl-input"></sl-input>
+
+                    <p>Value 가져오기 : </p>
+                    <p id="input-value"></p>
+
+                    <script>
+                        const slInput = document.getElementById("sl-input");
+                        const inputValue = document.getElementById("input-value");
+
+                        /* 특이하게 shoelace에서는 sl-input 라는 이벤트를 감지한다. */
+                        slInput?.addEventListener("sl-input", (e) => {
+                            inputValue.innerText = e.target.value
+                        })
+                    </script>
+                </div>
+
+                <div>
+                    <h5>Label 인풋</h5>
+                    <sl-input label="이름을 입력해주세요"></sl-input>
+                </div>
+
+                <div>
+                    <h5>Help Text</h5>
+                    <sl-input label="Nickname" help-text="이곳에는 help 텍스트를 입력할 수 있습니다."></sl-input>
+                </div>
+
+                <div>
+                    <h5>Placeholder</h5>
+                    <sl-input placeholder="플레이스 홀더"></sl-input>
+                </div>
+
+                <div>
+                    <h5>clearable</h5>
+                    <sl-input clearable></sl-input>
+                </div>
+
+                <div>
+                    <h5>toggle hide</h5>
+                    <sl-input type="password" placeholder="Password Toggle" password-toggle></sl-input>
+                </div>
+
+                <div>
+                    <h5>filled Input</h5>
+                    <sl-input placeholder="filled" filled></sl-input>
+                </div>
+
+                <div>
+                    <h5>Disabled</h5>
+                    <sl-input placeholder="Disabled" disabled></sl-input>
+                </div>
+
+                <div>
+                    <h5>input 타입</h5>
+                    <sl-input type="Email" placeholder="Email"></sl-input>
+                    <br/>
+                    <sl-input type="number" placeholder="Number"></sl-input>
+                    <br/>
+                    <sl-input type="date" placeholder="Date"></sl-input>
+                </div>
+
+                <div>
+                    <h5>prefix & suffix Icon</h5>
+                    <sl-input placeholder="Medium" size="medium">
+                        <sl-icon name="house" slot="prefix" style="margin-left: 1rem;"></sl-icon>
+                        <sl-icon name="chat" slot="suffix" style="margin-right: 1rem;"></sl-icon>
+                    </sl-input>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/Input.js"></script>
+</body>
+</html>

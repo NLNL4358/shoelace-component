@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- shoelace -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- shoelace Light & Dark Theme -->
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <!-- component css -->
+    <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <!-- 셀렉트 -->
+        <div class="section">
+            <h3 class="componentTitle">모달</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기본 Dialog</h5>
+                      
+                    <sl-button id="dialog-open-1">Open Dialog</sl-button>
+
+                    <sl-dialog label="Dialog" id="dialog-overview-1">   <!-- label 제목 -->
+                        <div class="dialogInner">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+
+                    <script>
+                    const openButton = document.getElementById("dialog-open-1");
+
+                    const dialog = document.getElementById('dialog-overview-1');
+                    const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+                    
+                    openButton.addEventListener('click', () => dialog.show()); /* show() */
+                    closeButton.addEventListener('click', () => dialog.hide()); /* hide() */
+                    </script>
+                </div>
+
+                <div>
+                    <h5>Dialog 너비 설정</h5>
+
+                    <sl-button id="dialog-open-2">Open Custom Width Dialog</sl-button>
+
+                    <sl-dialog label="Dialog-Custom-Width" id="dialog-overview-2" style="--width: 50vw;">
+                        <div class="dialogInner">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </div>
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+
+                    <script>
+                        const openButton2 =document.getElementById("dialog-open-2");
+
+                        const dialog2 = document.getElementById("dialog-overview-2");
+                        const closeButton2 = dialog2.querySelector("sl-button[slot='footer']");
+
+                        openButton2.addEventListener('click', () => dialog2.show());
+                        closeButton2.addEventListener('click', () => dialog2.hide())
+                    </script>
+                </div>
+
+                <div>
+                    <h5>스크롤 Dialog</h5>
+
+                    <sl-button id="dialog-open-3">Open Scrolling Dialog</sl-button>
+
+                    <sl-dialog label="Scrolling-Dialog" id="dialog-overview-3">
+                        <div class="dialogInner" style="height: 150vh;">
+                            <p>별다른추가없이 dialog안에 div를 만들어주면 자동으로 label과 footer 사이에 scroll영역을 만든다!! 👇</p>
+
+                            <h4 style="margin-top: 3rem;">단!! dialog안의 div(dialogInner)는 max-width가 필요하다 -> CSS </h4>
+
+                            <p style="margin-top: 3rem;">가로 최대 Test</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt aliquid ad, nostrum ut a beatae facere culpa inventore maiores numquam repellendus blanditiis debitis corrupti ex, soluta ipsum quidem vero. Unde.</p>
+                        </div>
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+
+                    <script>
+                        const openButton3 =document.getElementById("dialog-open-3");
+
+                        const dialog3 = document.getElementById("dialog-overview-3");
+                        const closeButton3 = dialog3.querySelector("sl-button[slot='footer']");
+                                            
+                        openButton3.addEventListener('click', () => dialog3.show());
+                        closeButton3.addEventListener('click', () => dialog3.hide())
+                    </script>
+                </div>
+
+                <div>
+                    <h5>헤더 Action 추가 Dialog</h5>
+
+                    <sl-button id="dialog-open-4">Open Header Action Dialog</sl-button>
+
+                    <sl-dialog label="Header Action Dialog" id="dialog-overview-4">
+                        <sl-icon-button id="actionButton" slot="header-actions" name="zoom-in"></sl-icon-button>
+                        <sl-icon-button id="actionButton" slot="header-actions" name="zoom-out"></sl-icon-button>
+                        
+                        
+                        <div class="dialogInner">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing.
+                        </div>
+
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+
+                    <script>
+                        const openButton4 =document.getElementById("dialog-open-4");
+
+                        const dialog4 = document.getElementById("dialog-overview-4");
+                        const closeButton4 = dialog4.querySelector("sl-button[slot='footer']");
+                                            
+                        openButton4.addEventListener('click', () => dialog4.show());
+                        closeButton4.addEventListener('click', () => dialog4.hide())
+                    </script>
+                </div>
+
+                <div>
+                    <h5>영역 밖 터치 방지 Dialog -> JS로 구현</h5>
+
+                    <sl-button id="dialog-open-5">Open Close-Deny Dialog</sl-button>
+
+                    <sl-dialog id="dialog-overview-5" label="overlay close denied">
+                        <div class="dialogInner">
+                            dialog의 외부(overlay)을 클릭해도 dialog가 꺼지지 않습니다.👍
+                        </div>
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+
+                    <script>
+                        const openButton5 =document.getElementById("dialog-open-5");
+
+                        const dialog5 = document.getElementById("dialog-overview-5");
+                        const closeButton5 = dialog5.querySelector("sl-button[slot='footer']");
+                                            
+                        /* 외부(overlay) 클릭시 Close를 막기 위해서 아래의 이벤트를 정의해줘야함 */
+                        dialog5.addEventListener("sl-request-close", (e) => {
+                            if(e.detail.source === 'overlay'){
+                                console.log("외부 클릭이기에 not close!")
+                                e.preventDefault();
+                            }
+                        })
+                        
+                        openButton5.addEventListener('click', () => dialog5.show());
+                        closeButton5.addEventListener('click', () => dialog5.hide())
+                    </script>
+                </div>
+
+                <div>
+                    <h5>Dialog가 열리자마자 Focus 되야할 input이 있다면?</h5>
+
+                    <sl-button id="dialog-open-6">
+                        Open Auto Focus Dialog
+                    </sl-button>
+
+                    <sl-dialog id="dialog-overview-6" label="Auto Focus Dialog">
+                        <div class="dialogInner">
+                            <sl-input placeholder="일반 input"></sl-input>
+                            <br/>
+                            <sl-input autofocus placeholder="자동으로 focus 됩니다."></sl-input>
+                        </div>
+
+                        <sl-button slot="footer" variant="primary">Close</sl-button>
+                    </sl-dialog>
+
+                    <script>
+                        const openButton6 =document.getElementById("dialog-open-6");
+
+                        const dialog6 = document.getElementById("dialog-overview-6");
+                        const closeButton6 = dialog6.querySelector("sl-button[slot='footer']");
+
+                        openButton6.addEventListener('click', () => dialog6.show());
+                        closeButton6.addEventListener('click', () => dialog6.hide())
+                    </script>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

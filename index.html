@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KJS shoelace 컴포넌트</title>
+
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/index.css" />
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="./assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu style="display: flex;flex-direction: column;">
+                                       <sl-button 
+                                       href="/components/button/button.html"
+                                       size="large"
+                                       class="navButton"
+                                       >
+                                        Default Button
+                                       </sl-button>
+                                    
+                                       <sl-button 
+                                       href="/components/button/buttonGroup.html"
+                                       size="large"
+                                       class="navButton"
+                                       >
+                                        Group Button
+                                       </sl-button>
+                                    
+                                    <sl-menu-item>
+                                    Find
+                                        <sl-menu slot="submenu">
+                                            <sl-menu-item value="find">Find…</sl-menu-item>
+                                            <sl-menu-item value="find-previous">Find Next</sl-menu-item>
+                                            <sl-menu-item value="find-next">Find Previous</sl-menu-item>
+                                        </sl-menu>
+                                    </sl-menu-item>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu style="display: flex;flex-direction: column;">
+                                    <sl-button 
+                                    href="/components/select/select.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                     Select
+                                    </sl-button>
+
+                                    <sl-button 
+                                    href="/components/select/input.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                     Input
+                                    </sl-button>
+                             </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu style="display: flex;flex-direction: column;">
+                                    <sl-button 
+                                    href="/components/checkbox/checkbox.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                     CheckBox
+                                    </sl-button>
+
+                                    <sl-button 
+                                    href="/components/checkbox/radio.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                     Radio
+                                    </sl-button>
+                             </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>모달 & 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu style="display: flex;flex-direction: column;">
+                                    <sl-button 
+                                    href="/components/modal/modal.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                    href="/components/modal/details.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="mode">
+                    <a
+                        href="https://github.com/shoelace-style/shoelace"
+                        title="View Shoelace on GitHub"
+                        class="external-link"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <sl-icon
+                            name="github"
+                            aria-hidden="true"
+                            library="default"
+                            style="font-size: 2rem"
+                        ></sl-icon>
+                    </a>
+
+                    <a
+                        href="https://shoelace.style/"
+                        title="View Shoelace official web"
+                        class="external-link"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <sl-icon
+                            name="book"
+                            aria-hidden="true"
+                            library="default"
+                            style="font-size: 1.5rem"
+                        ></sl-icon>
+                    </a>
+                    
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
+            </div>
+
+            <div class="inner">
+                <h5>Shoelace 컴포넌트는 내부적으로 Shadow DOM을 사용하기 때문에, CSS 선택자 .red-color-radio .radio__control처럼 외부 스타일로 내부 요소를 직접 조작하는 건 기본적으로 불가능</h5>
+                <h5>외부 스타일은 Shadow DOM 내부까지 접근하지못함</h5>
+                <br/>
+                <h5>다만 방법은 있다.</h5>
+                <h5>1. shoelace 컴포넌트들이 가지는 part를 이용해서 CSS의 ::part() 를 이용하거나</h5>
+                <h5>2. css의 속성 선택자 sl-component[속성='~'] 를 이용하는 방법이 있다.</h5>
+            </div>
+            
+    </body>
+
+    <!-- script -->
+    <script src="./js/darkmode.js"></script>
+</html>
