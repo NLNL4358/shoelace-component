@@ -86,3 +86,21 @@ sl-details.sl-detail-20rem::part(content){
 .custom-icon-details::part(summary-icon) {
     rotate: none;
 }
+
+
+/* Alert */
+sl-alert::part(message){
+    max-width: 100%;
+    text-wrap: wrap;
+}
+
+
+/* Drawer */
+.drawerInner{
+    max-width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.drawerInner *{
+    text-wrap: wrap;
+}

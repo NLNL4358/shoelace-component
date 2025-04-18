@@ -67,7 +67,7 @@
 .componentWrap > div{
     min-height: fit-content;
 }
-.componentWrap h5 {
+.componentWrap > h5 {
     margin: 0.7rem 0px 0.3rem 0px;
 }
 

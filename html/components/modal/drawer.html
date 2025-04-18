@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!-- shoelace -->
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+     />
+     <script
+         type="module"
+         src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+     ></script>
+ 
+     <!-- shoelace Light & Dark Theme -->
+     <link
+         rel="stylesheet"
+         media="(prefers-color-scheme:light)"
+         href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+     />
+     <link
+         rel="stylesheet"
+         media="(prefers-color-scheme:dark)"
+         href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+     />
+ 
+     <link rel="stylesheet" href="/css/reset.css" />
+     <link rel="stylesheet" href="/css/index.css" />
+ 
+     <!-- component css -->
+     <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <div class="section">
+            <h3 class="componentTitle">Drawer - 서랍 , 햄버거 메뉴</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기본 Drawer</h5>
+
+                    <sl-button id="default-drawer-open">Open Drawer</sl-button>
+                    <sl-drawer label="default Drawer" id="default-drawer">
+                        <div class="drawerInner">
+                            <h4>기본적인 Drawer입니다.</h4>
+                        </div>
+                        <sl-button slot="footer" id="default-drawer-close">Close Drawer</sl-button>
+                    </sl-drawer>
+
+                    <script>
+                        const defaultDrawer = document.getElementById("default-drawer")
+                        const defaultDrawerOpen = document.getElementById("default-drawer-open")
+                        const defaultDrawerClose = document.getElementById("default-drawer-close")
+
+                        defaultDrawerOpen.addEventListener("click", () => {
+                            defaultDrawer.show();
+                        })
+                        defaultDrawerClose.addEventListener("click", ()=>{
+                            defaultDrawer.hide()
+                        })
+                    </script>
+                </div>
+
+                <div>
+                    <h5>Drawer 방향 설정 - placement 속성</h5>
+
+                    <div style="display: grid; gap: 2rem; grid-template-columns: auto auto;">
+                        <sl-button id="top-drawer-open">
+                            위쪽 Drawer - top
+                        </sl-button>
+                        <sl-button id="bottom-drawer-open">
+                            아래쪽 Drawer - bottom
+                        </sl-button>
+                        <sl-button id="start-drawer-open">
+                            왼쪽 Drawer - start
+                        </sl-button>
+                        <sl-button id="end-drawer-open">
+                            오른쪽 Drawer(기본) - end
+                        </sl-button>
+                    </div>
+
+                    <sl-drawer id="top-drawer" label="위쪽 Drawer" placement="top">
+                        <div class="drawerInner"></div>
+                            <sl-button id="top-drawer-close" slot="footer">Close Drawer</sl-button>
+                    </sl-drawer>
+                    <sl-drawer id="bottom-drawer" label="아래쪽 Drawer" placement="bottom">
+                        <div class="drawerInner"></div>
+                            <sl-button id="bottom-drawer-close" slot="footer">Close Drawer</sl-button>
+                    </sl-drawer>
+                    <sl-drawer id="start-drawer" label="왼쪽 Drawer" placement="start">
+                        <div class="drawerInner"></div>
+                            <sl-button id="start-drawer-close" slot="footer">Close Drawer</sl-button>
+                    </sl-drawer>
+                    <sl-drawer id="end-drawer" label="오른쪽 Drawer(기본)" placement="end">
+                        <div class="drawerInner"></div>
+                        <sl-button id="end-drawer-close" slot="footer">Close Drawer</sl-button>
+                    </sl-drawer>
+                    
+                    <script>
+                        const topDrawerOpen = document.getElementById("top-drawer-open")
+                        const bottomDrawerOpen = document.getElementById("bottom-drawer-open")
+                        const startDrawerOpen = document.getElementById("start-drawer-open")
+                        const endDrawerOpen = document.getElementById("end-drawer-open")
+
+                        const topDrawerClose = document.getElementById("top-drawer-close")
+                        const bottomDrawerClose = document.getElementById("bottom-drawer-close")
+                        const startDrawerClose = document.getElementById("start-drawer-close")
+                        const endDrawerClose = document.getElementById("end-drawer-close")
+
+                        const topDrawer = document.getElementById("top-drawer")
+                        const bottomDrawer = document.getElementById("bottom-drawer")
+                        const startDrawer = document.getElementById("start-drawer")
+                        const endDrawer = document.getElementById("end-drawer")
+
+                        topDrawerOpen.addEventListener("click",()=>{
+                            topDrawer.show()
+                        })
+                        bottomDrawerOpen.addEventListener("click",()=>{
+                            bottomDrawer.show()
+                        })
+                        startDrawerOpen.addEventListener("click",()=>{
+                            startDrawer.show()
+                        })
+                        endDrawerOpen.addEventListener("click",()=>{
+                            endDrawer.show()
+                        })
+                        
+                        topDrawerClose.addEventListener("click", () => {
+                            topDrawer.hide()
+                        })
+                        bottomDrawerClose.addEventListener("click", () => {
+                            bottomDrawer.hide()
+                        })
+                        startDrawerClose.addEventListener("click", () => {
+                            startDrawer.hide()
+                        })
+                        endDrawerClose.addEventListener("click", () => {
+                            endDrawer.hide()
+                        })
+                        
+                    </script>
+                </div>
+
+                <div>
+                    <h5>영역 밖 터치 방지 Drawer -> JS로 구현</h5>
+
+                    <sl-button id="deny-drawer-open">Open Drawer</sl-button>
+
+                    <sl-drawer label="Deny Drawer" id="deny-drawer">
+                        <div class="drawerInner">
+                            <p>drawer에 'sl-request-close' 이벤트를 확인하여 event의 .detail.source === 'overlay'인 경우 event.preventDefault 합니다.</p>
+                        </div>
+                        <sl-button id="deny-drawer-close" slot="footer">CLose Drawer</sl-button>
+                    </sl-drawer>
+
+                    <script>
+                        const denyDrawerOpen = document.getElementById("deny-drawer-open")
+                        const denyDrawerClose = document.getElementById("deny-drawer-close")
+                        const denyDrawer = document.getElementById("deny-drawer")
+
+                        denyDrawer.addEventListener('sl-request-close', (e) => {
+                            if(e.detail.source === 'overlay'){
+                                console.log("외부 클릭이기에 not close!")
+                                e.preventDefault();
+                            }
+                        })
+
+                        denyDrawerOpen.addEventListener("click", () => {denyDrawer.show()})
+                        denyDrawerClose.addEventListener("click", () => {denyDrawer.hide()})
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- shoelace -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- shoelace Light & Dark Theme -->
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <!-- component css -->
+    <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <div class="section">
+            <h3 class="componentTitle">Alert</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기본 Alert</h5>
+
+                    <sl-alert open>
+                        <sl-icon slot="icon" name="info-circle" style="font-size: 20px;"></sl-icon>
+                        이곳에 들어갈 텍스트를 넣습니다.
+                    </sl-alert>
+                </div>
+                
+                 <div>
+                    <h5>여러 종류의 Alert</h5>
+
+                    <sl-alert variant="primary" open>
+                        <sl-icon slot="icon" name="info-circle"></sl-icon>
+                        <strong>This is super informative</strong><br />
+                        You can tell by how pretty the alert is.
+                      </sl-alert>
+                      
+                      <br />
+                      
+                      <sl-alert variant="success" open>
+                        <sl-icon slot="icon" name="check2-circle"></sl-icon>
+                        <strong>Your changes have been saved</strong><br />
+                        You can safely exit the app now.
+                      </sl-alert>
+                      
+                      <br />
+                      
+                      <sl-alert variant="neutral" open>
+                        <sl-icon slot="icon" name="gear"></sl-icon>
+                        <strong>Your settings have been updated</strong><br />
+                        Settings will take effect on next login.
+                      </sl-alert>
+                      
+                      <br />
+                      
+                      <sl-alert variant="warning" open>
+                        <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+                        <strong>Your session has ended</strong><br />
+                        Please login again to continue.
+                      </sl-alert>
+                      
+                      <br />
+                      
+                      <sl-alert variant="danger" open>
+                        <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+                        <strong>Your account has been deleted</strong><br />
+                        We're very sorry to see you go!
+                      </sl-alert>
+                 </div>
+
+                 <div>
+                    <h5>닫을 수 있는 Alert</h5>
+
+                    <sl-alert variant="primary" open closable >
+                        <sl-icon slot="icon" name="info-circle"></sl-icon>
+                        sl-alert에 closable 속성 필요!
+                    </sl-alert>
+                 </div>
+
+                 <div>
+                    <h5>자동으로 사라지는 Alert</h5>
+
+                    <sl-alert variant="primary" duration="3000" open closable>
+                        <sl-icon slot="icon" name="info-circle"></sl-icon>
+                        sl-alert에 duration="3000" 속성을 사용하면 열리고
+                        3초후 자동으로 닫힙니다
+                    </sl-alert>
+                 </div>
+
+                 <div>
+                    <h5>열고 닫을 수 있는 Alert - 열때 JS필요!</h5>
+
+                    <sl-button id="alert-open">Show Alert</sl-button>
+
+                    <sl-alert variant="primary" duration="3000" closable id="openableAlert">
+                        <sl-icon slot="icon" name="info-circle"></sl-icon>
+                        sl-alert 에 .show() 명령어로 Open가능
+                    </sl-alert>
+                    
+                    <script>
+                        const openButton = document.getElementById("alert-open")
+                        const openableAlert = document.getElementById("openableAlert")
+
+                        openButton.addEventListener("click", () => {
+                            openableAlert.show()
+                        })
+                    </script>
+                 </div>
+
+                 <div>
+                    <h5>카운트다운이 Alert창에서 확인 할 수 있는 Alert</h5>
+
+                    <sl-button id="alert-open2">Show Alert</sl-button>
+
+                    <sl-alert variant="primary" duration="3000" countdown="rtl" closable id="countdownAlert">
+                        <sl-icon slot="icon" name="info-circle"></sl-icon>
+                        sl-alert에 countdown="rtl" 속성을 추가
+                    </sl-alert>
+
+                    <script>
+                        const openButton2 = document.getElementById("alert-open2")
+                        const countdownAlert = document.getElementById("countdownAlert")
+
+                        openButton2.addEventListener("click", () => {
+                            countdownAlert.show()
+                        })
+                    </script>
+                 </div>
+
+                 <div>
+                    <h5>우측 상단에 Toast 식으로 Alert 띄우기</h5>
+
+                    <sl-button id="alert-open3">Show Alert</sl-button>
+
+                    <sl-alert variant="primary"  id="toastAlert" closable>
+                        <sl-icon slot="icon" name="info-circle"></sl-icon>
+                        alert를 show()로 여는게아닌 toast() 함수로 열게되면 우측상단에 보입니다.
+                    </sl-alert>
+
+                    <script>
+                        const openButton3 = document.getElementById("alert-open3")
+                        const toastAlert = document.getElementById("toastAlert")
+
+                        openButton3.addEventListener("click", () => {
+                            toastAlert.toast()
+                        })
+                    </script>
+                 </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
