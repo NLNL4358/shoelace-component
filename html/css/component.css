@@ -104,3 +104,15 @@ sl-alert::part(message){
 .drawerInner *{
     text-wrap: wrap;
 }
+
+/* BreadCrumb */
+sl-breadcrumb{
+    display: flex;
+    width: fit-content;
+}
+sl-breadcrumb-item::part(base){
+    font-size: var(--span-size);
+}
+sl-breadcrumb-item sl-dropdown sl-button sl-icon{
+    font-size: var(--small-size);
+}

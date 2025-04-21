@@ -12,7 +12,11 @@ const getLocalStorage_darkMode = () => {
         /* 초기 테마 설정 (시스템 테마 감지) */
         mode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    darkModeSwitch.checked = mode === 'dark' ? true : false;
+
+    if(darkModeSwitch !== null)
+    {
+        darkModeSwitch.checked = mode === 'dark' ? true : false;
+    }
     setTheme(mode)
 }
 
@@ -30,7 +34,7 @@ const setTheme = (mode) => {
 };
 
 /* Event */
-darkModeSwitch.addEventListener('sl-change', () => {
+darkModeSwitch?.addEventListener('sl-change', () => {
     // 토글 이벤트 연결
     const isDarkMode = darkModeSwitch.checked;
     setTheme(isDarkMode ? 'dark' : 'light');

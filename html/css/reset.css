@@ -1,6 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 
-* {
+*{
     margin: 0px;
     padding: 0px;
     list-style: none;
@@ -125,6 +125,7 @@ var {
     /* button color */
     --button-primary-color :rgb(75, 132, 255);
 }
+
 
 /* 실제 적용되는 부분 */
 body {

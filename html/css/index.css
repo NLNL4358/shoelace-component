@@ -65,10 +65,25 @@
     flex-wrap: wrap;
 }
 .componentWrap > div{
-    min-height: fit-content;
+    min-height: 10rem;
+
 }
-.componentWrap > h5 {
+.componentWrap > div > h5 {
     margin: 0.7rem 0px 0.3rem 0px;
+    position: relative;
+}
+.componentWrap > div > h5::after {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--text-title-color);
 }
 
 .section {
