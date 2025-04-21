@@ -122,3 +122,12 @@ sl-breadcrumb-item sl-dropdown sl-button sl-icon{
     font-size: var(--small-size);
 }
 
+/* icon */
+sl-icon{
+    color: var(--icon-color);
+}
+sl-button sl-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

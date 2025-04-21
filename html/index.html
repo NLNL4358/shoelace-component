@@ -27,8 +27,9 @@
             href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
         />
 
-        <link rel="stylesheet" href="./css/reset.css" />
-        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css">
     </head>
     <body class="outer">
         <div class="inner">
@@ -177,6 +178,14 @@
                                     >
                                      Dropdown
                                     </sl-button>
+                                    <sl-button
+                                    href="/components/uiux/icon.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                     Icon
+                                    </sl-button>
+
                                 </sl-menu>
                             </div>
                         </li>
@@ -184,35 +193,19 @@
 
                 </div>
                 <div class="mode">
-                    <a
-                        href="https://github.com/shoelace-style/shoelace"
-                        title="View Shoelace on GitHub"
-                        class="external-link"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <sl-icon
-                            name="github"
-                            aria-hidden="true"
-                            library="default"
-                            style="font-size: 2rem"
-                        ></sl-icon>
-                    </a>
+                    <sl-icon-button 
+                    name="github" 
+                    href="https://github.com/shoelace-style/shoelace" 
+                    target="_blank"
+                    class="linkIconButton"
+                    ></sl-icon-button>
 
-                    <a
-                        href="https://shoelace.style/"
-                        title="View Shoelace official web"
-                        class="external-link"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <sl-icon
-                            name="book"
-                            aria-hidden="true"
-                            library="default"
-                            style="font-size: 1.5rem"
-                        ></sl-icon>
-                    </a>
+                    <sl-icon-button 
+                    name="book" 
+                    href="https://shoelace.style/" 
+                    target="_blank"
+                    class="linkIconButton"
+                    ></sl-icon-button>
                     
                     <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
                 </div>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- shoelace -->
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- shoelace Light & Dark Theme -->
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <div class="section">
+            <h3 class="componentTitle">Icon</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>아이콘 - name속성안에 사용할 아이콘의 종류를 선언하면 된다.</h5>
+                    <p>
+                        name="chat-left-dots"  ->
+                        <sl-icon name="chat-left-dots"></sl-icon>
+                    </p>
+                </div>
+
+                <div>
+                    <h5>아이콘의 크기 - 부모dom의 font-size를 따라간다</h5>
+                    <div style="font-size : 2rem">
+                        부모div의 font-size : 2rem  -> 
+                        <sl-icon name="chat-left-dots"></sl-icon>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>아이콘의 컬러 - 원래 Shoelace의 아이콘은 부모의 Color를 따라간다.<br/>하지만 그럴경우 sideEffect가 너무 많아져서 CSS로 제어하였다.</h5>
+                    <p>단, 컬러의 지정이 필요할경우 -> 직접 sl-icon 에 style로 지정해주면 가능하다.</p>
+
+                    <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; margin-top: 1.5rem;">
+                        <sl-icon name="chat-left-dots" style="color: red;"></sl-icon>
+                        <sl-icon name="chat-left-dots" style="color: blue;"></sl-icon>
+                        <sl-icon name="chat-left-dots" style="color: green;"></sl-icon>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Custom Icon : name대신에 src=""를 사용해주면 된다. </h5>
+                    <sl-icon src="https://shoelace.style/assets/images/shoe.svg" style="font-size: 4rem;"></sl-icon>
+                </div>
+            </div>
+        </div>
+
+        <sl-divider></sl-divider>
+
+        <div class="section">
+            <h3 class="componentTitle">Icon Button</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>Icon Button : name을 사용하는것은 sl-icon과 동일하나<br/>sl-icon-button으로 선언</h5>
+
+                    <sl-icon-button name="gear" label="Settings"></sl-icon-button>
+                </div>
+
+                <div>
+                    <h5>Icon Button 크기 : Icon 크기를 정할때와 같이 부모의 font-size 를 따라간다. 혹은 직접 지정해줘도 된다</h5>
+
+                    <div style="display: flex; gap: 1rem; align-items: flex-end;">
+                        inline 1.5rem ->
+                        <sl-icon-button name="pencil" label="Edit" style="font-size: 1.5rem;"></sl-icon-button>
+                        div 2rem ->
+                        <div style="border: 1px solid lightgray; border-radius: 5px; font-size: 2rem; width: fit-content;">
+                            <sl-icon-button name="pencil" label="Edit" ></sl-icon-button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Link Icon Button - href 속성과 target 속성 사용</h5>
+                    <sl-icon-button name="gear" label="Settings" href="https://example.com" target="_blank"></sl-icon-button>
+                </div>
+
+                <div>
+                    <h5>Icon Tooltip - < sl-tooltip >으로 감싸준다</h5>
+                    <sl-tooltip content="Settings">
+                        <sl-icon-button name="gear" label="Settings"></sl-icon-button>
+                    </sl-tooltip>
+                </div>
+
+                <div>
+                    <h5>Disabled - disabled 속성을 사용한다.</h5>
+                    <sl-icon-button name="gear" label="Settings" disabled></sl-icon-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/darkmode.js"></script>
+</body>
+</html>

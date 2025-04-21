@@ -70,14 +70,16 @@
 }
 .componentWrap > div > h5 {
     margin: 0.7rem 0px ;
+    text-wrap: wrap
+    ;
     position: relative;
 }
-.componentWrap > div > h5::after {
+.componentWrap > div > h5:after {
     position: absolute;
     left: -10px;
-    top: 50%;
+    top: var(--h5-size);
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, calc(100% - var(--h5-size)));
     
     content: "";
     width: 0.5rem;
@@ -103,8 +105,8 @@
     align-items: center;
     gap: 1rem;
 }
-.external-link {
-    padding: 8px;
+.linkIconButton{
+    font-size: 2rem;
 }
 .navWrap {
     flex: 1;
