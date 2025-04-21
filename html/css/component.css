@@ -10,6 +10,7 @@ sl-radio{
     padding-left: 0.5rem;
 }
 
+
 .red-color-radio ::part(control--checked){
     /* 선택된 Radio */
     background-color: var(--sl-color-red-500);
@@ -130,4 +131,12 @@ sl-button sl-icon{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+sl-radio-button sl-icon{
+    color: currentColor;
+}
+
+/* switch */
+sl-switch::part(form-control-help-text){
+    margin-top: 0.5rem;
 }
