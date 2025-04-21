@@ -37,6 +37,73 @@
             <div class="componentWrap">
                 <div>
                     <h5>기초적인 Badge</h5>
+                    <sl-badge>Badge</sl-badge>
+                </div>
+
+                <div>
+                    <h5>여러 Color, 용도의 Badge</h5>
+                    <sl-badge variant="primary">Primary</sl-badge>
+                    <sl-badge variant="success">Success</sl-badge>
+                    <sl-badge variant="neutral">Neutral</sl-badge>
+                    <sl-badge variant="warning">Warning</sl-badge>
+                    <sl-badge variant="danger">Danger</sl-badge>
+                </div>
+
+                <div>
+                    <h5>둥그런 Badge - pill 속성 사용</h5>
+                    <sl-badge variant="primary" pill>Primary</sl-badge>
+                    <sl-badge variant="success" pill>Success</sl-badge>
+                    <sl-badge variant="neutral" pill>Neutral</sl-badge>
+                    <sl-badge variant="warning" pill>Warning</sl-badge>
+                    <sl-badge variant="danger" pill>Danger</sl-badge>
+                </div>
+
+                <div>
+                    <h5>물결있는 Badge - pulse 속성 사용</h5>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <sl-badge variant="primary" pill pulse>1</sl-badge>
+                        <sl-badge variant="success" pill pulse>10</sl-badge>
+                        <sl-badge variant="neutral" pill pulse>100</sl-badge>
+                        <sl-badge variant="warning" pill pulse>알림</sl-badge>
+                        <sl-badge variant="danger" pill pulse>경고</sl-badge>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>버튼과 같이 사용하는 Badge</h5>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <sl-button>
+                            Requests
+                            <sl-badge pill>30</sl-badge>
+                          </sl-button>
+                          
+                          <sl-button style="margin-inline-start: 1rem;">
+                            Warnings
+                            <sl-badge variant="warning" pill>8</sl-badge>
+                          </sl-button>
+                          
+                          <sl-button style="margin-inline-start: 1rem;">
+                            Errors
+                            <sl-badge variant="danger" pill pulse>6</sl-badge>
+                          </sl-button>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Menu와 같이 사용하는 Badge</h5>
+                    <sl-menu style="max-width: 240px;">
+                        <sl-menu-label style="border-bottom: 1px solid var(--sl-panel-border-color);">
+                            Messages
+                        </sl-menu-label>
+                        <sl-menu-item>
+                            Comments 
+                            <sl-badge slot="suffix" variant="primary" pill>4</sl-badge>
+                        </sl-menu-item>
+                        <sl-menu-item>
+                            Replies 
+                            <sl-badge slot="suffix" variant="primary" pill>12</sl-badge>
+                        </sl-menu-item>
+                    </sl-menu>
                 </div>
             </div>
         </div>
