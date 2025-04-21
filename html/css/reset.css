@@ -4,7 +4,6 @@
     margin: 0px;
     padding: 0px;
     list-style: none;
-    color: var(--text-title-color);
     text-decoration: none;
     font-family: 'Pretendard Variable', sans-serif;
     box-sizing: border-box;
@@ -144,6 +143,10 @@ body {
     --p-size: 1.133rem; /* 17px */
     --span-size: 1rem; /* 15px */
     --small-size: 0.87rem; /* 13px */
+}
+
+h1,h2,h3,h4,h5,p,span,small{
+    color: var(--text-title-color);
 }
 
 h1 {

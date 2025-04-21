@@ -1,4 +1,9 @@
 
+/* divider */
+sl-divider{
+    margin : var(--spacing) 0;
+}
+
 /* Radio */
 sl-radio{
     margin-top: 0.5rem;
@@ -116,3 +121,4 @@ sl-breadcrumb-item::part(base){
 sl-breadcrumb-item sl-dropdown sl-button sl-icon{
     font-size: var(--small-size);
 }
+

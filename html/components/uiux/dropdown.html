@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- shoelace -->
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- shoelace Light & Dark Theme -->
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/component.css">
+</head>
+<body class="outer">
+    <div class="inner">
+        <div class="section">
+            <h3 class="componentTitle">Dropdown</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기초적인 Dropdown</h5>
+                    
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                        <p>선택된 item의 Value(e.detail.item.value) : </p>
+                        <p id="drop-down-value"></p>
+                    </div>
+
+                    <sl-dropdown id="default-dropdown">
+                        <sl-button slot="trigger" caret>Edit</sl-button>
+                        <sl-menu>
+                            <sl-menu-item value="cut">Cut</sl-menu-item>
+                            <sl-menu-item value="copy">Copy</sl-menu-item>
+                            <sl-menu-item value="paste">Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+
+                    
+                    <script>
+                    const defaultDropdown = document.getElementById('default-dropdown');
+                    const dropDownValue = document.getElementById('drop-down-value')
+                    
+                    defaultDropdown.addEventListener('sl-select', e => {
+                        dropDownValue.innerText = e.detail.item.value
+                    });
+                    </script>
+                </div>
+
+                <div>
+                    <h5>펼쳐지는 위치를 지정하는 Dropdown</h5>
+
+                    <p style="margin: 1rem 0px;">규칙 placement = "상하좌우 중 택 1 - 시작 끝 중 택 1"</p>
+                    
+                    <sl-dropdown placement="top">
+                        <sl-button slot="trigger" caret>top</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="top-start">
+                        <sl-button slot="trigger" caret>top-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="top-end">
+                        <sl-button slot="trigger" caret>top-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+                    
+                    <br/><br/>
+
+                    <sl-dropdown placement="bottom">
+                        <sl-button slot="trigger" caret>bottom</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="bottom-start">
+                        <sl-button slot="trigger" caret>bottom-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="bottom-end">
+                        <sl-button slot="trigger" caret>bottom-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <br/><br/>
+
+                    <sl-dropdown placement="right">
+                        <sl-button slot="trigger" caret>right</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="right-start">
+                        <sl-button slot="trigger" caret>right-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="right-end">
+                        <sl-button slot="trigger" caret>right-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <br/><br/>
+
+                    <sl-dropdown placement="left">
+                        <sl-button slot="trigger" caret>left</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="left-start">
+                        <sl-button slot="trigger" caret>left-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+
+                    <sl-dropdown placement="left-end">
+                        <sl-button slot="trigger" caret>left-start</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+                </div>
+
+                <div>
+                    <h5>임의의 거리 Distance 설정</h5>
+
+                    <sl-dropdown distance="30">
+                        <sl-button slot="trigger" caret>Edit</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Cut</sl-menu-item>
+                          <sl-menu-item>Copy</sl-menu-item>
+                          <sl-menu-item>Paste</sl-menu-item>
+                          <sl-divider></sl-divider>
+                          <sl-menu-item>Find</sl-menu-item>
+                          <sl-menu-item>Replace</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+                </div>
+
+                <div>
+                    <h5> subMenu를 포함한 Dropdown</h5>
+                    <sl-dropdown>
+                        <sl-button slot="trigger" caret>Edit</sl-button>
+                      
+                        <sl-menu style="max-width: 200px;">
+                          <sl-menu-item value="cut">Cut</sl-menu-item>
+                          <sl-menu-item value="copy">Copy</sl-menu-item>
+                          <sl-menu-item value="paste">Paste</sl-menu-item>
+                          <sl-divider></sl-divider>
+                          <sl-menu-item>
+                            Find
+                            <sl-menu slot="submenu">
+                              <sl-menu-item value="find-previous">Find Next</sl-menu-item>
+                              <sl-menu-item value="find-next">Find Previous</sl-menu-item>
+                            </sl-menu>
+                          </sl-menu-item>
+                          <sl-menu-item>
+                            Transformations
+                            <sl-menu slot="submenu">
+                              <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
+                              <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
+                              <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
+                            </sl-menu>
+                          </sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+                </div>
+
+                <div>
+                    <h5>Prefix , Suffix 아이콘을 포함하는 Dropdown</h5>
+
+                    <sl-dropdown>
+                        <sl-button slot="trigger" caret>Dropdown</sl-button>
+                        <sl-menu>
+                          
+                          <sl-menu-item>
+                            Prefix
+                            <sl-icon slot="prefix" name="gift" style="margin-right: 1rem;"></sl-icon>
+                          </sl-menu-item>
+                          <sl-menu-item>
+                            Suffix Icon
+                            <sl-icon slot="suffix" name="heart" style="margin-left: 1rem;"></sl-icon>
+                          </sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+                </div>
+
+                <div>
+                    <h5>checked , disabled 상태를 가지는 Dropdown</h5>
+
+                    <sl-dropdown>
+                        <sl-button slot="trigger" caret>Dropdown</sl-button>
+                        <sl-menu>
+                          <sl-menu-item>Dropdown Item 1</sl-menu-item>
+                          <sl-menu-item>Dropdown Item 2</sl-menu-item>
+                          <sl-menu-item>Dropdown Item 3</sl-menu-item>
+                          <sl-divider></sl-divider>
+                          <sl-menu-item type="checkbox" checked>Checkbox</sl-menu-item>
+                          <sl-menu-item disabled>Disabled</sl-menu-item>
+                        </sl-menu>
+                    </sl-dropdown>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/darkmode.js"></script>
+</body>
+</html>
