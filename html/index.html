@@ -155,6 +155,28 @@
                         </li>
 
                         <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu style="display: flex;flex-direction: column;">
+                                    <sl-button
+                                    href="/components/menu/menu.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                     Menu
+                                    </sl-button>
+                                    <sl-button
+                                    href="/components/menu/tab.html"
+                                    size="large"
+                                    class="navButton"
+                                    >
+                                     Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
                             <h4>UI - UX</h4>
                             <div class="navMenu">
                                 <sl-menu style="display: flex;flex-direction: column;">
@@ -220,14 +242,12 @@
                 </div>
             </div>
 
-            <div class="inner">
-                <h5>Shoelace 컴포넌트는 내부적으로 Shadow DOM을 사용하기 때문에, CSS 선택자 .red-color-radio .radio__control처럼 외부 스타일로 내부 요소를 직접 조작하는 건 기본적으로 불가능</h5>
-                <h5>외부 스타일은 Shadow DOM 내부까지 접근하지못함</h5>
-                <br/>
-                <h5>다만 방법은 있다.</h5>
-                <h5>1. shoelace 컴포넌트들이 가지는 part를 이용해서 CSS의 ::part() 를 이용하거나</h5>
-                <h5>2. css의 속성 선택자 sl-component[속성='~'] 를 이용하는 방법이 있다.</h5>
-            </div>
+             <h5>Shoelace 컴포넌트는 내부적으로 Shadow DOM을 사용하기 때문에, CSS 선택자 .red-color-radio .radio__control처럼 외부 스타일로 내부 요소를 직접 조작하는 건 기본적으로 불가능</h5>
+             <h5>외부 스타일은 Shadow DOM 내부까지 접근하지못함</h5>
+             <br/>
+             <h5>다만 방법은 있다.</h5>
+             <h5>1. shoelace 컴포넌트들이 가지는 part를 이용해서 CSS의 ::part() 를 이용하거나</h5>
+             <h5>2. css의 속성 선택자 sl-component[속성='~'] 를 이용하는 방법이 있다.</h5>
             
     </body>
 
