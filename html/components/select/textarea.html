@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KJS shoelace 컴포넌트</title>
+
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css">
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <div class="section">
+                <h3 class="componentTitle">Textarea</h3>
+                <div class="componentWrap">
+                    <div>
+                        <h5>
+                            기초적인 Textarea
+                        </h5>
+
+                        <sl-textarea id="textarea"></sl-textarea>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem;">
+                            <p>입력된 value :</p>
+                            <p style="white-space: pre-wrap;" id="textarea-value"></p>
+                        </div>
+
+                        <script>
+                            const textarea = document.getElementById("textarea")
+                            const textareaValue = document.getElementById("textarea-value")
+
+                            textarea.addEventListener("sl-input", (e) => {
+                                textareaValue.innerHTML = e.target.value
+                            })
+                        </script>
+                    </div>
+
+                    <div>
+                        <h5>Label과 Help-Text를 사용하려면 각각 label, help-text 속성을 사용한다.</h5>
+
+                        <sl-textarea label="label을 입력합니다." help-text="help-text를 입력합니다"> </sl-textarea>
+
+                    </div>
+
+                    <div>
+                        <h5>최대 행을 설정하려먼 rows="n"  속성을 사용합니다.</h5>
+
+                        <sl-textarea rows="3" label="행을 3으로 고정"></sl-textarea>
+                    </div>
+
+                    <div>
+                        <h5>Placeholder 를 사용하려면 placeholder="text" 속성을 사용합니다.</h5>
+
+                        <sl-textarea placeholder="플레이스 홀더"></sl-textarea>
+                    </div>
+
+                    <div>
+                        <h5>Disabled 를 사용하려면 disabled 속성을 사용합니다.</h5>
+
+                        <sl-textarea placeholder="비활성화" disabled></sl-textarea>
+                    </div>
+
+                    <div>
+                        <h5>textarea영역의 색이 채워져있게하려면 filled 속성을 사용합니다.</h5>
+                        <sl-textarea filled></sl-textarea>
+                    </div>
+
+                    <div>
+                        <h5>Read-Only 를 사용하려면 readonly 속성을 사용합니다.</h5>
+                        <sl-textarea value="읽기만 가능합니다." readonly></sl-textarea>
+                    </div>
+
+                    <div>
+                        <h5>자동 크기조절 를 사용하려면 resize="auto" 속성을 사용합니다.</h5>
+                        <sl-textarea resize="auto"></sl-textarea>
+                    </div>
+
+                    <div>
+                        <h5>자동 크기조절 를 사용하면서 max-height를 사용하기위해선<br/>별도의 Style이 필요합니다.</h5>
+                        <sl-textarea resize="auto" style="max-height: 15rem;" label="inlineStyle max-height:15rem 이 적용되었습니다." help-text="CSS로 ::part()를 이용해 추가적인 스타일도 사용되었습니다.">
+
+                        </sl-textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/darkmode.js"></script>
+    </body>
+</html>

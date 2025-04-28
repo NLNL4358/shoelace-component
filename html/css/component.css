@@ -140,3 +140,15 @@ sl-radio-button sl-icon{
 sl-switch::part(form-control-help-text){
     margin-top: 0.5rem;
 }
+
+
+/* textarea */
+sl-textarea::part(form-control),
+sl-textarea::part(form-control-input),
+sl-textarea::part(base)
+{
+    max-height: inherit !important;
+}
+sl-textarea::part(base){
+    overflow: auto;
+}
