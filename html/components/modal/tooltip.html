@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        
+    <!-- shoelace -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- shoelace Light & Dark Theme -->
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+    />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/component.css">
+
+    <style>
+        .tooltip-placement-example {
+          width: 250px;
+          margin: 1rem;
+        }
+      
+        .tooltip-placement-example-row:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+      
+        .tooltip-placement-example sl-button {
+          float: left;
+          width: 2.5rem;
+          margin-right: 0.25rem;
+          margin-bottom: 0.25rem;
+        }
+      
+        .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
+        .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
+          margin-left: calc(40px + 0.25rem);
+        }
+      
+        .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
+        .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
+        .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
+          margin-left: calc((40px * 3) + (0.25rem * 3));
+        }
+    </style>
+</head>
+<body class="outer">
+    <div class="inner">
+        <div class="section">
+            <h3 class="componentTitle">tooltip</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기초적인 Tooltip</h5>
+                    <p>사용법 : tooltip을 사용하려면 그냥 tooltip이 필요한 요소의 부모로<br/>sl-tooltip을 사용하면된다.</p><br/>
+                    <p>tooltip에는 content="텍스트" 속성을 사용한다.</p>
+
+                    <div style="margin: 3rem;"></div>
+                    <sl-tooltip content="이곳에 보여질 텍스트를 넣는다">
+                        <sl-button>Hover</sl-button>
+                    </sl-tooltip>
+                </div>
+
+                <div>
+                    <h5>Tooltip이 나타날 위치를 정하려면 placement="" 속성을 사용한다.</h5>
+
+                    <div class="tooltip-placement-example">
+                        <div class="tooltip-placement-example-row">
+                          <sl-tooltip content="top-start" placement="top-start">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                      
+                          <sl-tooltip content="top" placement="top">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                      
+                          <sl-tooltip content="top-end" placement="top-end">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                        </div>
+                      
+                        <div class="tooltip-placement-example-row">
+                          <sl-tooltip content="left-start" placement="left-start">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                      
+                          <sl-tooltip content="right-start" placement="right-start">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                        </div>
+                      
+                        <div class="tooltip-placement-example-row">
+                          <sl-tooltip content="left" placement="left">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                      
+                          <sl-tooltip content="right" placement="right">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                        </div>
+                      
+                        <div class="tooltip-placement-example-row">
+                          <sl-tooltip content="left-end" placement="left-end">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                      
+                          <sl-tooltip content="right-end" placement="right-end">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                        </div>
+                      
+                        <div class="tooltip-placement-example-row">
+                          <sl-tooltip content="bottom-start" placement="bottom-start">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                      
+                          <sl-tooltip content="bottom" placement="bottom">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                      
+                          <sl-tooltip content="bottom-end" placement="bottom-end">
+                            <sl-button></sl-button>
+                          </sl-tooltip>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Tooltip이 나타나는 trigger를 변경하고싶다면 trigger=""속성을 사용한다.</h5>
+                    <p>기본 trigger는 hover이다.</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 2rem; width: 100%;margin-top: 2rem;" >
+                        <sl-tooltip trigger="hover" content="tooltip">
+                            <sl-button>trigger="hover"</sl-button>
+                        </sl-tooltip>
+    
+                        <sl-tooltip trigger="click" content="tooltip">
+                            <sl-button>trigger="click"</sl-button>
+                        </sl-tooltip>
+    
+                        <sl-tooltip trigger="focus" content="tooltip" placement="top-start">
+                            <sl-input placeholder="trigger='focus'"></sl-input>
+                        </sl-tooltip>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>특정 조건으로 tooltip을 활성화 시키기 -> JS필요 + trigger="manual" 속성 필요</h5>
+                    <p>tooltip이 가지는 .open 속성을 변경해줍니다.</p>
+
+                    <div style="display: flex; width: 100%; justify-content: space-around ;margin-top: 2rem; ">
+                        <sl-button id="manual-button">툴팁 오픈!</sl-button>
+
+                        <sl-tooltip content="안녕하세요!" trigger="manual" id="manual-tooltip">
+                            <sl-avatar label="User"></sl-avatar>
+                        </sl-tooltip>
+                    </div>
+
+                    <script>
+                        const button = document.getElementById("manual-button")
+                        const tooltip = document.getElementById("manual-tooltip")
+
+                        button.addEventListener("click", (e) => {
+                            tooltip.open = !tooltip.open;
+                        })
+                    </script>
+                </div>
+
+                <div>
+                    <h5>tooltip의 화살표 없애기 - Style 수정 필요</h5>
+                    <div style="margin: 3rem;"></div>
+                    <sl-tooltip content="This is a tooltip" style="--sl-tooltip-arrow-size: 0;">
+                        <sl-button>No Arrow</sl-button>
+                    </sl-tooltip>
+                </div>
+
+                <div>
+                    <h5>tooltip에 html 넣어주기 - tooltip 안에 slot="content"인 div를 넣어준다.</h5>
+                    <div style="margin: 3rem;"></div>
+
+                    <sl-tooltip>
+                        <div slot="content">I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!</div>
+                      
+                        <sl-button>Hover me</sl-button>
+                    </sl-tooltip>
+                </div>
+
+                <div>
+                    <h5>tooltip에 max-width 주기 style="--max-width" 사용</h5>
+                    <div style="margin: 3rem;"></div>
+
+                    <sl-tooltip style="--max-width: 80px;" content="This tooltip will wrap after only 80 pixels.">
+                        <sl-button>Hover me</sl-button>
+                    </sl-tooltip>
+                </div>
+
+                <div>
+                    <h5>overflow에서도 보이도록 하는 tooltip - hoist 속성을 사용</h5>
+
+                    <div class="tooltip-hoist" style="position: relative;
+                    border: solid 2px var(--sl-panel-border-color);
+                    overflow: hidden;
+                    padding: var(--sl-spacing-medium);">
+                        <sl-tooltip content="This is a tooltip">
+                          <sl-button>No Hoist</sl-button>
+                        </sl-tooltip>
+                      
+                        <sl-tooltip content="This is a tooltip" hoist>
+                          <sl-button>Hoist</sl-button>
+                        </sl-tooltip>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/darkmode.js"></script>
+</body>
+</html>

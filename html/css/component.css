@@ -122,6 +122,11 @@ sl-breadcrumb-item::part(base){
 sl-breadcrumb-item sl-dropdown sl-button sl-icon{
     font-size: var(--small-size);
 }
+sl-breadcrumb-item sl-dropdown sl-button::part(base){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* icon */
 sl-icon{
