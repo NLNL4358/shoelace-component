@@ -58,23 +58,31 @@
 .componentWrap {
     padding-left: 8rem;
     max-width: 100%;
-    display: grid;
-    grid-template-columns: 40% 40%;
-    grid-template-rows: max-content;
-    gap: 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    
     flex-wrap: wrap;
 }
 .componentWrap > div{
+    max-width: 100%;
     min-height: 10rem;
 
+    display: grid;
+    grid-template-columns: 40% calc(60% - 2rem);
+    grid-template-rows: max-content;
+    gap: 2rem;
 }
-.componentWrap > div > h5 {
+.viewPart, .codePart{
+}
+.componentWrap > div > .viewPart > h5 {
     margin: 0.7rem 0px ;
     text-wrap: wrap
     ;
     position: relative;
 }
-.componentWrap > div > h5:after {
+.componentWrap > div > .viewPart > h5:after {
     position: absolute;
     left: -10px;
     top: var(--h5-size);
