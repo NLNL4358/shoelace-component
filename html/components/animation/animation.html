@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+            
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
+
+
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:light)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            media="(prefers-color-scheme:dark)"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
+
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+
+        <style>
+            .blue-box{
+                width: 100px;
+                height: 100px;
+                border-radius: .5rem;
+                background-color: var(--sl-color-primary-600);
+            }
+        </style>
+
+</head>
+<body class="outer">
+    <div class="inner">
+        <!-- 셀렉트 -->
+        <div class="section">
+            <h3 class="componentTitle">애니메이션</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>애니메이션은 적용하고 싶은 요소의 부모로 sl-animation을 생성합니다.</h5>
+                    <div style="display: flex; gap: 2rem; margin-top: 3rem;">
+                        <sl-animation name="bounce" duration="2000" play>
+                            <div class="blue-box"></div>
+                        </sl-animation>
+                        <sl-animation name="jello" duration="2000" play>
+                            <div class="blue-box"></div>
+                        </sl-animation>
+                        <sl-animation name="heartBeat" duration="2000" play>
+                            <div class="blue-box"></div>
+                        </sl-animation>
+                        <sl-animation name="flip" duration="2000" play>
+                            <div class="blue-box"></div>
+                        </sl-animation>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>애니메이션 종류와 Easings종류 <br/>name 속성과 easing 속성에 값을 바꿔주면 애니메이션의 종류가 Easing의 종류를 바꿀 수 있다.<br/><br/>또한, playbackRate 속성과 duration 속성으로 애니메이션 지속시간을 변경할 수 있다.<br/><br/>대략 계산식을 생각해보면 playbackRate / duration 속도로 움직인다</h5>
+
+                    <div class="animation-sandbox" style="margin-top: 3rem;">
+                        <sl-animation name="bounce" easing="ease-in-out" duration="2000" play>
+                          <div class="blue-box"></div>
+                        </sl-animation>
+
+                        <div style="margin: 2rem;"></div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                          <sl-select label="Animation" value="bounce" id="animation-select"></sl-select>
+                          <sl-select label="Easing" value="linear" id="easing-select"></sl-select>
+                          <sl-input label="Playback Rate" help-text="값이 커질수록 비례하여 빨라집니다." type="number" min="0" max="2" step=".25" value="1" id="playback-select"></sl-input>
+                          <sl-input label="Duration" help-text="값이 커질수록 반비례하여 느려집니다." type="number" min="0" max="10000" step="100" value="2000" id="duration-select"></sl-input>
+                        </div>
+                      </div>
+                      
+                      <script type="module">
+                        import { animationName, easingName } from '/js/animationName.js';
+                        const animations = animationName;
+                        const easings = easingName;
+
+                      
+                        const container = document.querySelector('.animation-sandbox');
+                        const animation = container.querySelector('sl-animation');
+
+                        const animationSelect = document.getElementById("animation-select");
+                        const easingSelect = document.getElementById("easing-select");
+                        const playbackRate = document.getElementById("playback-select");
+                        const durationRate =document.getElementById("duration-select");
+                      
+                        animations.map(name => {
+                          const option = Object.assign(document.createElement('sl-option'), {
+                            textContent: name,
+                            value: name
+                          });
+                          animationSelect.appendChild(option);
+                        });
+                      
+                        easings.map(name => {
+                          const option = Object.assign(document.createElement('sl-option'), {
+                            textContent: name,
+                            value: name
+                          });
+                          easingSelect.appendChild(option);
+                        });
+                      
+                        animationSelect.addEventListener('sl-change', () => {
+                            animation.name = animationSelect.value
+                        });
+                        easingSelect.addEventListener('sl-change', () => {
+                            animation.easing = easingSelect.value
+                        });
+                        playbackRate.addEventListener('sl-input', () => {
+                            animation.playbackRate = Number(playbackRate.value);
+                        });
+                        durationRate.addEventListener('sl-input', () => {
+                            animation.duration = Number(durationRate.value)
+                        })
+                    </script>
+                </div>
+
+                <div>
+                    <h5>애니메이션 동작하는 시점 정하기<br/><br/>sl-animation의 반복횟수를 정하는 'iterations' 속성을 '1'로 설정하고<br/>sl-animation의 play 속성을 true로 변경해주면 반복횟수만큼 재생된다.</h5>
+
+                    <sl-animation id="buttonAnimation" name="rubberBand" duration="1000" iterations="1">
+                        <sl-button id="button" variant="primary">Click me</sl-button>
+                    </sl-animation>
+                    
+                    <script>
+                        const buttonAnimation = document.getElementById('buttonAnimation');
+                        const button = document.getElementById('button');
+                      
+                        button.addEventListener('click', () => {
+                            buttonAnimation.play = true;
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/darkmode.js"></script>
+</body>
+</html>

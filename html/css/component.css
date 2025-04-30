@@ -157,3 +157,11 @@ sl-textarea::part(base)
 sl-textarea::part(base){
     overflow: auto;
 }
+
+/* animation */
+sl-animation{
+    position: relative;
+}
+sl-animation > *{
+    position: absolute;
+}
