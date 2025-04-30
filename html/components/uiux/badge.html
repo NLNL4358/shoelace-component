@@ -107,6 +107,57 @@
                 </div>
             </div>
         </div>
+
+        <div class="section">
+            <h3 class="componentTitle">Tag</h3>
+            <div class="componentWrap">
+                <div>
+                    <h5>기초적인 Tag</h5>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <sl-tag variant="primary">Primary</sl-tag>
+                        <sl-tag variant="success">Success</sl-tag>
+                        <sl-tag variant="neutral">Neutral</sl-tag>
+                        <sl-tag variant="warning">Warning</sl-tag>
+                        <sl-tag variant="danger">Danger</sl-tag>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Tag 사이즈 조절 size="" 속성사용 </h5>
+                    <sl-tag size="small">Small</sl-tag>
+                    <sl-tag size="medium">Medium</sl-tag>
+                    <sl-tag size="large">Large</sl-tag>
+                </div>
+
+                <div>
+                    <h5>Tag의 radius 조절 pill 속성사용 </h5>
+                    <sl-tag size="small" pill>Small</sl-tag>
+                    <sl-tag size="medium" pill>Medium</sl-tag>
+                    <sl-tag size="large" pill>Large</sl-tag>
+                </div>
+
+                <div>
+                    <h5>삭제 가능한 Tag를 만들기위해선 removable 속성과 JS 필요!</h5>
+
+                    <div class="tags-removable" style="display: flex; gap: 1rem; align-items: center;">
+                        <sl-tag size="small" removable>Small</sl-tag>
+                        <sl-tag size="medium" removable>Medium</sl-tag>
+                        <sl-tag size="large" removable>Large</sl-tag>
+                    </div>
+                      
+                    <script>
+                        const div = document.querySelector('.tags-removable');
+                      
+                        div.addEventListener('sl-remove', event => {
+                          const tag = event.target;
+                          tag.style.opacity = '0';
+                          setTimeout(() => (tag.style.opacity = '1'), 2000);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="/js/darkmode.js"></script>
