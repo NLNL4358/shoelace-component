@@ -31,6 +31,14 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/component.css">
+
+    <!-- CodeViewer -->
+    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
 </head>
 <body class="outer">
     <div class="inner">
@@ -39,113 +47,254 @@
             <h3 class="componentTitle">셀렉트 - 옵션</h3>
             <div class="componentWrap">
                 <div>
-                    <h5>기초적인 Select</h5>
-                    <div style="display: flex; gap: 2rem">
-                        <sl-select
-                            id="select"
-                        >
+                    <div class="viewPart">
+                        <h5>기초적인 Select</h5>
+                        <div style="display: flex; gap: 2rem">
+                            <sl-select
+                                id="select"
+                            >
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+
+                            <p>선택 value 가져오기</p>
+                            <p id="select-value"></p>
+
+                            <script>
+                                const select = document.getElementById('select');
+                                const selectValue = document.getElementById('select-value');
+
+                                /* 특이하게 shoelace에서는 sl-change 라는 이벤트를 감지한다. */
+                                select.addEventListener('sl-change', (e) => {
+                                    selectValue.innerText = e.target.value;
+                                });
+
+                            </script>
+                        </div>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;div style=&quot;display: flex; gap: 2rem&quot;&gt;
+        &lt;sl-select
+            id=&quot;select&quot;
+        &gt;
+            &lt;sl-option value=&quot;option-1&quot;&gt;Option 1&lt;/sl-option&gt;
+            &lt;sl-option value=&quot;option-2&quot;&gt;Option 2&lt;/sl-option&gt;
+            &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
+        &lt;/sl-select&gt;
+
+        &lt;p&gt;선택 value 가져오기&lt;/p&gt;
+        &lt;p id=&quot;select-value&quot;&gt;&lt;/p&gt;
+
+        &lt;script&gt;
+            const select = document.getElementById('select');
+            const selectValue = document.getElementById('select-value');
+
+            /* 특이하게 shoelace에서는 sl-change 라는 이벤트를 감지한다. */
+            select.addEventListener('sl-change', (e) =&gt; {
+                selectValue.innerText = e.target.value;
+            });
+
+        &lt;/script&gt;
+    &lt;/div&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
+                    
+                </div>
+                <div >
+                    <div class="viewPart">
+                        <h5>라벨</h5>
+                        <sl-select label="input label here.">
                             <sl-option value="option-1">Option 1</sl-option>
                             <sl-option value="option-2">Option 2</sl-option>
                             <sl-option value="option-3">Option 3</sl-option>
                         </sl-select>
-
-                        <p>선택 value 가져오기</p>
-                        <p id="select-value"></p>
-
-                        <script>
-                            const select = document.getElementById('select');
-                            const selectValue = document.getElementById('select-value');
-
-                            /* 특이하게 shoelace에서는 sl-change 라는 이벤트를 감지한다. */
-                            select.addEventListener('sl-change', (e) => {
-                                selectValue.innerText = e.target.value;
-                            });
-
-                        </script>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-select label=&quot;input label here.&quot;&gt;
+        &lt;sl-option value=&quot;option-1&quot;&gt;Option 1&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;option-2&quot;&gt;Option 2&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
+    &lt;/sl-select&gt;
+                        </code></pre>
+                    </div>
+                   
+                </div>
+                <div>
+                    <div class="viewPart">
+                        <h5>하단 도움 문구 (help-text)</h5>
+                        <sl-select
+                            label="Experience"
+                            help-text="Please tell us your skill level."
+                        >
+                            <sl-option value="1">Novice</sl-option>
+                            <sl-option value="2">Intermediate</sl-option>
+                            <sl-option value="3">Advanced</sl-option>
+                        </sl-select>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-select
+        label=&quot;Experience&quot;
+        help-text=&quot;Please tell us your skill level.&quot;
+    &gt;
+        &lt;sl-option value=&quot;1&quot;&gt;Novice&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;2&quot;&gt;Intermediate&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;3&quot;&gt;Advanced&lt;/sl-option&gt;
+    &lt;/sl-select&gt;
+                        </code></pre>
                     </div>
                 </div>
-                <div >
-                    <h5>라벨</h5>
-                    <sl-select label="input label here.">
-                        <sl-option value="option-1">Option 1</sl-option>
-                        <sl-option value="option-2">Option 2</sl-option>
-                        <sl-option value="option-3">Option 3</sl-option>
-                    </sl-select>
+                <div>
+                    <div class="viewPart">
+                        <h5>플레이스홀더 (placeholder)</h5>
+                        <sl-select placeholder="플레이스홀더">
+                            <sl-option value="option-1">Option 1</sl-option>
+                            <sl-option value="option-2">Option 2</sl-option>
+                            <sl-option value="option-3">Option 3</sl-option>
+                        </sl-select>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-select placeholder=&quot;플레이스홀더&quot;&gt;
+        &lt;sl-option value=&quot;option-1&quot;&gt;Option 1&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;option-2&quot;&gt;Option 2&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
+    &lt;/sl-select&gt;
+                        </code></pre>
+                    </div>
+                    
                 </div>
                 <div>
-                    <h5>하단 도움 문구 (help-text)</h5>
-                    <sl-select
-                        label="Experience"
-                        help-text="Please tell us your skill level."
-                    >
-                        <sl-option value="1">Novice</sl-option>
-                        <sl-option value="2">Intermediate</sl-option>
-                        <sl-option value="3">Advanced</sl-option>
-                    </sl-select>
+                    <div class="viewPart">
+                        <h5>아이콘 prefix & suffix</h5>
+                        <sl-select label="Select one">
+                            <sl-option value="option-1">
+                                <sl-icon
+                                    slot="prefix"
+                                    name="envelope"
+                                    style="padding-right: 0.7rem"
+                                ></sl-icon>
+                                Email
+                                <sl-icon
+                                    slot="suffix"
+                                    name="patch-check"
+                                ></sl-icon>
+                            </sl-option>
+
+                            <sl-option value="option-2">
+                                <sl-icon
+                                    slot="prefix"
+                                    name="telephone"
+                                    style="padding-right: 0.7rem"
+                                ></sl-icon>
+                                Phone
+                                <sl-icon
+                                    slot="suffix"
+                                    name="patch-check"
+                                ></sl-icon>
+                            </sl-option>
+
+                            <sl-option value="option-3">
+                                <sl-icon
+                                    slot="prefix"
+                                    name="chat-dots"
+                                    style="padding-right: 0.7rem"
+                                ></sl-icon>
+                                Chat
+                                <sl-icon
+                                    slot="suffix"
+                                    name="patch-check"
+                                ></sl-icon>
+                            </sl-option>
+                        </sl-select>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;sl-select label=&quot;Select one&quot;&gt;
+        &lt;sl-option value=&quot;option-1&quot;&gt;
+            &lt;sl-icon
+                slot=&quot;prefix&quot;
+                name=&quot;envelope&quot;
+                style=&quot;padding-right: 0.7rem&quot;
+            &gt;&lt;/sl-icon&gt;
+            Email
+            &lt;sl-icon
+                slot=&quot;suffix&quot;
+                name=&quot;patch-check&quot;
+            &gt;&lt;/sl-icon&gt;
+        &lt;/sl-option&gt;
+
+        &lt;sl-option value=&quot;option-2&quot;&gt;
+            &lt;sl-icon
+                slot=&quot;prefix&quot;
+                name=&quot;telephone&quot;
+                style=&quot;padding-right: 0.7rem&quot;
+            &gt;&lt;/sl-icon&gt;
+            Phone
+            &lt;sl-icon
+                slot=&quot;suffix&quot;
+                name=&quot;patch-check&quot;
+            &gt;&lt;/sl-icon&gt;
+        &lt;/sl-option&gt;
+
+        &lt;sl-option value=&quot;option-3&quot;&gt;
+            &lt;sl-icon
+                slot=&quot;prefix&quot;
+                name=&quot;chat-dots&quot;
+                style=&quot;padding-right: 0.7rem&quot;
+            &gt;&lt;/sl-icon&gt;
+            Chat
+            &lt;sl-icon
+                slot=&quot;suffix&quot;
+                name=&quot;patch-check&quot;
+            &gt;&lt;/sl-icon&gt;
+        &lt;/sl-option&gt;
+    &lt;/sl-select&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
                 </div>
                 <div>
-                    <h5>플레이스홀더 (placeholder)</h5>
-                    <sl-select placeholder="플레이스홀더">
-                        <sl-option value="option-1">Option 1</sl-option>
-                        <sl-option value="option-2">Option 2</sl-option>
-                        <sl-option value="option-3">Option 3</sl-option>
-                    </sl-select>
-                </div>
-                <div>
-                    <h5>아이콘 prefix & suffix</h5>
-                    <sl-select label="Select one">
-                        <sl-option value="option-1">
-                            <sl-icon
-                                slot="prefix"
-                                name="envelope"
-                                style="padding-right: 0.7rem"
-                            ></sl-icon>
-                            Email
-                            <sl-icon
-                                slot="suffix"
-                                name="patch-check"
-                            ></sl-icon>
-                        </sl-option>
-
-                        <sl-option value="option-2">
-                            <sl-icon
-                                slot="prefix"
-                                name="telephone"
-                                style="padding-right: 0.7rem"
-                            ></sl-icon>
-                            Phone
-                            <sl-icon
-                                slot="suffix"
-                                name="patch-check"
-                            ></sl-icon>
-                        </sl-option>
-
-                        <sl-option value="option-3">
-                            <sl-icon
-                                slot="prefix"
-                                name="chat-dots"
-                                style="padding-right: 0.7rem"
-                            ></sl-icon>
-                            Chat
-                            <sl-icon
-                                slot="suffix"
-                                name="patch-check"
-                            ></sl-icon>
-                        </sl-option>
-                    </sl-select>
-                </div>
-
-                <div>
-                    <h5 style=" color : var(--sl-color-red-500)">Select Color 바꾸기</h5>
-
-                    <sl-select
-                    class="red-select"
-                    label="Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! ">
-                        <sl-option value="option-1">Option 1</sl-option>
-                        <sl-option value="option-2">Option 2</sl-option>
-                        <sl-option value="option-3">Option 3</sl-option>
-                    </sl-select>
-
+                    <div class="viewPart">
+                        <h5 style=" color : var(--sl-color-red-500)">Select Color 바꾸기</h5>
+                        <sl-select
+                        class="red-select"
+                        label="Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! ">
+                            <sl-option value="option-1">Option 1</sl-option>
+                            <sl-option value="option-2">Option 2</sl-option>
+                            <sl-option value="option-3">Option 3</sl-option>
+                        </sl-select>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;style&gt;
+        .red-select sl-option::part(base):hover{
+            /* hover된 option */
+            background-color: var(--sl-color-red-200);
+        }
+        .red-select sl-option[tabindex=&quot;0&quot;]::part(base),
+        .red-select sl-option[tabindex=&quot;0&quot;]::part(base):hover {
+            /* 선택된 option */
+            background-color: var(--sl-color-red-500);
+        }
+    &lt;/style&gt;
+    &lt;sl-select
+    class=&quot;red-select&quot;
+    label=&quot;Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! &quot;&gt;
+        &lt;sl-option value=&quot;option-1&quot;&gt;Option 1&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;option-2&quot;&gt;Option 2&lt;/sl-option&gt;
+        &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
+    &lt;/sl-select&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
                 </div>
             </div>
         </div>

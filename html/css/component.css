@@ -4,6 +4,13 @@ sl-divider{
     margin : var(--spacing) 0;
 }
 
+/* Button */
+sl-button::part(label){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Radio */
 sl-radio{
     margin-top: 0.5rem;

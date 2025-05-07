@@ -74,7 +74,8 @@
     grid-template-rows: max-content;
     gap: 2rem;
 }
-.viewPart, .codePart{
+.codePart{
+    padding-top: 24px;
 }
 .componentWrap > div > .viewPart > h5 {
     margin: 0.7rem 0px ;

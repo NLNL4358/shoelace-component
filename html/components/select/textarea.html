@@ -30,6 +30,14 @@
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/css/component.css">
+
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
     </head>
     <body class="outer">
         <div class="inner">
@@ -37,72 +45,160 @@
                 <h3 class="componentTitle">Textarea</h3>
                 <div class="componentWrap">
                     <div>
-                        <h5>
-                            기초적인 Textarea
-                        </h5>
-
-                        <sl-textarea id="textarea"></sl-textarea>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem;">
-                            <p>입력된 value :</p>
-                            <p style="white-space: pre-wrap;" id="textarea-value"></p>
+                        <div class="viewPart">
+                            <h5>
+                                기초적인 Textarea
+                            </h5>
+    
+                            <sl-textarea id="textarea"></sl-textarea>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem;">
+                                <p>입력된 value :</p>
+                                <p style="white-space: pre-wrap;" id="textarea-value"></p>
+                            </div>
+    
+                            <script>
+                                const textarea = document.getElementById("textarea")
+                                const textareaValue = document.getElementById("textarea-value")
+    
+                                textarea.addEventListener("sl-input", (e) => {
+                                    textareaValue.innerHTML = e.target.value
+                                })
+                            </script>
                         </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;sl-textarea id=&quot;textarea&quot;&gt;&lt;/sl-textarea&gt;
 
-                        <script>
-                            const textarea = document.getElementById("textarea")
-                            const textareaValue = document.getElementById("textarea-value")
+    &lt;div style=&quot;display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem;&quot;&gt;
+        &lt;p&gt;입력된 value :&lt;/p&gt;
+        &lt;p style=&quot;white-space: pre-wrap;&quot; id=&quot;textarea-value&quot;&gt;&lt;/p&gt;
+    &lt;/div&gt;
 
-                            textarea.addEventListener("sl-input", (e) => {
-                                textareaValue.innerHTML = e.target.value
-                            })
-                        </script>
+    &lt;script&gt;
+        const textarea = document.getElementById(&quot;textarea&quot;)
+        const textareaValue = document.getElementById(&quot;textarea-value&quot;)
+
+        textarea.addEventListener(&quot;sl-input&quot;, (e) =&gt; {
+            textareaValue.innerHTML = e.target.value
+        })
+    &lt;/script&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
                     </div>
 
                     <div>
-                        <h5>Label과 Help-Text를 사용하려면 각각 label, help-text 속성을 사용한다.</h5>
+                        <div class="viewPart">
+                            <h5>Label과 Help-Text를 사용하려면 각각 label, help-text 속성을 사용한다.</h5>
 
-                        <sl-textarea label="label을 입력합니다." help-text="help-text를 입력합니다"> </sl-textarea>
+                            <sl-textarea label="label을 입력합니다." help-text="help-text를 입력합니다"> </sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+        &lt;sl-textarea label=&quot;label을 입력합니다.&quot; help-text=&quot;help-text를 입력합니다&quot;&gt; &lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
+                        
 
                     </div>
 
                     <div>
-                        <h5>최대 행을 설정하려먼 rows="n"  속성을 사용합니다.</h5>
-
-                        <sl-textarea rows="3" label="행을 3으로 고정"></sl-textarea>
+                        <div class="viewPart">
+                            <h5>최대 행을 설정하려먼 rows="n"  속성을 사용합니다.</h5>
+                            <sl-textarea rows="3" label="행을 3으로 고정"></sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+        &lt;sl-textarea rows=&quot;3&quot; label=&quot;행을 3으로 고정&quot;&gt;&lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Placeholder 를 사용하려면 placeholder="text" 속성을 사용합니다.</h5>
-
-                        <sl-textarea placeholder="플레이스 홀더"></sl-textarea>
+                        <div class="viewPart">
+                            <h5>Placeholder 를 사용하려면 placeholder="text" 속성을 사용합니다.</h5>
+                            <sl-textarea placeholder="플레이스 홀더"></sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+        &lt;sl-textarea placeholder=&quot;플레이스 홀더&quot;&gt;&lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Disabled 를 사용하려면 disabled 속성을 사용합니다.</h5>
-
-                        <sl-textarea placeholder="비활성화" disabled></sl-textarea>
+                        <div class="viewPart">
+                            <h5>Disabled 를 사용하려면 disabled 속성을 사용합니다.</h5>
+                            <sl-textarea placeholder="비활성화" disabled></sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+        &lt;sl-textarea placeholder=&quot;비활성화&quot; disabled&gt;&lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>textarea영역의 색이 채워져있게하려면 filled 속성을 사용합니다.</h5>
-                        <sl-textarea filled></sl-textarea>
+                        <div class="viewPart">
+                            <h5>textarea영역의 색이 채워져있게하려면 filled 속성을 사용합니다.</h5>
+                            <sl-textarea filled></sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+        &lt;sl-textarea filled&gt;&lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Read-Only 를 사용하려면 readonly 속성을 사용합니다.</h5>
-                        <sl-textarea value="읽기만 가능합니다." readonly></sl-textarea>
+                        <div class="viewPart">
+                            <h5>Read-Only 를 사용하려면 readonly 속성을 사용합니다.</h5>
+                            <sl-textarea value="읽기만 가능합니다." readonly></sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+        &lt;sl-textarea value=&quot;읽기만 가능합니다.&quot; readonly&gt;&lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>자동 크기조절 를 사용하려면 resize="auto" 속성을 사용합니다.</h5>
-                        <sl-textarea resize="auto"></sl-textarea>
+                        <div class="viewPart">
+                            <h5>자동 크기조절 를 사용하려면 resize="auto" 속성을 사용합니다.</h5>
+                            <sl-textarea resize="auto"></sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+        &lt;sl-textarea resize=&quot;auto&quot;&gt;&lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
                     </div>
 
                     <div>
-                        <h5>자동 크기조절 를 사용하면서 max-height를 사용하기위해선<br/>별도의 Style이 필요합니다.</h5>
-                        <sl-textarea resize="auto" style="max-height: 15rem;" label="inlineStyle max-height:15rem 이 적용되었습니다." help-text="CSS로 ::part()를 이용해 추가적인 스타일도 사용되었습니다.">
+                        <div class="viewPart">
+                            <h5>자동 크기조절 를 사용하면서 max-height를 사용하기위해선<br/>별도의 Style이 필요합니다.</h5>
+                            <sl-textarea resize="auto" style="max-height: 15rem;" label="inlineStyle max-height:15rem 이 적용되었습니다." help-text="CSS로 ::part()를 이용해 추가적인 스타일도 사용되었습니다.">
 
-                        </sl-textarea>
+                            </sl-textarea>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-textarea resize=&quot;auto&quot; 
+    style=&quot;max-height: 15rem;&quot; 
+    label=&quot;inlineStyle max-height:15rem 이 적용되었습니다.&quot; 
+    help-text=&quot;CSS로 ::part()를 이용해 추가적인 스타일도 사용되었습니다.&quot;&gt;
+
+    &lt;/sl-textarea&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
