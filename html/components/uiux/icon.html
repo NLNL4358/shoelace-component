@@ -29,44 +29,90 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/component.css">
+
+    <!-- CodeViewer -->
+    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
 </head>
 <body class="outer">
     <div class="inner">
         <div class="section">
-            <h3 class="componentTitle" style="display: flex; align-items: center;">Icon - 
+            <h3 class="componentTitle" style="display: flex; align-items: center;">Icon - Shoelace에서 제공하는 icon 링크 ->
                 <sl-icon-button name="link-45deg" href="https://shoelace.style/components/icon"></sl-icon-butt>
             </h3>
             <div class="componentWrap">
                 <div>
-                    <h5>아이콘 - name속성안에 사용할 아이콘의 종류를 선언하면 된다.</h5>
-                    <p>
-                        name="chat-left-dots"  ->
-                        <sl-icon name="chat-left-dots"></sl-icon>
-                    </p>
-                </div>
-
-                <div>
-                    <h5>아이콘의 크기 - 부모dom의 font-size를 따라간다</h5>
-                    <div style="font-size : 2rem">
-                        부모div의 font-size : 2rem  -> 
-                        <sl-icon name="chat-left-dots"></sl-icon>
+                    <div class="viewPart">
+                        <h5>아이콘 - name속성안에 사용할 아이콘의 종류를 선언하면 된다.</h5>
+                        <p>
+                            name="chat-left-dots"  ->
+                            <sl-icon name="chat-left-dots"></sl-icon>
+                        </p>
                     </div>
-                </div>
-
-                <div>
-                    <h5>아이콘의 컬러 - 원래 Shoelace의 아이콘은 부모의 Color를 따라간다.<br/>하지만 그럴경우 sideEffect가 너무 많아져서 CSS로 제어하였다.</h5>
-                    <p>단, 컬러의 지정이 필요할경우 -> 직접 sl-icon 에 style로 지정해주면 가능하다.</p>
-
-                    <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; margin-top: 1.5rem;">
-                        <sl-icon name="chat-left-dots" style="color: red;"></sl-icon>
-                        <sl-icon name="chat-left-dots" style="color: blue;"></sl-icon>
-                        <sl-icon name="chat-left-dots" style="color: green;"></sl-icon>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-icon name=&quot;chat-left-dots&quot;&gt;&lt;/sl-icon&gt;      
+                        </code></pre>
                     </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Custom Icon : name대신에 src=""를 사용해주면 된다. </h5>
-                    <sl-icon src="https://shoelace.style/assets/images/shoe.svg" style="font-size: 4rem;"></sl-icon>
+                    <div class="viewPart">
+                        <h5>아이콘의 크기 - 부모dom의 font-size를 따라간다</h5>
+                        <div style="font-size : 2rem">
+                            부모div의 font-size : 2rem  -> 
+                            <sl-icon name="chat-left-dots"></sl-icon>
+                        </div>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;div style=&quot;font-size : 2rem&quot;&gt;
+        &lt;sl-icon name=&quot;chat-left-dots&quot;&gt;&lt;/sl-icon&gt;
+    &lt;/div&gt;
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>아이콘의 컬러 - 원래 Shoelace의 아이콘은 부모의 Color를 따라간다.<br/>하지만 그럴경우 sideEffect가 너무 많아져서 CSS로 제어하였다.</h5>
+                        <p>단, 컬러의 지정이 필요할경우 -> 직접 sl-icon 에 style로 지정해주면 가능하다.</p>
+    
+                        <div style="display: flex; gap: 1.5rem; font-size: 1.5rem; margin-top: 1.5rem;">
+                            <sl-icon name="chat-left-dots" style="color: red;"></sl-icon>
+                            <sl-icon name="chat-left-dots" style="color: blue;"></sl-icon>
+                            <sl-icon name="chat-left-dots" style="color: green;"></sl-icon>
+                        </div>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;div style=&quot;display: flex; gap: 1.5rem; font-size: 1.5rem; margin-top: 1.5rem;&quot;&gt;
+        &lt;sl-icon name=&quot;chat-left-dots&quot; style=&quot;color: red;&quot;&gt;&lt;/sl-icon&gt;
+        &lt;sl-icon name=&quot;chat-left-dots&quot; style=&quot;color: blue;&quot;&gt;&lt;/sl-icon&gt;
+        &lt;sl-icon name=&quot;chat-left-dots&quot; style=&quot;color: green;&quot;&gt;&lt;/sl-icon&gt;
+    &lt;/div&gt;
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Custom Icon : name대신에 src=""를 사용해주면 된다. </h5>
+                        <sl-icon src="https://shoelace.style/assets/images/shoe.svg" style="font-size: 4rem;"></sl-icon>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-icon src=&quot;https://shoelace.style/assets/images/shoe.svg&quot; style=&quot;font-size: 4rem;&quot;&gt;&lt;/sl-icon&gt;             
+                        </code></pre>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -77,39 +123,88 @@
             <h3 class="componentTitle">Icon Button</h3>
             <div class="componentWrap">
                 <div>
-                    <h5>Icon Button : name을 사용하는것은 sl-icon과 동일하나<br/>sl-icon-button으로 선언</h5>
+                    <div class="viewPart">
+                        <h5>Icon Button : name을 사용하는것은 sl-icon과 동일하나<br/>sl-icon-button으로 선언</h5>
 
-                    <sl-icon-button name="gear" label="Settings"></sl-icon-button>
+                        <sl-icon-button name="gear" label="Settings"></sl-icon-button>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-icon-button name=&quot;gear&quot; label=&quot;Settings&quot;&gt;&lt;/sl-icon-button&gt;       
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Icon Button 크기 : Icon 크기를 정할때와 같이 부모의 font-size 를 따라간다. 혹은 직접 지정해줘도 된다</h5>
+                    <div class="viewPart">
+                        <h5>Icon Button 크기 : Icon 크기를 정할때와 같이 부모의 font-size 를 따라간다. 혹은 직접 지정해줘도 된다</h5>
 
-                    <div style="display: flex; gap: 1rem; align-items: flex-end;">
-                        inline 1.5rem ->
-                        <sl-icon-button name="pencil" label="Edit" style="font-size: 1.5rem;"></sl-icon-button>
-                        div 2rem ->
-                        <div style="border: 1px solid lightgray; border-radius: 5px; font-size: 2rem; width: fit-content;">
-                            <sl-icon-button name="pencil" label="Edit" ></sl-icon-button>
+                        <div style="display: flex; gap: 1rem; align-items: flex-end;">
+                            직접지정 1.5rem ->
+                            <sl-icon-button name="pencil" label="Edit" style="font-size: 1.5rem;"></sl-icon-button>
+                            부모 2rem ->
+                            <div style="border: 1px solid lightgray; border-radius: 5px; font-size: 2rem; width: fit-content;">
+                                <sl-icon-button name="pencil" label="Edit" ></sl-icon-button>
+                            </div>
                         </div>
                     </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;div style=&quot;display: flex; gap: 1rem; align-items: flex-end;&quot;&gt;
+    직접지정 1.5rem -&gt;
+        &lt;sl-icon-button name=&quot;pencil&quot; label=&quot;Edit&quot; style=&quot;font-size: 1.5rem;&quot;&gt;&lt;/sl-icon-button&gt;
+        부모 2rem -&gt;
+        &lt;div style=&quot;border: 1px solid lightgray; border-radius: 5px; font-size: 2rem; width: fit-content;&quot;&gt;
+            &lt;sl-icon-button name=&quot;pencil&quot; label=&quot;Edit&quot; &gt;&lt;/sl-icon-button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; 
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Link Icon Button - href 속성과 target 속성 사용</h5>
-                    <sl-icon-button name="gear" label="Settings" href="https://example.com" target="_blank"></sl-icon-button>
+                    <div class="viewPart">
+                        <h5>Link Icon Button - href 속성과 target 속성 사용</h5>
+                        <sl-icon-button name="gear" label="Settings" href="https://example.com" target="_blank"></sl-icon-button>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-icon-button name=&quot;gear&quot; label=&quot;Settings&quot; href=&quot;https://example.com&quot; target=&quot;_blank&quot;&gt;&lt;/sl-icon-button&gt;
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Icon Tooltip - < sl-tooltip >으로 감싸준다</h5>
-                    <sl-tooltip content="Settings">
-                        <sl-icon-button name="gear" label="Settings"></sl-icon-button>
-                    </sl-tooltip>
+                    <div class="viewPart">
+                        <h5>Icon Tooltip - < sl-tooltip >으로 감싸준다</h5>
+                        <sl-tooltip content="Settings">
+                            <sl-icon-button name="gear" label="Settings"></sl-icon-button>
+                        </sl-tooltip>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-tooltip content=&quot;Settings&quot;&gt;
+        &lt;sl-icon-button name=&quot;gear&quot; label=&quot;Settings&quot;&gt;&lt;/sl-icon-button&gt;
+    &lt;/sl-tooltip&gt;         
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Disabled - disabled 속성을 사용한다.</h5>
-                    <sl-icon-button name="gear" label="Settings" disabled></sl-icon-button>
+                    <div class="viewPart">
+                        <h5>Disabled - disabled 속성을 사용한다.</h5>
+                        <sl-icon-button name="gear" label="Settings" disabled></sl-icon-button>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-icon-button name=&quot;gear&quot; label=&quot;Settings&quot; disabled&gt;&lt;/sl-icon-button&gt;      
+                        </code></pre>
+                    </div>
+                    
                 </div>
             </div>
         </div>
