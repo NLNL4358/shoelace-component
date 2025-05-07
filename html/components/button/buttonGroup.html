@@ -28,6 +28,17 @@
 
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css">
+
+
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+        
     </head>
     <body class="outer">
         <div class="inner">
@@ -35,80 +46,163 @@
                 <h3 class="componentTitle">그룹버튼</h3>
                 <div class="componentWrap">
                     <div class="">
-                        <h5>기초적인 그룹버튼</h5>
-                        <sl-button-group label="Alignment">
-                            <sl-button>Left</sl-button>
-                            <sl-button>Center</sl-button>
-                            <sl-button>Right</sl-button>
+                        <div class="viewPart">
+                          <h5>기초적인 그룹버튼</h5>
+                          <sl-button-group label="Alignment">
+                              <sl-button>Left</sl-button>
+                              <sl-button>Center</sl-button>
+                              <sl-button>Right</sl-button>
                           </sl-button-group>
+                        </div>
+                        <div class="codePart">
+                          <sl-details summary="codeView">
+                            <pre><code class="language-markup">
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+      &lt;sl-button&gt;Left&lt;/sl-button&gt;
+      &lt;sl-button&gt;Center&lt;/sl-button&gt;
+      &lt;sl-button&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+                            </code></pre>
+                          </sl-details>
+                        </div>
                     </div>
                     <div class="">
-                        <h5>그룹버튼 사이즈</h5>
-                        <sl-button-group label="Alignment">
-                            <sl-button size="small">Left</sl-button>
-                            <sl-button size="small">Center</sl-button>
-                            <sl-button size="small">Right</sl-button>
-                          </sl-button-group>
-                          
-                          <br /><br />
-                          
+                        <div class="viewPart">
+                          <h5>그룹버튼 사이즈</h5>
                           <sl-button-group label="Alignment">
-                            <sl-button size="medium">Left</sl-button>
-                            <sl-button size="medium">Center</sl-button>
-                            <sl-button size="medium">Right</sl-button>
-                          </sl-button-group>
-                          
-                          <br /><br />
-                          
-                          <sl-button-group label="Alignment">
-                            <sl-button size="large">Left</sl-button>
-                            <sl-button size="large">Center</sl-button>
-                            <sl-button size="large">Right</sl-button>
-                          </sl-button-group>
+                              <sl-button size="small">Left</sl-button>
+                              <sl-button size="small">Center</sl-button>
+                              <sl-button size="small">Right</sl-button>
+                            </sl-button-group>
+                            
+                            <br /><br />
+                            
+                            <sl-button-group label="Alignment">
+                              <sl-button size="medium">Left</sl-button>
+                              <sl-button size="medium">Center</sl-button>
+                              <sl-button size="medium">Right</sl-button>
+                            </sl-button-group>
+                            
+                            <br /><br />
+                            
+                            <sl-button-group label="Alignment">
+                              <sl-button size="large">Left</sl-button>
+                              <sl-button size="large">Center</sl-button>
+                              <sl-button size="large">Right</sl-button>
+                            </sl-button-group>
+                        </div>
+                        <div class="codePart">
+                          <sl-details summary="codeView">
+                            <pre><code class="language-markup">
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button size=&quot;small&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;small&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;small&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+  
+  
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button size=&quot;medium&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;medium&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;medium&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+  
+  
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button size=&quot;large&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;large&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;large&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+                            </code></pre>
+                          </sl-details>
+                        </div>
                           
                     </div>
                     <div class="">
-                        <h5>컬러 그룹버튼</h5>
-                        <sl-button-group label="Alignment">
-                            <sl-button variant="primary">Left</sl-button>
-                            <sl-button variant="primary">Center</sl-button>
-                            <sl-button variant="primary">Right</sl-button>
-                          </sl-button-group>
-                          
-                          <br /><br />
-                          
+                        <div class="viewPart">
+                          <h5>컬러 그룹버튼</h5>
                           <sl-button-group label="Alignment">
-                            <sl-button variant="success">Left</sl-button>
-                            <sl-button variant="success">Center</sl-button>
-                            <sl-button variant="success">Right</sl-button>
-                          </sl-button-group>
-                          
-                          <br /><br />
-                          
-                          <sl-button-group label="Alignment">
-                            <sl-button variant="neutral">Left</sl-button>
-                            <sl-button variant="neutral">Center</sl-button>
-                            <sl-button variant="neutral">Right</sl-button>
-                          </sl-button-group>
-                          
-                          <br /><br />
-                          
-                          <sl-button-group label="Alignment">
-                            <sl-button variant="warning">Left</sl-button>
-                            <sl-button variant="warning">Center</sl-button>
-                            <sl-button variant="warning">Right</sl-button>
-                          </sl-button-group>
-                          
-                          <br /><br />
-                          
-                          <sl-button-group label="Alignment">
-                            <sl-button variant="danger">Left</sl-button>
-                            <sl-button variant="danger">Center</sl-button>
-                            <sl-button variant="danger">Right</sl-button>
-                          </sl-button-group>
-                          
+                              <sl-button variant="primary">Left</sl-button>
+                              <sl-button variant="primary">Center</sl-button>
+                              <sl-button variant="primary">Right</sl-button>
+                            </sl-button-group>
+                            
+                            <br /><br />
+                            
+                            <sl-button-group label="Alignment">
+                              <sl-button variant="success">Left</sl-button>
+                              <sl-button variant="success">Center</sl-button>
+                              <sl-button variant="success">Right</sl-button>
+                            </sl-button-group>
+                            
+                            <br /><br />
+                            
+                            <sl-button-group label="Alignment">
+                              <sl-button variant="neutral">Left</sl-button>
+                              <sl-button variant="neutral">Center</sl-button>
+                              <sl-button variant="neutral">Right</sl-button>
+                            </sl-button-group>
+                            
+                            <br /><br />
+                            
+                            <sl-button-group label="Alignment">
+                              <sl-button variant="warning">Left</sl-button>
+                              <sl-button variant="warning">Center</sl-button>
+                              <sl-button variant="warning">Right</sl-button>
+                            </sl-button-group>
+                            
+                            <br /><br />
+                            
+                            <sl-button-group label="Alignment">
+                              <sl-button variant="danger">Left</sl-button>
+                              <sl-button variant="danger">Center</sl-button>
+                              <sl-button variant="danger">Right</sl-button>
+                            </sl-button-group>
+                            
+                        </div>
+                        <div class="codePart">
+                          <sl-details summary="codeView">
+                            <pre><code class="language-markup">
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button variant=&quot;primary&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;primary&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;primary&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+  
+  
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button variant=&quot;success&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;success&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;success&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+  
+  
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button variant=&quot;neutral&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;neutral&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;neutral&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+  
+  
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button variant=&quot;warning&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;warning&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;warning&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+  
+  
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button variant=&quot;danger&quot;&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;danger&quot;&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button variant=&quot;danger&quot;&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+                            </code></pre>
+                          </sl-details>
+                        </div>
+                        
                     </div>
                     <div class="">
+                      <div class="viewPart">
                         <h5>radius 그룹버튼</h5>
                         <sl-button-group label="Alignment">
                             <sl-button size="small" pill>Left</sl-button>
@@ -131,9 +225,35 @@
                             <sl-button size="large" pill>Center</sl-button>
                             <sl-button size="large" pill>Right</sl-button>
                           </sl-button-group>
-                          
+                      </div>
+                      <div class="codePart">
+                        <sl-details summary="codeView">
+                        <pre><code class="language-markup">
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button size=&quot;small&quot; pill&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;small&quot; pill&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;small&quot; pill&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+
+
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button size=&quot;medium&quot; pill&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;medium&quot; pill&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;medium&quot; pill&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+
+
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-button size=&quot;large&quot; pill&gt;Left&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;large&quot; pill&gt;Center&lt;/sl-button&gt;
+    &lt;sl-button size=&quot;large&quot; pill&gt;Right&lt;/sl-button&gt;
+  &lt;/sl-button-group&gt;
+                        </code></pre></sl-details>
+                      </div>
+                        
                     </div>
                     <div class="">
+                      <div class="viewPart">
                         <h5>드롭다운 그룹버튼</h5>
                         <sl-button-group label="Example Button Group">
                             <sl-button>Button</sl-button>
@@ -147,9 +267,29 @@
                               </sl-menu>
                             </sl-dropdown>
                           </sl-button-group>
+                      </div>
+                      <div class="codePart">
+                        <sl-details summary="codeView">
+                          <pre><code class="language-markup">
+  &lt;sl-button-group label=&quot;Example Button Group&quot;&gt;
+    &lt;sl-button&gt;Button&lt;/sl-button&gt;
+    &lt;sl-button&gt;Button&lt;/sl-button&gt;
+    &lt;sl-dropdown&gt;
+      &lt;sl-button slot=&quot;trigger&quot; caret&gt;Dropdown&lt;/sl-button&gt;
+      &lt;sl-menu&gt;
+        &lt;sl-menu-item&gt;Item 1&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;Item 2&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;Item 3&lt;/sl-menu-item&gt;
+      &lt;/sl-menu&gt;
+    &lt;/sl-dropdown&gt;
+  &lt;/sl-button-group&gt;
+                          </code></pre>
+                        </sl-details>
+                      </div>                        
                           
                     </div>
                     <div class="">
+                      <div class="viewPart">
                         <h5>스플릿 드롭다운 그룹버튼</h5>
                         <sl-button-group label="Example Button Group">
                             <sl-button variant="primary">Save</sl-button>
@@ -164,9 +304,29 @@
                               </sl-menu>
                             </sl-dropdown>
                           </sl-button-group>
-                          
+                      </div>
+                      <div class="codePart">
+                        <sl-details summary="codeView">
+                          <pre><code class="language-markup">
+  &lt;sl-button-group label=&quot;Example Button Group&quot;&gt;
+    &lt;sl-button variant=&quot;primary&quot;&gt;Save&lt;/sl-button&gt;
+    &lt;sl-dropdown placement=&quot;bottom-end&quot;&gt;
+      &lt;sl-button slot=&quot;trigger&quot; variant=&quot;primary&quot; caret&gt;
+        &lt;sl-visually-hidden&gt;More options&lt;/sl-visually-hidden&gt;
+      &lt;/sl-button&gt;
+      &lt;sl-menu&gt;
+        &lt;sl-menu-item&gt;Save&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;Save as&amp;hellip;&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;Save all&lt;/sl-menu-item&gt;
+      &lt;/sl-menu&gt;
+    &lt;/sl-dropdown&gt;
+  &lt;/sl-button-group&gt;
+                          </code></pre>
+                        </sl-details>
+                      </div>
                     </div>
                     <div class="">
+                      <div class="viewPart">
                         <h5>Hover시 툴팁이 보이는 그룹버튼</h5>
                         <sl-button-group label="Alignment">
                             <sl-tooltip content="I'm on the left">
@@ -181,6 +341,27 @@
                               <sl-button>Right</sl-button>
                             </sl-tooltip>
                           </sl-button-group>
+                      </div>
+                      <div class="codePart">
+                        <sl-details summary="codeView">
+                          <pre><code class="language-markup">
+  &lt;sl-button-group label=&quot;Alignment&quot;&gt;
+    &lt;sl-tooltip content=&quot;I'm on the left&quot;&gt;
+      &lt;sl-button&gt;Left&lt;/sl-button&gt;
+    &lt;/sl-tooltip&gt;
+  
+    &lt;sl-tooltip content=&quot;I'm in the middle&quot;&gt;
+      &lt;sl-button&gt;Center&lt;/sl-button&gt;
+    &lt;/sl-tooltip&gt;
+  
+    &lt;sl-tooltip content=&quot;I'm on the right&quot;&gt;
+      &lt;sl-button&gt;Right&lt;/sl-button&gt;
+    &lt;/sl-tooltip&gt;
+  &lt;/sl-button-group&gt;
+                          </code></pre>
+                          </sl-details>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>

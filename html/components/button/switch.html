@@ -30,6 +30,15 @@
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/css/component.css">
+
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+        
     </head>
     <body class="outer">
         <div class="inner">
@@ -37,38 +46,98 @@
                 <h3 class="componentTitle">Switch</h3>
                 <div class="componentWrap">
                     <div>
-                        <h5>기초적인 Swtich</h5>
-                        <sl-switch>Switch</sl-switch>
-                    </div>
-
-                    <div>
-                        <h5>checked 되어있는 Switch - checked 속성사용</h5>
-                        <sl-switch checked>Checked</sl-switch>
-                    </div>
-
-                    <div>
-                        <h5>Disabled Switch - disabled 속성사용</h5>
-                        <sl-switch disabled>Disabled</sl-switch>
-                    </div>
-
-                    <div>
-                        <h5>Switch 사이즈 - size 속성사용</h5>
-                        <div style="display: flex; flex-direction: column; gap
-                        : 0.5rem">
-                            <sl-switch size="small">Small</sl-switch>
-                            <sl-switch size="medium">Medium</sl-switch>
-                            <sl-switch size="large">Large</sl-switch>
+                        <div class="viewPart">
+                            <h5>기초적인 Switch</h5>
+                            <sl-switch>Switch</sl-switch>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+                                &lt;sl-switch&gt;Switch&lt;/sl-switch&gt;
+                                </code></pre>
+                            </sl-details>
                         </div>
                     </div>
 
                     <div>
-                        <h5>하단 도움말 - help-text 속성 사용</h5>
-                        <sl-switch help-text="What should the user know about the switch?">Label</sl-switch>
+                        <div class="viewPart">
+                            <h5>checked 되어있는 Switch - checked 속성사용</h5>
+                            <sl-switch checked>Checked</sl-switch>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+                            &lt;sl-switch checked&gt;Checked&lt;/sl-switch&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
                     </div>
 
                     <div>
-                        <h5>Custom Size - style 에서 --width, --height, --thumb-size 스타일 사용</h5>
-                        <sl-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</sl-switch>
+                        <div class="viewPart">
+                            <h5>Disabled Switch - disabled 속성사용</h5>
+                            <sl-switch disabled>Disabled</sl-switch>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+                            &lt;sl-switch disabled&gt;Disabled&lt;/sl-switch&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>Switch 사이즈 - size 속성사용</h5>
+                            <div style="display: flex; flex-direction: column; gap
+                            : 0.5rem">
+                                <sl-switch size="small">Small</sl-switch>
+                                <sl-switch size="medium">Medium</sl-switch>
+                                <sl-switch size="large">Large</sl-switch>
+                            </div>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;sl-switch size=&quot;small&quot;&gt;Small&lt;/sl-switch&gt;
+    &lt;sl-switch size=&quot;medium&quot;&gt;Medium&lt;/sl-switch&gt;
+    &lt;sl-switch size=&quot;large&quot;&gt;Large&lt;/sl-switch&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>하단 도움말 - help-text 속성 사용</h5>
+                            <sl-switch help-text="What should the user know about the switch?">Label</sl-switch>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;sl-switch help-text=&quot;What should the user know about the switch?&quot;&gt;Label&lt;/sl-switch&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>Custom Size - style 에서 --width, --height, --thumb-size 스타일 사용</h5>
+                            <sl-switch style="--width: 80px; --height: 40px; --thumb-size: 36px;">Really big</sl-switch>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;sl-switch style=&quot;--width: 80px; --height: 40px; --thumb-size: 36px;&quot;&gt;Really big&lt;/sl-switch&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

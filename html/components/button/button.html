@@ -28,6 +28,16 @@
 
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css">
+
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+        
     </head>
     <body class="outer">
         <div class="inner">
@@ -35,70 +45,159 @@
                 <h3 class="componentTitle">버튼</h3>
                 <div class="componentWrap">
                     <div class="">
-                        <h5>기초적인 버튼</h5>
-                        <sl-button>Simple</sl-button>
+                        <div class="viewPart">
+                            <h5>기초적인 버튼</h5>
+                            <sl-button>Simple</sl-button>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+                                &lt;sl-button&gt;Simple&lt;/sl-button&gt;
+                            </code></pre>
+                        </div>
+
                     </div>
                     <div class="">
-                        <h5>컬러 버튼</h5>
-                        <sl-button variant="default">Default</sl-button>
-                        <sl-button variant="primary">Primary</sl-button>
-                        <sl-button variant="success">Success</sl-button>
-                        <sl-button variant="neutral">Neutral</sl-button>
-                        <sl-button variant="warning">Warning</sl-button>
-                        <sl-button variant="danger">Danger</sl-button>
+                        <div class="viewPart">
+                            <h5>컬러 버튼</h5>
+                            <sl-button variant="default">Default</sl-button>
+                            <sl-button variant="primary">Primary</sl-button>
+                            <sl-button variant="success">Success</sl-button>
+                            <sl-button variant="neutral">Neutral</sl-button>
+                            <sl-button variant="warning">Warning</sl-button>
+                            <sl-button variant="danger">Danger</sl-button>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+                        &lt;sl-button variant=&quot;default&quot;&gt;Default&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;primary&quot;&gt;Primary&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;success&quot;&gt;Success&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;neutral&quot;&gt;Neutral&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;warning&quot;&gt;Warning&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;danger&quot;&gt;Danger&lt;/sl-button&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
                     <div class="">
+                        <div class="viewPart">
                         <h5>아웃라인 버튼</h5>
-                        <sl-button variant="default" outline>Default</sl-button>
-                        <sl-button variant="primary" outline>Primary</sl-button>
-                        <sl-button variant="success" outline>Success</sl-button>
-                        <sl-button variant="neutral" outline>Neutral</sl-button>
-                        <sl-button variant="warning" outline>Warning</sl-button>
-                        <sl-button variant="danger" outline>Danger</sl-button>
+                            <sl-button variant="default" outline>Default</sl-button>
+                            <sl-button variant="primary" outline>Primary</sl-button>
+                            <sl-button variant="success" outline>Success</sl-button>
+                            <sl-button variant="neutral" outline>Neutral</sl-button>
+                            <sl-button variant="warning" outline>Warning</sl-button>
+                            <sl-button variant="danger" outline>Danger</sl-button>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+                        &lt;sl-button variant=&quot;default&quot; outline&gt;Default&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;primary&quot; outline&gt;Primary&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;success&quot; outline&gt;Success&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;neutral&quot; outline&gt;Neutral&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;warning&quot; outline&gt;Warning&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;danger&quot; outline&gt;Danger&lt;/sl-button&gt;
+                            </code></pre>
+                        </div>
                     </div>
                     <div class="">
-                        <h5>모양 버튼</h5>
-                        <sl-button pill>pill</sl-button>
-                        <sl-button variant="default" circle>
-                            <sl-icon name="gear" label="Settings"></sl-icon>
-                        </sl-button>
+                        <div class="viewPart">
+                            <h5>모양 버튼</h5>
+                            <sl-button pill>pill</sl-button>
+                            <sl-button variant="default" circle>
+                                <sl-icon name="gear" label="Settings"></sl-icon>
+                            </sl-button>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+                        &lt;sl-button pill&gt;pill&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;default&quot; circle&gt;
+                            &lt;sl-icon name=&quot;gear&quot; label=&quot;Settings&quot;&gt;&lt;/sl-icon&gt;
+                        &lt;/sl-button&gt;
+                            </code></pre>
+                        </div>
                     </div>
                     <div class="">
-                        <h5>텍스트 버튼</h5>
-                        <sl-button variant="text" size="small">Text</sl-button>
-                        <sl-button variant="text" size="medium">Text</sl-button>
-                        <sl-button variant="text" size="large">Text</sl-button>
+                        <div class="viewPart">
+                            <h5>텍스트 버튼</h5>
+                            <sl-button variant="text" size="small">Text</sl-button>
+                            <sl-button variant="text" size="medium">Text</sl-button>
+                            <sl-button variant="text" size="large">Text</sl-button>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+                        &lt;sl-button variant=&quot;text&quot; size=&quot;small&quot;&gt;Text&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;text&quot; size=&quot;medium&quot;&gt;Text&lt;/sl-button&gt;
+                        &lt;sl-button variant=&quot;text&quot; size=&quot;large&quot;&gt;Text&lt;/sl-button&gt;
+                            </code></pre>
+                        </div>
                     </div>
                     <div class="">
-                        <h5>링크 버튼</h5>
-                        <sl-button
-                            href="https://www.naver.com/"
-                            variant="success"
-                            >Naver</sl-button
-                        >
-                        <sl-button
-                            href="https://www.google.com/"
-                            variant="primary"
-                            target="_blank"
-                            >Google</sl-button
-                        >
-                        <sl-button
-                            href="/assets/images/wordmark.svg"
-                            download="shoelace.svg"
-                            >Download</sl-button
-                        >
-                        <sl-button href="https://example.com/" disabled
-                            >Disabled</sl-button
-                        >
+                        <div class="viewPart">
+                            <h5>링크 버튼</h5>
+                            <sl-button
+                                href="https://www.naver.com/"
+                                variant="success"
+                                >Naver</sl-button
+                            >
+                            <sl-button
+                                href="https://www.google.com/"
+                                variant="primary"
+                                target="_blank"
+                                >Google</sl-button
+                            >
+                            <sl-button
+                                href="/assets/images/wordmark.svg"
+                                download="shoelace.svg"
+                                >Download</sl-button
+                            >
+                            <sl-button href="https://example.com/" disabled
+                                >Disabled</sl-button
+                            >
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-button
+        href=&quot;https://www.naver.com/&quot;
+        variant=&quot;success&quot;
+        &gt;Naver&lt;/sl-button
+    &gt;
+    &lt;sl-button
+        href=&quot;https://www.google.com/&quot;
+        variant=&quot;primary&quot;
+        target=&quot;_blank&quot;
+        &gt;Google&lt;/sl-button
+    &gt;
+    &lt;sl-button
+        href=&quot;/assets/images/wordmark.svg&quot;
+        download=&quot;shoelace.svg&quot;
+        &gt;Download&lt;/sl-button
+    &gt;
+    &lt;sl-button href=&quot;https://example.com/&quot; disabled
+        &gt;Disabled&lt;/sl-button
+    &gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
                     <div class="">
-                        <h5>카피 버튼</h5>
-                        <sl-copy-button value="복사할 값을 이곳에 넣는다">
-                            <sl-icon slot="copy-icon" name="clipboard"></sl-icon>
-                            <sl-icon slot="success-icon" name="clipboard-check"></sl-icon>
-                            <sl-icon slot="error-icon" name="clipboard-x"></sl-icon>
-                        </sl-copy-button>
-                        <input type="text">
+                        <div class="viewPart">
+                            <h5>카피 버튼</h5>
+                            <sl-copy-button value="복사할 값을 이곳에 넣는다">
+                                <sl-icon slot="copy-icon" name="clipboard"></sl-icon>
+                                <sl-icon slot="success-icon" name="clipboard-check"></sl-icon>
+                                <sl-icon slot="error-icon" name="clipboard-x"></sl-icon>
+                            </sl-copy-button>
+                            <input type="text">
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-copy-button value=&quot;복사할 값을 이곳에 넣는다&quot;&gt;
+        &lt;sl-icon slot=&quot;copy-icon&quot; name=&quot;clipboard&quot;&gt;&lt;/sl-icon&gt;
+        &lt;sl-icon slot=&quot;success-icon&quot; name=&quot;clipboard-check&quot;&gt;&lt;/sl-icon&gt;
+        &lt;sl-icon slot=&quot;error-icon&quot; name=&quot;clipboard-x&quot;&gt;&lt;/sl-icon&gt;
+    &lt;/sl-copy-button&gt;
+                            </code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
