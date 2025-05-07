@@ -32,6 +32,25 @@
 
     <!-- component css -->
     <link rel="stylesheet" href="/css/component.css">
+
+    <style>
+        sl-details.sl-detail-20rem{
+            width: 20rem;
+        }
+        sl-details.sl-detail-20rem::part(header),
+        sl-details.sl-detail-20rem::part(content){
+            padding: 2rem;
+        }
+
+    </style>
+
+    <!-- CodeViewer -->
+    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
 </head>
 <body class="outer">
     <div class="inner">
@@ -39,77 +58,167 @@
             <h3 class="componentTitle">아코디언 - Details</h3>
             <div class="componentWrap">
                 <div>
-                    <h5>기본 Details</h5>
+                    <div class="viewPart">
+                        <h5>기본 Details</h5>
 
-                    <sl-details summary="summary 라는 속성으로 처음 노출되는 텍스트를 보여줍니다.">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </sl-details>
-                </div>
-
-                <div>
-                    <h5>Custom Size Details</h5>
-
-                    <sl-details summary="Size 와 Padding 넣어주기 - CSS 이용" 
-                    class="sl-detail-20rem"
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </sl-details>
-                </div>
-
-                <div>
-                    <h5>Disabled Details</h5>
-
-                    <sl-details summary="비활성화 sl-details는 disabled속성을 추가해준다" disabled>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, quos.
-                    </sl-details>
-                </div>
-
-                <div>
-                    <h5>Details 아이콘 Customizing</h5>
-
-                    <sl-details class="custom-icon-details" summary="우측 아이콘을 바꿔주었습니다. + CSS">
-                        <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
-                        <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
-
-                        icon에 사용된 slot을 확인!
-                    </sl-details>
-                </div>
-
-                <div>
-                    <h5>그룹 Details - 하나만 열려있게 하기위해선 JS 필요</h5>
-
-                    <div id="container"> <!-- 임의의 container필요 -->
-                        <sl-details summary="First" open>   <!-- 초기값 open -->
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </sl-details>
-
-                          <sl-details summary="Second">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </sl-details>
-
-                        <sl-details summary="Third">
+                        <sl-details summary="summary 라는 속성으로 처음 노출되는 텍스트를 보여줍니다.">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </sl-details>
                     </div>
-
-                    <script>
-                        const container = document.getElementById("container");
-
-                        container.addEventListener("sl-show", (e) => {
-                            if(e.target.localName === 'sl-details'){
-                                [...container.querySelectorAll('sl-details')].map(item => item.open = e.target === item)
-                            }
-                        })
-                        
-                    </script>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-details summary=&quot;summary 라는 속성으로 처음 노출되는 텍스트를 보여줍니다.&quot;&gt;
+        ...
+    &lt;/sl-details&gt;      
+                        </code></pre>
+                    </div>
                     
                 </div>
-                
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Custom Size Details</h5>
+
+                        <sl-details summary="Size 와 Padding 넣어주기 - CSS 이용" 
+                        class="sl-detail-20rem"
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </sl-details>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;style&gt;
+        sl-details.sl-detail-20rem{
+            width: 20rem;
+        }
+        sl-details.sl-detail-20rem::part(header),
+        sl-details.sl-detail-20rem::part(content){
+            padding: 2rem;
+        }
+    &lt;/style&gt;
+    
+    &lt;sl-details summary=&quot;Size 와 Padding 넣어주기 - CSS 이용&quot; 
+    class=&quot;sl-detail-20rem&quot;
+    &gt;
+        ...
+    &lt;/sl-details&gt; 
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Disabled Details</h5>
+
+                        <sl-details summary="비활성화 sl-details는 disabled속성을 추가해준다" disabled>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, quos.
+                        </sl-details>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-details summary=&quot;비활성화 sl-details는 disabled속성을 추가해준다&quot; disabled&gt;
+        ...
+    &lt;/sl-details&gt;
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Details 아이콘 Customizing</h5>
+
+                        <sl-details class="custom-icon-details" summary="우측 아이콘을 바꿔주었습니다. + CSS">
+                            <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+                            <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+    
+                            icon에 사용된 slot을 확인!
+                        </sl-details>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;style&gt;
+        .custom-icon-details::part(summary-icon) {
+            rotate: none;
+        }
+    &lt;/style&gt;
+    
+    &lt;sl-details class=&quot;custom-icon-details&quot; summary=&quot;우측 아이콘을 바꿔주었습니다. + CSS&quot;&gt;
+        &lt;sl-icon name=&quot;plus-square&quot; slot=&quot;expand-icon&quot;&gt;&lt;/sl-icon&gt;
+        &lt;sl-icon name=&quot;dash-square&quot; slot=&quot;collapse-icon&quot;&gt;&lt;/sl-icon&gt;
+
+        icon에 사용된 slot을 확인!
+    &lt;/sl-details&gt;
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>그룹 Details - 하나만 열려있게 하기위해선 JS 필요</h5>
+
+                        <div id="container"> <!-- 임의의 container필요 -->
+                            <sl-details summary="First" open>   <!-- 초기값 open -->
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </sl-details>
+
+                            <sl-details summary="Second">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </sl-details>
+
+                            <sl-details summary="Third">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </sl-details>
+                        </div>
+
+                        <script>
+                            const container = document.getElementById("container");
+
+                            container.addEventListener("sl-show", (e) => {
+                                if(e.target.localName === 'sl-details'){
+                                    [...container.querySelectorAll('sl-details')].map(item => item.open = e.target === item)
+                                }
+                            })
+                            
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;div id=&quot;container&quot;&gt; &lt;!-- 임의의 container필요 --&gt;
+        &lt;sl-details summary=&quot;First&quot; open&gt;   &lt;!-- 초기값 open --&gt;
+            ...
+        &lt;/sl-details&gt;
+
+        &lt;sl-details summary=&quot;Second&quot;&gt;
+            ...
+        &lt;/sl-details&gt;
+
+        &lt;sl-details summary=&quot;Third&quot;&gt;
+            ...
+        &lt;/sl-details&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        const container = document.getElementById(&quot;container&quot;);
+
+        container.addEventListener(&quot;sl-show&quot;, (e) =&gt; {
+            if(e.target.localName === 'sl-details'){
+                [...container.querySelectorAll('sl-details')].map(item =&gt; item.open = e.target === item)
+            }
+        })
+    &lt;/script&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -95,18 +95,9 @@ sl-details::part(content){
     text-wrap: wrap;
 }
 
-sl-details.sl-detail-20rem{
-    width: 20rem;
-}
-sl-details.sl-detail-20rem::part(header),
-sl-details.sl-detail-20rem::part(content){
-    padding: 2rem;
-}
-
 .custom-icon-details::part(summary-icon) {
     rotate: none;
 }
-
 
 /* Alert */
 sl-alert::part(message){

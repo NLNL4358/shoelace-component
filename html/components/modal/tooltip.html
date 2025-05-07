@@ -31,6 +31,14 @@
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/component.css">
 
+    <!-- CodeViewer -->
+    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+
     <style>
         .tooltip-placement-example {
           width: 250px;
@@ -68,17 +76,28 @@
             <h3 class="componentTitle">tooltip</h3>
             <div class="componentWrap">
                 <div>
+                  <div class="viewPart">
                     <h5>기초적인 Tooltip</h5>
                     <p>사용법 : tooltip을 사용하려면 그냥 tooltip이 필요한 요소의 부모로<br/>sl-tooltip을 사용하면된다.</p><br/>
                     <p>tooltip에는 content="텍스트" 속성을 사용한다.</p>
 
                     <div style="margin: 3rem;"></div>
                     <sl-tooltip content="이곳에 보여질 텍스트를 넣는다">
-                        <sl-button>Hover</sl-button>
+                        <sl-button>Hover Me</sl-button>
                     </sl-tooltip>
+                  </div>
+                  <div class="codePart">
+                    <pre><code class="language-markup">
+  &lt;sl-tooltip content=&quot;이곳에 보여질 텍스트를 넣는다&quot;&gt;
+      &lt;sl-button&gt;Hover Me&lt;/sl-button&gt;
+  &lt;/sl-tooltip&gt;
+                    </code></pre>
+                  </div>
+                    
                 </div>
 
                 <div>
+                  <div class="viewPart">
                     <h5>Tooltip이 나타날 위치를 정하려면 placement="" 속성을 사용한다.</h5>
 
                     <div class="tooltip-placement-example">
@@ -140,9 +159,108 @@
                           </sl-tooltip>
                         </div>
                     </div>
+                  </div>
+                  <div class="codePart">
+                    <sl-details summary="Code View">
+                      <pre><code class="language-markup">
+  &lt;style&gt;
+    .tooltip-placement-example {
+      width: 250px;
+      margin: 1rem;
+    }
+
+    .tooltip-placement-example-row:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .tooltip-placement-example sl-button {
+      float: left;
+      width: 2.5rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
+    .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
+      margin-left: calc(40px + 0.25rem);
+    }
+
+    .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
+    .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
+    .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
+      margin-left: calc((40px * 3) + (0.25rem * 3));
+    }
+  &lt;/style&gt;
+                        
+  &lt;div class=&quot;tooltip-placement-example&quot;&gt;
+    &lt;div class=&quot;tooltip-placement-example-row&quot;&gt;
+      &lt;sl-tooltip content=&quot;top-start&quot; placement=&quot;top-start&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  
+      &lt;sl-tooltip content=&quot;top&quot; placement=&quot;top&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  
+      &lt;sl-tooltip content=&quot;top-end&quot; placement=&quot;top-end&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;tooltip-placement-example-row&quot;&gt;
+      &lt;sl-tooltip content=&quot;left-start&quot; placement=&quot;left-start&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  
+      &lt;sl-tooltip content=&quot;right-start&quot; placement=&quot;right-start&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;tooltip-placement-example-row&quot;&gt;
+      &lt;sl-tooltip content=&quot;left&quot; placement=&quot;left&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  
+      &lt;sl-tooltip content=&quot;right&quot; placement=&quot;right&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;tooltip-placement-example-row&quot;&gt;
+      &lt;sl-tooltip content=&quot;left-end&quot; placement=&quot;left-end&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  
+      &lt;sl-tooltip content=&quot;right-end&quot; placement=&quot;right-end&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;tooltip-placement-example-row&quot;&gt;
+      &lt;sl-tooltip content=&quot;bottom-start&quot; placement=&quot;bottom-start&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  
+      &lt;sl-tooltip content=&quot;bottom&quot; placement=&quot;bottom&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  
+      &lt;sl-tooltip content=&quot;bottom-end&quot; placement=&quot;bottom-end&quot;&gt;
+        &lt;sl-button&gt;&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                      </code></pre>
+                    </sl-details>
+                  </div>
+                    
                 </div>
 
                 <div>
+                  <div class="viewPart">
                     <h5>Tooltip이 나타나는 trigger를 변경하고싶다면 trigger=""속성을 사용한다.</h5>
                     <p>기본 trigger는 hover이다.</p>
 
@@ -159,9 +277,27 @@
                             <sl-input placeholder="trigger='focus'"></sl-input>
                         </sl-tooltip>
                     </div>
+                  </div>
+                  <div class="codePart">
+                    <pre><code class="language-markup">
+  &lt;sl-tooltip trigger=&quot;hover&quot; content=&quot;tooltip&quot;&gt;
+      &lt;sl-button&gt;trigger=&quot;hover&quot;&lt;/sl-button&gt;
+  &lt;/sl-tooltip&gt;
+
+  &lt;sl-tooltip trigger=&quot;click&quot; content=&quot;tooltip&quot;&gt;
+      &lt;sl-button&gt;trigger=&quot;click&quot;&lt;/sl-button&gt;
+  &lt;/sl-tooltip&gt;
+
+  &lt;sl-tooltip trigger=&quot;focus&quot; content=&quot;tooltip&quot; placement=&quot;top-start&quot;&gt;
+      &lt;sl-input placeholder=&quot;trigger='focus'&quot;&gt;&lt;/sl-input&gt;
+  &lt;/sl-tooltip&gt;
+                    </code></pre>
+                  </div>
+                    
                 </div>
 
                 <div>
+                  <div class="viewPart">
                     <h5>특정 조건으로 tooltip을 활성화 시키기 -> JS필요 + trigger="manual" 속성 필요</h5>
                     <p>tooltip이 가지는 .open 속성을 변경해줍니다.</p>
 
@@ -181,17 +317,50 @@
                             tooltip.open = !tooltip.open;
                         })
                     </script>
+                  </div>
+                  <div class="codePart">
+                    <sl-details summary="Code View">
+                      <pre><code class="language-markup">
+  &lt;sl-button id=&quot;manual-button&quot;&gt;툴팁 오픈!&lt;/sl-button&gt;
+
+  &lt;sl-tooltip content=&quot;안녕하세요!&quot; trigger=&quot;manual&quot; id=&quot;manual-tooltip&quot;&gt;
+      &lt;sl-avatar label=&quot;User&quot;&gt;&lt;/sl-avatar&gt;
+  &lt;/sl-tooltip&gt;
+
+  &lt;script&gt;
+      const button = document.getElementById(&quot;manual-button&quot;)
+      const tooltip = document.getElementById(&quot;manual-tooltip&quot;)
+
+      button.addEventListener(&quot;click&quot;, (e) =&gt; {
+          tooltip.open = !tooltip.open;
+      })
+  &lt;/script&gt;
+                      </code></pre>
+                    </sl-details>
+                  </div>
+                    
                 </div>
 
                 <div>
+                  <div class="viewPart">
                     <h5>tooltip의 화살표 없애기 - Style 수정 필요</h5>
                     <div style="margin: 3rem;"></div>
                     <sl-tooltip content="This is a tooltip" style="--sl-tooltip-arrow-size: 0;">
                         <sl-button>No Arrow</sl-button>
-                    </sl-tooltip>
+                    </sl-tooltip>         
+                  </div>
+                  <div class="codePart">
+                    <pre><code class="language-markup">
+  &lt;sl-tooltip content=&quot;This is a tooltip&quot; style=&quot;--sl-tooltip-arrow-size: 0;&quot;&gt;
+      &lt;sl-button&gt;No Arrow&lt;/sl-button&gt;
+  &lt;/sl-tooltip&gt;   
+                    </code></pre>
+                  </div>
+                    
                 </div>
 
                 <div>
+                  <div class="viewPart">
                     <h5>tooltip에 html 넣어주기 - tooltip 안에 slot="content"인 div를 넣어준다.</h5>
                     <div style="margin: 3rem;"></div>
 
@@ -200,19 +369,40 @@
                       
                         <sl-button>Hover me</sl-button>
                     </sl-tooltip>
+                  </div>
+                  <div class="codePart">
+                    <pre><code class="language-markup">
+  &lt;sl-tooltip&gt;
+      &lt;div slot=&quot;content&quot;&gt;I'm not &lt;strong&gt;just&lt;/strong&gt; a tooltip, I'm a &lt;em&gt;tooltip&lt;/em&gt; with HTML!&lt;/div&gt;
+    
+      &lt;sl-button&gt;Hover me&lt;/sl-button&gt;
+  &lt;/sl-tooltip&gt;   
+                    </code></pre>
+                  </div>
+                    
                 </div>
 
                 <div>
+                  <div class="viewPart">
                     <h5>tooltip에 max-width 주기 style="--max-width" 사용</h5>
                     <div style="margin: 3rem;"></div>
 
                     <sl-tooltip style="--max-width: 80px;" content="This tooltip will wrap after only 80 pixels.">
                         <sl-button>Hover me</sl-button>
                     </sl-tooltip>
+                  </div>
+                  <div class="codePart">
+                    <pre><code class="language-markup">
+  &lt;sl-tooltip style=&quot;--max-width: 80px;&quot; content=&quot;This tooltip will wrap after only 80 pixels.&quot;&gt;
+      &lt;sl-button&gt;Hover me&lt;/sl-button&gt;
+  &lt;/sl-tooltip&gt;
+                    </code></pre>
+                  </div>
                 </div>
 
                 <div>
-                    <h5>overflow에서도 보이도록 하는 tooltip - hoist 속성을 사용</h5>
+                  <div class="viewPart">
+                    <h5>overflow에서도 보이도록 하려면 hoist 속성을 사용</h5>
 
                     <div class="tooltip-hoist" style="position: relative;
                     border: solid 2px var(--sl-panel-border-color);
@@ -226,6 +416,24 @@
                           <sl-button>Hoist</sl-button>
                         </sl-tooltip>
                     </div>
+                  </div>
+                  <div class="codePart">
+                    <pre><code class="language-markup">
+  &lt;div class=&quot;tooltip-hoist&quot; style=&quot;position: relative;
+  border: solid 2px var(--sl-panel-border-color);
+  overflow: hidden;
+  padding: var(--sl-spacing-medium);&quot;&gt;
+      &lt;sl-tooltip content=&quot;This is a tooltip&quot;&gt;
+        &lt;sl-button&gt;No Hoist&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+    
+      &lt;sl-tooltip content=&quot;This is a tooltip&quot; hoist&gt;
+        &lt;sl-button&gt;Hoist&lt;/sl-button&gt;
+      &lt;/sl-tooltip&gt;
+  &lt;/div&gt;
+                    </code></pre>
+                  </div>
+                    
                 </div>
             </div>
         </div>
