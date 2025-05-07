@@ -30,6 +30,14 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/component.css">
+
+    <!-- CodeViewer -->
+    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
 </head>
 <body class="outer">
     <div class="inner">
@@ -37,96 +45,196 @@
             <h3 class="componentTitle">Breadcrumb</h3>
             <div class="componentWrap">
                 <div>
-                    <h5>기초적인 Breadcrumb</h5>
+                    <div class="viewPart">
+                        <h5>기초적인 Breadcrumb</h5>
 
-                    <sl-breadcrumb>
-                        <sl-breadcrumb-item>Catalog</sl-breadcrumb-item>
-                        <sl-breadcrumb-item>Clothing</sl-breadcrumb-item>
-                        <sl-breadcrumb-item>Women's</sl-breadcrumb-item>
-                        <sl-breadcrumb-item>Shirts &amp; Tops</sl-breadcrumb-item>
-                    </sl-breadcrumb>
-                </div>
-
-                <div>
-                    <h5>링크 이동 Breadcrumb - href 속성 사용</h5>
-
-                    <sl-breadcrumb>
-                        <sl-breadcrumb-item href="https://example.com/home">Homepage</sl-breadcrumb-item>
-                      
-                        <sl-breadcrumb-item href="https://example.com/home/services">Our Services</sl-breadcrumb-item>
-                      
-                        <sl-breadcrumb-item href="https://example.com/home/services/digital">Digital Media</sl-breadcrumb-item>
-                      
-                        <sl-breadcrumb-item href="https://example.com/home/services/digital/web-design">Web Design</sl-breadcrumb-item>
-                    </sl-breadcrumb>
-                </div>
-
-                <div>
-                    <h5>Breadcrumb 나누는 기호 정의 - sl-icon 사용</h5>
-
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                         <sl-breadcrumb>
-                            <sl-icon name="dot" slot="separator"></sl-icon>
-                            <sl-breadcrumb-item>First</sl-breadcrumb-item>
-                            <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-                            <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-                          </sl-breadcrumb>
-                          
-                          <br />
-                          
-                          <sl-breadcrumb>
-                            <sl-icon name="arrow-right" slot="separator"></sl-icon>
-                            <sl-breadcrumb-item>First</sl-breadcrumb-item>
-                            <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-                            <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-                          </sl-breadcrumb>
-                          
-                          <br />
-                          
-                          <sl-breadcrumb>
-                            <span slot="separator">/</span>
-                            <sl-breadcrumb-item>First</sl-breadcrumb-item>
-                            <sl-breadcrumb-item>Second</sl-breadcrumb-item>
-                            <sl-breadcrumb-item>Third</sl-breadcrumb-item>
-                          </sl-breadcrumb>
+                            <sl-breadcrumb-item>Catalog</sl-breadcrumb-item>
+                            <sl-breadcrumb-item>Clothing</sl-breadcrumb-item>
+                            <sl-breadcrumb-item>Women's</sl-breadcrumb-item>
+                            <sl-breadcrumb-item>Shirts &amp; Tops</sl-breadcrumb-item>
+                        </sl-breadcrumb>
                     </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-breadcrumb&gt;
+        &lt;sl-breadcrumb-item&gt;Catalog&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Clothing&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Women's&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Shirts &amp;amp; Tops&lt;/sl-breadcrumb-item&gt;
+    &lt;/sl-breadcrumb&gt;
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Prefix , Suffix 아이콘 넣어주기 - sl-icon에 slot 속성 추가</h5>
-                    <sl-breadcrumb>
-                        <sl-breadcrumb-item>
-                            <sl-icon slot="prefix" name="house"></sl-icon>
-                            Home
-                        </sl-breadcrumb-item>
-                        <sl-breadcrumb-item>Articles</sl-breadcrumb-item>
-                        <sl-breadcrumb-item>
-                            Traveling
-                            <sl-icon slot="suffix" name="shield-lock"></sl-icon>
-                        </sl-breadcrumb-item>
-                    </sl-breadcrumb>
+                    <div class="viewPart">
+                        <h5>링크 이동 Breadcrumb - href 속성 사용</h5>
+
+                        <sl-breadcrumb>
+                            <sl-breadcrumb-item href="https://example.com/home">Homepage</sl-breadcrumb-item>
+                          
+                            <sl-breadcrumb-item href="https://example.com/home/services">Our Services</sl-breadcrumb-item>
+                          
+                            <sl-breadcrumb-item href="https://example.com/home/services/digital">Digital Media</sl-breadcrumb-item>
+                          
+                            <sl-breadcrumb-item href="https://example.com/home/services/digital/web-design">Web Design</sl-breadcrumb-item>
+                        </sl-breadcrumb>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-breadcrumb&gt;
+        &lt;sl-breadcrumb-item href=&quot;https://example.com/home&quot;&gt;Homepage&lt;/sl-breadcrumb-item&gt;
+    
+        &lt;sl-breadcrumb-item href=&quot;https://example.com/home/services&quot;&gt;Our Services&lt;/sl-breadcrumb-item&gt;
+    
+        &lt;sl-breadcrumb-item href=&quot;https://example.com/home/services/digital&quot;&gt;Digital Media&lt;/sl-breadcrumb-item&gt;
+    
+        &lt;sl-breadcrumb-item href=&quot;https://example.com/home/services/digital/web-design&quot;&gt;Web Design&lt;/sl-breadcrumb-item&gt;
+    &lt;/sl-breadcrumb&gt;      
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>너무 길땐? 생략을 위한 sl-dropdown 사용</h5>
+                    <div class="viewPart">
+                        <h5>Breadcrumb 나누는 기호 정의 - sl-icon 사용</h5>
 
-                    <sl-breadcrumb>
-                        <sl-breadcrumb-item>Homepage</sl-breadcrumb-item>
-                        <sl-breadcrumb-item>
-                          <sl-dropdown> <!-- breadcrumb-item 안에 sl-dropdown -->
-                            <sl-button slot="trigger" size="small" circle> <!-- sl-button -->
-                              <sl-icon label="More options" name="three-dots"></sl-icon>
-                            </sl-button>
-                            <sl-menu>   <!-- sl-menu 에 sl-menu-item을 추가 -->
-                              <sl-menu-item>Web Design</sl-menu-item>
-                              <sl-menu-item>Web Development</sl-menu-item>
-                              <sl-menu-item>Marketing</sl-menu-item>
-                            </sl-menu>
-                          </sl-dropdown>
-                        </sl-breadcrumb-item>
-                        <sl-breadcrumb-item>Our Services</sl-breadcrumb-item>
-                        <sl-breadcrumb-item>Digital Media</sl-breadcrumb-item>
-                    </sl-breadcrumb>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <sl-breadcrumb>
+                                <sl-icon name="dot" slot="separator"></sl-icon>
+                                <sl-breadcrumb-item>First</sl-breadcrumb-item>
+                                <sl-breadcrumb-item>Second</sl-breadcrumb-item>
+                                <sl-breadcrumb-item>Third</sl-breadcrumb-item>
+                            </sl-breadcrumb>
+                              
+                              <br />
+                              
+                            <sl-breadcrumb>
+                                <sl-icon name="arrow-right" slot="separator"></sl-icon>
+                                <sl-breadcrumb-item>First</sl-breadcrumb-item>
+                                <sl-breadcrumb-item>Second</sl-breadcrumb-item>
+                                <sl-breadcrumb-item>Third</sl-breadcrumb-item>
+                            </sl-breadcrumb>
+                              
+                              <br />
+                              
+                            <sl-breadcrumb>
+                                <span slot="separator">/</span>
+                                <sl-breadcrumb-item>First</sl-breadcrumb-item>
+                                <sl-breadcrumb-item>Second</sl-breadcrumb-item>
+                                <sl-breadcrumb-item>Third</sl-breadcrumb-item>
+                            </sl-breadcrumb>
+                        </div>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-breadcrumb&gt;
+        &lt;sl-icon name=&quot;dot&quot; slot=&quot;separator&quot;&gt;&lt;/sl-icon&gt;
+        &lt;sl-breadcrumb-item&gt;First&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Second&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Third&lt;/sl-breadcrumb-item&gt;
+    &lt;/sl-breadcrumb&gt;
+    
+    &lt;sl-breadcrumb&gt;
+        &lt;sl-icon name=&quot;arrow-right&quot; slot=&quot;separator&quot;&gt;&lt;/sl-icon&gt;
+        &lt;sl-breadcrumb-item&gt;First&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Second&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Third&lt;/sl-breadcrumb-item&gt;
+    &lt;/sl-breadcrumb&gt;
+    
+    &lt;sl-breadcrumb&gt;
+        &lt;span slot=&quot;separator&quot;&gt;/&lt;/span&gt;
+        &lt;sl-breadcrumb-item&gt;First&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Second&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Third&lt;/sl-breadcrumb-item&gt;
+    &lt;/sl-breadcrumb&gt;  
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Prefix , Suffix 아이콘 넣어주기 - sl-icon에 slot 속성 추가</h5>
+                        <sl-breadcrumb>
+                            <sl-breadcrumb-item>
+                                <sl-icon slot="prefix" name="house"></sl-icon>
+                                Home
+                            </sl-breadcrumb-item>
+                            <sl-breadcrumb-item>Articles</sl-breadcrumb-item>
+                            <sl-breadcrumb-item>
+                                Traveling
+                                <sl-icon slot="suffix" name="shield-lock"></sl-icon>
+                            </sl-breadcrumb-item>
+                        </sl-breadcrumb>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-breadcrumb&gt;
+        &lt;sl-breadcrumb-item&gt;
+            &lt;sl-icon slot=&quot;prefix&quot; name=&quot;house&quot;&gt;&lt;/sl-icon&gt;
+            Home
+        &lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Articles&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;
+            Traveling
+            &lt;sl-icon slot=&quot;suffix&quot; name=&quot;shield-lock&quot;&gt;&lt;/sl-icon&gt;
+        &lt;/sl-breadcrumb-item&gt;
+    &lt;/sl-breadcrumb&gt;
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>너무 길땐? 생략을 위한 sl-dropdown 사용</h5>
+
+                        <sl-breadcrumb>
+                            <sl-breadcrumb-item>Homepage</sl-breadcrumb-item>
+                            <sl-breadcrumb-item>
+                              <sl-dropdown> <!-- breadcrumb-item 안에 sl-dropdown -->
+                                <sl-button slot="trigger" size="small" circle> <!-- sl-button -->
+                                  <sl-icon label="More options" name="three-dots"></sl-icon>
+                                </sl-button>
+                                <sl-menu>   <!-- sl-menu 에 sl-menu-item을 추가 -->
+                                  <sl-menu-item>Web Design</sl-menu-item>
+                                  <sl-menu-item>Web Development</sl-menu-item>
+                                  <sl-menu-item>Marketing</sl-menu-item>
+                                </sl-menu>
+                              </sl-dropdown>
+                            </sl-breadcrumb-item>
+                            <sl-breadcrumb-item>Our Services</sl-breadcrumb-item>
+                            <sl-breadcrumb-item>Digital Media</sl-breadcrumb-item>
+                        </sl-breadcrumb>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;sl-breadcrumb&gt;
+        &lt;sl-breadcrumb-item&gt;Homepage&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;
+        &lt;sl-dropdown&gt; &lt;!-- breadcrumb-item 안에 sl-dropdown --&gt;
+            &lt;sl-button slot=&quot;trigger&quot; size=&quot;small&quot; circle&gt; &lt;!-- sl-button --&gt;
+            &lt;sl-icon label=&quot;More options&quot; name=&quot;three-dots&quot;&gt;&lt;/sl-icon&gt;
+            &lt;/sl-button&gt;
+            &lt;sl-menu&gt;   &lt;!-- sl-menu 에 sl-menu-item을 추가 --&gt;
+            &lt;sl-menu-item&gt;Web Design&lt;/sl-menu-item&gt;
+            &lt;sl-menu-item&gt;Web Development&lt;/sl-menu-item&gt;
+            &lt;sl-menu-item&gt;Marketing&lt;/sl-menu-item&gt;
+            &lt;/sl-menu&gt;
+        &lt;/sl-dropdown&gt;
+        &lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Our Services&lt;/sl-breadcrumb-item&gt;
+        &lt;sl-breadcrumb-item&gt;Digital Media&lt;/sl-breadcrumb-item&gt;
+    &lt;/sl-breadcrumb&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
+                    
                 </div>
             </div>
         </div>

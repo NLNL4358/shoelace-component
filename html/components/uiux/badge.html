@@ -29,6 +29,14 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/component.css">
+
+    <!-- CodeViewer -->
+    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
 </head>
 <body class="outer">
     <div class="inner">
@@ -36,74 +44,159 @@
             <h3 class="componentTitle">Badge</h3>
             <div class="componentWrap">
                 <div>
-                    <h5>기초적인 Badge</h5>
-                    <sl-badge>Badge</sl-badge>
-                </div>
-
-                <div>
-                    <h5>여러 Color, 용도의 Badge</h5>
-                    <sl-badge variant="primary">Primary</sl-badge>
-                    <sl-badge variant="success">Success</sl-badge>
-                    <sl-badge variant="neutral">Neutral</sl-badge>
-                    <sl-badge variant="warning">Warning</sl-badge>
-                    <sl-badge variant="danger">Danger</sl-badge>
-                </div>
-
-                <div>
-                    <h5>둥그런 Badge - pill 속성 사용</h5>
-                    <sl-badge variant="primary" pill>Primary</sl-badge>
-                    <sl-badge variant="success" pill>Success</sl-badge>
-                    <sl-badge variant="neutral" pill>Neutral</sl-badge>
-                    <sl-badge variant="warning" pill>Warning</sl-badge>
-                    <sl-badge variant="danger" pill>Danger</sl-badge>
-                </div>
-
-                <div>
-                    <h5>물결있는 Badge - pulse 속성 사용</h5>
-                    <div style="display: flex; gap: 1.5rem;">
-                        <sl-badge variant="primary" pill pulse>1</sl-badge>
-                        <sl-badge variant="success" pill pulse>10</sl-badge>
-                        <sl-badge variant="neutral" pill pulse>100</sl-badge>
-                        <sl-badge variant="warning" pill pulse>알림</sl-badge>
-                        <sl-badge variant="danger" pill pulse>경고</sl-badge>
+                    <div class="viewPart">
+                        <h5>기초적인 Badge</h5>
+                        <sl-badge>Badge</sl-badge>
                     </div>
-                </div>
-
-                <div>
-                    <h5>버튼과 같이 사용하는 Badge</h5>
-                    <div style="display: flex; gap: 1.5rem;">
-                        <sl-button>
-                            Requests
-                            <sl-badge pill>30</sl-badge>
-                          </sl-button>
-                          
-                          <sl-button style="margin-inline-start: 1rem;">
-                            Warnings
-                            <sl-badge variant="warning" pill>8</sl-badge>
-                          </sl-button>
-                          
-                          <sl-button style="margin-inline-start: 1rem;">
-                            Errors
-                            <sl-badge variant="danger" pill pulse>6</sl-badge>
-                          </sl-button>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-badge&gt;Badge&lt;/sl-badge&gt;
+                        </code></pre>
                     </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Menu와 같이 사용하는 Badge</h5>
-                    <sl-menu style="max-width: 240px;">
-                        <sl-menu-label style="border-bottom: 1px solid var(--sl-panel-border-color);">
-                            Messages
-                        </sl-menu-label>
-                        <sl-menu-item>
-                            Comments 
-                            <sl-badge slot="suffix" variant="primary" pill>4</sl-badge>
-                        </sl-menu-item>
-                        <sl-menu-item>
-                            Replies 
-                            <sl-badge slot="suffix" variant="primary" pill>12</sl-badge>
-                        </sl-menu-item>
-                    </sl-menu>
+                    <div class="viewPart">
+                        <h5>여러 Color, 용도의 Badge</h5>
+                        <sl-badge variant="primary">Primary</sl-badge>
+                        <sl-badge variant="success">Success</sl-badge>
+                        <sl-badge variant="neutral">Neutral</sl-badge>
+                        <sl-badge variant="warning">Warning</sl-badge>
+                        <sl-badge variant="danger">Danger</sl-badge>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-badge variant=&quot;primary&quot;&gt;Primary&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;success&quot;&gt;Success&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;neutral&quot;&gt;Neutral&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;warning&quot;&gt;Warning&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;danger&quot;&gt;Danger&lt;/sl-badge&gt;    
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>둥그런 Badge - pill 속성 사용</h5>
+                        <sl-badge variant="primary" pill>Primary</sl-badge>
+                        <sl-badge variant="success" pill>Success</sl-badge>
+                        <sl-badge variant="neutral" pill>Neutral</sl-badge>
+                        <sl-badge variant="warning" pill>Warning</sl-badge>
+                        <sl-badge variant="danger" pill>Danger</sl-badge>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-badge variant=&quot;primary&quot; pill&gt;Primary&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;success&quot; pill&gt;Success&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;neutral&quot; pill&gt;Neutral&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;warning&quot; pill&gt;Warning&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;danger&quot; pill&gt;Danger&lt;/sl-badge&gt;         
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>물결있는 Badge - pulse 속성 사용</h5>
+                        <div style="display: flex; gap: 1.5rem;">
+                            <sl-badge variant="primary" pill pulse>1</sl-badge>
+                            <sl-badge variant="success" pill pulse>10</sl-badge>
+                            <sl-badge variant="neutral" pill pulse>100</sl-badge>
+                            <sl-badge variant="warning" pill pulse>알림</sl-badge>
+                            <sl-badge variant="danger" pill pulse>경고</sl-badge>
+                        </div>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-badge variant=&quot;primary&quot; pill pulse&gt;1&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;success&quot; pill pulse&gt;10&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;neutral&quot; pill pulse&gt;100&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;warning&quot; pill pulse&gt;알림&lt;/sl-badge&gt;
+    &lt;sl-badge variant=&quot;danger&quot; pill pulse&gt;경고&lt;/sl-badge&gt;
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        h5>버튼과 같이 사용하는 Badge</h5>
+                        <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                            <sl-button>
+                                Requests
+                                <sl-badge pill>30</sl-badge>
+                            </sl-button>
+                              
+                            <sl-button style="margin-inline-start: 1rem;">
+                                Warnings
+                                <sl-badge variant="warning" pill>8</sl-badge>
+                            </sl-button>
+                              
+                            <sl-button style="margin-inline-start: 1rem;">
+                                Errors
+                                <sl-badge variant="danger" pill pulse>6</sl-badge>
+                            </sl-button>
+                        </div>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-button&gt;
+        Requests
+        &lt;sl-badge pill&gt;30&lt;/sl-badge&gt;
+    &lt;/sl-button&gt;
+    
+    &lt;sl-button style=&quot;margin-inline-start: 1rem;&quot;&gt;
+        Warnings
+        &lt;sl-badge variant=&quot;warning&quot; pill&gt;8&lt;/sl-badge&gt;
+    &lt;/sl-button&gt;
+    
+    &lt;sl-button style=&quot;margin-inline-start: 1rem;&quot;&gt;
+        Errors
+        &lt;sl-badge variant=&quot;danger&quot; pill pulse&gt;6&lt;/sl-badge&gt;
+    &lt;/sl-button&gt;
+                        </code></pre>
+                    </div>
+                    <
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Menu와 같이 사용하는 Badge</h5>
+                        <sl-menu style="max-width: 240px;">
+                            <sl-menu-label style="border-bottom: 1px solid var(--sl-panel-border-color);">
+                                Messages
+                            </sl-menu-label>
+                            <sl-menu-item>
+                                Comments 
+                                <sl-badge slot="suffix" variant="primary" pill>4</sl-badge>
+                            </sl-menu-item>
+                            <sl-menu-item>
+                                Replies 
+                                <sl-badge slot="suffix" variant="primary" pill>12</sl-badge>
+                            </sl-menu-item>
+                        </sl-menu>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-menu style=&quot;max-width: 240px;&quot;&gt;
+        &lt;sl-menu-label style=&quot;border-bottom: 1px solid var(--sl-panel-border-color);&quot;&gt;
+            Messages
+        &lt;/sl-menu-label&gt;
+        &lt;sl-menu-item&gt;
+            Comments 
+            &lt;sl-badge slot=&quot;suffix&quot; variant=&quot;primary&quot; pill&gt;4&lt;/sl-badge&gt;
+        &lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;
+            Replies 
+            &lt;sl-badge slot=&quot;suffix&quot; variant=&quot;primary&quot; pill&gt;12&lt;/sl-badge&gt;
+        &lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;    
+                        </code></pre>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -112,49 +205,105 @@
             <h3 class="componentTitle">Tag</h3>
             <div class="componentWrap">
                 <div>
-                    <h5>기초적인 Tag</h5>
+                    <div class="viewPart">
+                        <h5>기초적인 Tag</h5>
 
-                    <div style="display: flex; gap: 1rem;">
-                        <sl-tag variant="primary">Primary</sl-tag>
-                        <sl-tag variant="success">Success</sl-tag>
-                        <sl-tag variant="neutral">Neutral</sl-tag>
-                        <sl-tag variant="warning">Warning</sl-tag>
-                        <sl-tag variant="danger">Danger</sl-tag>
+                        <div style="display: flex; gap: 1rem;">
+                            <sl-tag variant="primary">Primary</sl-tag>
+                            <sl-tag variant="success">Success</sl-tag>
+                            <sl-tag variant="neutral">Neutral</sl-tag>
+                            <sl-tag variant="warning">Warning</sl-tag>
+                            <sl-tag variant="danger">Danger</sl-tag>
+                        </div>
                     </div>
-                </div>
-
-                <div>
-                    <h5>Tag 사이즈 조절 size="" 속성사용 </h5>
-                    <sl-tag size="small">Small</sl-tag>
-                    <sl-tag size="medium">Medium</sl-tag>
-                    <sl-tag size="large">Large</sl-tag>
-                </div>
-
-                <div>
-                    <h5>Tag의 radius 조절 pill 속성사용 </h5>
-                    <sl-tag size="small" pill>Small</sl-tag>
-                    <sl-tag size="medium" pill>Medium</sl-tag>
-                    <sl-tag size="large" pill>Large</sl-tag>
-                </div>
-
-                <div>
-                    <h5>삭제 가능한 Tag를 만들기위해선 removable 속성과 JS 필요!</h5>
-
-                    <div class="tags-removable" style="display: flex; gap: 1rem; align-items: center;">
-                        <sl-tag size="small" removable>Small</sl-tag>
-                        <sl-tag size="medium" removable>Medium</sl-tag>
-                        <sl-tag size="large" removable>Large</sl-tag>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-tag variant=&quot;primary&quot;&gt;Primary&lt;/sl-tag&gt;
+    &lt;sl-tag variant=&quot;success&quot;&gt;Success&lt;/sl-tag&gt;
+    &lt;sl-tag variant=&quot;neutral&quot;&gt;Neutral&lt;/sl-tag&gt;
+    &lt;sl-tag variant=&quot;warning&quot;&gt;Warning&lt;/sl-tag&gt;
+    &lt;sl-tag variant=&quot;danger&quot;&gt;Danger&lt;/sl-tag&gt;
+                        </code></pre>
                     </div>
-                      
-                    <script>
-                        const div = document.querySelector('.tags-removable');
-                      
-                        div.addEventListener('sl-remove', event => {
-                          const tag = event.target;
-                          tag.style.opacity = '0';
-                          setTimeout(() => (tag.style.opacity = '1'), 2000);
-                        });
-                    </script>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Tag 사이즈 조절 size="" 속성사용 </h5>
+                        <sl-tag size="small">Small</sl-tag>
+                        <sl-tag size="medium">Medium</sl-tag>
+                        <sl-tag size="large">Large</sl-tag>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-tag size=&quot;small&quot;&gt;Small&lt;/sl-tag&gt;
+    &lt;sl-tag size=&quot;medium&quot;&gt;Medium&lt;/sl-tag&gt;
+    &lt;sl-tag size=&quot;large&quot;&gt;Large&lt;/sl-tag&gt;
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>Tag의 radius 조절 pill 속성사용 </h5>
+                        <sl-tag size="small" pill>Small</sl-tag>
+                        <sl-tag size="medium" pill>Medium</sl-tag>
+                        <sl-tag size="large" pill>Large</sl-tag>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-tag size=&quot;small&quot; pill&gt;Small&lt;/sl-tag&gt;
+    &lt;sl-tag size=&quot;medium&quot; pill&gt;Medium&lt;/sl-tag&gt;
+    &lt;sl-tag size=&quot;large&quot; pill&gt;Large&lt;/sl-tag&gt;     
+                        </code></pre>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <div class="viewPart">
+                        <h5>삭제 가능한 Tag를 만들기위해선 removable 속성과 JS 필요!</h5>
+
+                        <div class="tags-removable" style="display: flex; gap: 1rem; align-items: center;">
+                            <sl-tag size="small" removable>Small</sl-tag>
+                            <sl-tag size="medium" removable>Medium</sl-tag>
+                            <sl-tag size="large" removable>Large</sl-tag>
+                        </div>
+                          
+                        <script>
+                            const div = document.querySelector('.tags-removable');
+                          
+                            div.addEventListener('sl-remove', event => {
+                              const tag = event.target;
+                              tag.style.opacity = '0';
+                              setTimeout(() => (tag.style.opacity = '1'), 2000);
+                            });
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;div class=&quot;tags-removable&quot; style=&quot;display: flex; gap: 1rem; align-items: center;&quot;&gt;
+        &lt;sl-tag size=&quot;small&quot; removable&gt;Small&lt;/sl-tag&gt;
+        &lt;sl-tag size=&quot;medium&quot; removable&gt;Medium&lt;/sl-tag&gt;
+        &lt;sl-tag size=&quot;large&quot; removable&gt;Large&lt;/sl-tag&gt;
+    &lt;/div&gt;
+    
+    &lt;script&gt;
+        const div = document.querySelector('.tags-removable');
+    
+        div.addEventListener('sl-remove', event =&gt; {
+        const tag = event.target;
+        tag.style.opacity = '0';
+        setTimeout(() =&gt; (tag.style.opacity = '1'), 2000);
+        });
+    &lt;/script&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
+                    
                 </div>
             </div>
         </div>
