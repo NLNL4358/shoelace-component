@@ -30,6 +30,14 @@
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/css/component.css">
+
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
     </head>
     <body class="outer">
         <div class="inner">
@@ -37,179 +45,359 @@
                 <h3 class="componentTitle">Tab</h3>
                 <div class="componentWrap">
                     <div>
-                        <h5>
-                            기초적인 Tab
-                            <br/><br/>
-                            sl-tab 에서 선언한 panel="abc" 와 <br/>
-                            sl-tab-panel 에서 선언한 name="abc" 가 매칭되어 보여진다.
-                        </h5>
-
-                        <sl-tab-group style="width: 400px;">  <!-- tab-group 안에서 선언되야함 -->
-                            <sl-tab slot="nav" panel="a">설명1</sl-tab>
-                            <sl-tab slot="nav" panel="b">설명2</sl-tab>
-                            <sl-tab slot="nav" panel="c">설명3</sl-tab>
-                            <sl-tab slot="nav" panel="d" disabled>disabled</sl-tab>
-                          
-                            <sl-tab-panel name="a">sl-tab이 가지는 panel의 값과</sl-tab-panel>
-                            <sl-tab-panel name="b">sl-tab-panel이 가지는 name의 값을 비교해</sl-tab-panel>
-                            <sl-tab-panel name="c">같은 sl-tab-panel을 보여줍니다.</sl-tab-panel>
-                            <sl-tab-panel name="d">disabled</sl-tab-panel>
-                        </sl-tab-group>
+                        <div class="viewPart">
+                            <h5>
+                                기초적인 Tab
+                                <br/><br/>
+                                sl-tab 에서 선언한 panel="abc" 와 <br/>
+                                sl-tab-panel 에서 선언한 name="abc" 가 매칭되어 보여진다.
+                            </h5>
+    
+                            <sl-tab-group style="width: 400px;">  <!-- tab-group 안에서 선언되야함 -->
+                                <sl-tab slot="nav" panel="a">설명1</sl-tab>
+                                <sl-tab slot="nav" panel="b">설명2</sl-tab>
+                                <sl-tab slot="nav" panel="c">설명3</sl-tab>
+                                <sl-tab slot="nav" panel="d" disabled>disabled</sl-tab>
+                              
+                                <sl-tab-panel name="a">sl-tab이 가지는 panel의 값과</sl-tab-panel>
+                                <sl-tab-panel name="b">sl-tab-panel이 가지는 name의 값을 비교해</sl-tab-panel>
+                                <sl-tab-panel name="c">같은 sl-tab-panel을 보여줍니다.</sl-tab-panel>
+                                <sl-tab-panel name="d">disabled</sl-tab-panel>
+                            </sl-tab-group>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-tab-group style=&quot;width: 400px;&quot;&gt;  &lt;!-- tab-group 안에서 선언되야함 --&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;a&quot;&gt;설명1&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;b&quot;&gt;설명2&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;c&quot;&gt;설명3&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;d&quot; disabled&gt;disabled&lt;/sl-tab&gt;
+    
+        &lt;sl-tab-panel name=&quot;a&quot;&gt;sl-tab이 가지는 panel의 값과&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;b&quot;&gt;sl-tab-panel이 가지는 name의 값을 비교해&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;c&quot;&gt;같은 sl-tab-panel을 보여줍니다.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;d&quot;&gt;disabled&lt;/sl-tab-panel&gt;
+    &lt;/sl-tab-group&gt;     
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Tab이 아래로, panel이 위로가게끔 배치<br/>
-                            sl-tab-group 내에서 placement="bottom" 속성 사용</h5>
-
-                        <sl-tab-group placement="bottom">
-                            <sl-tab slot="nav" panel="general">General</sl-tab>
-                            <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                            <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                            <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
-                          
-                            <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-                        </sl-tab-group>
+                        <div class="viewPart">
+                            <h5>Tab이 아래로, panel이 위로가게끔 배치<br/>
+                                sl-tab-group 내에서 placement="bottom" 속성 사용</h5>
+    
+                            <sl-tab-group placement="bottom">
+                                <sl-tab slot="nav" panel="general">General</sl-tab>
+                                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
+                                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
+                                <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+                              
+                                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
+                            </sl-tab-group>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-tab-group placement=&quot;bottom&quot;&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;general&quot;&gt;General&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;custom&quot;&gt;Custom&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;advanced&quot;&gt;Advanced&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;disabled&quot; disabled&gt;Disabled&lt;/sl-tab&gt;
+    
+        &lt;sl-tab-panel name=&quot;general&quot;&gt;This is the general tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;custom&quot;&gt;This is the custom tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;advanced&quot;&gt;This is the advanced tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;disabled&quot;&gt;This is a disabled tab panel.&lt;/sl-tab-panel&gt;
+    &lt;/sl-tab-group&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Tab은 왼쪽으로, Panel은 오른쪽으로 배치<br/>
-                            sl-tab-group 내에서 placement="start" 속성 사용</h5>
-
-                        <sl-tab-group placement="start">
-                            <sl-tab slot="nav" panel="general">General</sl-tab>
-                            <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                            <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                            <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
-                          
-                            <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-                        </sl-tab-group>
+                        <div class="viewPart">
+                            <h5>Tab은 왼쪽으로, Panel은 오른쪽으로 배치<br/>
+                                sl-tab-group 내에서 placement="start" 속성 사용</h5>
+    
+                            <sl-tab-group placement="start">
+                                <sl-tab slot="nav" panel="general">General</sl-tab>
+                                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
+                                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
+                                <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+                              
+                                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
+                            </sl-tab-group>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-tab-group placement=&quot;start&quot;&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;general&quot;&gt;General&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;custom&quot;&gt;Custom&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;advanced&quot;&gt;Advanced&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;disabled&quot; disabled&gt;Disabled&lt;/sl-tab&gt;
+    
+        &lt;sl-tab-panel name=&quot;general&quot;&gt;This is the general tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;custom&quot;&gt;This is the custom tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;advanced&quot;&gt;This is the advanced tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;disabled&quot;&gt;This is a disabled tab panel.&lt;/sl-tab-panel&gt;
+    &lt;/sl-tab-group&gt;
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Tab은 오른쪽으로, Panel은 왼쪽으로 배치<br/>
-                            sl-tab-group 내에서 placement="end" 속성 사용</h5>
-
-                        <sl-tab-group placement="end">
-                            <sl-tab slot="nav" panel="general">General</sl-tab>
-                            <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                            <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                            <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
-                          
-                            <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-                        </sl-tab-group>
+                        <div class="viewPart">
+                            <h5>Tab은 오른쪽으로, Panel은 왼쪽으로 배치<br/>
+                                sl-tab-group 내에서 placement="end" 속성 사용</h5>
+    
+                            <sl-tab-group placement="end">
+                                <sl-tab slot="nav" panel="general">General</sl-tab>
+                                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
+                                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
+                                <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+                              
+                                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
+                            </sl-tab-group>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-tab-group placement=&quot;end&quot;&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;general&quot;&gt;General&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;custom&quot;&gt;Custom&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;advanced&quot;&gt;Advanced&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;disabled&quot; disabled&gt;Disabled&lt;/sl-tab&gt;
+    
+        &lt;sl-tab-panel name=&quot;general&quot;&gt;This is the general tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;custom&quot;&gt;This is the custom tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;advanced&quot;&gt;This is the advanced tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;disabled&quot;&gt;This is a disabled tab panel.&lt;/sl-tab-panel&gt;
+    &lt;/sl-tab-group&gt;       
+                            </code></pre>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Closable Tabs<br/>sl-tab 에 closable 속성 추가</h5>
+                        <div class="viewPart">
+                            <h5>Closable Tabs<br/>sl-tab 에 closable 속성 추가 + JS 사용하여 tab, panel의 remove()</h5>
 
-                        <sl-tab-group class="tabs-closable">
-                            <sl-tab slot="nav" panel="general">General</sl-tab>
-                            <sl-tab slot="nav" panel="closable-1" closable>Closable 1</sl-tab>
-                            <sl-tab slot="nav" panel="closable-2" closable>Closable 2</sl-tab>
-                            <sl-tab slot="nav" panel="closable-3" closable>Closable 3</sl-tab>
-                          
-                            <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="closable-1">This is the first closable tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="closable-2">This is the second closable tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="closable-3">This is the third closable tab panel.</sl-tab-panel>
-                          </sl-tab-group>
-                          
-                          <script>
+                            <sl-tab-group class="tabs-closable">
+                                <sl-tab slot="nav" panel="general">General</sl-tab>
+                                <sl-tab slot="nav" panel="closable-1" closable>Closable 1</sl-tab>
+                                <sl-tab slot="nav" panel="closable-2" closable>Closable 2</sl-tab>
+                                <sl-tab slot="nav" panel="closable-3" closable>Closable 3</sl-tab>
+                              
+                                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="closable-1">This is the first closable tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="closable-2">This is the second closable tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="closable-3">This is the third closable tab panel.</sl-tab-panel>
+                            </sl-tab-group>
+                              
+                            <script>
                             const tabGroup = document.querySelector('.tabs-closable');
-                          
+                            
                             tabGroup.addEventListener('sl-close', async event => {
-                              const tab = event.target;
-                              const panel = tabGroup.querySelector(`sl-tab-panel[name="${tab.panel}"]`);
-                          
-                              // Show the previous tab if the tab is currently active
-                              if (tab.active) {
+                                const tab = event.target;
+                                const panel = tabGroup.querySelector(`sl-tab-panel[name="${tab.panel}"]`);
+                            
+                                // Show the previous tab if the tab is currently active
+                                if (tab.active) {
                                 tabGroup.show(tab.previousElementSibling.panel);
-                              }
-                          
-                              // Remove the tab + panel
-                              tab.remove();
-                              panel.remove();
+                                }
+                            
+                                // Remove the tab + panel
+                                tab.remove();
+                                panel.remove();
                             });
-                          </script>
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;sl-tab-group class=&quot;tabs-closable&quot;&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;general&quot;&gt;General&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;closable-1&quot; closable&gt;Closable 1&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;closable-2&quot; closable&gt;Closable 2&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;closable-3&quot; closable&gt;Closable 3&lt;/sl-tab&gt;
+    
+        &lt;sl-tab-panel name=&quot;general&quot;&gt;This is the general tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;closable-1&quot;&gt;This is the first closable tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;closable-2&quot;&gt;This is the second closable tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;closable-3&quot;&gt;This is the third closable tab panel.&lt;/sl-tab-panel&gt;
+    &lt;/sl-tab-group&gt;
+    
+    &lt;script&gt;
+    const tabGroup = document.querySelector('.tabs-closable');
+    
+    tabGroup.addEventListener('sl-close', async event =&gt; {
+        const tab = event.target;
+        const panel = tabGroup.querySelector(`sl-tab-panel[name=&quot;${tab.panel}&quot;]`);
+    
+        // Show the previous tab if the tab is currently active
+        if (tab.active) {
+        tabGroup.show(tab.previousElementSibling.panel);
+        }
+    
+        // Remove the tab + panel
+        tab.remove();
+        panel.remove();
+    });
+    &lt;/script&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
+                        
                     </div>
 
                     <div>
-                        <h5>Scrolling Tabs<br/>tab-group의 길이보다 tab의 길이가 더 길어지면 자동적으로 스크롤이 생긴다</h5>
+                        <div class="viewPart">
+                            <h5>Scrolling Tabs<br/>tab-group의 길이보다 tab의 길이가 더 길어지면 자동적으로 스크롤이 생긴다</h5>
 
-                        <sl-tab-group>
-                            <sl-tab slot="nav" panel="tab-1">Tab 1</sl-tab>
-                            <sl-tab slot="nav" panel="tab-2">Tab 2</sl-tab>
-                            <sl-tab slot="nav" panel="tab-3">Tab 3</sl-tab>
-                            <sl-tab slot="nav" panel="tab-4">Tab 4</sl-tab>
-                            <sl-tab slot="nav" panel="tab-5">Tab 5</sl-tab>
-                            <sl-tab slot="nav" panel="tab-6">Tab 6</sl-tab>
-                            <sl-tab slot="nav" panel="tab-7">Tab 7</sl-tab>
-                            <sl-tab slot="nav" panel="tab-8">Tab 8</sl-tab>
-                            <sl-tab slot="nav" panel="tab-9">Tab 9</sl-tab>
-                            <sl-tab slot="nav" panel="tab-10">Tab 10</sl-tab>
-                            <sl-tab slot="nav" panel="tab-11">Tab 11</sl-tab>
-                            <sl-tab slot="nav" panel="tab-12">Tab 12</sl-tab>
-                            <sl-tab slot="nav" panel="tab-13">Tab 13</sl-tab>
-                            <sl-tab slot="nav" panel="tab-14">Tab 14</sl-tab>
-                            <sl-tab slot="nav" panel="tab-15">Tab 15</sl-tab>
-                            <sl-tab slot="nav" panel="tab-16">Tab 16</sl-tab>
-                            <sl-tab slot="nav" panel="tab-17">Tab 17</sl-tab>
-                            <sl-tab slot="nav" panel="tab-18">Tab 18</sl-tab>
-                            <sl-tab slot="nav" panel="tab-19">Tab 19</sl-tab>
-                            <sl-tab slot="nav" panel="tab-20">Tab 20</sl-tab>
-                          
-                            <sl-tab-panel name="tab-1">Tab panel 1</sl-tab-panel>
-                            <sl-tab-panel name="tab-2">Tab panel 2</sl-tab-panel>
-                            <sl-tab-panel name="tab-3">Tab panel 3</sl-tab-panel>
-                            <sl-tab-panel name="tab-4">Tab panel 4</sl-tab-panel>
-                            <sl-tab-panel name="tab-5">Tab panel 5</sl-tab-panel>
-                            <sl-tab-panel name="tab-6">Tab panel 6</sl-tab-panel>
-                            <sl-tab-panel name="tab-7">Tab panel 7</sl-tab-panel>
-                            <sl-tab-panel name="tab-8">Tab panel 8</sl-tab-panel>
-                            <sl-tab-panel name="tab-9">Tab panel 9</sl-tab-panel>
-                            <sl-tab-panel name="tab-10">Tab panel 10</sl-tab-panel>
-                            <sl-tab-panel name="tab-11">Tab panel 11</sl-tab-panel>
-                            <sl-tab-panel name="tab-12">Tab panel 12</sl-tab-panel>
-                            <sl-tab-panel name="tab-13">Tab panel 13</sl-tab-panel>
-                            <sl-tab-panel name="tab-14">Tab panel 14</sl-tab-panel>
-                            <sl-tab-panel name="tab-15">Tab panel 15</sl-tab-panel>
-                            <sl-tab-panel name="tab-16">Tab panel 16</sl-tab-panel>
-                            <sl-tab-panel name="tab-17">Tab panel 17</sl-tab-panel>
-                            <sl-tab-panel name="tab-18">Tab panel 18</sl-tab-panel>
-                            <sl-tab-panel name="tab-19">Tab panel 19</sl-tab-panel>
-                            <sl-tab-panel name="tab-20">Tab panel 20</sl-tab-panel>
-                          </sl-tab-group>
+                            <sl-tab-group>
+                                <sl-tab slot="nav" panel="tab-1">Tab 1</sl-tab>
+                                <sl-tab slot="nav" panel="tab-2">Tab 2</sl-tab>
+                                <sl-tab slot="nav" panel="tab-3">Tab 3</sl-tab>
+                                <sl-tab slot="nav" panel="tab-4">Tab 4</sl-tab>
+                                <sl-tab slot="nav" panel="tab-5">Tab 5</sl-tab>
+                                <sl-tab slot="nav" panel="tab-6">Tab 6</sl-tab>
+                                <sl-tab slot="nav" panel="tab-7">Tab 7</sl-tab>
+                                <sl-tab slot="nav" panel="tab-8">Tab 8</sl-tab>
+                                <sl-tab slot="nav" panel="tab-9">Tab 9</sl-tab>
+                                <sl-tab slot="nav" panel="tab-10">Tab 10</sl-tab>
+                                <sl-tab slot="nav" panel="tab-11">Tab 11</sl-tab>
+                                <sl-tab slot="nav" panel="tab-12">Tab 12</sl-tab>
+                                <sl-tab slot="nav" panel="tab-13">Tab 13</sl-tab>
+                                <sl-tab slot="nav" panel="tab-14">Tab 14</sl-tab>
+                                <sl-tab slot="nav" panel="tab-15">Tab 15</sl-tab>
+                                <sl-tab slot="nav" panel="tab-16">Tab 16</sl-tab>
+                                <sl-tab slot="nav" panel="tab-17">Tab 17</sl-tab>
+                                <sl-tab slot="nav" panel="tab-18">Tab 18</sl-tab>
+                                <sl-tab slot="nav" panel="tab-19">Tab 19</sl-tab>
+                                <sl-tab slot="nav" panel="tab-20">Tab 20</sl-tab>
+                              
+                                <sl-tab-panel name="tab-1">Tab panel 1</sl-tab-panel>
+                                <sl-tab-panel name="tab-2">Tab panel 2</sl-tab-panel>
+                                <sl-tab-panel name="tab-3">Tab panel 3</sl-tab-panel>
+                                <sl-tab-panel name="tab-4">Tab panel 4</sl-tab-panel>
+                                <sl-tab-panel name="tab-5">Tab panel 5</sl-tab-panel>
+                                <sl-tab-panel name="tab-6">Tab panel 6</sl-tab-panel>
+                                <sl-tab-panel name="tab-7">Tab panel 7</sl-tab-panel>
+                                <sl-tab-panel name="tab-8">Tab panel 8</sl-tab-panel>
+                                <sl-tab-panel name="tab-9">Tab panel 9</sl-tab-panel>
+                                <sl-tab-panel name="tab-10">Tab panel 10</sl-tab-panel>
+                                <sl-tab-panel name="tab-11">Tab panel 11</sl-tab-panel>
+                                <sl-tab-panel name="tab-12">Tab panel 12</sl-tab-panel>
+                                <sl-tab-panel name="tab-13">Tab panel 13</sl-tab-panel>
+                                <sl-tab-panel name="tab-14">Tab panel 14</sl-tab-panel>
+                                <sl-tab-panel name="tab-15">Tab panel 15</sl-tab-panel>
+                                <sl-tab-panel name="tab-16">Tab panel 16</sl-tab-panel>
+                                <sl-tab-panel name="tab-17">Tab panel 17</sl-tab-panel>
+                                <sl-tab-panel name="tab-18">Tab panel 18</sl-tab-panel>
+                                <sl-tab-panel name="tab-19">Tab panel 19</sl-tab-panel>
+                                <sl-tab-panel name="tab-20">Tab panel 20</sl-tab-panel>
+                            </sl-tab-group>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;sl-tab-group&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-1&quot;&gt;Tab 1&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-2&quot;&gt;Tab 2&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-3&quot;&gt;Tab 3&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-4&quot;&gt;Tab 4&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-5&quot;&gt;Tab 5&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-6&quot;&gt;Tab 6&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-7&quot;&gt;Tab 7&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-8&quot;&gt;Tab 8&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-9&quot;&gt;Tab 9&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-10&quot;&gt;Tab 10&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-11&quot;&gt;Tab 11&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-12&quot;&gt;Tab 12&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-13&quot;&gt;Tab 13&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-14&quot;&gt;Tab 14&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-15&quot;&gt;Tab 15&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-16&quot;&gt;Tab 16&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-17&quot;&gt;Tab 17&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-18&quot;&gt;Tab 18&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-19&quot;&gt;Tab 19&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;tab-20&quot;&gt;Tab 20&lt;/sl-tab&gt;
+    
+        &lt;sl-tab-panel name=&quot;tab-1&quot;&gt;Tab panel 1&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-2&quot;&gt;Tab panel 2&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-3&quot;&gt;Tab panel 3&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-4&quot;&gt;Tab panel 4&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-5&quot;&gt;Tab panel 5&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-6&quot;&gt;Tab panel 6&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-7&quot;&gt;Tab panel 7&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-8&quot;&gt;Tab panel 8&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-9&quot;&gt;Tab panel 9&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-10&quot;&gt;Tab panel 10&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-11&quot;&gt;Tab panel 11&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-12&quot;&gt;Tab panel 12&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-13&quot;&gt;Tab panel 13&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-14&quot;&gt;Tab panel 14&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-15&quot;&gt;Tab panel 15&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-16&quot;&gt;Tab panel 16&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-17&quot;&gt;Tab panel 17&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-18&quot;&gt;Tab panel 18&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-19&quot;&gt;Tab panel 19&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;tab-20&quot;&gt;Tab panel 20&lt;/sl-tab-panel&gt;
+    &lt;/sl-tab-group&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
+                        
                     </div>
 
                     <div >
-                        <h5>
-                            Tab위에서 키보드 - 수동 활성화
-                        </h5>
-                        <p>
-                            일반적으로 Tab에 마우스를 클릭하고 키보드 좌, 우를 누르면 바로 활성화 된다.<br/>
-                            이를 수동으로(Enter) 활성화 시키려면 activation="manual"속성을 이용한다.
-                        </p>
-
-                        <sl-tab-group activation="manual">
-                            <sl-tab slot="nav" panel="general">General</sl-tab>
-                            <sl-tab slot="nav" panel="custom">Custom</sl-tab>
-                            <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
-                            <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
-                          
-                            <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
-                            <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
-                        </sl-tab-group>
+                        <div class="viewPart">
+                            <h5>
+                                Tab위에서 키보드 - 수동 활성화
+                            </h5>
+                            <p>
+                                일반적으로 Tab에 마우스를 클릭하고 키보드 좌, 우를 누르면 바로 활성화 된다.<br/>
+                                이를 수동으로(Enter) 활성화 시키려면 activation="manual"속성을 이용한다.
+                            </p>
+    
+                            <sl-tab-group activation="manual">
+                                <sl-tab slot="nav" panel="general">General</sl-tab>
+                                <sl-tab slot="nav" panel="custom">Custom</sl-tab>
+                                <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
+                                <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+                              
+                                <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
+                                <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
+                            </sl-tab-group>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-tab-group activation=&quot;manual&quot;&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;general&quot;&gt;General&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;custom&quot;&gt;Custom&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;advanced&quot;&gt;Advanced&lt;/sl-tab&gt;
+        &lt;sl-tab slot=&quot;nav&quot; panel=&quot;disabled&quot; disabled&gt;Disabled&lt;/sl-tab&gt;
+    
+        &lt;sl-tab-panel name=&quot;general&quot;&gt;This is the general tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;custom&quot;&gt;This is the custom tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;advanced&quot;&gt;This is the advanced tab panel.&lt;/sl-tab-panel&gt;
+        &lt;sl-tab-panel name=&quot;disabled&quot;&gt;This is a disabled tab panel.&lt;/sl-tab-panel&gt;
+    &lt;/sl-tab-group&gt;  
+                            </code></pre>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

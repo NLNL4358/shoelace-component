@@ -30,6 +30,14 @@
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/css/component.css">
+
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
     </head>
     <body class="outer">
         <div class="inner">
@@ -37,156 +45,326 @@
                 <h3 class="componentTitle">Menu</h3>
                 <div class="componentWrap">
                     <div>
-                        <h5>기초적인 Menu - 길이는 부모Div의 width를 따라갑니다.</h5>
-                        <p>width : 300px</p>
+                        <div class="viewPart">
+                            <h5>기초적인 Menu - 길이는 부모Div의 width를 따라갑니다.</h5>
+                            <p>width : 300px</p>
+    
+                            <div style="width: 300px;">
+                                <sl-menu>
+                                    <sl-menu-item value="undo">Undo</sl-menu-item>
+                                    <sl-menu-item value="redo">Redo</sl-menu-item>
+                                    <sl-divider></sl-divider>
+                                    <sl-menu-item value="cut">Cut</sl-menu-item>
+                                    <sl-menu-item value="copy">Copy</sl-menu-item>
+                                    <sl-menu-item value="paste">Paste</sl-menu-item>
+                                    <sl-menu-item value="delete">Delete</sl-menu-item>
+                                </sl-menu>
+                            </div>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-menu&gt;
+        &lt;sl-menu-item value=&quot;undo&quot;&gt;Undo&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;redo&quot;&gt;Redo&lt;/sl-menu-item&gt;
+        &lt;sl-divider&gt;&lt;/sl-divider&gt;
+        &lt;sl-menu-item value=&quot;cut&quot;&gt;Cut&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;copy&quot;&gt;Copy&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;paste&quot;&gt;Paste&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;delete&quot;&gt;Delete&lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;      
+                            </code></pre>
+                        </div>
+                    </div>
 
-                        <div style="width: 300px;">
-                            <sl-menu>
+                    <div>
+                        <div class="viewPart">
+                            <h5>Sub Menu를 포함하는 Menu</h5>
+
+                            <sl-menu style="max-width: 200px;">
                                 <sl-menu-item value="undo">Undo</sl-menu-item>
                                 <sl-menu-item value="redo">Redo</sl-menu-item>
                                 <sl-divider></sl-divider>
                                 <sl-menu-item value="cut">Cut</sl-menu-item>
                                 <sl-menu-item value="copy">Copy</sl-menu-item>
                                 <sl-menu-item value="paste">Paste</sl-menu-item>
-                                <sl-menu-item value="delete">Delete</sl-menu-item>
+                                <sl-divider></sl-divider>
+                                <sl-menu-item>
+                                  Find
+                                  <sl-menu slot="submenu">
+                                    <sl-menu-item value="find">Find…</sl-menu-item>
+                                    <sl-menu-item value="find-previous">Find Next</sl-menu-item>
+                                    <sl-menu-item value="find-next">Find Previous</sl-menu-item>
+                                  </sl-menu>
+                                </sl-menu-item>
+                                <sl-menu-item>
+                                  Transformations
+                                  <sl-menu slot="submenu">
+                                    <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
+                                    <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
+                                    <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
+                                  </sl-menu>
+                                </sl-menu-item>
                             </sl-menu>
                         </div>
-                    </div>
-
-                    <div>
-                        <h5>Sub Menu를 포함하는 Menu</h5>
-
-                        <sl-menu style="max-width: 200px;">
-                            <sl-menu-item value="undo">Undo</sl-menu-item>
-                            <sl-menu-item value="redo">Redo</sl-menu-item>
-                            <sl-divider></sl-divider>
-                            <sl-menu-item value="cut">Cut</sl-menu-item>
-                            <sl-menu-item value="copy">Copy</sl-menu-item>
-                            <sl-menu-item value="paste">Paste</sl-menu-item>
-                            <sl-divider></sl-divider>
-                            <sl-menu-item>
-                              Find
-                              <sl-menu slot="submenu">
-                                <sl-menu-item value="find">Find…</sl-menu-item>
-                                <sl-menu-item value="find-previous">Find Next</sl-menu-item>
-                                <sl-menu-item value="find-next">Find Previous</sl-menu-item>
-                              </sl-menu>
-                            </sl-menu-item>
-                            <sl-menu-item>
-                              Transformations
-                              <sl-menu slot="submenu">
-                                <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-                                <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-                                <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-                              </sl-menu>
-                            </sl-menu-item>
-                        </sl-menu>
-                    </div>
-
-                    <div>
-                        <h5>Prefix & Suffix</h5>
-
-                        <sl-menu style="max-width: 200px;">
-                            <sl-menu-item>
-                              <sl-icon slot="prefix" name="house" style="margin-right: 0.5rem;"></sl-icon>
-                              Home
-                            </sl-menu-item>
-                          
-                            <sl-menu-item>
-                              <sl-icon slot="prefix" name="envelope" style="margin-right: 0.5rem;"></sl-icon>
-                              Messages
-                              <sl-badge slot="suffix" variant="primary" pill>12</sl-badge>
-                            </sl-menu-item>
-                          
-                            <sl-divider></sl-divider>
-                          
-                            <sl-menu-item>
-                              <sl-icon slot="prefix" name="gear" style="margin-right: 0.5rem;"></sl-icon>
-                              Settings
-                            </sl-menu-item>
-                        </sl-menu>
-                    </div>
-
-                    <div>
-                        <h5>Disabled - disabled 속성 사용</h5>
-
-                        <sl-menu style="max-width: 200px;">
-                            <sl-menu-item>Option 1</sl-menu-item>
-                            <sl-menu-item disabled>Option 2</sl-menu-item>
-                            <sl-menu-item>Option 3</sl-menu-item>
-                        </sl-menu>
-                    </div>
-
-                    <div>
-                        <h5>Loading - loading 속성 사용</h5>
-                        
-                        <sl-menu style="max-width: 200px;">
-                            <sl-menu-item>Option 1</sl-menu-item>
-                            <sl-menu-item loading>Option 2</sl-menu-item>
-                            <sl-menu-item>Option 3</sl-menu-item>
-                        </sl-menu>
-                    </div>
-
-                    <div>
-                        <h5>CheckBox Menu - type="checkbox" 사용</h5>
-
-                        <sl-menu style="max-width: 200px;">
-                            <sl-menu-item type="checkbox">Autosave</sl-menu-item>
-                            <sl-menu-item type="checkbox" checked>Check Spelling</sl-menu-item>
-                            <sl-menu-item type="checkbox">Word Wrap</sl-menu-item>
-                        </sl-menu>
-                    </div>
-
-                    <div>
-                        <h5>Label을 가지는 Menu - sl-menu-label</h5>
-
-                        <sl-menu style="max-width: 200px;">
-                            <sl-menu-label>Fruits</sl-menu-label>
-                            <sl-menu-item value="apple">Apple</sl-menu-item>
-                            <sl-menu-item value="banana">Banana</sl-menu-item>
-                            <sl-menu-item value="orange">Orange</sl-menu-item>
-                            <sl-divider></sl-divider>
-                            <sl-menu-label>Vegetables</sl-menu-label>
-                            <sl-menu-item value="broccoli">Broccoli</sl-menu-item>
-                            <sl-menu-item value="carrot">Carrot</sl-menu-item>
-                            <sl-menu-item value="zucchini">Zucchini</sl-menu-item>
-                        </sl-menu>
-                    </div>
-
-                    <div>
-                        <h5>Value 를 가지는 Menu - value 속성 사용</h5>
-                        <div style="display: flex; gap: 0.5rem; margin: 0.5rem;">
-                            <span>선택 값 :</span>
-                            <span id="value"></span>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;sl-menu style=&quot;max-width: 200px;&quot;&gt;
+        &lt;sl-menu-item value=&quot;undo&quot;&gt;Undo&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;redo&quot;&gt;Redo&lt;/sl-menu-item&gt;
+        &lt;sl-divider&gt;&lt;/sl-divider&gt;
+        &lt;sl-menu-item value=&quot;cut&quot;&gt;Cut&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;copy&quot;&gt;Copy&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;paste&quot;&gt;Paste&lt;/sl-menu-item&gt;
+        &lt;sl-divider&gt;&lt;/sl-divider&gt;
+        &lt;sl-menu-item&gt;
+        Find
+        &lt;sl-menu slot=&quot;submenu&quot;&gt;
+            &lt;sl-menu-item value=&quot;find&quot;&gt;Find&hellip;&lt;/sl-menu-item&gt;
+            &lt;sl-menu-item value=&quot;find-previous&quot;&gt;Find Next&lt;/sl-menu-item&gt;
+            &lt;sl-menu-item value=&quot;find-next&quot;&gt;Find Previous&lt;/sl-menu-item&gt;
+        &lt;/sl-menu&gt;
+        &lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;
+        Transformations
+        &lt;sl-menu slot=&quot;submenu&quot;&gt;
+            &lt;sl-menu-item value=&quot;uppercase&quot;&gt;Make uppercase&lt;/sl-menu-item&gt;
+            &lt;sl-menu-item value=&quot;lowercase&quot;&gt;Make lowercase&lt;/sl-menu-item&gt;
+            &lt;sl-menu-item value=&quot;capitalize&quot;&gt;Capitalize&lt;/sl-menu-item&gt;
+        &lt;/sl-menu&gt;
+        &lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;
+                                </code></pre>
+                            </sl-details>
                         </div>
+                        
+                    </div>
 
-                        <sl-menu class="menu-value" style="max-width: 200px;">
-                            <sl-menu-label>option</sl-menu-label>
-                            <sl-menu-item value="opt-1">Option 1</sl-menu-item>
-                            <sl-menu-item value="opt-2">Option 2</sl-menu-item>
-                            <sl-menu-item value="opt-3">Option 3</sl-menu-item>
-                            <sl-divider></sl-divider>
-                            <sl-menu-label>checkbox</sl-menu-label>
-                            <sl-menu-item type="checkbox" value="opt-4">Checkbox 4</sl-menu-item>
-                            <sl-menu-item type="checkbox" value="opt-5">Checkbox 5</sl-menu-item>
-                            <sl-menu-item type="checkbox" value="opt-6">Checkbox 6</sl-menu-item>
-                        </sl-menu>
-                          
-                        <script>
-                            const menu = document.querySelector('.menu-value');
-                            const menuValue = document.getElementById('value')
-                          
-                            menu.addEventListener('sl-select', event => {
-                              const item = event.detail.item;
-                          
-                              // Log value
-                              if (item.type === 'checkbox') {
-                                menuValue.innerText = (`Selected value: ${item.value} (${item.checked ? 'checked' : 'unchecked'})`);
-                              } else {
-                                menuValue.innerText = (`Selected value: ${item.value}`);
-                              }
-                            });
-                        </script>
+                    <div>
+                        <div class="viewPart">
+                            <h5>Prefix & Suffix</h5>
+
+                            <sl-menu style="max-width: 200px;">
+                                <sl-menu-item>
+                                  <sl-icon slot="prefix" name="house" style="margin-right: 0.5rem;"></sl-icon>
+                                  Home
+                                </sl-menu-item>
+                              
+                                <sl-menu-item>
+                                  <sl-icon slot="prefix" name="envelope" style="margin-right: 0.5rem;"></sl-icon>
+                                  Messages
+                                  <sl-badge slot="suffix" variant="primary" pill>12</sl-badge>
+                                </sl-menu-item>
+                              
+                                <sl-divider></sl-divider>
+                              
+                                <sl-menu-item>
+                                  <sl-icon slot="prefix" name="gear" style="margin-right: 0.5rem;"></sl-icon>
+                                  Settings
+                                </sl-menu-item>
+                            </sl-menu>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-menu style=&quot;max-width: 200px;&quot;&gt;
+        &lt;sl-menu-item&gt;
+        &lt;sl-icon slot=&quot;prefix&quot; name=&quot;house&quot; style=&quot;margin-right: 0.5rem;&quot;&gt;&lt;/sl-icon&gt;
+        Home
+        &lt;/sl-menu-item&gt;
+    
+        &lt;sl-menu-item&gt;
+        &lt;sl-icon slot=&quot;prefix&quot; name=&quot;envelope&quot; style=&quot;margin-right: 0.5rem;&quot;&gt;&lt;/sl-icon&gt;
+        Messages
+        &lt;sl-badge slot=&quot;suffix&quot; variant=&quot;primary&quot; pill&gt;12&lt;/sl-badge&gt;
+        &lt;/sl-menu-item&gt;
+    
+        &lt;sl-divider&gt;&lt;/sl-divider&gt;
+    
+        &lt;sl-menu-item&gt;
+        &lt;sl-icon slot=&quot;prefix&quot; name=&quot;gear&quot; style=&quot;margin-right: 0.5rem;&quot;&gt;&lt;/sl-icon&gt;
+        Settings
+        &lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;     
+                            </code></pre>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>Disabled - disabled 속성 사용</h5>
+
+                            <sl-menu style="max-width: 200px;">
+                                <sl-menu-item>Option 1</sl-menu-item>
+                                <sl-menu-item disabled>Option 2</sl-menu-item>
+                                <sl-menu-item>Option 3</sl-menu-item>
+                            </sl-menu>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-menu style=&quot;max-width: 200px;&quot;&gt;
+        &lt;sl-menu-item&gt;Option 1&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item disabled&gt;Option 2&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;Option 3&lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;         
+                            </code></pre>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>Loading - loading 속성 사용</h5>
+                        
+                            <sl-menu style="max-width: 200px;">
+                                <sl-menu-item>Option 1</sl-menu-item>
+                                <sl-menu-item loading>Option 2</sl-menu-item>
+                                <sl-menu-item>Option 3</sl-menu-item>
+                            </sl-menu>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-menu style=&quot;max-width: 200px;&quot;&gt;
+        &lt;sl-menu-item&gt;Option 1&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item loading&gt;Option 2&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item&gt;Option 3&lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;
+                            </code></pre>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>CheckBox Menu - type="checkbox" 사용</h5>
+
+                            <sl-menu style="max-width: 200px;">
+                                <sl-menu-item type="checkbox">Autosave</sl-menu-item>
+                                <sl-menu-item type="checkbox" checked>Check Spelling</sl-menu-item>
+                                <sl-menu-item type="checkbox">Word Wrap</sl-menu-item>
+                            </sl-menu>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-menu style=&quot;max-width: 200px;&quot;&gt;
+        &lt;sl-menu-item type=&quot;checkbox&quot;&gt;Autosave&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item type=&quot;checkbox&quot; checked&gt;Check Spelling&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item type=&quot;checkbox&quot;&gt;Word Wrap&lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;   
+                            </code></pre>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>Label을 가지는 Menu - sl-menu-label</h5>
+
+                            <sl-menu style="max-width: 200px;">
+                                <sl-menu-label>Fruits</sl-menu-label>
+                                <sl-menu-item value="apple">Apple</sl-menu-item>
+                                <sl-menu-item value="banana">Banana</sl-menu-item>
+                                <sl-menu-item value="orange">Orange</sl-menu-item>
+                                <sl-divider></sl-divider>
+                                <sl-menu-label>Vegetables</sl-menu-label>
+                                <sl-menu-item value="broccoli">Broccoli</sl-menu-item>
+                                <sl-menu-item value="carrot">Carrot</sl-menu-item>
+                                <sl-menu-item value="zucchini">Zucchini</sl-menu-item>
+                            </sl-menu>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
+    &lt;sl-menu style=&quot;max-width: 200px;&quot;&gt;
+        &lt;sl-menu-label&gt;Fruits&lt;/sl-menu-label&gt;
+        &lt;sl-menu-item value=&quot;apple&quot;&gt;Apple&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;banana&quot;&gt;Banana&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;orange&quot;&gt;Orange&lt;/sl-menu-item&gt;
+        &lt;sl-divider&gt;&lt;/sl-divider&gt;
+        &lt;sl-menu-label&gt;Vegetables&lt;/sl-menu-label&gt;
+        &lt;sl-menu-item value=&quot;broccoli&quot;&gt;Broccoli&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;carrot&quot;&gt;Carrot&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;zucchini&quot;&gt;Zucchini&lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;
+                            </code></pre>
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>Value 를 가지는 Menu - value 속성 사용</h5>
+                            <div style="display: flex; gap: 0.5rem; margin: 0.5rem;">
+                                <span>선택 값 :</span>
+                                <span id="value"></span>
+                            </div>
+    
+                            <sl-menu class="menu-value" style="max-width: 200px;">
+                                <sl-menu-label>option</sl-menu-label>
+                                <sl-menu-item value="opt-1">Option 1</sl-menu-item>
+                                <sl-menu-item value="opt-2">Option 2</sl-menu-item>
+                                <sl-menu-item value="opt-3">Option 3</sl-menu-item>
+                                <sl-divider></sl-divider>
+                                <sl-menu-label>checkbox</sl-menu-label>
+                                <sl-menu-item type="checkbox" value="opt-4">Checkbox 4</sl-menu-item>
+                                <sl-menu-item type="checkbox" value="opt-5">Checkbox 5</sl-menu-item>
+                                <sl-menu-item type="checkbox" value="opt-6">Checkbox 6</sl-menu-item>
+                            </sl-menu>
+                              
+                            <script>
+                                const menu = document.querySelector('.menu-value');
+                                const menuValue = document.getElementById('value')
+                              
+                                menu.addEventListener('sl-select', event => {
+                                  const item = event.detail.item;
+                              
+                                  // Log value
+                                  if (item.type === 'checkbox') {
+                                    menuValue.innerText = (`Selected value: ${item.value} (${item.checked ? 'checked' : 'unchecked'})`);
+                                  } else {
+                                    menuValue.innerText = (`Selected value: ${item.value}`);
+                                  }
+                                });
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
+    &lt;div style=&quot;display: flex; gap: 0.5rem; margin: 0.5rem;&quot;&gt;
+        &lt;span&gt;선택 값 :&lt;/span&gt;
+        &lt;span id=&quot;value&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;sl-menu class=&quot;menu-value&quot; style=&quot;max-width: 200px;&quot;&gt;
+        &lt;sl-menu-label&gt;option&lt;/sl-menu-label&gt;
+        &lt;sl-menu-item value=&quot;opt-1&quot;&gt;Option 1&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;opt-2&quot;&gt;Option 2&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item value=&quot;opt-3&quot;&gt;Option 3&lt;/sl-menu-item&gt;
+        &lt;sl-divider&gt;&lt;/sl-divider&gt;
+        &lt;sl-menu-label&gt;checkbox&lt;/sl-menu-label&gt;
+        &lt;sl-menu-item type=&quot;checkbox&quot; value=&quot;opt-4&quot;&gt;Checkbox 4&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item type=&quot;checkbox&quot; value=&quot;opt-5&quot;&gt;Checkbox 5&lt;/sl-menu-item&gt;
+        &lt;sl-menu-item type=&quot;checkbox&quot; value=&quot;opt-6&quot;&gt;Checkbox 6&lt;/sl-menu-item&gt;
+    &lt;/sl-menu&gt;
+    
+    &lt;script&gt;
+        const menu = document.querySelector('.menu-value');
+        const menuValue = document.getElementById('value')
+    
+        menu.addEventListener('sl-select', event =&gt; {
+        const item = event.detail.item;
+    
+        // Log value
+        if (item.type === 'checkbox') {
+            menuValue.innerText = (`Selected value: ${item.value} (${item.checked ? 'checked' : 'unchecked'})`);
+        } else {
+            menuValue.innerText = (`Selected value: ${item.value}`);
+        }
+        });
+    &lt;/script&gt;
+                                </code></pre>
+                            </sl-details>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

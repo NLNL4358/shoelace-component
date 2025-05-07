@@ -33,6 +33,27 @@
         <!-- component css -->
         <link rel="stylesheet" href="/css/component.css">
 
+        <style>
+          .red-color-radio ::part(control--checked){
+              /* 선택된 Radio */
+              background-color: var(--sl-color-red-500);
+              border-color: var(--sl-color-red-500);
+          }
+
+          .red-color-radio-button sl-radio-button:hover::part(button){
+              /* hover된 Radio Button*/
+              background-color: var(--sl-color-red-200);
+              border-color: var(--sl-color-red-200);
+          }
+
+          .red-color-radio-button ::part(button--checked),
+          .red-color-radio-button sl-radio-button:hover::part(button--checked){
+              /* 선택된 Radio Button*/
+              background-color: var(--sl-color-red-500);
+              border-color: var(--sl-color-red-500);
+          }
+        </style>
+
         <!-- CodeViewer -->
         <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
         <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />

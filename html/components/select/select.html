@@ -32,6 +32,18 @@
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/component.css">
 
+    <style>
+        .red-select sl-option::part(base):hover{
+            /* hover된 option */
+            background-color: var(--sl-color-red-200);
+        }
+        .red-select sl-option[tabindex="0"]::part(base),
+        .red-select sl-option[tabindex="0"]::part(base):hover {
+            /* 선택된 option */
+            background-color: var(--sl-color-red-500);
+        }
+    </style>
+
     <!-- CodeViewer -->
     <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
