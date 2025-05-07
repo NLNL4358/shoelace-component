@@ -32,6 +32,14 @@
 
     <!-- component css -->
     <link rel="stylesheet" href="/css/component.css">
+
+    <!-- CodeViewer -->
+    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
 </head>
 <body class="outer">
     <div class="inner">
@@ -39,164 +47,345 @@
             <h3 class="componentTitle">모달 - Dialog</h3>
             <div class="componentWrap">
                 <div>
-                    <h5>기본 Dialog</h5>
-                      
-                    <sl-button id="dialog-open-1">Open Dialog</sl-button>
+                    <div class="viewPart">
+                        <h5>기본 Dialog</h5>
+                        
+                        <sl-button id="dialog-open-1">Open Dialog</sl-button>
 
-                    <sl-dialog label="Dialog" id="dialog-overview-1">   <!-- label 제목 -->
-                        <div class="dialogInner">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </div>
-                        <sl-button slot="footer" variant="primary">Close</sl-button>
-                    </sl-dialog>
+                        <sl-dialog label="Dialog" id="dialog-overview-1">   <!-- label 제목 -->
+                            <div class="dialogInner">
+                                Lorem ipsum dolor sit amet consectetur adipisicing.
+                            </div>
+                            <sl-button slot="footer" variant="primary">확인</sl-button>
+                            <sl-button id="close" slot="footer" variant="default">Close</sl-button>
+                        </sl-dialog>
 
-                    <script>
-                    const openButton = document.getElementById("dialog-open-1");
+                        <script>
+                        const openButton = document.getElementById("dialog-open-1");
 
-                    const dialog = document.getElementById('dialog-overview-1');
-                    const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+                        const dialog = document.getElementById('dialog-overview-1');
+                        const closeButton = dialog.querySelector('#close');
+                        
+                        openButton.addEventListener('click', () => dialog.show()); /* show() */
+                        closeButton.addEventListener('click', () => dialog.hide()); /* hide() */
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-button id=&quot;dialog-open-1&quot;&gt;Open Dialog&lt;/sl-button&gt;
+
+    &lt;sl-dialog label=&quot;Dialog&quot; id=&quot;dialog-overview-1&quot;&gt;   &lt;!-- label 제목 --&gt;
+        &lt;div class=&quot;dialogInner&quot;&gt;
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+        &lt;/div&gt;
+        &lt;sl-button slot=&quot;footer&quot; variant=&quot;primary&quot;&gt;확인&lt;/sl-button&gt;
+        &lt;sl-button id=&quot;close&quot; slot=&quot;footer&quot; variant=&quot;default&quot;&gt;Close&lt;/sl-button&gt;
+    &lt;/sl-dialog&gt;
+
+    &lt;script&gt;
+    const openButton = document.getElementById(&quot;dialog-open-1&quot;);
+
+    const dialog = document.getElementById('dialog-overview-1');
+    const closeButton = dialog.querySelector('#close');
+    
+    openButton.addEventListener('click', () =&gt; dialog.show()); /* show() */
+    closeButton.addEventListener('click', () =&gt; dialog.hide()); /* hide() */
+    &lt;/script&gt;
+                        </code></pre>
+                    </div>
                     
-                    openButton.addEventListener('click', () => dialog.show()); /* show() */
-                    closeButton.addEventListener('click', () => dialog.hide()); /* hide() */
-                    </script>
                 </div>
 
                 <div>
-                    <h5>Dialog 너비 설정</h5>
+                    <div class="viewPart">
+                        <h5>Dialog 너비 설정</h5>
 
-                    <sl-button id="dialog-open-2">Open Custom Width Dialog</sl-button>
+                        <sl-button id="dialog-open-2">Open Custom Width Dialog</sl-button>
 
-                    <sl-dialog label="Dialog-Custom-Width" id="dialog-overview-2" style="--width: 50vw;">
-                        <div class="dialogInner">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </div>
-                        <sl-button slot="footer" variant="primary">Close</sl-button>
-                    </sl-dialog>
+                        <sl-dialog label="Dialog-Custom-Width" id="dialog-overview-2" style="--width: 50vw;">
+                            <div class="dialogInner">
+                                Lorem ipsum dolor sit amet consectetur adipisicing.
+                            </div>
+                            <sl-button slot="footer" variant="primary">Close</sl-button>
+                        </sl-dialog>
 
-                    <script>
-                        const openButton2 =document.getElementById("dialog-open-2");
+                        <script>
+                            const openButton2 =document.getElementById("dialog-open-2");
 
-                        const dialog2 = document.getElementById("dialog-overview-2");
-                        const closeButton2 = dialog2.querySelector("sl-button[slot='footer']");
+                            const dialog2 = document.getElementById("dialog-overview-2");
+                            const closeButton2 = dialog2.querySelector("sl-button[slot='footer']");
 
-                        openButton2.addEventListener('click', () => dialog2.show());
-                        closeButton2.addEventListener('click', () => dialog2.hide())
-                    </script>
+                            openButton2.addEventListener('click', () => dialog2.show());
+                            closeButton2.addEventListener('click', () => dialog2.hide())
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-button id=&quot;dialog-open-2&quot;&gt;Open Custom Width Dialog&lt;/sl-button&gt;
+
+    &lt;sl-dialog label=&quot;Dialog-Custom-Width&quot; id=&quot;dialog-overview-2&quot; style=&quot;--width: 50vw;&quot;&gt;
+        &lt;div class=&quot;dialogInner&quot;&gt;
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+        &lt;/div&gt;
+        &lt;sl-button slot=&quot;footer&quot; variant=&quot;primary&quot;&gt;Close&lt;/sl-button&gt;
+    &lt;/sl-dialog&gt;
+
+    &lt;script&gt;
+        const openButton2 =document.getElementById(&quot;dialog-open-2&quot;);
+
+        const dialog2 = document.getElementById(&quot;dialog-overview-2&quot;);
+        const closeButton2 = dialog2.querySelector(&quot;sl-button[slot='footer']&quot;);
+
+        openButton2.addEventListener('click', () =&gt; dialog2.show());
+        closeButton2.addEventListener('click', () =&gt; dialog2.hide())
+    &lt;/script&gt;
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>스크롤 Dialog</h5>
+                    <div class="viewPart">
+                        <h5>스크롤 Dialog</h5>
 
-                    <sl-button id="dialog-open-3">Open Scrolling Dialog</sl-button>
+                        <sl-button id="dialog-open-3">Open Scrolling Dialog</sl-button>
 
-                    <sl-dialog label="Scrolling-Dialog" id="dialog-overview-3">
-                        <div class="dialogInner" style="height: 150vh;">
-                            <p>별다른추가없이 dialog안에 div를 만들어주면 자동으로 label과 footer 사이에 scroll영역을 만든다!! 👇</p>
+                        <sl-dialog label="Scrolling-Dialog" id="dialog-overview-3">
+                            <div class="dialogInner" style="height: 150vh;">
+                                <p>별다른추가없이 dialog안에 div를 만들어주면 자동으로 label과 footer 사이에 scroll영역을 만든다!! 👇</p>
 
-                            <h4 style="margin-top: 3rem;">단!! dialog안의 div(dialogInner)는 max-width가 필요하다 -> CSS </h4>
+                                <h4 style="margin-top: 3rem;">단!! dialog안의 div(dialogInner)는 max-width가 필요하다 -> CSS </h4>
 
-                            <p style="margin-top: 3rem;">가로 최대 Test</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt aliquid ad, nostrum ut a beatae facere culpa inventore maiores numquam repellendus blanditiis debitis corrupti ex, soluta ipsum quidem vero. Unde.</p>
-                        </div>
-                        <sl-button slot="footer" variant="primary">Close</sl-button>
-                    </sl-dialog>
+                                <p style="margin-top: 3rem;">가로 최대 Test</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt aliquid ad, nostrum ut a beatae facere culpa inventore maiores numquam repellendus blanditiis debitis corrupti ex, soluta ipsum quidem vero. Unde.</p>
+                            </div>
+                            <sl-button slot="footer" variant="primary">Close</sl-button>
+                        </sl-dialog>
 
-                    <script>
-                        const openButton3 =document.getElementById("dialog-open-3");
+                        <script>
+                            const openButton3 =document.getElementById("dialog-open-3");
 
-                        const dialog3 = document.getElementById("dialog-overview-3");
-                        const closeButton3 = dialog3.querySelector("sl-button[slot='footer']");
-                                            
-                        openButton3.addEventListener('click', () => dialog3.show());
-                        closeButton3.addEventListener('click', () => dialog3.hide())
-                    </script>
+                            const dialog3 = document.getElementById("dialog-overview-3");
+                            const closeButton3 = dialog3.querySelector("sl-button[slot='footer']");
+                                                
+                            openButton3.addEventListener('click', () => dialog3.show());
+                            closeButton3.addEventListener('click', () => dialog3.hide())
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <pre><code class="language-markup">
+    &lt;sl-button id=&quot;dialog-open-3&quot;&gt;Open Scrolling Dialog&lt;/sl-button&gt;
+
+    &lt;sl-dialog label=&quot;Scrolling-Dialog&quot; id=&quot;dialog-overview-3&quot;&gt;
+        &lt;div class=&quot;dialogInner&quot; style=&quot;height: 150vh;&quot;&gt;
+            &lt;p&gt;별다른추가없이 dialog안에 div를 만들어주면 자동으로 label과 footer 사이에 scroll영역을 만든다!! 👇&lt;/p&gt;
+
+            &lt;h4 style=&quot;margin-top: 3rem;&quot;&gt;단!! dialog안의 div(dialogInner)는 max-width가 필요하다 -&gt; CSS &lt;/h4&gt;
+
+            &lt;p style=&quot;margin-top: 3rem;&quot;&gt;가로 최대 Test&lt;/p&gt;
+            &lt;p&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt aliquid ad, nostrum ut a beatae facere culpa inventore maiores numquam repellendus blanditiis debitis corrupti ex, soluta ipsum quidem vero. Unde.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;sl-button slot=&quot;footer&quot; variant=&quot;primary&quot;&gt;Close&lt;/sl-button&gt;
+    &lt;/sl-dialog&gt;
+
+    &lt;script&gt;
+        const openButton3 =document.getElementById(&quot;dialog-open-3&quot;);
+
+        const dialog3 = document.getElementById(&quot;dialog-overview-3&quot;);
+        const closeButton3 = dialog3.querySelector(&quot;sl-button[slot='footer']&quot;);
+                            
+        openButton3.addEventListener('click', () =&gt; dialog3.show());
+        closeButton3.addEventListener('click', () =&gt; dialog3.hide())
+    &lt;/script&gt;
+                        </code></pre>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>헤더 Action 추가 Dialog</h5>
+                    <div class="viewPart">
+                        <h5>헤더 Action 추가 Dialog</h5>
 
-                    <sl-button id="dialog-open-4">Open Header Action Dialog</sl-button>
+                        <sl-button id="dialog-open-4">Open Header Action Dialog</sl-button>
+    
+                        <sl-dialog label="Header Action Dialog" id="dialog-overview-4">
+                            <sl-icon-button id="actionButton" slot="header-actions" name="zoom-in"></sl-icon-button>
+                            <sl-icon-button id="actionButton" slot="header-actions" name="zoom-out"></sl-icon-button>
+                            
+                            
+                            <div class="dialogInner">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing.
+                            </div>
+    
+                            <sl-button slot="footer" variant="primary">Close</sl-button>
+                        </sl-dialog>
+    
+                        <script>
+                            const openButton4 =document.getElementById("dialog-open-4");
+    
+                            const dialog4 = document.getElementById("dialog-overview-4");
+                            const closeButton4 = dialog4.querySelector("sl-button[slot='footer']");
+                                                
+                            openButton4.addEventListener('click', () => dialog4.show());
+                            closeButton4.addEventListener('click', () => dialog4.hide())
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;sl-button id=&quot;dialog-open-4&quot;&gt;Open Header Action Dialog&lt;/sl-button&gt;
 
-                    <sl-dialog label="Header Action Dialog" id="dialog-overview-4">
-                        <sl-icon-button id="actionButton" slot="header-actions" name="zoom-in"></sl-icon-button>
-                        <sl-icon-button id="actionButton" slot="header-actions" name="zoom-out"></sl-icon-button>
-                        
-                        
-                        <div class="dialogInner">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing.
-                        </div>
+    &lt;sl-dialog label=&quot;Header Action Dialog&quot; id=&quot;dialog-overview-4&quot;&gt;
+        &lt;sl-icon-button id=&quot;actionButton&quot; slot=&quot;header-actions&quot; name=&quot;zoom-in&quot;&gt;&lt;/sl-icon-button&gt;
+        &lt;sl-icon-button id=&quot;actionButton&quot; slot=&quot;header-actions&quot; name=&quot;zoom-out&quot;&gt;&lt;/sl-icon-button&gt;
+        
+        
+        &lt;div class=&quot;dialogInner&quot;&gt;
+            Lorem ipsum dolor, sit amet consectetur adipisicing.
+        &lt;/div&gt;
 
-                        <sl-button slot="footer" variant="primary">Close</sl-button>
-                    </sl-dialog>
+        &lt;sl-button slot=&quot;footer&quot; variant=&quot;primary&quot;&gt;Close&lt;/sl-button&gt;
+    &lt;/sl-dialog&gt;
 
-                    <script>
-                        const openButton4 =document.getElementById("dialog-open-4");
+    &lt;script&gt;
+        const openButton4 =document.getElementById(&quot;dialog-open-4&quot;);
 
-                        const dialog4 = document.getElementById("dialog-overview-4");
-                        const closeButton4 = dialog4.querySelector("sl-button[slot='footer']");
-                                            
-                        openButton4.addEventListener('click', () => dialog4.show());
-                        closeButton4.addEventListener('click', () => dialog4.hide())
-                    </script>
+        const dialog4 = document.getElementById(&quot;dialog-overview-4&quot;);
+        const closeButton4 = dialog4.querySelector(&quot;sl-button[slot='footer']&quot;);
+                            
+        openButton4.addEventListener('click', () =&gt; dialog4.show());
+        closeButton4.addEventListener('click', () =&gt; dialog4.hide())
+    &lt;/script&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>영역 밖 터치 방지 Dialog⚠️ -> JS로 구현</h5>
+                    <div class="viewPart">
+                        <h5>영역 밖 터치 방지 Dialog⚠️ -> JS로 구현</h5>
 
-                    <sl-button id="dialog-open-5">Open Close-Deny Dialog</sl-button>
+                        <sl-button id="dialog-open-5">Open Close-Deny Dialog</sl-button>
+    
+                        <sl-dialog id="dialog-overview-5" label="overlay close denied">
+                            <div class="dialogInner">
+                                dialog의 외부(overlay)을 클릭해도 dialog가 꺼지지 않습니다.👍
+                            </div>
+                            <sl-button slot="footer" variant="primary">Close</sl-button>
+                        </sl-dialog>
+    
+                        <script>
+                            const openButton5 =document.getElementById("dialog-open-5");
+    
+                            const dialog5 = document.getElementById("dialog-overview-5");
+                            const closeButton5 = dialog5.querySelector("sl-button[slot='footer']");
+                                                
+                            /* 외부(overlay) 클릭시 Close를 막기 위해서 아래의 이벤트를 정의해줘야함 */
+                            dialog5.addEventListener("sl-request-close", (e) => {
+                                if(e.detail.source === 'overlay'){
+                                    console.log("외부 클릭이기에 not close!")
+                                    e.preventDefault();
+                                }
+                            })
+                            
+                            openButton5.addEventListener('click', () => dialog5.show());
+                            closeButton5.addEventListener('click', () => dialog5.hide())
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;sl-button id=&quot;dialog-open-5&quot;&gt;Open Close-Deny Dialog&lt;/sl-button&gt;
 
-                    <sl-dialog id="dialog-overview-5" label="overlay close denied">
-                        <div class="dialogInner">
-                            dialog의 외부(overlay)을 클릭해도 dialog가 꺼지지 않습니다.👍
-                        </div>
-                        <sl-button slot="footer" variant="primary">Close</sl-button>
-                    </sl-dialog>
+    &lt;sl-dialog id=&quot;dialog-overview-5&quot; label=&quot;overlay close denied&quot;&gt;
+        &lt;div class=&quot;dialogInner&quot;&gt;
+            dialog의 외부(overlay)을 클릭해도 dialog가 꺼지지 않습니다.👍
+        &lt;/div&gt;
+        &lt;sl-button slot=&quot;footer&quot; variant=&quot;primary&quot;&gt;Close&lt;/sl-button&gt;
+    &lt;/sl-dialog&gt;
 
-                    <script>
-                        const openButton5 =document.getElementById("dialog-open-5");
+    &lt;script&gt;
+        const openButton5 =document.getElementById(&quot;dialog-open-5&quot;);
 
-                        const dialog5 = document.getElementById("dialog-overview-5");
-                        const closeButton5 = dialog5.querySelector("sl-button[slot='footer']");
-                                            
-                        /* 외부(overlay) 클릭시 Close를 막기 위해서 아래의 이벤트를 정의해줘야함 */
-                        dialog5.addEventListener("sl-request-close", (e) => {
-                            if(e.detail.source === 'overlay'){
-                                console.log("외부 클릭이기에 not close!")
-                                e.preventDefault();
-                            }
-                        })
-                        
-                        openButton5.addEventListener('click', () => dialog5.show());
-                        closeButton5.addEventListener('click', () => dialog5.hide())
-                    </script>
+        const dialog5 = document.getElementById(&quot;dialog-overview-5&quot;);
+        const closeButton5 = dialog5.querySelector(&quot;sl-button[slot='footer']&quot;);
+                            
+        /* 외부(overlay) 클릭시 Close를 막기 위해서 아래의 이벤트를 정의해줘야함 */
+        dialog5.addEventListener(&quot;sl-request-close&quot;, (e) =&gt; {
+            if(e.detail.source === 'overlay'){
+                console.log(&quot;외부 클릭이기에 not close!&quot;)
+                e.preventDefault();
+            }
+        })
+        
+        openButton5.addEventListener('click', () =&gt; dialog5.show());
+        closeButton5.addEventListener('click', () =&gt; dialog5.hide())
+    &lt;/script&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
+                    
                 </div>
 
                 <div>
-                    <h5>Dialog가 열리자마자 Focus 되야할 input이 있다면?</h5>
+                    <div class="viewPart">
+                        <h5>Dialog가 열리자마자 Focus 되야할 input이 있다면?</h5>
 
-                    <sl-button id="dialog-open-6">
-                        Open Auto Focus Dialog
-                    </sl-button>
+                        <sl-button id="dialog-open-6">
+                            Open Auto Focus Dialog
+                        </sl-button>
+    
+                        <sl-dialog id="dialog-overview-6" label="Auto Focus Dialog">
+                            <div class="dialogInner">
+                                <sl-input placeholder="일반 input"></sl-input>
+                                <br/>
+                                <sl-input autofocus placeholder="자동으로 focus 됩니다."></sl-input>
+                            </div>
+    
+                            <sl-button slot="footer" variant="primary">Close</sl-button>
+                        </sl-dialog>
+    
+                        <script>
+                            const openButton6 =document.getElementById("dialog-open-6");
+    
+                            const dialog6 = document.getElementById("dialog-overview-6");
+                            const closeButton6 = dialog6.querySelector("sl-button[slot='footer']");
+    
+                            openButton6.addEventListener('click', () => dialog6.show());
+                            closeButton6.addEventListener('click', () => dialog6.hide())
+                        </script>
+                    </div>
+                    <div class="codePart">
+                        <sl-details summary="Code View">
+                            <pre><code class="language-markup">
+    &lt;sl-button id=&quot;dialog-open-6&quot;&gt;
+    Open Auto Focus Dialog
+    &lt;/sl-button&gt;
 
-                    <sl-dialog id="dialog-overview-6" label="Auto Focus Dialog">
-                        <div class="dialogInner">
-                            <sl-input placeholder="일반 input"></sl-input>
-                            <br/>
-                            <sl-input autofocus placeholder="자동으로 focus 됩니다."></sl-input>
-                        </div>
+    &lt;sl-dialog id=&quot;dialog-overview-6&quot; label=&quot;Auto Focus Dialog&quot;&gt;
+        &lt;div class=&quot;dialogInner&quot;&gt;
+            &lt;sl-input placeholder=&quot;일반 input&quot;&gt;&lt;/sl-input&gt;
+            &lt;br/&gt;
+            &lt;sl-input autofocus placeholder=&quot;자동으로 focus 됩니다.&quot;&gt;&lt;/sl-input&gt;
+        &lt;/div&gt;
 
-                        <sl-button slot="footer" variant="primary">Close</sl-button>
-                    </sl-dialog>
+        &lt;sl-button slot=&quot;footer&quot; variant=&quot;primary&quot;&gt;Close&lt;/sl-button&gt;
+    &lt;/sl-dialog&gt;
 
-                    <script>
-                        const openButton6 =document.getElementById("dialog-open-6");
+    &lt;script&gt;
+        const openButton6 =document.getElementById(&quot;dialog-open-6&quot;);
 
-                        const dialog6 = document.getElementById("dialog-overview-6");
-                        const closeButton6 = dialog6.querySelector("sl-button[slot='footer']");
+        const dialog6 = document.getElementById(&quot;dialog-overview-6&quot;);
+        const closeButton6 = dialog6.querySelector(&quot;sl-button[slot='footer']&quot;);
 
-                        openButton6.addEventListener('click', () => dialog6.show());
-                        closeButton6.addEventListener('click', () => dialog6.hide())
-                    </script>
+        openButton6.addEventListener('click', () =&gt; dialog6.show());
+        closeButton6.addEventListener('click', () =&gt; dialog6.hide())
+    &lt;/script&gt;
+                            </code></pre>
+                        </sl-details>
+                    </div>
+                    
                 </div>
                 
             </div>

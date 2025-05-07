@@ -73,6 +73,13 @@ sl-dialog::part(panel){
     width: fit-content;
 }
 
+sl-dialog::part(footer){
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .dialogInner{
     padding: 0 1rem;
     max-width: 80vw;
@@ -167,8 +174,8 @@ sl-textarea::part(base){
 
 /* animation */
 sl-animation{
+    display: block;
+    width: fit-content;
+    height: fit-content;
     position: relative;
-}
-sl-animation > *{
-    position: absolute;
 }
