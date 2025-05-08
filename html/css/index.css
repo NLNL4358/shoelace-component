@@ -193,6 +193,7 @@
     width: 100%;
     margin: auto;
 }
+.indexMain .install,
 .indexMain .title,
 .indexMain .style,
 .indexMain .darkMode{
@@ -208,6 +209,7 @@
 .indexMain .title > img{
     width: 50%;
 }
+.indexMain .install,
 .indexMain .style,
 .indexMain .darkMode{
     align-items: flex-start;
