@@ -30,6 +30,14 @@
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/css/component.css">
+
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
     </head>
     <body class="outer">
         <div class="inner">
@@ -271,14 +279,249 @@
                     <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
                 </div>
             </div>
+             
+            <div class="indexMain">
+                <div class="title">
+                    <img class="mainLogo" src="/assets/logo.svg" alt="">
+                    <h2>Shoelace 사용 가이드 - HTML</h2>
+                    <h4>해당 페이지는 Shoelace 라이브러리에서 제공되는 UI,UX 요소들의 소개와 사용법들을 기록한 페이지입니다.<br/>헤더에서 각 UI,UX 요소들을 정리한 페이지로 이동하여 확인할 수 있습니다. <br/><br/> * 보다 정확한 내용이 필요할 땐 헤더의 아이콘을 클릭해 공식 페이지를 참조하길 바랍니다.</h4>
+                </div>
 
-             <h5>Shoelace 컴포넌트는 내부적으로 Shadow DOM을 사용하기 때문에, CSS 선택자 .red-color-radio .radio__control처럼 외부 스타일로 내부 요소를 직접 조작하는 건 기본적으로 불가능</h5>
-             <h5>외부 스타일은 Shadow DOM 내부까지 접근하지못함</h5>
-             <br/>
-             <h5>다만 방법은 있다.</h5>
-             <h5>1. shoelace 컴포넌트들이 가지는 part를 이용해서 CSS의 ::part() 를 이용하거나</h5>
-             <h5>2. css의 속성 선택자 sl-component[속성='~'] 를 이용하는 방법이 있다.</h5>
-            
+                <div class="style">
+                    <h3><sl-icon name="filetype-css"></sl-icon>Shoelace 컴포넌트의 CSS Style 적용법</h3>
+                    <sl-details summary="How to style Shoelace DOM with CSS">
+
+                        <h5>Shoelace 컴포넌트는 내부적으로 Shadow DOM을 사용하기 때문에, CSS 선택자 .red-color-radio 처럼 외부 스타일로 내부 요소를 직접 조작하는 건 기본적으로 불가능하다</h5>
+                        <h5>외부 스타일은 Shadow DOM 내부까지 접근하지못함</h5>
+                        <div>
+                                <span>※</span><span style="color: var(--sl-color-red-600); text-decoration: underline;">잘못된</span><span> 접근 방법※</span>
+                                <sl-radio-group value="1">
+                                    <sl-radio value="1">Shoelace</sl-radio>
+                                </sl-radio-group>
+                                <pre><code class="language-markup">
+        &lt;style&gt;
+            sl-radio {
+                background-color : red; /* 적용안됨 */
+            }
+        &lt;/style&gt;
+
+        &lt;sl-radio-group value=&quot;1&quot;&gt;
+            &lt;sl-radio value=&quot;1&quot;&gt;Shoelace&lt;/sl-radio&gt;
+        &lt;/sl-radio-group&gt;
+                                </code></pre>
+                                <h4>&nbsp;&nbsp;&nbsp;<sl-icon name="arrow-90deg-up"></sl-icon> Shoelace의 태그 그대로 Style을 적용하려고 했지만 적용되지 않은 모습</h4>
+                        </div>
+                        <br/>
+                        <h5>다른 방법으로 접근하여야한다. 2가지 방법이 있는데 아래와 같다</h5>
+                        <h5><sl-icon name="1-circle"></sl-icon> shoelace 컴포넌트들이 가지는 part를 이용해서 CSS의 ::part() 를 이용하는 방법</h5>
+                        <div>
+                            <style>
+                                sl-radio-group.red-radio ::part(control--checked){
+                                    background-color: var(--sl-color-red-500);
+                                    border-color: var(--sl-color-red-500);
+                                }
+                            </style>
+                            <sl-radio-group value="1" class="red-radio">
+                                <sl-radio value="1">Shoelace</sl-radio>
+                            </sl-radio-group>
+                            <pre><code class="language-markup">
+        &lt;style&gt;
+            sl-radio-group.red-radio ::part(control--checked){     /* ::part를 사용하여 적용가능 */
+                background-color: var(--sl-color-red-500);
+                border-color: var(--sl-color-red-500);
+            }
+        &lt;/style&gt;
+        &lt;sl-radio-group value=&quot;1&quot; class=&quot;red-radio&quot;&gt;
+            &lt;sl-radio value=&quot;1&quot;&gt;Shoelace&lt;/sl-radio&gt;
+        &lt;/sl-radio-group&gt;
+                            </code></pre>
+                            <h4>&nbsp;&nbsp;&nbsp;<sl-icon name="arrow-90deg-up"></sl-icon> ::part() 를 이용하여 Shoelace 내부의 Shadow DOM 까지 접근하여 스타일이 적용된 모습</h4>
+                        </div>
+                        <h5><sl-icon name="2-circle"></sl-icon> css의 속성 선택자 sl-component[속성='~'] 를 이용하는 방법</h5>
+                        <div>
+                            <style>
+                                .red-select sl-option::part(base):hover{
+                                    /* hover된 option */
+                                    background-color: var(--sl-color-red-200);
+                                }
+                                .red-select sl-option[tabindex="0"]::part(base),
+                                .red-select sl-option[tabindex="0"]::part(base):hover {
+                                    /* 선택된 option */
+                                    background-color: var(--sl-color-red-500);
+                                }
+                            </style>
+
+                            <sl-select
+                            class="red-select"
+                            label="Shoelace">
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+                            
+                            <pre><code class="language-markup">
+        &lt;style&gt;
+            .red-select sl-option::part(base):hover{
+                /* hover된 option */
+                background-color: var(--sl-color-red-200);
+            }
+            .red-select sl-option[tabindex=&quot;0&quot;]::part(base),
+            .red-select sl-option[tabindex=&quot;0&quot;]::part(base):hover {
+                /* 선택된 option */
+                background-color: var(--sl-color-red-500);
+            }
+        &lt;/style&gt;
+
+        &lt;sl-select
+        class=&quot;red-select&quot;
+        label=&quot;Shoelace&quot;&gt;
+            &lt;sl-option value=&quot;option-1&quot;&gt;Option 1&lt;/sl-option&gt;
+            &lt;sl-option value=&quot;option-2&quot;&gt;Option 2&lt;/sl-option&gt;
+            &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
+        &lt;/sl-select&gt;
+                            </code></pre>
+                            <h4>&nbsp;&nbsp;&nbsp;<sl-icon name="arrow-90deg-up"></sl-icon> sl-component[속성=''] 를 이용하여 접근 하여 내부DOM을 특정하여 스타일이 적용된 모습</h4>
+                        </div>
+                    </sl-details>
+                </div>
+
+                <div class="darkMode">
+                    <h3><sl-icon name="moon-stars"></sl-icon>다크모드 사용법</h3>
+
+                    <sl-details summary="How to install dark-mode using Shoelace">
+                        <h5>Shoelace에서는 DarkMode를 사용하는 방법을 제공하고있다.<br/> 단, 아래의 단계가 필요하다.</h5>
+
+                        <h5><sl-icon name="1-circle"></sl-icon> 우선 Shoelace에서 제공하는 Light & Dark Theme를 위한 CSS를 받아준다</h5>
+                        <div>
+                            <pre><code class="language-markup">
+    &lt;!-- shoelace Light &amp; Dark Theme --&gt;
+    &lt;link
+        rel=&quot;stylesheet&quot;
+        media=&quot;(prefers-color-scheme:light)&quot;
+        href=&quot;https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css&quot;
+    /&gt;
+    &lt;link
+        rel=&quot;stylesheet&quot;
+        media=&quot;(prefers-color-scheme:dark)&quot;
+        href=&quot;https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css&quot;
+    /&gt;
+                            </code></pre>
+                        </div>
+
+                        <h5><sl-icon name="2-circle"></sl-icon> 전역으로 사용하는 reset.css에 다음과 같이 Light-Theme일때의 색상과 Dark-Theme일때의 색상을 명시해준다</h5>
+                        <pre><code class="language-css">
+    reset.css
+        
+    /* 라이트 모드 컬러 */
+    .sl-theme-light {
+        /* background - color */
+        --bg-color: #ffffff;
+
+        /* text - color */
+        --text-body-color: #555555;
+        --text-title-color: #1d1d1d;
+        --text-disable-color: #8e8e8e;
+
+        /* border color */
+        --border-gray-color: rgb(136, 136, 136);
+
+        /* button color */
+        --button-primary-color : rgb(59, 105, 255);
+
+        /* icon color */
+        --icon-color: var(--sl-color-neutral-700);
+    }
+
+    /* 다크 모드 컬러 */
+    .sl-theme-dark {
+        /* background - color */
+        --bg-color: #202020;
+
+        /* text - color */
+        --text-body-color: #bdbdbd;
+        --text-title-color: #eeeeee;
+        --text-disable-color: #8e8e8e;
+
+        /* border color */
+        --border-gray-color: #888;
+
+        /* button color */
+        --button-primary-color :rgb(75, 132, 255);
+
+        /* icon color */
+        --icon-color: var(--sl-color-neutral-900);
+    }
+                        </code></pre>
+
+                        
+                        <h5><sl-icon name="3-circle"></sl-icon> 위에서 선언한 컬러를 전역으로 사용하기위해 동일하게 reset.css에서 아래와같이 기본 html 요소들에 스타일을 적용시킨다.</h5>
+                        <pre><code class="language-css">
+    reset.css                        
+                            
+    /* 실제 적용되는 부분 */
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-body-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    h1,h2,h3,h4,h5,p,span,small,div{
+        color: var(--text-title-color);
+    }
+                        </code></pre>
+
+                        <h5><sl-icon name="4-circle"></sl-icon> 페이지에서 Theme의 변경을 저장하고 적용시키기 위해서는 JS가 필요하다.<br/>아래의 script를 추가하여 페이지에서 적용될 수 있게 한다.</h5>
+
+                        <pre><code class="language-javascript">
+    /** 라이트 모드 , 다크 모드를 바꾸기위한 script */
+
+    /* DOM */
+    const html = document.documentElement;
+    const darkModeSwitch = document.getElementById('darkModeSwitch');
+
+    /* function */
+    const getLocalStorage_darkMode = () =&gt; {
+        let mode = window.localStorage.getItem('isDarkMode');
+        if(mode === null){ //localStorage가 없다 = 첫 방문
+
+            /* 초기 테마 설정 (시스템 테마 감지) */
+            mode = window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        if(darkModeSwitch !== null)
+        {
+            darkModeSwitch.checked = mode === 'dark' ? true : false;
+        }
+        setTheme(mode)
+    }
+
+    const getCurrentTheme = () =&gt; {
+        // 현재 테마 확인
+        return html.classList.contains('sl-theme-dark') ? 'dark' : 'light';
+    };
+
+    const setTheme = (mode) =&gt; {
+        // 테마 설정 함수
+        html.classList.remove('sl-theme-light', 'sl-theme-dark');
+        html.classList.add(`sl-theme-${mode}`);
+
+        window.localStorage.setItem('isDarkMode', mode);
+    };
+
+    /* Event */
+    darkModeSwitch?.addEventListener('sl-change', () =&gt; {
+        // 토글 이벤트 연결
+        const isDarkMode = darkModeSwitch.checked;
+        setTheme(isDarkMode ? 'dark' : 'light');
+    });
+
+    /* init */
+    getLocalStorage_darkMode()
+                        </code></pre>
+                    </sl-details>
+
+                </div>
+            </div>
     </body>
 
     <!-- script -->

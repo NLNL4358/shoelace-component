@@ -188,3 +188,43 @@
     background-color: var(--button-primary-color);
     color: var(--bg-color);
 }
+
+.indexMain{
+    width: 100%;
+    margin: auto;
+}
+.indexMain .title,
+.indexMain .style,
+.indexMain .darkMode{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0px;
+
+    border-bottom: 1px dashed var(--border-gray-color);
+}
+.indexMain .title > img{
+    width: 50%;
+}
+.indexMain .style,
+.indexMain .darkMode{
+    align-items: flex-start;
+}
+.indexMain sl-details,
+.indexMain sl-details::part(base){
+    width: 100%;
+}
+.indexMain sl-details::part(content){
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.indexMain h3,
+.indexMain h5{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
