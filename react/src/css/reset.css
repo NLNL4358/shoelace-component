@@ -1,0 +1,227 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Pretendard Variable', sans-serif;
+    box-sizing: border-box;
+
+    font-weight: normal;
+    pointer-events: auto;
+    white-space: nowrap;
+
+    /* 중요! print시 배경색을 브라우저가 빼버리는데 아래의 CSS가 있다면 적용시켜줄 수 있다. */
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+a,
+abbr,
+acronym,
+address,
+applet,
+b,
+big,
+blockquote,
+button,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+title,
+tr,
+tt,
+u,
+ul,
+var {
+    background: transparent;
+    border: 0px;
+    margin: 0px;
+    outline: 0px;
+    padding: 0px;
+    vertical-align: baseline;
+}
+
+/* 라이트 모드 컬러 */
+.sl-theme-light {
+    /* background - color */
+    --bg-color: #ffffff;
+
+    /* text - color */
+    --text-body-color: #555555;
+    --text-title-color: #1d1d1d;
+    --text-disable-color: #8e8e8e;
+
+    /* border color */
+    --border-gray-color: rgb(136, 136, 136);
+
+    /* button color */
+    --button-primary-color: rgb(59, 105, 255);
+
+    /* icon color */
+    --icon-color: var(--sl-color-neutral-700);
+}
+
+/* 다크 모드 컬러 */
+.sl-theme-dark {
+    /* background - color */
+    --bg-color: #202020;
+
+    /* text - color */
+    --text-body-color: #bdbdbd;
+    --text-title-color: #eeeeee;
+    --text-disable-color: #8e8e8e;
+
+    /* border color */
+    --border-gray-color: #888;
+
+    /* button color */
+    --button-primary-color: rgb(75, 132, 255);
+
+    /* icon color */
+    --icon-color: var(--sl-color-neutral-900);
+}
+
+/* 실제 적용되는 부분 */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+    /* size - html 기본값 15px 기준*/
+    --h1-size: 3.5rem; /* px; */
+    --h2-size: 2.666rem; /* 40px */
+    --h3-size: 1.666rem; /* 25px */
+    --h4-size: 1.4rem; /* 21px */
+    --h5-size: 1.2666rem; /* 19px */
+    --p-size: 1.133rem; /* 17px */
+    --span-size: 1rem; /* 15px */
+    --small-size: 0.87rem; /* 13px */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+small,
+div {
+    color: var(--text-title-color);
+}
+
+h1 {
+    font-size: var(--h1-size);
+    font-weight: bold;
+}
+h2 {
+    font-size: var(--h2-size);
+    font-weight: bold;
+}
+h3 {
+    font-size: var(--h3-size);
+    font-weight: 700;
+}
+h4 {
+    font-size: var(--h4-size);
+    font-weight: 500;
+}
+h5 {
+    font-size: var(--h5-size);
+    font-weight: 500;
+}
+p {
+    font-size: var(--p-size);
+    font-weight: 500;
+}
+span {
+    font-size: var(--span-size);
+    font-weight: 500;
+}
+
+body {
+    /* 15px */
+    font-size: var(--span-size);
+    font-weight: 500;
+}
+
+small {
+    /* 14px */
+    font-size: var(--small-size);
+    font-weight: 300;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* 스크롤바 */
+div::-webkit-scrollbar {
+    /* width: 10px; */
+    /* height: 10px; */
+}
+div::-webkit-scrollbar-thumb {
+    /* width: 10px; */
+    /* border-radius: 20px; */
+    /* background-color: var(--highlight-blue); */
+}
+div::-webkit-scrollbar-track-piece {
+    /* background-color: transparent; */
+    /* border: 10px; */
+}

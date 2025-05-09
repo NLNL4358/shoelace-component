@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+
+/* 컴포넌트 */
+import { Header } from './component/Header';
+
+/* 페이지 & Routes */
+import MainPage from './page/main/MainPage';
+import Animation_Routes from './page/animation/Animation_Routes';
+import Button_Routes from './page/button/Button_Routes';
+import Checkbox_Routes from './page/checkbox/Checkbox_Routes';
+import Menu_Routes from './page/menu/Menu_Routes';
+import Modal_Routes from './page/modal/Modal_Routes';
+import Select_Routes from './page/select/Select_Routes';
+import UiUx_Routes from './page/uiux/UiUx_Routes';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <div className="inner">
+            <Header></Header>
+            <Routes>
+                <Route path="/" element={<MainPage />}></Route>
+                <Route path="/button/*" element={<Button_Routes />}></Route>
+                <Route path="/select/*" element={<Select_Routes />}></Route>
+                <Route path="/checkbox/*" element={<Checkbox_Routes />}></Route>
+                <Route path="/modal/*" element={<Modal_Routes />}></Route>
+                <Route path="/menu/*" element={<Menu_Routes />}></Route>
+                <Route path="/uiux/*" element={<UiUx_Routes />}></Route>
+                <Route
+                    path="/animation/*"
+                    element={<Animation_Routes />}
+                ></Route>
+            </Routes>
+        </div>
+    );
 }
 
-export default App
+export default App;

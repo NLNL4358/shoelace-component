@@ -1,0 +1,134 @@
+/* divider */
+sl-divider {
+    margin: var(--spacing) 0;
+}
+
+/* Button */
+sl-button::part(label) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Radio */
+sl-radio {
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+/* CheckBox */
+sl-checkbox::part(base) {
+    align-items: center;
+}
+
+sl-checkbox.x1::part(control) {
+    width: 1rem;
+    height: 1rem;
+}
+sl-checkbox.x2::part(control) {
+    width: 2rem;
+    height: 2rem;
+}
+sl-checkbox.x3::part(control) {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* dialog */
+sl-dialog::part(panel) {
+    width: fit-content;
+}
+
+sl-dialog::part(footer) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dialogInner {
+    padding: 0 1rem;
+    max-width: 80vw;
+}
+.dialogInner * {
+    max-width: 100%;
+    text-wrap: wrap;
+}
+
+/* Details - 아코디언 */
+sl-details::part(content) {
+    text-wrap: wrap;
+}
+
+.custom-icon-details::part(summary-icon) {
+    rotate: none;
+}
+
+/* Alert */
+sl-alert::part(message) {
+    max-width: 100%;
+    text-wrap: wrap;
+}
+
+/* Drawer */
+.drawerInner {
+    max-width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.drawerInner * {
+    text-wrap: wrap;
+}
+
+/* BreadCrumb */
+sl-breadcrumb {
+    display: flex;
+    width: fit-content;
+}
+sl-breadcrumb-item::part(base) {
+    font-size: var(--span-size);
+}
+sl-breadcrumb-item sl-dropdown sl-button sl-icon {
+    font-size: var(--small-size);
+}
+sl-breadcrumb-item sl-dropdown sl-button::part(base) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* icon */
+sl-icon {
+    color: var(--icon-color);
+}
+sl-button sl-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+sl-radio-button sl-icon {
+    color: currentColor;
+}
+
+/* switch */
+sl-switch::part(form-control-help-text) {
+    margin-top: 0.5rem;
+}
+
+/* textarea */
+sl-textarea::part(form-control),
+sl-textarea::part(form-control-input),
+sl-textarea::part(base) {
+    max-height: inherit !important;
+}
+sl-textarea::part(base) {
+    overflow: auto;
+}
+
+/* animation */
+sl-animation {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
