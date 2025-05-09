@@ -1,317 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-     <!-- shoelace -->
-     <link
-     rel="stylesheet"
-     href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-     />
-     <script
-         type="module"
-         src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
-     ></script>
- 
-     <!-- shoelace Light & Dark Theme -->
-     <link
-         rel="stylesheet"
-         media="(prefers-color-scheme:light)"
-         href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-     />
-     <link
-         rel="stylesheet"
-         media="(prefers-color-scheme:dark)"
-         href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
-     />
- 
-     <link rel="stylesheet" href="/css/reset.css" />
-     <link rel="stylesheet" href="/css/index.css" />
- 
-     <!-- component css -->
-     <link rel="stylesheet" href="/css/component.css">
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
 
-     <!-- CodeViewer -->
-    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
 
-    <!-- Prism.js -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
-</head>
-<body class="outer">
-    <div class="inner">
-        <!-- 헤더 -->
-        <div class="header">
-            <a class="logoButton" href="/index.html">
-                <img src="/assets/logo.svg" alt="" />
-            </a>
-            <div class="navWrap">
-                <ul class="navTitle">
-                    <li class="navLi">
-                        <h4>버튼</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                   <sl-button 
-                                   href="/components/button/button.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Default Button
-                                   </sl-button>
-                                
-                                   <sl-button 
-                                   href="/components/button/buttonGroup.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Group Button
-                                   </sl-button>
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
 
-                                   <sl-button 
-                                   href="/components/button/switch.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Switch
-                                   </sl-button>
+        <!-- component css -->
+        <link rel="stylesheet" href="/css/component.css" />
 
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>셀렉트 & 인풋</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/select/select.html"
-                                size="large"
-                                class="navButton"
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
+
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="/assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Select
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Default Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/input.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Input
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Group Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/textarea.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Textarea
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>체크박스 & 라디오</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/checkbox/checkbox.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 CheckBox
-                                </sl-button>
-
-                                <sl-button 
-                                href="/components/checkbox/radio.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Radio
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>모달 ~ 아코디언</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/modal/modal.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    모달
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/drawer.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Drawer
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/alert.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Alert
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/tooltip.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Tooltip
-                                </sl-button>
-
-                                <sl-button
-                                href="/components/modal/details.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    아코디언
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>Menu & Tab</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button
-                                href="/components/menu/menu.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Menu
-                                </sl-button>
-                                <sl-button
-                                href="/components/menu/tab.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Tab
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>UI - UX</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/uiux/uxInput.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 UX-Input
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/breadcrumb.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Breadcrumb
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/badge.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Badge & Tag
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/dropdown.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Dropdown
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/icon.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Icon
-                                </sl-button>
-
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>애니메이션</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/animation/animation.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Animation
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="mode">
-                <sl-icon-button 
-                name="github" 
-                href="https://github.com/shoelace-style/shoelace" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-
-                <sl-icon-button 
-                name="book" 
-                href="https://shoelace.style/" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-                
-                <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h3 class="componentTitle">Drawer - 서랍 , 햄버거 메뉴</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>기본 Drawer</h5>
-
-                        <sl-button id="default-drawer-open">Open Drawer</sl-button>
-                        <sl-drawer label="default Drawer" id="default-drawer"> <!-- label : 제목 -->
-                            <div class="drawerInner">
-                                <h4>기본적인 Drawer입니다.</h4>
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Switch
+                                    </sl-button>
+                                </sl-menu>
                             </div>
-                            <sl-button slot="footer" id="default-drawer-close">Close Drawer</sl-button>
-                        </sl-drawer>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Select
+                                    </sl-button>
 
-                        <script>
-                            const defaultDrawer = document.getElementById("default-drawer")
-                            const defaultDrawerOpen = document.getElementById("default-drawer-open")
-                            const defaultDrawerClose = document.getElementById("default-drawer-close")
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Input
+                                    </sl-button>
 
-                            defaultDrawerOpen.addEventListener("click", () => {
-                                defaultDrawer.show();
-                            })
-                            defaultDrawerClose.addEventListener("click", ()=>{
-                                defaultDrawer.hide()
-                            })
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Textarea
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        CheckBox
+                                    </sl-button>
+
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Radio
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>모달 ~ 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Drawer
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Alert
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tooltip
+                                    </sl-button>
+
+                                    <sl-button
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Menu
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>UI - UX</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        UX-Input
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Breadcrumb
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Badge & Tag
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Dropdown
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Icon
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>애니메이션</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Animation
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mode">
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="componentTitle">Drawer - 서랍 , 햄버거 메뉴</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>기본 Drawer</h5>
+
+                            <sl-button id="default-drawer-open"
+                                >Open Drawer</sl-button
+                            >
+                            <sl-drawer
+                                label="default Drawer"
+                                id="default-drawer"
+                            >
+                                <!-- label : 제목 -->
+                                <div class="drawerInner">
+                                    <h4>기본적인 Drawer입니다.</h4>
+                                </div>
+                                <sl-button
+                                    slot="footer"
+                                    id="default-drawer-close"
+                                    >Close Drawer</sl-button
+                                >
+                            </sl-drawer>
+
+                            <script>
+                                const defaultDrawer =
+                                    document.getElementById('default-drawer');
+                                const defaultDrawerOpen =
+                                    document.getElementById(
+                                        'default-drawer-open',
+                                    );
+                                const defaultDrawerClose =
+                                    document.getElementById(
+                                        'default-drawer-close',
+                                    );
+
+                                defaultDrawerOpen.addEventListener(
+                                    'click',
+                                    () => {
+                                        defaultDrawer.show();
+                                    },
+                                );
+                                defaultDrawerClose.addEventListener(
+                                    'click',
+                                    () => {
+                                        defaultDrawer.hide();
+                                    },
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;default-drawer-open&quot;&gt;Open Drawer&lt;/sl-button&gt;
 
     &lt;sl-drawer label=&quot;default Drawer&quot; id=&quot;default-drawer&quot;&gt; &lt;!-- label : 제목 --&gt;
@@ -334,93 +388,155 @@
         })
     &lt;/script&gt;
                         </code></pre>
-                    </div>
-                    
-                </div>
-
-                <div>
-                    <div class="viewPart">
-                        <h5>Drawer 방향 설정 - placement 속성</h5>
-
-                        <div style="display: grid; gap: 2rem; grid-template-columns: auto auto;">
-                            <sl-button id="top-drawer-open">
-                                위쪽 Drawer - top
-                            </sl-button>
-                            <sl-button id="bottom-drawer-open">
-                                아래쪽 Drawer - bottom
-                            </sl-button>
-                            <sl-button id="start-drawer-open">
-                                왼쪽 Drawer - start
-                            </sl-button>
-                            <sl-button id="end-drawer-open">
-                                오른쪽 Drawer(기본) - end
-                            </sl-button>
                         </div>
-
-                        <sl-drawer id="top-drawer" label="위쪽 Drawer" placement="top">
-                            <div class="drawerInner"></div>
-                                <sl-button id="top-drawer-close" slot="footer">Close Drawer</sl-button>
-                        </sl-drawer>
-                        <sl-drawer id="bottom-drawer" label="아래쪽 Drawer" placement="bottom">
-                            <div class="drawerInner"></div>
-                                <sl-button id="bottom-drawer-close" slot="footer">Close Drawer</sl-button>
-                        </sl-drawer>
-                        <sl-drawer id="start-drawer" label="왼쪽 Drawer" placement="start">
-                            <div class="drawerInner"></div>
-                                <sl-button id="start-drawer-close" slot="footer">Close Drawer</sl-button>
-                        </sl-drawer>
-                        <sl-drawer id="end-drawer" label="오른쪽 Drawer(기본)" placement="end">
-                            <div class="drawerInner"></div>
-                            <sl-button id="end-drawer-close" slot="footer">Close Drawer</sl-button>
-                        </sl-drawer>
-                        
-                        <script>
-                            const topDrawerOpen = document.getElementById("top-drawer-open")
-                            const bottomDrawerOpen = document.getElementById("bottom-drawer-open")
-                            const startDrawerOpen = document.getElementById("start-drawer-open")
-                            const endDrawerOpen = document.getElementById("end-drawer-open")
-
-                            const topDrawerClose = document.getElementById("top-drawer-close")
-                            const bottomDrawerClose = document.getElementById("bottom-drawer-close")
-                            const startDrawerClose = document.getElementById("start-drawer-close")
-                            const endDrawerClose = document.getElementById("end-drawer-close")
-
-                            const topDrawer = document.getElementById("top-drawer")
-                            const bottomDrawer = document.getElementById("bottom-drawer")
-                            const startDrawer = document.getElementById("start-drawer")
-                            const endDrawer = document.getElementById("end-drawer")
-
-                            topDrawerOpen.addEventListener("click",()=>{
-                                topDrawer.show()
-                            })
-                            bottomDrawerOpen.addEventListener("click",()=>{
-                                bottomDrawer.show()
-                            })
-                            startDrawerOpen.addEventListener("click",()=>{
-                                startDrawer.show()
-                            })
-                            endDrawerOpen.addEventListener("click",()=>{
-                                endDrawer.show()
-                            })
-                            
-                            topDrawerClose.addEventListener("click", () => {
-                                topDrawer.hide()
-                            })
-                            bottomDrawerClose.addEventListener("click", () => {
-                                bottomDrawer.hide()
-                            })
-                            startDrawerClose.addEventListener("click", () => {
-                                startDrawer.hide()
-                            })
-                            endDrawerClose.addEventListener("click", () => {
-                                endDrawer.hide()
-                            })
-                            
-                        </script>
                     </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>Drawer 방향 설정 - placement 속성</h5>
+
+                            <div
+                                style="
+                                    display: grid;
+                                    gap: 2rem;
+                                    grid-template-columns: auto auto;
+                                "
+                            >
+                                <sl-button id="top-drawer-open">
+                                    위쪽 Drawer - top
+                                </sl-button>
+                                <sl-button id="bottom-drawer-open">
+                                    아래쪽 Drawer - bottom
+                                </sl-button>
+                                <sl-button id="start-drawer-open">
+                                    왼쪽 Drawer - start
+                                </sl-button>
+                                <sl-button id="end-drawer-open">
+                                    오른쪽 Drawer(기본) - end
+                                </sl-button>
+                            </div>
+
+                            <sl-drawer
+                                id="top-drawer"
+                                label="위쪽 Drawer"
+                                placement="top"
+                            >
+                                <div class="drawerInner"></div>
+                                <sl-button id="top-drawer-close" slot="footer"
+                                    >Close Drawer</sl-button
+                                >
+                            </sl-drawer>
+                            <sl-drawer
+                                id="bottom-drawer"
+                                label="아래쪽 Drawer"
+                                placement="bottom"
+                            >
+                                <div class="drawerInner"></div>
+                                <sl-button
+                                    id="bottom-drawer-close"
+                                    slot="footer"
+                                    >Close Drawer</sl-button
+                                >
+                            </sl-drawer>
+                            <sl-drawer
+                                id="start-drawer"
+                                label="왼쪽 Drawer"
+                                placement="start"
+                            >
+                                <div class="drawerInner"></div>
+                                <sl-button id="start-drawer-close" slot="footer"
+                                    >Close Drawer</sl-button
+                                >
+                            </sl-drawer>
+                            <sl-drawer
+                                id="end-drawer"
+                                label="오른쪽 Drawer(기본)"
+                                placement="end"
+                            >
+                                <div class="drawerInner"></div>
+                                <sl-button id="end-drawer-close" slot="footer"
+                                    >Close Drawer</sl-button
+                                >
+                            </sl-drawer>
+
+                            <script>
+                                const topDrawerOpen =
+                                    document.getElementById('top-drawer-open');
+                                const bottomDrawerOpen =
+                                    document.getElementById(
+                                        'bottom-drawer-open',
+                                    );
+                                const startDrawerOpen =
+                                    document.getElementById(
+                                        'start-drawer-open',
+                                    );
+                                const endDrawerOpen =
+                                    document.getElementById('end-drawer-open');
+
+                                const topDrawerClose =
+                                    document.getElementById('top-drawer-close');
+                                const bottomDrawerClose =
+                                    document.getElementById(
+                                        'bottom-drawer-close',
+                                    );
+                                const startDrawerClose =
+                                    document.getElementById(
+                                        'start-drawer-close',
+                                    );
+                                const endDrawerClose =
+                                    document.getElementById('end-drawer-close');
+
+                                const topDrawer =
+                                    document.getElementById('top-drawer');
+                                const bottomDrawer =
+                                    document.getElementById('bottom-drawer');
+                                const startDrawer =
+                                    document.getElementById('start-drawer');
+                                const endDrawer =
+                                    document.getElementById('end-drawer');
+
+                                topDrawerOpen.addEventListener('click', () => {
+                                    topDrawer.show();
+                                });
+                                bottomDrawerOpen.addEventListener(
+                                    'click',
+                                    () => {
+                                        bottomDrawer.show();
+                                    },
+                                );
+                                startDrawerOpen.addEventListener(
+                                    'click',
+                                    () => {
+                                        startDrawer.show();
+                                    },
+                                );
+                                endDrawerOpen.addEventListener('click', () => {
+                                    endDrawer.show();
+                                });
+
+                                topDrawerClose.addEventListener('click', () => {
+                                    topDrawer.hide();
+                                });
+                                bottomDrawerClose.addEventListener(
+                                    'click',
+                                    () => {
+                                        bottomDrawer.hide();
+                                    },
+                                );
+                                startDrawerClose.addEventListener(
+                                    'click',
+                                    () => {
+                                        startDrawer.hide();
+                                    },
+                                );
+                                endDrawerClose.addEventListener('click', () => {
+                                    endDrawer.hide();
+                                });
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
                         
     &lt;div style=&quot;display: grid; gap: 2rem; grid-template-columns: auto auto;&quot;&gt;
         &lt;sl-button id=&quot;top-drawer-open&quot;&gt;
@@ -498,37 +614,52 @@
         
     &lt;/script&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>Custom Size Drawer</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>Custom Size Drawer</h5>
 
-                        <sl-button id="size-drawer-open">Open Drawer</sl-button>
-                        <sl-drawer id="size-drawer" label="Custom Size Drawer" style="--size: 50vw;">
-                            style에 "--size: 50vw;" 식으로 스타일 추가
+                            <sl-button id="size-drawer-open"
+                                >Open Drawer</sl-button
+                            >
+                            <sl-drawer
+                                id="size-drawer"
+                                label="Custom Size Drawer"
+                                style="--size: 50vw"
+                            >
+                                style에 "--size: 50vw;" 식으로 스타일 추가
 
-                            <sl-button id="size-drawer-close" slot="footer">Close Drawer</sl-button>
-                        </sl-drawer>
+                                <sl-button id="size-drawer-close" slot="footer"
+                                    >Close Drawer</sl-button
+                                >
+                            </sl-drawer>
 
-                        <script>
-                            const sizeDrawerOpen = document.getElementById("size-drawer-open")
-                            const sizeDrawerClose = document.getElementById("size-drawer-close")
-                            const sizeDrawer = document.getElementById("size-drawer")
+                            <script>
+                                const sizeDrawerOpen =
+                                    document.getElementById('size-drawer-open');
+                                const sizeDrawerClose =
+                                    document.getElementById(
+                                        'size-drawer-close',
+                                    );
+                                const sizeDrawer =
+                                    document.getElementById('size-drawer');
 
-                            sizeDrawerOpen.addEventListener("click", () => {
-                                sizeDrawer.show()
-                            })
-                            sizeDrawerClose.addEventListener("click", () => {
-                                sizeDrawer.hide()
-                            })
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                sizeDrawerOpen.addEventListener('click', () => {
+                                    sizeDrawer.show();
+                                });
+                                sizeDrawerClose.addEventListener(
+                                    'click',
+                                    () => {
+                                        sizeDrawer.hide();
+                                    },
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;size-drawer-open&quot;&gt;Open Drawer&lt;/sl-button&gt;
 
     &lt;sl-drawer id=&quot;size-drawer&quot; label=&quot;Custom Size Drawer&quot; style=&quot;--size: 50vw;&quot;&gt;
@@ -550,41 +681,70 @@
         })
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>영역 밖 터치 방지⚠️ Drawer -> JS로 구현</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>영역 밖 터치 방지⚠️ Drawer -> JS로 구현</h5>
 
-                        <sl-button id="deny-drawer-open">Open Drawer</sl-button>
+                            <sl-button id="deny-drawer-open"
+                                >Open Drawer</sl-button
+                            >
 
-                        <sl-drawer label="Deny Drawer" id="deny-drawer" style="--size: 30vw">
-                            <div class="drawerInner">
-                                <p>drawer에 'sl-request-close' 이벤트를 확인하여 event의 .detail.source === 'overlay'인 경우 event.preventDefault 합니다.</p>
-                            </div>
-                            <sl-button id="deny-drawer-close" slot="footer">CLose Drawer</sl-button>
-                        </sl-drawer>
+                            <sl-drawer
+                                label="Deny Drawer"
+                                id="deny-drawer"
+                                style="--size: 30vw"
+                            >
+                                <div class="drawerInner">
+                                    <p>
+                                        drawer에 'sl-request-close' 이벤트를
+                                        확인하여 event의 .detail.source ===
+                                        'overlay'인 경우 event.preventDefault
+                                        합니다.
+                                    </p>
+                                </div>
+                                <sl-button id="deny-drawer-close" slot="footer"
+                                    >CLose Drawer</sl-button
+                                >
+                            </sl-drawer>
 
-                        <script>
-                            const denyDrawerOpen = document.getElementById("deny-drawer-open")
-                            const denyDrawerClose = document.getElementById("deny-drawer-close")
-                            const denyDrawer = document.getElementById("deny-drawer")
+                            <script>
+                                const denyDrawerOpen =
+                                    document.getElementById('deny-drawer-open');
+                                const denyDrawerClose =
+                                    document.getElementById(
+                                        'deny-drawer-close',
+                                    );
+                                const denyDrawer =
+                                    document.getElementById('deny-drawer');
 
-                            denyDrawer.addEventListener('sl-request-close', (e) => {
-                                if(e.detail.source === 'overlay'){
-                                    console.log("외부 클릭이기에 not close!")
-                                    e.preventDefault();
-                                }
-                            })
+                                denyDrawer.addEventListener(
+                                    'sl-request-close',
+                                    (e) => {
+                                        if (e.detail.source === 'overlay') {
+                                            console.log(
+                                                '외부 클릭이기에 not close!',
+                                            );
+                                            e.preventDefault();
+                                        }
+                                    },
+                                );
 
-                            denyDrawerOpen.addEventListener("click", () => {denyDrawer.show()})
-                            denyDrawerClose.addEventListener("click", () => {denyDrawer.hide()})
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                denyDrawerOpen.addEventListener('click', () => {
+                                    denyDrawer.show();
+                                });
+                                denyDrawerClose.addEventListener(
+                                    'click',
+                                    () => {
+                                        denyDrawer.hide();
+                                    },
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;deny-drawer-open&quot;&gt;Open Drawer&lt;/sl-button&gt;
 
     &lt;sl-drawer label=&quot;Deny Drawer&quot; id=&quot;deny-drawer&quot; style=&quot;--size: 30vw&quot;&gt;
@@ -610,15 +770,12 @@
         denyDrawerClose.addEventListener(&quot;click&quot;, () =&gt; {denyDrawer.hide()})
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
                 </div>
-
-                
             </div>
         </div>
-    </div>
 
-    <script src="/js/darkmode.js"></script>
-</body>
+        <script src="/js/darkmode.js"></script>
+    </body>
 </html>

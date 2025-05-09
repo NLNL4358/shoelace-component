@@ -1,354 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-    <!-- shoelace -->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <script
-        type="module"
-        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
-    ></script>
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
 
-    <!-- shoelace Light & Dark Theme -->
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:light)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:dark)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
-    />
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
 
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
 
-    <!-- component css -->
-    <link rel="stylesheet" href="/css/component.css">
-    
-    <!-- CodeViewer -->
-    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <!-- component css -->
+        <link rel="stylesheet" href="/css/component.css" />
 
-    <!-- Prism.js -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
-</head>
-<body class="outer">
-    <div class="inner">
-        <!-- 헤더 -->
-        <div class="header">
-            <a class="logoButton" href="/index.html">
-                <img src="/assets/logo.svg" alt="" />
-            </a>
-            <div class="navWrap">
-                <ul class="navTitle">
-                    <li class="navLi">
-                        <h4>버튼</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                   <sl-button 
-                                   href="/components/button/button.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Default Button
-                                   </sl-button>
-                                
-                                   <sl-button 
-                                   href="/components/button/buttonGroup.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Group Button
-                                   </sl-button>
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
-                                   <sl-button 
-                                   href="/components/button/switch.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Switch
-                                   </sl-button>
-
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>셀렉트 & 인풋</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/select/select.html"
-                                size="large"
-                                class="navButton"
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="/assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Select
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Default Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/input.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Input
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Group Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/textarea.html"
-                                size="large"
-                                class="navButton"
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Switch
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Textarea
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Select
+                                    </sl-button>
 
-                    <li class="navLi">
-                        <h4>체크박스 & 라디오</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/checkbox/checkbox.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 CheckBox
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Input
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/checkbox/radio.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Radio
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Textarea
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>모달 ~ 아코디언</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/modal/modal.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                    모달
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/drawer.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Drawer
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/alert.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Alert
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/tooltip.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Tooltip
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        CheckBox
+                                    </sl-button>
 
-                                <sl-button
-                                href="/components/modal/details.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    아코디언
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Radio
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>Menu & Tab</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button
-                                href="/components/menu/menu.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>모달 ~ 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Menu
-                                </sl-button>
-                                <sl-button
-                                href="/components/menu/tab.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Tab
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Drawer
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Alert
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tooltip
+                                    </sl-button>
 
-                    <li class="navLi">
-                        <h4>UI - UX</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
+                                    <sl-button
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                                <sl-button
-                                href="/components/uiux/uxInput.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 UX-Input
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/breadcrumb.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Breadcrumb
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/badge.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Badge & Tag
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/dropdown.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Dropdown
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/icon.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Icon
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Menu
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>애니메이션</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/animation/animation.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>UI - UX</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Animation
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-                </ul>
+                                    <sl-button
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        UX-Input
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Breadcrumb
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Badge & Tag
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Dropdown
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Icon
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>애니메이션</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Animation
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mode">
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
 
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
             </div>
-            <div class="mode">
-                <sl-icon-button 
-                name="github" 
-                href="https://github.com/shoelace-style/shoelace" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
 
-                <sl-icon-button 
-                name="book" 
-                href="https://shoelace.style/" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-                
-                <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h3 class="componentTitle">Alert</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>기본 Alert</h5>
-                        <sl-alert open> <!-- open 속성을 넣어줘야 열립니다. -->
-                            <sl-icon slot="icon" name="info-circle" style="font-size: 20px;"></sl-icon>
-                            이곳에 들어갈 텍스트를 넣습니다.
-                        </sl-alert>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+            <div class="section">
+                <h3 class="componentTitle">Alert</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>기본 Alert</h5>
+                            <sl-alert open>
+                                <!-- open 속성을 넣어줘야 열립니다. -->
+                                <sl-icon
+                                    slot="icon"
+                                    name="info-circle"
+                                    style="font-size: 20px"
+                                ></sl-icon>
+                                이곳에 들어갈 텍스트를 넣습니다.
+                            </sl-alert>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-alert open&gt;  &lt;!-- open 속성을 넣어줘야 열립니다. --&gt;
         &lt;sl-icon slot=&quot;icon&quot; name=&quot;info-circle&quot; style=&quot;font-size: 20px;&quot;&gt;&lt;/sl-icon&gt;
         이곳에 들어갈 텍스트를 넣습니다.
     &lt;/sl-alert&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
-                
-                 <div>
-                    <div class="viewPart">
-                        <h5>여러 종류의 Alert</h5>
 
-                        <sl-alert variant="primary" open>
-                            <sl-icon slot="icon" name="info-circle"></sl-icon>
-                            <strong>This is super informative</strong><br />
-                            You can tell by how pretty the alert is.
-                        </sl-alert>
-                        
-                        <br />
-                        
-                        <sl-alert variant="success" open>
-                            <sl-icon slot="icon" name="check2-circle"></sl-icon>
-                            <strong>Your changes have been saved</strong><br />
-                            You can safely exit the app now.
-                        </sl-alert>
-                        
-                        <br />
-                        
-                        <sl-alert variant="neutral" open>
-                            <sl-icon slot="icon" name="gear"></sl-icon>
-                            <strong>Your settings have been updated</strong><br />
-                            Settings will take effect on next login.
-                        </sl-alert>
-                        
-                        <br />
-                        
-                        <sl-alert variant="warning" open>
-                            <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-                            <strong>Your session has ended</strong><br />
-                            Please login again to continue.
-                        </sl-alert>
-                        
-                        <br />
-                        
-                        <sl-alert variant="danger" open>
-                            <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-                            <strong>Your account has been deleted</strong><br />
-                            We're very sorry to see you go!
-                        </sl-alert>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>여러 종류의 Alert</h5>
+
+                            <sl-alert variant="primary" open>
+                                <sl-icon
+                                    slot="icon"
+                                    name="info-circle"
+                                ></sl-icon>
+                                <strong>This is super informative</strong><br />
+                                You can tell by how pretty the alert is.
+                            </sl-alert>
+
+                            <br />
+
+                            <sl-alert variant="success" open>
+                                <sl-icon
+                                    slot="icon"
+                                    name="check2-circle"
+                                ></sl-icon>
+                                <strong>Your changes have been saved</strong
+                                ><br />
+                                You can safely exit the app now.
+                            </sl-alert>
+
+                            <br />
+
+                            <sl-alert variant="neutral" open>
+                                <sl-icon slot="icon" name="gear"></sl-icon>
+                                <strong>Your settings have been updated</strong
+                                ><br />
+                                Settings will take effect on next login.
+                            </sl-alert>
+
+                            <br />
+
+                            <sl-alert variant="warning" open>
+                                <sl-icon
+                                    slot="icon"
+                                    name="exclamation-triangle"
+                                ></sl-icon>
+                                <strong>Your session has ended</strong><br />
+                                Please login again to continue.
+                            </sl-alert>
+
+                            <br />
+
+                            <sl-alert variant="danger" open>
+                                <sl-icon
+                                    slot="icon"
+                                    name="exclamation-octagon"
+                                ></sl-icon>
+                                <strong>Your account has been deleted</strong
+                                ><br />
+                                We're very sorry to see you go!
+                            </sl-alert>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;sl-alert variant=&quot;primary&quot; open&gt;
         &lt;sl-icon slot=&quot;icon&quot; name=&quot;info-circle&quot;&gt;&lt;/sl-icon&gt;
         &lt;strong&gt;This is super informative&lt;/strong&gt;&lt;br /&gt;
@@ -387,22 +437,24 @@
         We're very sorry to see you go!
     &lt;/sl-alert&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                    
-                 </div>
 
-                 <div>
-                    <div class="viewPart">
-                        <h5>닫을 수 있는 Alert</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>닫을 수 있는 Alert</h5>
 
-                        <sl-alert variant="primary" open closable >
-                            <sl-icon slot="icon" name="info-circle"></sl-icon>
-                            sl-alert에 closable 속성 필요!
-                        </sl-alert>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                            <sl-alert variant="primary" open closable>
+                                <sl-icon
+                                    slot="icon"
+                                    name="info-circle"
+                                ></sl-icon>
+                                sl-alert에 closable 속성 필요!
+                            </sl-alert>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;h5&gt;닫을 수 있는 Alert&lt;/h5&gt;
 
     &lt;sl-alert variant=&quot;primary&quot; open closable &gt;
@@ -410,54 +462,70 @@
         sl-alert에 closable 속성 필요!
     &lt;/sl-alert&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                 </div>
 
-                 <div>
-                    <div class="viewPart">
-                        <h5>자동으로 사라지는 Alert</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>자동으로 사라지는 Alert</h5>
 
-                        <sl-alert variant="primary" duration="3000" open closable>
-                            <sl-icon slot="icon" name="info-circle"></sl-icon>
-                            sl-alert에 duration="3000" 속성을 사용하면 열리고
-                            3초후 자동으로 닫힙니다
-                        </sl-alert>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                            <sl-alert
+                                variant="primary"
+                                duration="3000"
+                                open
+                                closable
+                            >
+                                <sl-icon
+                                    slot="icon"
+                                    name="info-circle"
+                                ></sl-icon>
+                                sl-alert에 duration="3000" 속성을 사용하면
+                                열리고 3초후 자동으로 닫힙니다
+                            </sl-alert>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-alert variant=&quot;primary&quot; duration=&quot;3000&quot; open closable&gt;
         &lt;sl-icon slot=&quot;icon&quot; name=&quot;info-circle&quot;&gt;&lt;/sl-icon&gt;
         sl-alert에 duration=&quot;3000&quot; 속성을 사용하면 열리고
         3초후 자동으로 닫힙니다
     &lt;/sl-alert&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                 </div>
 
-                 <div>
-                    <div class="viewPart">
-                        <h5>열고 닫을 수 있는 Alert - 열때 JS필요!</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>열고 닫을 수 있는 Alert - 열때 JS필요!</h5>
 
-                        <sl-button id="alert-open">Show Alert</sl-button>
+                            <sl-button id="alert-open">Show Alert</sl-button>
 
-                        <sl-alert variant="primary" duration="3000" closable id="openableAlert">
-                            <sl-icon slot="icon" name="info-circle"></sl-icon>
-                            sl-alert 에 .show() 명령어로 Open가능
-                        </sl-alert>
-                        
-                        <script>
-                            const openButton = document.getElementById("alert-open")
-                            const openableAlert = document.getElementById("openableAlert")
+                            <sl-alert
+                                variant="primary"
+                                duration="3000"
+                                closable
+                                id="openableAlert"
+                            >
+                                <sl-icon
+                                    slot="icon"
+                                    name="info-circle"
+                                ></sl-icon>
+                                sl-alert 에 .show() 명령어로 Open가능
+                            </sl-alert>
 
-                            openButton.addEventListener("click", () => {
-                                openableAlert.show()
-                            })
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                            <script>
+                                const openButton =
+                                    document.getElementById('alert-open');
+                                const openableAlert =
+                                    document.getElementById('openableAlert');
+
+                                openButton.addEventListener('click', () => {
+                                    openableAlert.show();
+                                });
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;alert-open&quot;&gt;Show Alert&lt;/sl-button&gt;
 
     &lt;sl-alert variant=&quot;primary&quot; duration=&quot;3000&quot; closable id=&quot;openableAlert&quot;&gt;
@@ -474,32 +542,44 @@
         })
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                 </div>
 
-                 <div>
-                    <div class="viewPart">
-                        <h5>카운트다운이 Alert창에서 확인 할 수 있는 Alert</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                카운트다운이 Alert창에서 확인 할 수 있는 Alert
+                            </h5>
 
-                        <sl-button id="alert-open2">Show Alert</sl-button>
+                            <sl-button id="alert-open2">Show Alert</sl-button>
 
-                        <sl-alert variant="primary" duration="3000" countdown="rtl" closable id="countdownAlert">
-                            <sl-icon slot="icon" name="info-circle"></sl-icon>
-                            sl-alert에 countdown="rtl" 속성을 추가
-                        </sl-alert>
+                            <sl-alert
+                                variant="primary"
+                                duration="3000"
+                                countdown="rtl"
+                                closable
+                                id="countdownAlert"
+                            >
+                                <sl-icon
+                                    slot="icon"
+                                    name="info-circle"
+                                ></sl-icon>
+                                sl-alert에 countdown="rtl" 속성을 추가
+                            </sl-alert>
 
-                        <script>
-                            const openButton2 = document.getElementById("alert-open2")
-                            const countdownAlert = document.getElementById("countdownAlert")
+                            <script>
+                                const openButton2 =
+                                    document.getElementById('alert-open2');
+                                const countdownAlert =
+                                    document.getElementById('countdownAlert');
 
-                            openButton2.addEventListener("click", () => {
-                                countdownAlert.show()
-                            })
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                openButton2.addEventListener('click', () => {
+                                    countdownAlert.show();
+                                });
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;alert-open2&quot;&gt;Show Alert&lt;/sl-button&gt;
 
     &lt;sl-alert variant=&quot;primary&quot; duration=&quot;3000&quot; countdown=&quot;rtl&quot; closable id=&quot;countdownAlert&quot;&gt;
@@ -516,32 +596,43 @@
         })
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                 </div>
 
-                 <div>
-                    <div class="viewPart">
-                        <h5>우측 상단에 Toast 식으로 Alert 띄우기</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>우측 상단에 Toast 식으로 Alert 띄우기</h5>
 
-                        <sl-button id="alert-open3">Show Alert</sl-button>
+                            <sl-button id="alert-open3">Show Alert</sl-button>
 
-                        <sl-alert variant="primary"  duration="3000" countdown="rtl" id="toastAlert" closable>
-                            <sl-icon slot="icon" name="info-circle"></sl-icon>
-                            alert를 show()로 여는게아닌 toast() 함수로 열게되면 우측상단에 보입니다.
-                        </sl-alert>
+                            <sl-alert
+                                variant="primary"
+                                duration="3000"
+                                countdown="rtl"
+                                id="toastAlert"
+                                closable
+                            >
+                                <sl-icon
+                                    slot="icon"
+                                    name="info-circle"
+                                ></sl-icon>
+                                alert를 show()로 여는게아닌 toast() 함수로
+                                열게되면 우측상단에 보입니다.
+                            </sl-alert>
 
-                        <script>
-                            const openButton3 = document.getElementById("alert-open3")
-                            const toastAlert = document.getElementById("toastAlert")
+                            <script>
+                                const openButton3 =
+                                    document.getElementById('alert-open3');
+                                const toastAlert =
+                                    document.getElementById('toastAlert');
 
-                            openButton3.addEventListener("click", () => {
-                                toastAlert.toast() /* .toast() 로 엽니다! */
-                            })
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                openButton3.addEventListener('click', () => {
+                                    toastAlert.toast(); /* .toast() 로 엽니다! */
+                                });
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;alert-open3&quot;&gt;Show Alert&lt;/sl-button&gt;
 
     &lt;sl-alert variant=&quot;primary&quot;  duration=&quot;3000&quot; countdown=&quot;rtl&quot; id=&quot;toastAlert&quot; closable&gt;
@@ -558,13 +649,12 @@
         })
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                 </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="/js/darkmode.js"></script>
-</body>
+        <script src="/js/darkmode.js"></script>
+    </body>
 </html>

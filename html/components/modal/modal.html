@@ -1,316 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-    <!-- shoelace -->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <script
-        type="module"
-        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
-    ></script>
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
 
-    <!-- shoelace Light & Dark Theme -->
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:light)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:dark)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
-    />
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
 
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
 
-    <!-- component css -->
-    <link rel="stylesheet" href="/css/component.css">
+        <!-- component css -->
+        <link rel="stylesheet" href="/css/component.css" />
 
-    <!-- CodeViewer -->
-    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
-    <!-- Prism.js -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
-</head>
-<body class="outer">
-    <div class="inner">
-        <!-- 헤더 -->
-        <div class="header">
-            <a class="logoButton" href="/index.html">
-                <img src="/assets/logo.svg" alt="" />
-            </a>
-            <div class="navWrap">
-                <ul class="navTitle">
-                    <li class="navLi">
-                        <h4>버튼</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                   <sl-button 
-                                   href="/components/button/button.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Default Button
-                                   </sl-button>
-                                
-                                   <sl-button 
-                                   href="/components/button/buttonGroup.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Group Button
-                                   </sl-button>
-
-                                   <sl-button 
-                                   href="/components/button/switch.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Switch
-                                   </sl-button>
-
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>셀렉트 & 인풋</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/select/select.html"
-                                size="large"
-                                class="navButton"
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="/assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Select
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Default Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/input.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Input
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Group Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/textarea.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Textarea
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>체크박스 & 라디오</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/checkbox/checkbox.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 CheckBox
-                                </sl-button>
-
-                                <sl-button 
-                                href="/components/checkbox/radio.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Radio
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>모달 ~ 아코디언</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/modal/modal.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    모달
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/drawer.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Drawer
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/alert.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Alert
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/tooltip.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Tooltip
-                                </sl-button>
-
-                                <sl-button
-                                href="/components/modal/details.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    아코디언
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>Menu & Tab</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button
-                                href="/components/menu/menu.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Menu
-                                </sl-button>
-                                <sl-button
-                                href="/components/menu/tab.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Tab
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-
-                    <li class="navLi">
-                        <h4>UI - UX</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/uiux/uxInput.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 UX-Input
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/breadcrumb.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Breadcrumb
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/badge.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Badge & Tag
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/dropdown.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Dropdown
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/icon.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Icon
-                                </sl-button>
-
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>애니메이션</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/animation/animation.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Animation
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="mode">
-                <sl-icon-button 
-                name="github" 
-                href="https://github.com/shoelace-style/shoelace" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-
-                <sl-icon-button 
-                name="book" 
-                href="https://shoelace.style/" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-                
-                <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h3 class="componentTitle">모달 - Dialog</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>기본 Dialog</h5>
-                        
-                        <sl-button id="dialog-open-1">Open Dialog</sl-button>
-
-                        <sl-dialog label="Dialog" id="dialog-overview-1">   <!-- label 제목 -->
-                            <div class="dialogInner">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Switch
+                                    </sl-button>
+                                </sl-menu>
                             </div>
-                            <sl-button slot="footer" variant="primary">확인</sl-button>
-                            <sl-button id="close" slot="footer" variant="default">Close</sl-button>
-                        </sl-dialog>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Select
+                                    </sl-button>
 
-                        <script>
-                        const openButton = document.getElementById("dialog-open-1");
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Input
+                                    </sl-button>
 
-                        const dialog = document.getElementById('dialog-overview-1');
-                        const closeButton = dialog.querySelector('#close');
-                        
-                        openButton.addEventListener('click', () => dialog.show()); /* show() */
-                        closeButton.addEventListener('click', () => dialog.hide()); /* hide() */
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Textarea
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        CheckBox
+                                    </sl-button>
+
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Radio
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>모달 ~ 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Drawer
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Alert
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tooltip
+                                    </sl-button>
+
+                                    <sl-button
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Menu
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+
+                        <li class="navLi">
+                            <h4>UI - UX</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        UX-Input
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Breadcrumb
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Badge & Tag
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Dropdown
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Icon
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>애니메이션</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Animation
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mode">
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="componentTitle">모달 - Dialog</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>기본 Dialog</h5>
+
+                            <sl-button id="dialog-open-1"
+                                >Open Dialog</sl-button
+                            >
+
+                            <sl-dialog label="Dialog" id="dialog-overview-1">
+                                <!-- label 제목 -->
+                                <div class="dialogInner">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing.
+                                </div>
+                                <sl-button slot="footer" variant="primary"
+                                    >확인</sl-button
+                                >
+                                <sl-button
+                                    id="close"
+                                    slot="footer"
+                                    variant="default"
+                                    >Close</sl-button
+                                >
+                            </sl-dialog>
+
+                            <script>
+                                const openButton =
+                                    document.getElementById('dialog-open-1');
+
+                                const dialog =
+                                    document.getElementById(
+                                        'dialog-overview-1',
+                                    );
+                                const closeButton =
+                                    dialog.querySelector('#close');
+
+                                openButton.addEventListener('click', () =>
+                                    dialog.show(),
+                                ); /* show() */
+                                closeButton.addEventListener('click', () =>
+                                    dialog.hide(),
+                                ); /* hide() */
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;dialog-open-1&quot;&gt;Open Dialog&lt;/sl-button&gt;
 
     &lt;sl-dialog label=&quot;Dialog&quot; id=&quot;dialog-overview-1&quot;&gt;   &lt;!-- label 제목 --&gt;
@@ -331,35 +382,53 @@
     closeButton.addEventListener('click', () =&gt; dialog.hide()); /* hide() */
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>Dialog 너비 설정</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>Dialog 너비 설정</h5>
 
-                        <sl-button id="dialog-open-2">Open Custom Width Dialog</sl-button>
+                            <sl-button id="dialog-open-2"
+                                >Open Custom Width Dialog</sl-button
+                            >
 
-                        <sl-dialog label="Dialog-Custom-Width" id="dialog-overview-2" style="--width: 50vw;">
-                            <div class="dialogInner">
-                                Lorem ipsum dolor sit amet consectetur adipisicing.
-                            </div>
-                            <sl-button slot="footer" variant="primary">Close</sl-button>
-                        </sl-dialog>
+                            <sl-dialog
+                                label="Dialog-Custom-Width"
+                                id="dialog-overview-2"
+                                style="--width: 50vw"
+                            >
+                                <div class="dialogInner">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing.
+                                </div>
+                                <sl-button slot="footer" variant="primary"
+                                    >Close</sl-button
+                                >
+                            </sl-dialog>
 
-                        <script>
-                            const openButton2 =document.getElementById("dialog-open-2");
+                            <script>
+                                const openButton2 =
+                                    document.getElementById('dialog-open-2');
 
-                            const dialog2 = document.getElementById("dialog-overview-2");
-                            const closeButton2 = dialog2.querySelector("sl-button[slot='footer']");
+                                const dialog2 =
+                                    document.getElementById(
+                                        'dialog-overview-2',
+                                    );
+                                const closeButton2 = dialog2.querySelector(
+                                    "sl-button[slot='footer']",
+                                );
 
-                            openButton2.addEventListener('click', () => dialog2.show());
-                            closeButton2.addEventListener('click', () => dialog2.hide())
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                openButton2.addEventListener('click', () =>
+                                    dialog2.show(),
+                                );
+                                closeButton2.addEventListener('click', () =>
+                                    dialog2.hide(),
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;dialog-open-2&quot;&gt;Open Custom Width Dialog&lt;/sl-button&gt;
 
     &lt;sl-dialog label=&quot;Dialog-Custom-Width&quot; id=&quot;dialog-overview-2&quot; style=&quot;--width: 50vw;&quot;&gt;
@@ -379,40 +448,72 @@
         closeButton2.addEventListener('click', () =&gt; dialog2.hide())
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>스크롤 Dialog</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>스크롤 Dialog</h5>
 
-                        <sl-button id="dialog-open-3">Open Scrolling Dialog</sl-button>
+                            <sl-button id="dialog-open-3"
+                                >Open Scrolling Dialog</sl-button
+                            >
 
-                        <sl-dialog label="Scrolling-Dialog" id="dialog-overview-3">
-                            <div class="dialogInner" style="height: 150vh;">
-                                <p>별다른추가없이 dialog안에 div를 만들어주면 자동으로 label과 footer 사이에 scroll영역을 만든다!! 👇</p>
+                            <sl-dialog
+                                label="Scrolling-Dialog"
+                                id="dialog-overview-3"
+                            >
+                                <div class="dialogInner" style="height: 150vh">
+                                    <p>
+                                        별다른추가없이 dialog안에 div를
+                                        만들어주면 자동으로 label과 footer
+                                        사이에 scroll영역을 만든다!! 👇
+                                    </p>
 
-                                <h4 style="margin-top: 3rem;">단!! dialog안의 div(dialogInner)는 max-width가 필요하다 -> CSS </h4>
+                                    <h4 style="margin-top: 3rem">
+                                        단!! dialog안의 div(dialogInner)는
+                                        max-width가 필요하다 -> CSS
+                                    </h4>
 
-                                <p style="margin-top: 3rem;">가로 최대 Test</p>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt aliquid ad, nostrum ut a beatae facere culpa inventore maiores numquam repellendus blanditiis debitis corrupti ex, soluta ipsum quidem vero. Unde.</p>
-                            </div>
-                            <sl-button slot="footer" variant="primary">Close</sl-button>
-                        </sl-dialog>
+                                    <p style="margin-top: 3rem">
+                                        가로 최대 Test
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur
+                                        adipisicing elit. Incidunt aliquid ad,
+                                        nostrum ut a beatae facere culpa
+                                        inventore maiores numquam repellendus
+                                        blanditiis debitis corrupti ex, soluta
+                                        ipsum quidem vero. Unde.
+                                    </p>
+                                </div>
+                                <sl-button slot="footer" variant="primary"
+                                    >Close</sl-button
+                                >
+                            </sl-dialog>
 
-                        <script>
-                            const openButton3 =document.getElementById("dialog-open-3");
+                            <script>
+                                const openButton3 =
+                                    document.getElementById('dialog-open-3');
 
-                            const dialog3 = document.getElementById("dialog-overview-3");
-                            const closeButton3 = dialog3.querySelector("sl-button[slot='footer']");
-                                                
-                            openButton3.addEventListener('click', () => dialog3.show());
-                            closeButton3.addEventListener('click', () => dialog3.hide())
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                                const dialog3 =
+                                    document.getElementById(
+                                        'dialog-overview-3',
+                                    );
+                                const closeButton3 = dialog3.querySelector(
+                                    "sl-button[slot='footer']",
+                                );
+
+                                openButton3.addEventListener('click', () =>
+                                    dialog3.show(),
+                                );
+                                closeButton3.addEventListener('click', () =>
+                                    dialog3.hide(),
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-button id=&quot;dialog-open-3&quot;&gt;Open Scrolling Dialog&lt;/sl-button&gt;
 
     &lt;sl-dialog label=&quot;Scrolling-Dialog&quot; id=&quot;dialog-overview-3&quot;&gt;
@@ -437,41 +538,65 @@
         closeButton3.addEventListener('click', () =&gt; dialog3.hide())
     &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>헤더 Action 추가 Dialog</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>헤더 Action 추가 Dialog</h5>
 
-                        <sl-button id="dialog-open-4">Open Header Action Dialog</sl-button>
-    
-                        <sl-dialog label="Header Action Dialog" id="dialog-overview-4">
-                            <sl-icon-button id="actionButton" slot="header-actions" name="zoom-in"></sl-icon-button>
-                            <sl-icon-button id="actionButton" slot="header-actions" name="zoom-out"></sl-icon-button>
-                            
-                            
-                            <div class="dialogInner">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing.
-                            </div>
-    
-                            <sl-button slot="footer" variant="primary">Close</sl-button>
-                        </sl-dialog>
-    
-                        <script>
-                            const openButton4 =document.getElementById("dialog-open-4");
-    
-                            const dialog4 = document.getElementById("dialog-overview-4");
-                            const closeButton4 = dialog4.querySelector("sl-button[slot='footer']");
-                                                
-                            openButton4.addEventListener('click', () => dialog4.show());
-                            closeButton4.addEventListener('click', () => dialog4.hide())
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+                            <sl-button id="dialog-open-4"
+                                >Open Header Action Dialog</sl-button
+                            >
+
+                            <sl-dialog
+                                label="Header Action Dialog"
+                                id="dialog-overview-4"
+                            >
+                                <sl-icon-button
+                                    id="actionButton"
+                                    slot="header-actions"
+                                    name="zoom-in"
+                                ></sl-icon-button>
+                                <sl-icon-button
+                                    id="actionButton"
+                                    slot="header-actions"
+                                    name="zoom-out"
+                                ></sl-icon-button>
+
+                                <div class="dialogInner">
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing.
+                                </div>
+
+                                <sl-button slot="footer" variant="primary"
+                                    >Close</sl-button
+                                >
+                            </sl-dialog>
+
+                            <script>
+                                const openButton4 =
+                                    document.getElementById('dialog-open-4');
+
+                                const dialog4 =
+                                    document.getElementById(
+                                        'dialog-overview-4',
+                                    );
+                                const closeButton4 = dialog4.querySelector(
+                                    "sl-button[slot='footer']",
+                                );
+
+                                openButton4.addEventListener('click', () =>
+                                    dialog4.show(),
+                                );
+                                closeButton4.addEventListener('click', () =>
+                                    dialog4.hide(),
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;sl-button id=&quot;dialog-open-4&quot;&gt;Open Header Action Dialog&lt;/sl-button&gt;
 
     &lt;sl-dialog label=&quot;Header Action Dialog&quot; id=&quot;dialog-overview-4&quot;&gt;
@@ -496,45 +621,67 @@
         closeButton4.addEventListener('click', () =&gt; dialog4.hide())
     &lt;/script&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>영역 밖 터치 방지 Dialog⚠️ -> JS로 구현</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>영역 밖 터치 방지 Dialog⚠️ -> JS로 구현</h5>
 
-                        <sl-button id="dialog-open-5">Open Close-Deny Dialog</sl-button>
-    
-                        <sl-dialog id="dialog-overview-5" label="overlay close denied">
-                            <div class="dialogInner">
-                                dialog의 외부(overlay)을 클릭해도 dialog가 꺼지지 않습니다.👍
-                            </div>
-                            <sl-button slot="footer" variant="primary">Close</sl-button>
-                        </sl-dialog>
-    
-                        <script>
-                            const openButton5 =document.getElementById("dialog-open-5");
-    
-                            const dialog5 = document.getElementById("dialog-overview-5");
-                            const closeButton5 = dialog5.querySelector("sl-button[slot='footer']");
-                                                
-                            /* 외부(overlay) 클릭시 Close를 막기 위해서 아래의 이벤트를 정의해줘야함 */
-                            dialog5.addEventListener("sl-request-close", (e) => {
-                                if(e.detail.source === 'overlay'){
-                                    console.log("외부 클릭이기에 not close!")
-                                    e.preventDefault();
-                                }
-                            })
-                            
-                            openButton5.addEventListener('click', () => dialog5.show());
-                            closeButton5.addEventListener('click', () => dialog5.hide())
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+                            <sl-button id="dialog-open-5"
+                                >Open Close-Deny Dialog</sl-button
+                            >
+
+                            <sl-dialog
+                                id="dialog-overview-5"
+                                label="overlay close denied"
+                            >
+                                <div class="dialogInner">
+                                    dialog의 외부(overlay)을 클릭해도 dialog가
+                                    꺼지지 않습니다.👍
+                                </div>
+                                <sl-button slot="footer" variant="primary"
+                                    >Close</sl-button
+                                >
+                            </sl-dialog>
+
+                            <script>
+                                const openButton5 =
+                                    document.getElementById('dialog-open-5');
+
+                                const dialog5 =
+                                    document.getElementById(
+                                        'dialog-overview-5',
+                                    );
+                                const closeButton5 = dialog5.querySelector(
+                                    "sl-button[slot='footer']",
+                                );
+
+                                /* 외부(overlay) 클릭시 Close를 막기 위해서 아래의 이벤트를 정의해줘야함 */
+                                dialog5.addEventListener(
+                                    'sl-request-close',
+                                    (e) => {
+                                        if (e.detail.source === 'overlay') {
+                                            console.log(
+                                                '외부 클릭이기에 not close!',
+                                            );
+                                            e.preventDefault();
+                                        }
+                                    },
+                                );
+
+                                openButton5.addEventListener('click', () =>
+                                    dialog5.show(),
+                                );
+                                closeButton5.addEventListener('click', () =>
+                                    dialog5.hide(),
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;sl-button id=&quot;dialog-open-5&quot;&gt;Open Close-Deny Dialog&lt;/sl-button&gt;
 
     &lt;sl-dialog id=&quot;dialog-overview-5&quot; label=&quot;overlay close denied&quot;&gt;
@@ -562,42 +709,63 @@
         closeButton5.addEventListener('click', () =&gt; dialog5.hide())
     &lt;/script&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>Dialog가 열리자마자 Focus 되야할 input이 있다면?</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                Dialog가 열리자마자 Focus 되야할 input이 있다면?
+                            </h5>
 
-                        <sl-button id="dialog-open-6">
-                            Open Auto Focus Dialog
-                        </sl-button>
-    
-                        <sl-dialog id="dialog-overview-6" label="Auto Focus Dialog">
-                            <div class="dialogInner">
-                                <sl-input placeholder="일반 input"></sl-input>
-                                <br/>
-                                <sl-input autofocus placeholder="자동으로 focus 됩니다."></sl-input>
-                            </div>
-    
-                            <sl-button slot="footer" variant="primary">Close</sl-button>
-                        </sl-dialog>
-    
-                        <script>
-                            const openButton6 =document.getElementById("dialog-open-6");
-    
-                            const dialog6 = document.getElementById("dialog-overview-6");
-                            const closeButton6 = dialog6.querySelector("sl-button[slot='footer']");
-    
-                            openButton6.addEventListener('click', () => dialog6.show());
-                            closeButton6.addEventListener('click', () => dialog6.hide())
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+                            <sl-button id="dialog-open-6">
+                                Open Auto Focus Dialog
+                            </sl-button>
+
+                            <sl-dialog
+                                id="dialog-overview-6"
+                                label="Auto Focus Dialog"
+                            >
+                                <div class="dialogInner">
+                                    <sl-input
+                                        placeholder="일반 input"
+                                    ></sl-input>
+                                    <br />
+                                    <sl-input
+                                        autofocus
+                                        placeholder="자동으로 focus 됩니다."
+                                    ></sl-input>
+                                </div>
+
+                                <sl-button slot="footer" variant="primary"
+                                    >Close</sl-button
+                                >
+                            </sl-dialog>
+
+                            <script>
+                                const openButton6 =
+                                    document.getElementById('dialog-open-6');
+
+                                const dialog6 =
+                                    document.getElementById(
+                                        'dialog-overview-6',
+                                    );
+                                const closeButton6 = dialog6.querySelector(
+                                    "sl-button[slot='footer']",
+                                );
+
+                                openButton6.addEventListener('click', () =>
+                                    dialog6.show(),
+                                );
+                                closeButton6.addEventListener('click', () =>
+                                    dialog6.hide(),
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;sl-button id=&quot;dialog-open-6&quot;&gt;
     Open Auto Focus Dialog
     &lt;/sl-button&gt;
@@ -622,15 +790,13 @@
         closeButton6.addEventListener('click', () =&gt; dialog6.hide())
     &lt;/script&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                    
                 </div>
-                
             </div>
         </div>
-    </div>
 
-    <script src="/js/darkmode.js"></script>
-</body>
+        <script src="/js/darkmode.js"></script>
+    </body>
 </html>

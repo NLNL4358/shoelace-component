@@ -1,407 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        
-    <!-- shoelace -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <script
-        type="module"
-        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
-    ></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-    <!-- shoelace Light & Dark Theme -->
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:light)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:dark)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
-    />
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
 
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/component.css">
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
 
-    <!-- CodeViewer -->
-    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css" />
 
-    <!-- Prism.js -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
-    <style>
-        .tooltip-placement-example {
-          width: 250px;
-          margin: 1rem;
-        }
-      
-        .tooltip-placement-example-row:after {
-          content: '';
-          display: table;
-          clear: both;
-        }
-      
-        .tooltip-placement-example sl-button {
-          float: left;
-          width: 2.5rem;
-          margin-right: 0.25rem;
-          margin-bottom: 0.25rem;
-        }
-      
-        .tooltip-placement-example-row:nth-child(1) sl-tooltip:first-child sl-button,
-        .tooltip-placement-example-row:nth-child(5) sl-tooltip:first-child sl-button {
-          margin-left: calc(40px + 0.25rem);
-        }
-      
-        .tooltip-placement-example-row:nth-child(2) sl-tooltip:nth-child(2) sl-button,
-        .tooltip-placement-example-row:nth-child(3) sl-tooltip:nth-child(2) sl-button,
-        .tooltip-placement-example-row:nth-child(4) sl-tooltip:nth-child(2) sl-button {
-          margin-left: calc((40px * 3) + (0.25rem * 3));
-        }
-    </style>
-</head>
-<body class="outer">
-    <div class="inner">
-      <!-- 헤더 -->
-      <div class="header">
-        <a class="logoButton" href="/index.html">
-            <img src="/assets/logo.svg" alt="" />
-        </a>
-        <div class="navWrap">
-            <ul class="navTitle">
-                <li class="navLi">
-                    <h4>버튼</h4>
-                    <div class="navMenu">
-                        <sl-menu style="display: flex;flex-direction: column;">
-                               <sl-button 
-                               href="/components/button/button.html"
-                               size="large"
-                               class="navButton"
-                               >
-                                Default Button
-                               </sl-button>
-                            
-                               <sl-button 
-                               href="/components/button/buttonGroup.html"
-                               size="large"
-                               class="navButton"
-                               >
-                                Group Button
-                               </sl-button>
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
 
-                               <sl-button 
-                               href="/components/button/switch.html"
-                               size="large"
-                               class="navButton"
-                               >
-                                Switch
-                               </sl-button>
+        <style>
+            .tooltip-placement-example {
+                width: 250px;
+                margin: 1rem;
+            }
 
-                        </sl-menu>
-                    </div>
-                </li>
-                <li class="navLi">
-                    <h4>셀렉트 & 인풋</h4>
-                    <div class="navMenu">
-                        <sl-menu style="display: flex;flex-direction: column;">
-                            <sl-button 
-                            href="/components/select/select.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Select
-                            </sl-button>
+            .tooltip-placement-example-row:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
 
-                            <sl-button 
-                            href="/components/select/input.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Input
-                            </sl-button>
+            .tooltip-placement-example sl-button {
+                float: left;
+                width: 2.5rem;
+                margin-right: 0.25rem;
+                margin-bottom: 0.25rem;
+            }
 
-                            <sl-button 
-                            href="/components/select/textarea.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Textarea
-                            </sl-button>
-                     </sl-menu>
-                    </div>
-                </li>
+            .tooltip-placement-example-row:nth-child(1)
+                sl-tooltip:first-child
+                sl-button,
+            .tooltip-placement-example-row:nth-child(5)
+                sl-tooltip:first-child
+                sl-button {
+                margin-left: calc(40px + 0.25rem);
+            }
 
-                <li class="navLi">
-                    <h4>체크박스 & 라디오</h4>
-                    <div class="navMenu">
-                        <sl-menu style="display: flex;flex-direction: column;">
-                            <sl-button 
-                            href="/components/checkbox/checkbox.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             CheckBox
-                            </sl-button>
+            .tooltip-placement-example-row:nth-child(2)
+                sl-tooltip:nth-child(2)
+                sl-button,
+            .tooltip-placement-example-row:nth-child(3)
+                sl-tooltip:nth-child(2)
+                sl-button,
+            .tooltip-placement-example-row:nth-child(4)
+                sl-tooltip:nth-child(2)
+                sl-button {
+                margin-left: calc((40px * 3) + (0.25rem * 3));
+            }
+        </style>
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="/assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Default Button
+                                    </sl-button>
 
-                            <sl-button 
-                            href="/components/checkbox/radio.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Radio
-                            </sl-button>
-                     </sl-menu>
-                    </div>
-                </li>
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Group Button
+                                    </sl-button>
 
-                <li class="navLi">
-                    <h4>모달 ~ 아코디언</h4>
-                    <div class="navMenu">
-                        <sl-menu style="display: flex;flex-direction: column;">
-                            <sl-button 
-                            href="/components/modal/modal.html"
-                            size="large"
-                            class="navButton"
-                            >
-                                모달
-                            </sl-button>
-                            <sl-button
-                            href="/components/modal/drawer.html"
-                            size="large"
-                            class="navButton"
-                            >
-                                Drawer
-                            </sl-button>
-                            <sl-button
-                            href="/components/modal/alert.html"
-                            size="large"
-                            class="navButton"
-                            >
-                                Alert
-                            </sl-button>
-                            <sl-button
-                            href="/components/modal/tooltip.html"
-                            size="large"
-                            class="navButton"
-                            >
-                                Tooltip
-                            </sl-button>
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Switch
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Select
+                                    </sl-button>
 
-                            <sl-button
-                            href="/components/modal/details.html"
-                            size="large"
-                            class="navButton"
-                            >
-                                아코디언
-                            </sl-button>
-                        </sl-menu>
-                    </div>
-                </li>
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Input
+                                    </sl-button>
 
-                <li class="navLi">
-                    <h4>Menu & Tab</h4>
-                    <div class="navMenu">
-                        <sl-menu style="display: flex;flex-direction: column;">
-                            <sl-button
-                            href="/components/menu/menu.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Menu
-                            </sl-button>
-                            <sl-button
-                            href="/components/menu/tab.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Tab
-                            </sl-button>
-                        </sl-menu>
-                    </div>
-                </li>
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Textarea
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                <li class="navLi">
-                    <h4>UI - UX</h4>
-                    <div class="navMenu">
-                        <sl-menu style="display: flex;flex-direction: column;">
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        CheckBox
+                                    </sl-button>
 
-                            <sl-button
-                            href="/components/uiux/uxInput.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             UX-Input
-                            </sl-button>
-                            <sl-button
-                            href="/components/uiux/breadcrumb.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Breadcrumb
-                            </sl-button>
-                            <sl-button
-                            href="/components/uiux/badge.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Badge & Tag
-                            </sl-button>
-                            <sl-button
-                            href="/components/uiux/dropdown.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Dropdown
-                            </sl-button>
-                            <sl-button
-                            href="/components/uiux/icon.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Icon
-                            </sl-button>
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Radio
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                        </sl-menu>
-                    </div>
-                </li>
-                <li class="navLi">
-                    <h4>애니메이션</h4>
-                    <div class="navMenu">
-                        <sl-menu style="display: flex;flex-direction: column;">
+                        <li class="navLi">
+                            <h4>모달 ~ 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Drawer
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Alert
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tooltip
+                                    </sl-button>
 
-                            <sl-button
-                            href="/components/animation/animation.html"
-                            size="large"
-                            class="navButton"
-                            >
-                             Animation
-                            </sl-button>
-                        </sl-menu>
-                    </div>
-                </li>
-            </ul>
+                                    <sl-button
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-        </div>
-        <div class="mode">
-            <sl-icon-button 
-            name="github" 
-            href="https://github.com/shoelace-style/shoelace" 
-            target="_blank"
-            class="linkIconButton"
-            ></sl-icon-button>
+                        <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Menu
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-            <sl-icon-button 
-            name="book" 
-            href="https://shoelace.style/" 
-            target="_blank"
-            class="linkIconButton"
-            ></sl-icon-button>
-            
-            <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
-        </div>
-    </div>
-      
-        <div class="section">
-            <h3 class="componentTitle">tooltip</h3>
-            <div class="componentWrap">
-                <div>
-                  <div class="viewPart">
-                    <h5>기초적인 Tooltip</h5>
-                    <p>사용법 : tooltip을 사용하려면 그냥 tooltip이 필요한 요소의 부모로<br/>sl-tooltip을 사용하면된다.</p><br/>
-                    <p>tooltip에는 content="텍스트" 속성을 사용한다.</p>
+                        <li class="navLi">
+                            <h4>UI - UX</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        UX-Input
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Breadcrumb
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Badge & Tag
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Dropdown
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Icon
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>애니메이션</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Animation
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mode">
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
 
-                    <div style="margin: 3rem;"></div>
-                    <sl-tooltip content="이곳에 보여질 텍스트를 넣는다">
-                        <sl-button>Hover Me</sl-button>
-                    </sl-tooltip>
-                  </div>
-                  <div class="codePart">
-                    <pre><code class="language-markup">
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="componentTitle">tooltip</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>기초적인 Tooltip</h5>
+                            <p>
+                                사용법 : tooltip을 사용하려면 그냥 tooltip이
+                                필요한 요소의 부모로<br />sl-tooltip을
+                                사용하면된다.
+                            </p>
+                            <br />
+                            <p>tooltip에는 content="텍스트" 속성을 사용한다.</p>
+
+                            <div style="margin: 3rem"></div>
+                            <sl-tooltip content="이곳에 보여질 텍스트를 넣는다">
+                                <sl-button>Hover Me</sl-button>
+                            </sl-tooltip>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
   &lt;sl-tooltip content=&quot;이곳에 보여질 텍스트를 넣는다&quot;&gt;
       &lt;sl-button&gt;Hover Me&lt;/sl-button&gt;
   &lt;/sl-tooltip&gt;
                     </code></pre>
-                  </div>
-                    
-                </div>
-
-                <div>
-                  <div class="viewPart">
-                    <h5>Tooltip이 나타날 위치를 정하려면 placement="" 속성을 사용한다.</h5>
-
-                    <div class="tooltip-placement-example">
-                        <div class="tooltip-placement-example-row">
-                          <sl-tooltip content="top-start" placement="top-start">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                      
-                          <sl-tooltip content="top" placement="top">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                      
-                          <sl-tooltip content="top-end" placement="top-end">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                        </div>
-                      
-                        <div class="tooltip-placement-example-row">
-                          <sl-tooltip content="left-start" placement="left-start">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                      
-                          <sl-tooltip content="right-start" placement="right-start">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                        </div>
-                      
-                        <div class="tooltip-placement-example-row">
-                          <sl-tooltip content="left" placement="left">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                      
-                          <sl-tooltip content="right" placement="right">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                        </div>
-                      
-                        <div class="tooltip-placement-example-row">
-                          <sl-tooltip content="left-end" placement="left-end">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                      
-                          <sl-tooltip content="right-end" placement="right-end">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                        </div>
-                      
-                        <div class="tooltip-placement-example-row">
-                          <sl-tooltip content="bottom-start" placement="bottom-start">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                      
-                          <sl-tooltip content="bottom" placement="bottom">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
-                      
-                          <sl-tooltip content="bottom-end" placement="bottom-end">
-                            <sl-button></sl-button>
-                          </sl-tooltip>
                         </div>
                     </div>
-                  </div>
-                  <div class="codePart">
-                    <sl-details summary="Code View">
-                      <pre><code class="language-markup">
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                Tooltip이 나타날 위치를 정하려면 placement=""
+                                속성을 사용한다.
+                            </h5>
+
+                            <div class="tooltip-placement-example">
+                                <div class="tooltip-placement-example-row">
+                                    <sl-tooltip
+                                        content="top-start"
+                                        placement="top-start"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+
+                                    <sl-tooltip content="top" placement="top">
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+
+                                    <sl-tooltip
+                                        content="top-end"
+                                        placement="top-end"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+                                </div>
+
+                                <div class="tooltip-placement-example-row">
+                                    <sl-tooltip
+                                        content="left-start"
+                                        placement="left-start"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+
+                                    <sl-tooltip
+                                        content="right-start"
+                                        placement="right-start"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+                                </div>
+
+                                <div class="tooltip-placement-example-row">
+                                    <sl-tooltip content="left" placement="left">
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+
+                                    <sl-tooltip
+                                        content="right"
+                                        placement="right"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+                                </div>
+
+                                <div class="tooltip-placement-example-row">
+                                    <sl-tooltip
+                                        content="left-end"
+                                        placement="left-end"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+
+                                    <sl-tooltip
+                                        content="right-end"
+                                        placement="right-end"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+                                </div>
+
+                                <div class="tooltip-placement-example-row">
+                                    <sl-tooltip
+                                        content="bottom-start"
+                                        placement="bottom-start"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+
+                                    <sl-tooltip
+                                        content="bottom"
+                                        placement="bottom"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+
+                                    <sl-tooltip
+                                        content="bottom-end"
+                                        placement="bottom-end"
+                                    >
+                                        <sl-button></sl-button>
+                                    </sl-tooltip>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
   &lt;style&gt;
     .tooltip-placement-example {
       width: 250px;
@@ -493,32 +571,48 @@
     &lt;/div&gt;
 &lt;/div&gt;
                       </code></pre>
-                    </sl-details>
-                  </div>
-                    
-                </div>
-
-                <div>
-                  <div class="viewPart">
-                    <h5>Tooltip이 나타나는 trigger를 변경하고싶다면 trigger=""속성을 사용한다.</h5>
-                    <p>기본 trigger는 hover이다.</p>
-
-                    <div style="display: flex; flex-direction: column; gap: 2rem; width: 100%;margin-top: 2rem;" >
-                        <sl-tooltip trigger="hover" content="tooltip">
-                            <sl-button>trigger="hover"</sl-button>
-                        </sl-tooltip>
-    
-                        <sl-tooltip trigger="click" content="tooltip">
-                            <sl-button>trigger="click"</sl-button>
-                        </sl-tooltip>
-    
-                        <sl-tooltip trigger="focus" content="tooltip" placement="top-start">
-                            <sl-input placeholder="trigger='focus'"></sl-input>
-                        </sl-tooltip>
+                            </sl-details>
+                        </div>
                     </div>
-                  </div>
-                  <div class="codePart">
-                    <pre><code class="language-markup">
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                Tooltip이 나타나는 trigger를 변경하고싶다면
+                                trigger=""속성을 사용한다.
+                            </h5>
+                            <p>기본 trigger는 hover이다.</p>
+
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 2rem;
+                                    width: 100%;
+                                    margin-top: 2rem;
+                                "
+                            >
+                                <sl-tooltip trigger="hover" content="tooltip">
+                                    <sl-button>trigger="hover"</sl-button>
+                                </sl-tooltip>
+
+                                <sl-tooltip trigger="click" content="tooltip">
+                                    <sl-button>trigger="click"</sl-button>
+                                </sl-tooltip>
+
+                                <sl-tooltip
+                                    trigger="focus"
+                                    content="tooltip"
+                                    placement="top-start"
+                                >
+                                    <sl-input
+                                        placeholder="trigger='focus'"
+                                    ></sl-input>
+                                </sl-tooltip>
+                            </div>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
   &lt;sl-tooltip trigger=&quot;hover&quot; content=&quot;tooltip&quot;&gt;
       &lt;sl-button&gt;trigger=&quot;hover&quot;&lt;/sl-button&gt;
   &lt;/sl-tooltip&gt;
@@ -531,35 +625,52 @@
       &lt;sl-input placeholder=&quot;trigger='focus'&quot;&gt;&lt;/sl-input&gt;
   &lt;/sl-tooltip&gt;
                     </code></pre>
-                  </div>
-                    
-                </div>
-
-                <div>
-                  <div class="viewPart">
-                    <h5>특정 조건으로 tooltip을 활성화 시키기 -> JS필요 + trigger="manual" 속성 필요</h5>
-                    <p>tooltip이 가지는 .open 속성을 변경해줍니다.</p>
-
-                    <div style="display: flex; width: 100%; justify-content: space-around ;margin-top: 2rem; ">
-                        <sl-button id="manual-button">툴팁 오픈!</sl-button>
-
-                        <sl-tooltip content="안녕하세요!" trigger="manual" id="manual-tooltip">
-                            <sl-avatar label="User"></sl-avatar>
-                        </sl-tooltip>
+                        </div>
                     </div>
 
-                    <script>
-                        const button = document.getElementById("manual-button")
-                        const tooltip = document.getElementById("manual-tooltip")
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                특정 조건으로 tooltip을 활성화 시키기 -> JS필요
+                                + trigger="manual" 속성 필요
+                            </h5>
+                            <p>tooltip이 가지는 .open 속성을 변경해줍니다.</p>
 
-                        button.addEventListener("click", (e) => {
-                            tooltip.open = !tooltip.open;
-                        })
-                    </script>
-                  </div>
-                  <div class="codePart">
-                    <sl-details summary="Code View">
-                      <pre><code class="language-markup">
+                            <div
+                                style="
+                                    display: flex;
+                                    width: 100%;
+                                    justify-content: space-around;
+                                    margin-top: 2rem;
+                                "
+                            >
+                                <sl-button id="manual-button"
+                                    >툴팁 오픈!</sl-button
+                                >
+
+                                <sl-tooltip
+                                    content="안녕하세요!"
+                                    trigger="manual"
+                                    id="manual-tooltip"
+                                >
+                                    <sl-avatar label="User"></sl-avatar>
+                                </sl-tooltip>
+                            </div>
+
+                            <script>
+                                const button =
+                                    document.getElementById('manual-button');
+                                const tooltip =
+                                    document.getElementById('manual-tooltip');
+
+                                button.addEventListener('click', (e) => {
+                                    tooltip.open = !tooltip.open;
+                                });
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
   &lt;sl-button id=&quot;manual-button&quot;&gt;툴팁 오픈!&lt;/sl-button&gt;
 
   &lt;sl-tooltip content=&quot;안녕하세요!&quot; trigger=&quot;manual&quot; id=&quot;manual-tooltip&quot;&gt;
@@ -575,89 +686,109 @@
       })
   &lt;/script&gt;
                       </code></pre>
-                    </sl-details>
-                  </div>
-                    
-                </div>
+                            </sl-details>
+                        </div>
+                    </div>
 
-                <div>
-                  <div class="viewPart">
-                    <h5>tooltip의 화살표 없애기 - Style 수정 필요</h5>
-                    <div style="margin: 3rem;"></div>
-                    <sl-tooltip content="This is a tooltip" style="--sl-tooltip-arrow-size: 0;">
-                        <sl-button>No Arrow</sl-button>
-                    </sl-tooltip>         
-                  </div>
-                  <div class="codePart">
-                    <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>tooltip의 화살표 없애기 - Style 수정 필요</h5>
+                            <div style="margin: 3rem"></div>
+                            <sl-tooltip
+                                content="This is a tooltip"
+                                style="--sl-tooltip-arrow-size: 0"
+                            >
+                                <sl-button>No Arrow</sl-button>
+                            </sl-tooltip>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
   &lt;sl-tooltip content=&quot;This is a tooltip&quot; style=&quot;--sl-tooltip-arrow-size: 0;&quot;&gt;
       &lt;sl-button&gt;No Arrow&lt;/sl-button&gt;
   &lt;/sl-tooltip&gt;   
                     </code></pre>
-                  </div>
-                    
-                </div>
+                        </div>
+                    </div>
 
-                <div>
-                  <div class="viewPart">
-                    <h5>tooltip에 html 넣어주기 - tooltip 안에 slot="content"인 div를 넣어준다.</h5>
-                    <div style="margin: 3rem;"></div>
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                tooltip에 html 넣어주기 - tooltip 안에
+                                slot="content"인 div를 넣어준다.
+                            </h5>
+                            <div style="margin: 3rem"></div>
 
-                    <sl-tooltip>
-                        <div slot="content">I'm not <strong>just</strong> a tooltip, I'm a <em>tooltip</em> with HTML!</div>
-                      
-                        <sl-button>Hover me</sl-button>
-                    </sl-tooltip>
-                  </div>
-                  <div class="codePart">
-                    <pre><code class="language-markup">
+                            <sl-tooltip>
+                                <div slot="content">
+                                    I'm not <strong>just</strong> a tooltip, I'm
+                                    a <em>tooltip</em> with HTML!
+                                </div>
+
+                                <sl-button>Hover me</sl-button>
+                            </sl-tooltip>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
   &lt;sl-tooltip&gt;
       &lt;div slot=&quot;content&quot;&gt;I'm not &lt;strong&gt;just&lt;/strong&gt; a tooltip, I'm a &lt;em&gt;tooltip&lt;/em&gt; with HTML!&lt;/div&gt;
     
       &lt;sl-button&gt;Hover me&lt;/sl-button&gt;
   &lt;/sl-tooltip&gt;   
                     </code></pre>
-                  </div>
-                    
-                </div>
+                        </div>
+                    </div>
 
-                <div>
-                  <div class="viewPart">
-                    <h5>tooltip에 max-width 주기 style="--max-width" 사용</h5>
-                    <div style="margin: 3rem;"></div>
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                tooltip에 max-width 주기 style="--max-width"
+                                사용
+                            </h5>
+                            <div style="margin: 3rem"></div>
 
-                    <sl-tooltip style="--max-width: 80px;" content="This tooltip will wrap after only 80 pixels.">
-                        <sl-button>Hover me</sl-button>
-                    </sl-tooltip>
-                  </div>
-                  <div class="codePart">
-                    <pre><code class="language-markup">
+                            <sl-tooltip
+                                style="--max-width: 80px"
+                                content="This tooltip will wrap after only 80 pixels."
+                            >
+                                <sl-button>Hover me</sl-button>
+                            </sl-tooltip>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
   &lt;sl-tooltip style=&quot;--max-width: 80px;&quot; content=&quot;This tooltip will wrap after only 80 pixels.&quot;&gt;
       &lt;sl-button&gt;Hover me&lt;/sl-button&gt;
   &lt;/sl-tooltip&gt;
                     </code></pre>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="viewPart">
-                    <h5>overflow에서도 보이도록 하려면 hoist 속성을 사용</h5>
-
-                    <div class="tooltip-hoist" style="position: relative;
-                    border: solid 2px var(--sl-panel-border-color);
-                    overflow: hidden;
-                    padding: var(--sl-spacing-medium);">
-                        <sl-tooltip content="This is a tooltip">
-                          <sl-button>No Hoist</sl-button>
-                        </sl-tooltip>
-                      
-                        <sl-tooltip content="This is a tooltip" hoist>
-                          <sl-button>Hoist</sl-button>
-                        </sl-tooltip>
+                        </div>
                     </div>
-                  </div>
-                  <div class="codePart">
-                    <pre><code class="language-markup">
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                overflow에서도 보이도록 하려면 hoist 속성을 사용
+                            </h5>
+
+                            <div
+                                class="tooltip-hoist"
+                                style="
+                                    position: relative;
+                                    border: solid 2px
+                                        var(--sl-panel-border-color);
+                                    overflow: hidden;
+                                    padding: var(--sl-spacing-medium);
+                                "
+                            >
+                                <sl-tooltip content="This is a tooltip">
+                                    <sl-button>No Hoist</sl-button>
+                                </sl-tooltip>
+
+                                <sl-tooltip content="This is a tooltip" hoist>
+                                    <sl-button>Hoist</sl-button>
+                                </sl-tooltip>
+                            </div>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
   &lt;div class=&quot;tooltip-hoist&quot; style=&quot;position: relative;
   border: solid 2px var(--sl-panel-border-color);
   overflow: hidden;
@@ -671,13 +802,12 @@
       &lt;/sl-tooltip&gt;
   &lt;/div&gt;
                     </code></pre>
-                  </div>
-                    
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="/js/darkmode.js"></script>
-</body>
+        <script src="/js/darkmode.js"></script>
+    </body>
 </html>

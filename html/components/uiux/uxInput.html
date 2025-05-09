@@ -1,316 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-    <!-- shoelace -->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <script
-        type="module"
-        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
-    ></script>
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
 
-    <!-- shoelace Light & Dark Theme -->
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:light)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:dark)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
-    />
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
 
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
 
-    <!-- component css -->
-    <link rel="stylesheet" href="/css/component.css">
+        <!-- component css -->
+        <link rel="stylesheet" href="/css/component.css" />
 
-    <!-- CodeViewer -->
-    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
-    <!-- Prism.js -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
-</head>
-<body class="outer">
-    <div class="inner">
-        <!-- 헤더 -->
-        <div class="header">
-            <a class="logoButton" href="/index.html">
-                <img src="/assets/logo.svg" alt="" />
-            </a>
-            <div class="navWrap">
-                <ul class="navTitle">
-                    <li class="navLi">
-                        <h4>버튼</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                   <sl-button 
-                                   href="/components/button/button.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Default Button
-                                   </sl-button>
-                                
-                                   <sl-button 
-                                   href="/components/button/buttonGroup.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Group Button
-                                   </sl-button>
-
-                                   <sl-button 
-                                   href="/components/button/switch.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Switch
-                                   </sl-button>
-
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>셀렉트 & 인풋</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/select/select.html"
-                                size="large"
-                                class="navButton"
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="/assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Select
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Default Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/input.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Input
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Group Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/textarea.html"
-                                size="large"
-                                class="navButton"
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Switch
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Textarea
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Select
+                                    </sl-button>
 
-                    <li class="navLi">
-                        <h4>체크박스 & 라디오</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/checkbox/checkbox.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 CheckBox
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Input
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/checkbox/radio.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Radio
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Textarea
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>모달 ~ 아코디언</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/modal/modal.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                    모달
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/drawer.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Drawer
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/alert.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Alert
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/tooltip.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Tooltip
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        CheckBox
+                                    </sl-button>
 
-                                <sl-button
-                                href="/components/modal/details.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    아코디언
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Radio
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>Menu & Tab</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button
-                                href="/components/menu/menu.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>모달 ~ 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Menu
-                                </sl-button>
-                                <sl-button
-                                href="/components/menu/tab.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Tab
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Drawer
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Alert
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tooltip
+                                    </sl-button>
 
-                    <li class="navLi">
-                        <h4>UI - UX</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
+                                    <sl-button
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                                <sl-button
-                                href="/components/uiux/uxInput.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 UX-Input
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/breadcrumb.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Breadcrumb
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/badge.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Badge & Tag
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/dropdown.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Dropdown
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/icon.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Icon
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Menu
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>애니메이션</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/animation/animation.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>UI - UX</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Animation
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-                </ul>
+                                    <sl-button
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        UX-Input
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Breadcrumb
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Badge & Tag
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Dropdown
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Icon
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>애니메이션</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Animation
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mode">
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
 
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
             </div>
-            <div class="mode">
-                <sl-icon-button 
-                name="github" 
-                href="https://github.com/shoelace-style/shoelace" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
 
-                <sl-icon-button 
-                name="book" 
-                href="https://shoelace.style/" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-                
-                <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h3 class="componentTitle">UX - input</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>Range - Input</h5>
-                        <br/>
-                        <p style="padding-left: 1rem;">
-                            label : 상단 텍스트 <br/>
-                            help-text : 하단 텍스트 <br/>
-                            min : 최솟값 <br/>
-                            max : 최댓값 <br/>
-                            step : 단위 <br/>
-                        </p>
-                        <br/>
-                        <sl-range
-                        label="label : 상단 텍스트"
-                        help-text="help-text : 하단 텍스트"
-                        min="0"
-                        max="100"
-                        step="1"
-                        style="
-                          --track-color-active: var(--sl-color-primary-500);
-                          --track-color-inactive: var(--sl-color-primary-200);
-                        "
-                        ></sl-range>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+            <div class="section">
+                <h3 class="componentTitle">UX - input</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>Range - Input</h5>
+                            <br />
+                            <p style="padding-left: 1rem">
+                                label : 상단 텍스트 <br />
+                                help-text : 하단 텍스트 <br />
+                                min : 최솟값 <br />
+                                max : 최댓값 <br />
+                                step : 단위 <br />
+                            </p>
+                            <br />
+                            <sl-range
+                                label="label : 상단 텍스트"
+                                help-text="help-text : 하단 텍스트"
+                                min="0"
+                                max="100"
+                                step="1"
+                                style="
+                                    --track-color-active: var(
+                                        --sl-color-primary-500
+                                    );
+                                    --track-color-inactive: var(
+                                        --sl-color-primary-200
+                                    );
+                                "
+                            ></sl-range>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-range
     label=&quot;label : 상단 텍스트&quot;
     help-text=&quot;help-text : 하단 텍스트&quot;
@@ -323,35 +358,38 @@
     &quot;
     &gt;&lt;/sl-range&gt; 
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>좌우 Range</h5>
-                        <br/>
-                        <p style="padding-left: 1rem;">
-                            min : 최솟값 +꼭지점 <br/>
-                            max : 최댓값 -꼭지점 <br/>
-                            --track-active-offset: 50% 추가 필요 <br/>
-                        </p>
-                        <br/>
-                        <sl-range
-                        label="속성 Test Range"
-                        help-text="1단위 씩 증가합니다."
-                        min="-100"
-                        max="100"
-                        step="1"
-                        style="
-                          --track-color-active: var(--sl-color-primary-500);
-                          --track-color-inactive: var(--sl-color-primary-200);
-                          --track-active-offset: 50%;
-                        "
-                        ></sl-range>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>좌우 Range</h5>
+                            <br />
+                            <p style="padding-left: 1rem">
+                                min : 최솟값 +꼭지점 <br />
+                                max : 최댓값 -꼭지점 <br />
+                                --track-active-offset: 50% 추가 필요 <br />
+                            </p>
+                            <br />
+                            <sl-range
+                                label="속성 Test Range"
+                                help-text="1단위 씩 증가합니다."
+                                min="-100"
+                                max="100"
+                                step="1"
+                                style="
+                                    --track-color-active: var(
+                                        --sl-color-primary-500
+                                    );
+                                    --track-color-inactive: var(
+                                        --sl-color-primary-200
+                                    );
+                                    --track-active-offset: 50%;
+                                "
+                            ></sl-range>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-range
     label=&quot;속성 Test Range&quot;
     help-text=&quot;1단위 씩 증가합니다.&quot;
@@ -365,31 +403,37 @@
     &quot;
     &gt;&lt;/sl-range&gt;   
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>Range - 커스텀 ToolTip</h5>
-                        <sl-range 
-                        id="range-with-custom-formatter"
-                        min="0" 
-                        max="100" 
-                        step="1" 
-                        style="
-                          --track-color-active: var(--sl-color-primary-500);
-                          --track-color-inactive: var(--sl-color-primary-200);
-                        "
-                        ></sl-range>
-    
-                        <script>
-                        const range = document.getElementById('range-with-custom-formatter');
-                        range.tooltipFormatter = value => `Total - ${value}%`;
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>Range - 커스텀 ToolTip</h5>
+                            <sl-range
+                                id="range-with-custom-formatter"
+                                min="0"
+                                max="100"
+                                step="1"
+                                style="
+                                    --track-color-active: var(
+                                        --sl-color-primary-500
+                                    );
+                                    --track-color-inactive: var(
+                                        --sl-color-primary-200
+                                    );
+                                "
+                            ></sl-range>
+
+                            <script>
+                                const range = document.getElementById(
+                                    'range-with-custom-formatter',
+                                );
+                                range.tooltipFormatter = (value) =>
+                                    `Total - ${value}%`;
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-range 
     id=&quot;range-with-custom-formatter&quot;
     min=&quot;0&quot; 
@@ -406,34 +450,47 @@
         range.tooltipFormatter = value =&gt; `Total - ${value}%`;
     &lt;/script&gt;    
                         </code></pre>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <sl-divider style="margin: 1rem 0px;"></sl-divider>
-
-            <h3 class="componentTitle">단위별 자동 변환</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>숫자 쉼표 - 천단위로 , 찍기</h5>
-                        <div id="format-number-overview">
-                            <sl-format-number value="1000"></sl-format-number>
-                            <br /><br />
-                            <sl-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></sl-input>
                         </div>
-                          
-                        <script>
-                        const container = document.getElementById('format-number-overview');
-                        const formatter = container.querySelector('sl-format-number');
-                        const input = container.querySelector('sl-input');
-                        
-                        input.addEventListener('sl-input', () => (formatter.value = input.value || 0));
-                        </script>
                     </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                </div>
+
+                <sl-divider style="margin: 1rem 0px"></sl-divider>
+
+                <h3 class="componentTitle">단위별 자동 변환</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>숫자 쉼표 - 천단위로 , 찍기</h5>
+                            <div id="format-number-overview">
+                                <sl-format-number
+                                    value="1000"
+                                ></sl-format-number>
+                                <br /><br />
+                                <sl-input
+                                    type="number"
+                                    value="1000"
+                                    label="Number to Format"
+                                    style="max-width: 180px"
+                                ></sl-input>
+                            </div>
+
+                            <script>
+                                const container = document.getElementById(
+                                    'format-number-overview',
+                                );
+                                const formatter =
+                                    container.querySelector('sl-format-number');
+                                const input =
+                                    container.querySelector('sl-input');
+
+                                input.addEventListener(
+                                    'sl-input',
+                                    () => (formatter.value = input.value || 0),
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;div id=&quot;format-number-overview&quot;&gt;
         &lt;sl-format-number value=&quot;1000&quot;&gt;&lt;/sl-format-number&gt;
         &lt;sl-input type=&quot;number&quot; value=&quot;1000&quot; label=&quot;Number to Format&quot; style=&quot;max-width: 180px;&quot;&gt;&lt;/sl-input&gt;
@@ -447,64 +504,105 @@
         input.addEventListener('sl-input', () =&gt; (formatter.value = input.value || 0));
     &lt;/script&gt;   
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
-                
-                <div>
-                    <div class="viewPart">
-                        <h5>소숫점 to 퍼센트%</h5>
-                        <br/>
-                        <div>0.0 -> <sl-format-number type="percent" value="0"></sl-format-number></div>
-                        <br />
-                        <div>0.25 -> <sl-format-number type="percent" value="0.25"></sl-format-number></div>
-                        <br />
-                        <div>0.50 -> <sl-format-number type="percent" value="0.50"></sl-format-number></div>
-                        <br />
-                        <div>0.75 -> <sl-format-number type="percent" value="0.75"></sl-format-number></div>
-                        <br />
-                        <div>1 -> <sl-format-number type="percent" value="1"></sl-format-number></div>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>소숫점 to 퍼센트%</h5>
+                            <br />
+                            <div>
+                                0.0 ->
+                                <sl-format-number
+                                    type="percent"
+                                    value="0"
+                                ></sl-format-number>
+                            </div>
+                            <br />
+                            <div>
+                                0.25 ->
+                                <sl-format-number
+                                    type="percent"
+                                    value="0.25"
+                                ></sl-format-number>
+                            </div>
+                            <br />
+                            <div>
+                                0.50 ->
+                                <sl-format-number
+                                    type="percent"
+                                    value="0.50"
+                                ></sl-format-number>
+                            </div>
+                            <br />
+                            <div>
+                                0.75 ->
+                                <sl-format-number
+                                    type="percent"
+                                    value="0.75"
+                                ></sl-format-number>
+                            </div>
+                            <br />
+                            <div>
+                                1 ->
+                                <sl-format-number
+                                    type="percent"
+                                    value="1"
+                                ></sl-format-number>
+                            </div>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;div&gt;0.0 -&gt; &lt;sl-format-number type=&quot;percent&quot; value=&quot;0&quot;&gt;&lt;/sl-format-number&gt;&lt;/div&gt;
     &lt;div&gt;0.25 -&gt; &lt;sl-format-number type=&quot;percent&quot; value=&quot;0.25&quot;&gt;&lt;/sl-format-number&gt;&lt;/div&gt;
     &lt;div&gt;0.50 -&gt; &lt;sl-format-number type=&quot;percent&quot; value=&quot;0.50&quot;&gt;&lt;/sl-format-number&gt;&lt;/div&gt;
     &lt;div&gt;0.75 -&gt; &lt;sl-format-number type=&quot;percent&quot; value=&quot;0.75&quot;&gt;&lt;/sl-format-number&gt;&lt;/div&gt;
     &lt;div&gt;1 -&gt; &lt;sl-format-number type=&quot;percent&quot; value=&quot;1&quot;&gt;&lt;/sl-format-number&gt;&lt;/div&gt;  
                         </code></pre>
-                    </div>
-                    
-                </div>
-
-                <div>
-                    <div class="viewPart">
-                        <h5>파일크기(byte ,KB , MB, GB) 자동화</h5>
-                        <div class="format-bytes-overview">
-                            소숫점 2자리 까지만 반올림하여 계산해줌
-                        <br />
-                        <br />
-
-                        계산된 크기 : 
-                        <sl-format-bytes value="1000"></sl-format-bytes> 
-                        
-                        <br />
-                        <br />
-
-                        <sl-input type="number" value="1000" label="Number to Format" style="max-width: 180px;"></sl-input>
                         </div>
-                        
-                        <script>
-                        const container2 = document.querySelector('.format-bytes-overview');
-                        const formatter2 = container2.querySelector('sl-format-bytes');
-                        const input2 = container2.querySelector('sl-input');
-                        
-                        input2.addEventListener('sl-input', () => (formatter2.value = input2.value || 0));
-                        </script>
                     </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+
+                    <div>
+                        <div class="viewPart">
+                            <h5>파일크기(byte ,KB , MB, GB) 자동화</h5>
+                            <div class="format-bytes-overview">
+                                소숫점 2자리 까지만 반올림하여 계산해줌
+                                <br />
+                                <br />
+
+                                계산된 크기 :
+                                <sl-format-bytes value="1000"></sl-format-bytes>
+
+                                <br />
+                                <br />
+
+                                <sl-input
+                                    type="number"
+                                    value="1000"
+                                    label="Number to Format"
+                                    style="max-width: 180px"
+                                ></sl-input>
+                            </div>
+
+                            <script>
+                                const container2 = document.querySelector(
+                                    '.format-bytes-overview',
+                                );
+                                const formatter2 =
+                                    container2.querySelector('sl-format-bytes');
+                                const input2 =
+                                    container2.querySelector('sl-input');
+
+                                input2.addEventListener(
+                                    'sl-input',
+                                    () =>
+                                        (formatter2.value = input2.value || 0),
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;div class=&quot;format-bytes-overview&quot;&gt;
         소숫점 2자리 까지만 반올림하여 계산해줌
     &lt;br /&gt;
@@ -527,188 +625,281 @@
         input2.addEventListener('sl-input', () =&gt; (formatter2.value = input2.value || 0));
     &lt;/script&gt;     
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <sl-divider></sl-divider>
+                <sl-divider></sl-divider>
 
-            <h3 class="componentTitle">날자-시간 자동 변환</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>날자 표현</h5>
+                <h3 class="componentTitle">날자-시간 자동 변환</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>날자 표현</h5>
 
-                        <p style="display: inline-block; font-weight: 400;">
-                            특정 날자 : date="2020-07-15T09:17:00-04:00"  => 
-                        </p>    
-                        <sl-format-date date="2020-07-15T09:17:00-04:00" style="font-size: var(--p-size);"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                            <p style="display: inline-block; font-weight: 400">
+                                특정 날자 : date="2020-07-15T09:17:00-04:00" =>
+                            </p>
+                            <sl-format-date
+                                date="2020-07-15T09:17:00-04:00"
+                                style="font-size: var(--p-size)"
+                            ></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date date=&quot;2020-07-15T09:17:00-04:00&quot; style=&quot;font-size: var(--p-size);&quot;&gt;&lt;/sl-format-date&gt;
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <h5>현재 날자/시간 표현</h5> 
+                        </div>
 
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            기본 표현 : 
-                        </p>
-                        <sl-format-date></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        <div class="viewPart">
+                            <h5>현재 날자/시간 표현</h5>
+
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                기본 표현 :
+                            </p>
+                            <sl-format-date></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date&gt;&lt;/sl-format-date&gt;  
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            월 일 년 : 
-                        </p>
-                        <sl-format-date month="long" day="numeric" year="numeric"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        </div>
+
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                월 일 년 :
+                            </p>
+                            <sl-format-date
+                                month="long"
+                                day="numeric"
+                                year="numeric"
+                            ></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date month=&quot;long&quot; day=&quot;numeric&quot; year=&quot;numeric&quot;&gt;&lt;/sl-format-date&gt;
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            시간 :  
-                        </p>
-                        <sl-format-date hour="numeric" minute="numeric"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        </div>
+
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                시간 :
+                            </p>
+                            <sl-format-date
+                                hour="numeric"
+                                minute="numeric"
+                            ></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date hour=&quot;numeric&quot; minute=&quot;numeric&quot;&gt;&lt;/sl-format-date&gt;     
                         </code></pre>
-                    </div>
+                        </div>
 
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            요일 : 
-                        </p>
-                        <sl-format-date weekday="long"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                요일 :
+                            </p>
+                            <sl-format-date weekday="long"></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date weekday=&quot;long&quot;&gt;&lt;/sl-format-date&gt;      
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            달 : 
-                        </p>
-                        <sl-format-date month="long"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        </div>
+
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                달 :
+                            </p>
+                            <sl-format-date month="long"></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date month=&quot;long&quot;&gt;&lt;/sl-format-date&gt;      
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            년도 : 
-                        </p>
-                        <sl-format-date year="numeric"></sl-format-date><br />
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        </div>
+
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                년도 :
+                            </p>
+                            <sl-format-date year="numeric"></sl-format-date
+                            ><br />
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date year=&quot;numeric&quot;&gt;&lt;/sl-format-date&gt;&lt;br /&gt;       
                         </code></pre>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>날자 표현 형식</h5>
-                        <br/>
-    
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            한국식 :  
-                        </p>
-                        <sl-format-date lang="ko"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>날자 표현 형식</h5>
+                            <br />
+
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                한국식 :
+                            </p>
+                            <sl-format-date lang="ko"></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date lang=&quot;ko&quot;&gt;&lt;/sl-format-date&gt;
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            미국식 :  
-                        </p>
-                        <sl-format-date lang="en"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        </div>
+
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                미국식 :
+                            </p>
+                            <sl-format-date lang="en"></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date lang=&quot;en&quot;&gt;&lt;/sl-format-date&gt;        
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 80px; font-weight: 400;">
-                            프랑스식 :  
-                        </p>
-                        <sl-format-date lang="fr"></sl-format-date><br />
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        </div>
+
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 80px;
+                                    font-weight: 400;
+                                "
+                            >
+                                프랑스식 :
+                            </p>
+                            <sl-format-date lang="fr"></sl-format-date><br />
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date lang=&quot;fr&quot;&gt;&lt;/sl-format-date&gt;&lt;br /&gt;
                         </code></pre>
+                        </div>
                     </div>
 
-                </div>
+                    <div>
+                        <div class="viewPart">
+                            <h5>시간 표현 12시간 / 24시간</h5>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>시간 표현 12시간 / 24시간</h5>
-
-                        <p style="display: inline-block;width: 130px; font-weight: 400;">
-                            오후 2시 30분 :  
-                        </p>
-                        <sl-format-date hour="numeric" minute="numeric" hour-format="12" date="2025-04-18T14:30:00"></sl-format-date>
-                         <- AM/PM   ||   24시간 ->
-                        <sl-format-date hour="numeric" minute="numeric" hour-format="24" date="2025-04-18T14:30:00"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 130px;
+                                    font-weight: 400;
+                                "
+                            >
+                                오후 2시 30분 :
+                            </p>
+                            <sl-format-date
+                                hour="numeric"
+                                minute="numeric"
+                                hour-format="12"
+                                date="2025-04-18T14:30:00"
+                            ></sl-format-date>
+                            <- AM/PM || 24시간 ->
+                            <sl-format-date
+                                hour="numeric"
+                                minute="numeric"
+                                hour-format="24"
+                                date="2025-04-18T14:30:00"
+                            ></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date hour=&quot;numeric&quot; minute=&quot;numeric&quot; hour-format=&quot;12&quot; date=&quot;2025-04-18T14:30:00&quot;&gt;&lt;/sl-format-date&gt;
     &lt;- AM/PM   ||   24시간 -&gt;
     &lt;sl-format-date hour=&quot;numeric&quot; minute=&quot;numeric&quot; hour-format=&quot;24&quot; date=&quot;2025-04-18T14:30:00&quot;&gt;&lt;/sl-format-date&gt;    
                         </code></pre>
-                    </div>
-                    
-                    <div class="viewPart">
-                        <p style="display: inline-block;width: 130px; font-weight: 400;">
-                            현재 시간 :  
-                        </p>
-    
-                        <sl-format-date hour="numeric" minute="numeric" hour-format="12"></sl-format-date>
-                         <- AM/PM   ||   24시간 ->
-                        <sl-format-date hour="numeric" minute="numeric" hour-format="24"></sl-format-date>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                        </div>
+
+                        <div class="viewPart">
+                            <p
+                                style="
+                                    display: inline-block;
+                                    width: 130px;
+                                    font-weight: 400;
+                                "
+                            >
+                                현재 시간 :
+                            </p>
+
+                            <sl-format-date
+                                hour="numeric"
+                                minute="numeric"
+                                hour-format="12"
+                            ></sl-format-date>
+                            <- AM/PM || 24시간 ->
+                            <sl-format-date
+                                hour="numeric"
+                                minute="numeric"
+                                hour-format="24"
+                            ></sl-format-date>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-format-date hour=&quot;numeric&quot; minute=&quot;numeric&quot; hour-format=&quot;12&quot;&gt;&lt;/sl-format-date&gt;
     &lt;- AM/PM   ||   24시간 -&gt;
     &lt;sl-format-date hour=&quot;numeric&quot; minute=&quot;numeric&quot; hour-format=&quot;24&quot;&gt;&lt;/sl-format-date&gt;     
                         </code></pre>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="/js/darkmode.js"></script>
-</body>
+        <script src="/js/darkmode.js"></script>
+    </body>
 </html>

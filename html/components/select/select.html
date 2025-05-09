@@ -1,332 +1,371 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-    
-    <!-- shoelace -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <script
-        type="module"
-        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
-    ></script>
+        <!-- shoelace -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
+        ></script>
 
-    <!-- shoelace Light & Dark Theme -->
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:light)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
-    />
-    <link
-        rel="stylesheet"
-        media="(prefers-color-scheme:dark)"
-        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
-    />
+        <!-- shoelace Light & Dark Theme -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
+        />
 
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/component.css">
+        <link rel="stylesheet" href="/css/reset.css" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/component.css" />
 
-    <style>
-        .red-select sl-option::part(base):hover{
-            /* hover된 option */
-            background-color: var(--sl-color-red-200);
-        }
-        .red-select sl-option[tabindex="0"]::part(base),
-        .red-select sl-option[tabindex="0"]::part(base):hover {
-            /* 선택된 option */
-            background-color: var(--sl-color-red-500);
-        }
-    </style>
+        <style>
+            .red-select sl-option::part(base):hover {
+                /* hover된 option */
+                background-color: var(--sl-color-red-200);
+            }
+            .red-select sl-option[tabindex='0']::part(base),
+            .red-select sl-option[tabindex='0']::part(base):hover {
+                /* 선택된 option */
+                background-color: var(--sl-color-red-500);
+            }
+        </style>
 
-    <!-- CodeViewer -->
-    <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <!-- CodeViewer -->
+        <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
-    <!-- Prism.js -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
-</head>
-<body class="outer">
-    <div class="inner">
-        <!-- 헤더 -->
-        <div class="header">
-            <a class="logoButton" href="/index.html">
-                <img src="/assets/logo.svg" alt="" />
-            </a>
-            <div class="navWrap">
-                <ul class="navTitle">
-                    <li class="navLi">
-                        <h4>버튼</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                   <sl-button 
-                                   href="/components/button/button.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Default Button
-                                   </sl-button>
-                                
-                                   <sl-button 
-                                   href="/components/button/buttonGroup.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Group Button
-                                   </sl-button>
-
-                                   <sl-button 
-                                   href="/components/button/switch.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Switch
-                                   </sl-button>
-
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>셀렉트 & 인풋</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/select/select.html"
-                                size="large"
-                                class="navButton"
+        <!-- Prism.js -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="/assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Select
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Default Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/input.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Input
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Group Button
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/textarea.html"
-                                size="large"
-                                class="navButton"
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Switch
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Textarea
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Select
+                                    </sl-button>
 
-                    <li class="navLi">
-                        <h4>체크박스 & 라디오</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/checkbox/checkbox.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 CheckBox
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Input
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/checkbox/radio.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Radio
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Textarea
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>모달 ~ 아코디언</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/modal/modal.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                    모달
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/drawer.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Drawer
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/alert.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Alert
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/tooltip.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Tooltip
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        CheckBox
+                                    </sl-button>
 
-                                <sl-button
-                                href="/components/modal/details.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    아코디언
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Radio
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>Menu & Tab</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button
-                                href="/components/menu/menu.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>모달 ~ 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Menu
-                                </sl-button>
-                                <sl-button
-                                href="/components/menu/tab.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Tab
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Drawer
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Alert
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tooltip
+                                    </sl-button>
 
-                    <li class="navLi">
-                        <h4>UI - UX</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
+                                    <sl-button
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                                <sl-button
-                                href="/components/uiux/uxInput.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 UX-Input
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/breadcrumb.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Breadcrumb
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/badge.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Badge & Tag
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/dropdown.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Dropdown
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/icon.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Icon
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Menu
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>애니메이션</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/animation/animation.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>UI - UX</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Animation
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-                </ul>
+                                    <sl-button
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        UX-Input
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Breadcrumb
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Badge & Tag
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Dropdown
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Icon
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>애니메이션</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Animation
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mode">
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
 
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
+
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
             </div>
-            <div class="mode">
-                <sl-icon-button 
-                name="github" 
-                href="https://github.com/shoelace-style/shoelace" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
 
-                <sl-icon-button 
-                name="book" 
-                href="https://shoelace.style/" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-                
-                <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
-            </div>
-        </div>
-        
-        <!-- 셀렉트 -->
-        <div class="section">
-            <h3 class="componentTitle">셀렉트 - 옵션</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>기초적인 Select</h5>
-                        <div style="display: flex; gap: 2rem">
-                            <sl-select
-                                id="select"
-                            >
-                                <sl-option value="option-1">Option 1</sl-option>
-                                <sl-option value="option-2">Option 2</sl-option>
-                                <sl-option value="option-3">Option 3</sl-option>
-                            </sl-select>
+            <!-- 셀렉트 -->
+            <div class="section">
+                <h3 class="componentTitle">셀렉트 - 옵션</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>기초적인 Select</h5>
+                            <div style="display: flex; gap: 2rem">
+                                <sl-select id="select">
+                                    <sl-option value="option-1"
+                                        >Option 1</sl-option
+                                    >
+                                    <sl-option value="option-2"
+                                        >Option 2</sl-option
+                                    >
+                                    <sl-option value="option-3"
+                                        >Option 3</sl-option
+                                    >
+                                </sl-select>
 
-                            <p>선택 value 가져오기</p>
-                            <p id="select-value"></p>
+                                <p>선택 value 가져오기</p>
+                                <p id="select-value"></p>
 
-                            <script>
-                                const select = document.getElementById('select');
-                                const selectValue = document.getElementById('select-value');
+                                <script>
+                                    const select =
+                                        document.getElementById('select');
+                                    const selectValue =
+                                        document.getElementById('select-value');
 
-                                /* 특이하게 shoelace에서는 sl-change 라는 이벤트를 감지한다. */
-                                select.addEventListener('sl-change', (e) => {
-                                    selectValue.innerText = e.target.value;
-                                });
-
-                            </script>
+                                    /* 특이하게 shoelace에서는 sl-change 라는 이벤트를 감지한다. */
+                                    select.addEventListener(
+                                        'sl-change',
+                                        (e) => {
+                                            selectValue.innerText =
+                                                e.target.value;
+                                        },
+                                    );
+                                </script>
+                            </div>
                         </div>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;div style=&quot;display: flex; gap: 2rem&quot;&gt;
         &lt;sl-select
             id=&quot;select&quot;
@@ -351,44 +390,42 @@
         &lt;/script&gt;
     &lt;/div&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                    
-                </div>
-                <div >
-                    <div class="viewPart">
-                        <h5>라벨</h5>
-                        <sl-select label="input label here.">
-                            <sl-option value="option-1">Option 1</sl-option>
-                            <sl-option value="option-2">Option 2</sl-option>
-                            <sl-option value="option-3">Option 3</sl-option>
-                        </sl-select>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>라벨</h5>
+                            <sl-select label="input label here.">
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-select label=&quot;input label here.&quot;&gt;
         &lt;sl-option value=&quot;option-1&quot;&gt;Option 1&lt;/sl-option&gt;
         &lt;sl-option value=&quot;option-2&quot;&gt;Option 2&lt;/sl-option&gt;
         &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
     &lt;/sl-select&gt;
                         </code></pre>
+                        </div>
                     </div>
-                   
-                </div>
-                <div>
-                    <div class="viewPart">
-                        <h5>하단 도움 문구 (help-text)</h5>
-                        <sl-select
-                            label="Experience"
-                            help-text="Please tell us your skill level."
-                        >
-                            <sl-option value="1">Novice</sl-option>
-                            <sl-option value="2">Intermediate</sl-option>
-                            <sl-option value="3">Advanced</sl-option>
-                        </sl-select>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>하단 도움 문구 (help-text)</h5>
+                            <sl-select
+                                label="Experience"
+                                help-text="Please tell us your skill level."
+                            >
+                                <sl-option value="1">Novice</sl-option>
+                                <sl-option value="2">Intermediate</sl-option>
+                                <sl-option value="3">Advanced</sl-option>
+                            </sl-select>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-select
         label=&quot;Experience&quot;
         help-text=&quot;Please tell us your skill level.&quot;
@@ -398,75 +435,74 @@
         &lt;sl-option value=&quot;3&quot;&gt;Advanced&lt;/sl-option&gt;
     &lt;/sl-select&gt;
                         </code></pre>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div class="viewPart">
-                        <h5>플레이스홀더 (placeholder)</h5>
-                        <sl-select placeholder="플레이스홀더">
-                            <sl-option value="option-1">Option 1</sl-option>
-                            <sl-option value="option-2">Option 2</sl-option>
-                            <sl-option value="option-3">Option 3</sl-option>
-                        </sl-select>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5>플레이스홀더 (placeholder)</h5>
+                            <sl-select placeholder="플레이스홀더">
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
     &lt;sl-select placeholder=&quot;플레이스홀더&quot;&gt;
         &lt;sl-option value=&quot;option-1&quot;&gt;Option 1&lt;/sl-option&gt;
         &lt;sl-option value=&quot;option-2&quot;&gt;Option 2&lt;/sl-option&gt;
         &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
     &lt;/sl-select&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
-                </div>
-                <div>
-                    <div class="viewPart">
-                        <h5>아이콘 prefix & suffix</h5>
-                        <sl-select label="Select one">
-                            <sl-option value="option-1">
-                                <sl-icon
-                                    slot="prefix"
-                                    name="envelope"
-                                    style="padding-right: 0.7rem"
-                                ></sl-icon>
-                                Email
-                                <sl-icon
-                                    slot="suffix"
-                                    name="patch-check"
-                                ></sl-icon>
-                            </sl-option>
+                    <div>
+                        <div class="viewPart">
+                            <h5>아이콘 prefix & suffix</h5>
+                            <sl-select label="Select one">
+                                <sl-option value="option-1">
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="envelope"
+                                        style="padding-right: 0.7rem"
+                                    ></sl-icon>
+                                    Email
+                                    <sl-icon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></sl-icon>
+                                </sl-option>
 
-                            <sl-option value="option-2">
-                                <sl-icon
-                                    slot="prefix"
-                                    name="telephone"
-                                    style="padding-right: 0.7rem"
-                                ></sl-icon>
-                                Phone
-                                <sl-icon
-                                    slot="suffix"
-                                    name="patch-check"
-                                ></sl-icon>
-                            </sl-option>
+                                <sl-option value="option-2">
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="telephone"
+                                        style="padding-right: 0.7rem"
+                                    ></sl-icon>
+                                    Phone
+                                    <sl-icon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></sl-icon>
+                                </sl-option>
 
-                            <sl-option value="option-3">
-                                <sl-icon
-                                    slot="prefix"
-                                    name="chat-dots"
-                                    style="padding-right: 0.7rem"
-                                ></sl-icon>
-                                Chat
-                                <sl-icon
-                                    slot="suffix"
-                                    name="patch-check"
-                                ></sl-icon>
-                            </sl-option>
-                        </sl-select>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+                                <sl-option value="option-3">
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="chat-dots"
+                                        style="padding-right: 0.7rem"
+                                    ></sl-icon>
+                                    Chat
+                                    <sl-icon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></sl-icon>
+                                </sl-option>
+                            </sl-select>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;sl-select label=&quot;Select one&quot;&gt;
         &lt;sl-option value=&quot;option-1&quot;&gt;
             &lt;sl-icon
@@ -508,23 +544,26 @@
         &lt;/sl-option&gt;
     &lt;/sl-select&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div class="viewPart">
-                        <h5 style=" color : var(--sl-color-red-500)">Select Color 바꾸기</h5>
-                        <sl-select
-                        class="red-select"
-                        label="Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! ">
-                            <sl-option value="option-1">Option 1</sl-option>
-                            <sl-option value="option-2">Option 2</sl-option>
-                            <sl-option value="option-3">Option 3</sl-option>
-                        </sl-select>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+                    <div>
+                        <div class="viewPart">
+                            <h5 style="color: var(--sl-color-red-500)">
+                                Select Color 바꾸기
+                            </h5>
+                            <sl-select
+                                class="red-select"
+                                label="Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! "
+                            >
+                                <sl-option value="option-1">Option 1</sl-option>
+                                <sl-option value="option-2">Option 2</sl-option>
+                                <sl-option value="option-3">Option 3</sl-option>
+                            </sl-select>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
     &lt;style&gt;
         .red-select sl-option::part(base):hover{
             /* hover된 option */
@@ -544,13 +583,13 @@
         &lt;sl-option value=&quot;option-3&quot;&gt;Option 3&lt;/sl-option&gt;
     &lt;/sl-select&gt;
                             </code></pre>
-                        </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="/js/darkmode.js"></script>
-</body>
+        <script src="/js/darkmode.js"></script>
+    </body>
 </html>

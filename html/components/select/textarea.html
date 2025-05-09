@@ -18,22 +18,23 @@
         <!-- shoelace Light & Dark Theme -->
         <link
             rel="stylesheet"
-            media="(prefers-color-scheme:light)"
             href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
         />
         <link
             rel="stylesheet"
-            media="(prefers-color-scheme:dark)"
             href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
         />
 
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
-        <link rel="stylesheet" href="/css/component.css">
+        <link rel="stylesheet" href="/css/component.css" />
 
         <!-- CodeViewer -->
         <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
         <!-- Prism.js -->
         <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
@@ -51,125 +52,144 @@
                         <li class="navLi">
                             <h4>버튼</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                       <sl-button 
-                                       href="/components/button/button.html"
-                                       size="large"
-                                       class="navButton"
-                                       >
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
                                         Default Button
-                                       </sl-button>
-                                    
-                                       <sl-button 
-                                       href="/components/button/buttonGroup.html"
-                                       size="large"
-                                       class="navButton"
-                                       >
+                                    </sl-button>
+
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
                                         Group Button
-                                       </sl-button>
+                                    </sl-button>
 
-                                       <sl-button 
-                                       href="/components/button/switch.html"
-                                       size="large"
-                                       class="navButton"
-                                       >
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
                                         Switch
-                                       </sl-button>
-
+                                    </sl-button>
                                 </sl-menu>
                             </div>
                         </li>
                         <li class="navLi">
                             <h4>셀렉트 & 인풋</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                    <sl-button 
-                                    href="/components/select/select.html"
-                                    size="large"
-                                    class="navButton"
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Select
+                                        Select
                                     </sl-button>
 
-                                    <sl-button 
-                                    href="/components/select/input.html"
-                                    size="large"
-                                    class="navButton"
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Input
+                                        Input
                                     </sl-button>
 
-                                    <sl-button 
-                                    href="/components/select/textarea.html"
-                                    size="large"
-                                    class="navButton"
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Textarea
+                                        Textarea
                                     </sl-button>
-                             </sl-menu>
+                                </sl-menu>
                             </div>
                         </li>
 
                         <li class="navLi">
                             <h4>체크박스 & 라디오</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                    <sl-button 
-                                    href="/components/checkbox/checkbox.html"
-                                    size="large"
-                                    class="navButton"
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     CheckBox
+                                        CheckBox
                                     </sl-button>
 
-                                    <sl-button 
-                                    href="/components/checkbox/radio.html"
-                                    size="large"
-                                    class="navButton"
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Radio
+                                        Radio
                                     </sl-button>
-                             </sl-menu>
+                                </sl-menu>
                             </div>
                         </li>
 
                         <li class="navLi">
                             <h4>모달 ~ 아코디언</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                    <sl-button 
-                                    href="/components/modal/modal.html"
-                                    size="large"
-                                    class="navButton"
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         모달
                                     </sl-button>
                                     <sl-button
-                                    href="/components/modal/drawer.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         Drawer
                                     </sl-button>
                                     <sl-button
-                                    href="/components/modal/alert.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         Alert
                                     </sl-button>
                                     <sl-button
-                                    href="/components/modal/tooltip.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         Tooltip
                                     </sl-button>
 
                                     <sl-button
-                                    href="/components/modal/details.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         아코디언
                                     </sl-button>
@@ -180,20 +200,25 @@
                         <li class="navLi">
                             <h4>Menu & Tab</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
                                     <sl-button
-                                    href="/components/menu/menu.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Menu
+                                        Menu
                                     </sl-button>
                                     <sl-button
-                                    href="/components/menu/tab.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Tab
+                                        Tab
                                     </sl-button>
                                 </sl-menu>
                             </div>
@@ -202,107 +227,123 @@
                         <li class="navLi">
                             <h4>UI - UX</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
                                     <sl-button
-                                    href="/components/uiux/uxInput.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     UX-Input
+                                        UX-Input
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/breadcrumb.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Breadcrumb
+                                        Breadcrumb
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/badge.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Badge & Tag
+                                        Badge & Tag
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/dropdown.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Dropdown
+                                        Dropdown
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/icon.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Icon
+                                        Icon
                                     </sl-button>
-
                                 </sl-menu>
                             </div>
                         </li>
                         <li class="navLi">
                             <h4>애니메이션</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
                                     <sl-button
-                                    href="/components/animation/animation.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Animation
+                                        Animation
                                     </sl-button>
                                 </sl-menu>
                             </div>
                         </li>
                     </ul>
-
                 </div>
                 <div class="mode">
-                    <sl-icon-button 
-                    name="github" 
-                    href="https://github.com/shoelace-style/shoelace" 
-                    target="_blank"
-                    class="linkIconButton"
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
                     ></sl-icon-button>
 
-                    <sl-icon-button 
-                    name="book" 
-                    href="https://shoelace.style/" 
-                    target="_blank"
-                    class="linkIconButton"
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
                     ></sl-icon-button>
-                    
+
                     <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
                 </div>
             </div>
-            
+
             <div class="section">
                 <h3 class="componentTitle">Textarea</h3>
                 <div class="componentWrap">
                     <div>
                         <div class="viewPart">
-                            <h5>
-                                기초적인 Textarea
-                            </h5>
-    
+                            <h5>기초적인 Textarea</h5>
+
                             <sl-textarea id="textarea"></sl-textarea>
-                            
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem;">
+
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 0.5rem;
+                                    margin: 0.5rem;
+                                "
+                            >
                                 <p>입력된 value :</p>
-                                <p style="white-space: pre-wrap;" id="textarea-value"></p>
+                                <p
+                                    style="white-space: pre-wrap"
+                                    id="textarea-value"
+                                ></p>
                             </div>
-    
+
                             <script>
-                                const textarea = document.getElementById("textarea")
-                                const textareaValue = document.getElementById("textarea-value")
-    
-                                textarea.addEventListener("sl-input", (e) => {
-                                    textareaValue.innerHTML = e.target.value
-                                })
+                                const textarea =
+                                    document.getElementById('textarea');
+                                const textareaValue =
+                                    document.getElementById('textarea-value');
+
+                                textarea.addEventListener('sl-input', (e) => {
+                                    textareaValue.innerHTML = e.target.value;
+                                });
                             </script>
                         </div>
                         <div class="codePart">
@@ -330,61 +371,82 @@
 
                     <div>
                         <div class="viewPart">
-                            <h5>Label과 Help-Text를 사용하려면 각각 label, help-text 속성을 사용한다.</h5>
+                            <h5>
+                                Label과 Help-Text를 사용하려면 각각 label,
+                                help-text 속성을 사용한다.
+                            </h5>
 
-                            <sl-textarea label="label을 입력합니다." help-text="help-text를 입력합니다"> </sl-textarea>
+                            <sl-textarea
+                                label="label을 입력합니다."
+                                help-text="help-text를 입력합니다"
+                            >
+                            </sl-textarea>
                         </div>
                         <div class="codePart">
                             <pre><code class="language-markup">
         &lt;sl-textarea label=&quot;label을 입력합니다.&quot; help-text=&quot;help-text를 입력합니다&quot;&gt; &lt;/sl-textarea&gt;
                             </code></pre>
                         </div>
-                        
-
                     </div>
 
                     <div>
                         <div class="viewPart">
-                            <h5>최대 행을 설정하려먼 rows="n"  속성을 사용합니다.</h5>
-                            <sl-textarea rows="3" label="행을 3으로 고정"></sl-textarea>
+                            <h5>
+                                최대 행을 설정하려먼 rows="n" 속성을 사용합니다.
+                            </h5>
+                            <sl-textarea
+                                rows="3"
+                                label="행을 3으로 고정"
+                            ></sl-textarea>
                         </div>
                         <div class="codePart">
                             <pre><code class="language-markup">
         &lt;sl-textarea rows=&quot;3&quot; label=&quot;행을 3으로 고정&quot;&gt;&lt;/sl-textarea&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
-                            <h5>Placeholder 를 사용하려면 placeholder="text" 속성을 사용합니다.</h5>
-                            <sl-textarea placeholder="플레이스 홀더"></sl-textarea>
+                            <h5>
+                                Placeholder 를 사용하려면 placeholder="text"
+                                속성을 사용합니다.
+                            </h5>
+                            <sl-textarea
+                                placeholder="플레이스 홀더"
+                            ></sl-textarea>
                         </div>
                         <div class="codePart">
                             <pre><code class="language-markup">
         &lt;sl-textarea placeholder=&quot;플레이스 홀더&quot;&gt;&lt;/sl-textarea&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
-                            <h5>Disabled 를 사용하려면 disabled 속성을 사용합니다.</h5>
-                            <sl-textarea placeholder="비활성화" disabled></sl-textarea>
+                            <h5>
+                                Disabled 를 사용하려면 disabled 속성을
+                                사용합니다.
+                            </h5>
+                            <sl-textarea
+                                placeholder="비활성화"
+                                disabled
+                            ></sl-textarea>
                         </div>
                         <div class="codePart">
                             <pre><code class="language-markup">
         &lt;sl-textarea placeholder=&quot;비활성화&quot; disabled&gt;&lt;/sl-textarea&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
-                            <h5>textarea영역의 색이 채워져있게하려면 filled 속성을 사용합니다.</h5>
+                            <h5>
+                                textarea영역의 색이 채워져있게하려면 filled
+                                속성을 사용합니다.
+                            </h5>
                             <sl-textarea filled></sl-textarea>
                         </div>
                         <div class="codePart">
@@ -392,25 +454,32 @@
         &lt;sl-textarea filled&gt;&lt;/sl-textarea&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
-                            <h5>Read-Only 를 사용하려면 readonly 속성을 사용합니다.</h5>
-                            <sl-textarea value="읽기만 가능합니다." readonly></sl-textarea>
+                            <h5>
+                                Read-Only 를 사용하려면 readonly 속성을
+                                사용합니다.
+                            </h5>
+                            <sl-textarea
+                                value="읽기만 가능합니다."
+                                readonly
+                            ></sl-textarea>
                         </div>
                         <div class="codePart">
                             <pre><code class="language-markup">
         &lt;sl-textarea value=&quot;읽기만 가능합니다.&quot; readonly&gt;&lt;/sl-textarea&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
-                            <h5>자동 크기조절 를 사용하려면 resize="auto" 속성을 사용합니다.</h5>
+                            <h5>
+                                자동 크기조절 를 사용하려면 resize="auto" 속성을
+                                사용합니다.
+                            </h5>
                             <sl-textarea resize="auto"></sl-textarea>
                         </div>
                         <div class="codePart">
@@ -422,9 +491,16 @@
 
                     <div>
                         <div class="viewPart">
-                            <h5>자동 크기조절 를 사용하면서 max-height를 사용하기위해선<br/>별도의 Style이 필요합니다.</h5>
-                            <sl-textarea resize="auto" style="max-height: 15rem;" label="inlineStyle max-height:15rem 이 적용되었습니다." help-text="CSS로 ::part()를 이용해 추가적인 스타일도 사용되었습니다.">
-
+                            <h5>
+                                자동 크기조절 를 사용하면서 max-height를
+                                사용하기위해선<br />별도의 Style이 필요합니다.
+                            </h5>
+                            <sl-textarea
+                                resize="auto"
+                                style="max-height: 15rem"
+                                label="inlineStyle max-height:15rem 이 적용되었습니다."
+                                help-text="CSS로 ::part()를 이용해 추가적인 스타일도 사용되었습니다."
+                            >
                             </sl-textarea>
                         </div>
                         <div class="codePart">
@@ -437,7 +513,6 @@
     &lt;/sl-textarea&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
                 </div>
             </div>

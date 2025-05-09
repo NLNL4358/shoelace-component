@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-            
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
         <!-- shoelace -->
         <link
             rel="stylesheet"
@@ -15,306 +15,352 @@
             src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"
         ></script>
 
-
         <!-- shoelace Light & Dark Theme -->
         <link
             rel="stylesheet"
-            media="(prefers-color-scheme:light)"
             href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
         />
         <link
             rel="stylesheet"
-            media="(prefers-color-scheme:dark)"
             href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
         />
 
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
-        <link rel="stylesheet" href="/css/component.css">
-
+        <link rel="stylesheet" href="/css/component.css" />
 
         <!-- CodeViewer -->
         <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
         <!-- Prism.js -->
         <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
-        
+
         <style>
-            .blue-box{
+            .blue-box {
                 width: 100px;
                 height: 100px;
-                border-radius: .5rem;
+                border-radius: 0.5rem;
                 background-color: var(--sl-color-primary-600);
             }
         </style>
-</head>
-<body class="outer">
-    <div class="inner">
-        <!-- 헤더 -->
-        <div class="header">
-            <a class="logoButton" href="/index.html">
-                <img src="/assets/logo.svg" alt="" />
-            </a>
-            <div class="navWrap">
-                <ul class="navTitle">
-                    <li class="navLi">
-                        <h4>버튼</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                   <sl-button 
-                                   href="/components/button/button.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Default Button
-                                   </sl-button>
-                                
-                                   <sl-button 
-                                   href="/components/button/buttonGroup.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Group Button
-                                   </sl-button>
+    </head>
+    <body class="outer">
+        <div class="inner">
+            <!-- 헤더 -->
+            <div class="header">
+                <a class="logoButton" href="/index.html">
+                    <img src="/assets/logo.svg" alt="" />
+                </a>
+                <div class="navWrap">
+                    <ul class="navTitle">
+                        <li class="navLi">
+                            <h4>버튼</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Default Button
+                                    </sl-button>
 
-                                   <sl-button 
-                                   href="/components/button/switch.html"
-                                   size="large"
-                                   class="navButton"
-                                   >
-                                    Switch
-                                   </sl-button>
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Group Button
+                                    </sl-button>
 
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>셀렉트 & 인풋</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/select/select.html"
-                                size="large"
-                                class="navButton"
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Switch
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>셀렉트 & 인풋</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Select
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Select
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/input.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Input
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Input
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/select/textarea.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Textarea
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Textarea
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>체크박스 & 라디오</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/checkbox/checkbox.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>체크박스 & 라디오</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 CheckBox
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        CheckBox
+                                    </sl-button>
 
-                                <sl-button 
-                                href="/components/checkbox/radio.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Radio
-                                </sl-button>
-                         </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Radio
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>모달 ~ 아코디언</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button 
-                                href="/components/modal/modal.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>모달 ~ 아코디언</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                    모달
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/drawer.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Drawer
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/alert.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Alert
-                                </sl-button>
-                                <sl-button
-                                href="/components/modal/tooltip.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    Tooltip
-                                </sl-button>
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        모달
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Drawer
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Alert
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tooltip
+                                    </sl-button>
 
-                                <sl-button
-                                href="/components/modal/details.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                    아코디언
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        아코디언
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>Menu & Tab</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-                                <sl-button
-                                href="/components/menu/menu.html"
-                                size="large"
-                                class="navButton"
+                        <li class="navLi">
+                            <h4>Menu & Tab</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
                                 >
-                                 Menu
-                                </sl-button>
-                                <sl-button
-                                href="/components/menu/tab.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Tab
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
+                                    <sl-button
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Menu
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Tab
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
 
-                    <li class="navLi">
-                        <h4>UI - UX</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
+                        <li class="navLi">
+                            <h4>UI - UX</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        UX-Input
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Breadcrumb
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Badge & Tag
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Dropdown
+                                    </sl-button>
+                                    <sl-button
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Icon
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                        <li class="navLi">
+                            <h4>애니메이션</h4>
+                            <div class="navMenu">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
+                                        Animation
+                                    </sl-button>
+                                </sl-menu>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mode">
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
 
-                                <sl-button
-                                href="/components/uiux/uxInput.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 UX-Input
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/breadcrumb.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Breadcrumb
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/badge.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Badge & Tag
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/dropdown.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Dropdown
-                                </sl-button>
-                                <sl-button
-                                href="/components/uiux/icon.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Icon
-                                </sl-button>
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
+                    ></sl-icon-button>
 
-                            </sl-menu>
-                        </div>
-                    </li>
-                    <li class="navLi">
-                        <h4>애니메이션</h4>
-                        <div class="navMenu">
-                            <sl-menu style="display: flex;flex-direction: column;">
-
-                                <sl-button
-                                href="/components/animation/animation.html"
-                                size="large"
-                                class="navButton"
-                                >
-                                 Animation
-                                </sl-button>
-                            </sl-menu>
-                        </div>
-                    </li>
-                </ul>
-
+                    <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
+                </div>
             </div>
-            <div class="mode">
-                <sl-icon-button 
-                name="github" 
-                href="https://github.com/shoelace-style/shoelace" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
 
-                <sl-icon-button 
-                name="book" 
-                href="https://shoelace.style/" 
-                target="_blank"
-                class="linkIconButton"
-                ></sl-icon-button>
-                
-                <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
-            </div>
-        </div>
-        
-        <!-- 셀렉트 -->
-        <div class="section">
-            <h3 class="componentTitle">애니메이션</h3>
-            <div class="componentWrap">
-                <div>
-                    <div class="viewPart">
-                        <h5>애니메이션은 적용하고 싶은 요소의 부모로 sl-animation을 생성합니다.</h5>
-                        <div style="display: flex; gap: 2rem; margin-top: 3rem;">
-                            <sl-animation name="bounce" duration="2000" play>
-                                <div class="blue-box"></div>
-                            </sl-animation>
-                            <sl-animation name="jello" duration="2000" play>
-                                <div class="blue-box"></div>
-                            </sl-animation>
-                            <sl-animation name="heartBeat" duration="2000" play>
-                                <div class="blue-box"></div>
-                            </sl-animation>
-                            <sl-animation name="flip" duration="2000" play>
-                                <div class="blue-box"></div>
-                            </sl-animation>
+            <!-- 셀렉트 -->
+            <div class="section">
+                <h3 class="componentTitle">애니메이션</h3>
+                <div class="componentWrap">
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                애니메이션은 적용하고 싶은 요소의 부모로
+                                sl-animation을 생성합니다.
+                            </h5>
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 2rem;
+                                    margin-top: 3rem;
+                                "
+                            >
+                                <sl-animation
+                                    name="bounce"
+                                    duration="2000"
+                                    play
+                                >
+                                    <div class="blue-box"></div>
+                                </sl-animation>
+                                <sl-animation name="jello" duration="2000" play>
+                                    <div class="blue-box"></div>
+                                </sl-animation>
+                                <sl-animation
+                                    name="heartBeat"
+                                    duration="2000"
+                                    play
+                                >
+                                    <div class="blue-box"></div>
+                                </sl-animation>
+                                <sl-animation name="flip" duration="2000" play>
+                                    <div class="blue-box"></div>
+                                </sl-animation>
+                            </div>
                         </div>
-                    </div>
-                    <div class="codePart">
-                        <pre>
+                        <div class="codePart">
+                            <pre>
                             <code class="language-markup">
 &lt;div style=&quot;display: flex; gap: 2rem; margin-top: 3rem;&quot;&gt;
     &lt;sl-animation name=&quot;bounce&quot; duration=&quot;2000&quot; play&gt;
@@ -332,75 +378,155 @@
 &lt;/div&gt;            
                             </code>
                         </pre>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>애니메이션 종류와 Easings종류 <br/>name 속성과 easing 속성에 값을 바꿔주면 애니메이션의 종류가 Easing의 종류를 바꿀 수 있다.<br/><br/>또한, playbackRate 속성과 duration 속성으로 애니메이션 지속시간을 변경할 수 있다.<br/><br/>대략 계산식을 생각해보면 playbackRate / duration 속도로 움직인다</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                애니메이션 종류와 Easings종류 <br />name 속성과
+                                easing 속성에 값을 바꿔주면 애니메이션의 종류가
+                                Easing의 종류를 바꿀 수 있다.<br /><br />또한,
+                                playbackRate 속성과 duration 속성으로 애니메이션
+                                지속시간을 변경할 수 있다.<br /><br />대략
+                                계산식을 생각해보면 playbackRate / duration
+                                속도로 움직인다
+                            </h5>
 
-                        <div class="animation-sandbox" style="margin-top: 3rem;">
-                            <sl-animation name="bounce" easing="ease-in-out" duration="2000" play>
-                              <div class="blue-box"></div>
-                            </sl-animation>
-    
-                            <div style="margin: 2rem;"></div>
-                            
-                            <div style="display: flex; flex-direction: column; gap: 1rem;">
-                              <sl-select label="Animation" value="bounce" id="animation-select"></sl-select>
-                              <sl-select label="Easing" value="linear" id="easing-select"></sl-select>
-                              <sl-input label="Playback Rate" help-text="값이 커질수록 비례하여 빨라집니다." type="number" min="0" max="2" step=".25" value="1" id="playback-select"></sl-input>
-                              <sl-input label="Duration" help-text="값이 커질수록 반비례하여 느려집니다." type="number" min="0" max="10000" step="100" value="2000" id="duration-select"></sl-input>
+                            <div
+                                class="animation-sandbox"
+                                style="margin-top: 3rem"
+                            >
+                                <sl-animation
+                                    name="bounce"
+                                    easing="ease-in-out"
+                                    duration="2000"
+                                    play
+                                >
+                                    <div class="blue-box"></div>
+                                </sl-animation>
+
+                                <div style="margin: 2rem"></div>
+
+                                <div
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 1rem;
+                                    "
+                                >
+                                    <sl-select
+                                        label="Animation"
+                                        value="bounce"
+                                        id="animation-select"
+                                    ></sl-select>
+                                    <sl-select
+                                        label="Easing"
+                                        value="linear"
+                                        id="easing-select"
+                                    ></sl-select>
+                                    <sl-input
+                                        label="Playback Rate"
+                                        help-text="값이 커질수록 비례하여 빨라집니다."
+                                        type="number"
+                                        min="0"
+                                        max="2"
+                                        step=".25"
+                                        value="1"
+                                        id="playback-select"
+                                    ></sl-input>
+                                    <sl-input
+                                        label="Duration"
+                                        help-text="값이 커질수록 반비례하여 느려집니다."
+                                        type="number"
+                                        min="0"
+                                        max="10000"
+                                        step="100"
+                                        value="2000"
+                                        id="duration-select"
+                                    ></sl-input>
+                                </div>
                             </div>
-                          </div>
-                          
-                          <script type="module">
-                            import { animationName, easingName } from '/js/animationName.js';
-                            const animations = animationName;
-                            const easings = easingName;
-    
-                          
-                            const container = document.querySelector('.animation-sandbox');
-                            const animation = container.querySelector('sl-animation');
-    
-                            const animationSelect = document.getElementById("animation-select");
-                            const easingSelect = document.getElementById("easing-select");
-                            const playbackRate = document.getElementById("playback-select");
-                            const durationRate =document.getElementById("duration-select");
-                          
-                            animations.map(name => {
-                              const option = Object.assign(document.createElement('sl-option'), {
-                                textContent: name,
-                                value: name
-                              });
-                              animationSelect.appendChild(option);
-                            });
-                          
-                            easings.map(name => {
-                              const option = Object.assign(document.createElement('sl-option'), {
-                                textContent: name,
-                                value: name
-                              });
-                              easingSelect.appendChild(option);
-                            });
-                          
-                            animationSelect.addEventListener('sl-change', () => {
-                                animation.name = animationSelect.value
-                            });
-                            easingSelect.addEventListener('sl-change', () => {
-                                animation.easing = easingSelect.value
-                            });
-                            playbackRate.addEventListener('sl-input', () => {
-                                animation.playbackRate = Number(playbackRate.value);
-                            });
-                            durationRate.addEventListener('sl-input', () => {
-                                animation.duration = Number(durationRate.value)
-                            })
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <sl-details summary="Code View">
-                            <pre><code class="language-markup">
+
+                            <script type="module">
+                                import {
+                                    animationName,
+                                    easingName,
+                                } from '/js/animationName.js';
+                                const animations = animationName;
+                                const easings = easingName;
+
+                                const container =
+                                    document.querySelector(
+                                        '.animation-sandbox',
+                                    );
+                                const animation =
+                                    container.querySelector('sl-animation');
+
+                                const animationSelect =
+                                    document.getElementById('animation-select');
+                                const easingSelect =
+                                    document.getElementById('easing-select');
+                                const playbackRate =
+                                    document.getElementById('playback-select');
+                                const durationRate =
+                                    document.getElementById('duration-select');
+
+                                animations.map((name) => {
+                                    const option = Object.assign(
+                                        document.createElement('sl-option'),
+                                        {
+                                            textContent: name,
+                                            value: name,
+                                        },
+                                    );
+                                    animationSelect.appendChild(option);
+                                });
+
+                                easings.map((name) => {
+                                    const option = Object.assign(
+                                        document.createElement('sl-option'),
+                                        {
+                                            textContent: name,
+                                            value: name,
+                                        },
+                                    );
+                                    easingSelect.appendChild(option);
+                                });
+
+                                animationSelect.addEventListener(
+                                    'sl-change',
+                                    () => {
+                                        animation.name = animationSelect.value;
+                                    },
+                                );
+                                easingSelect.addEventListener(
+                                    'sl-change',
+                                    () => {
+                                        animation.easing = easingSelect.value;
+                                    },
+                                );
+                                playbackRate.addEventListener(
+                                    'sl-input',
+                                    () => {
+                                        animation.playbackRate = Number(
+                                            playbackRate.value,
+                                        );
+                                    },
+                                );
+                                durationRate.addEventListener(
+                                    'sl-input',
+                                    () => {
+                                        animation.duration = Number(
+                                            durationRate.value,
+                                        );
+                                    },
+                                );
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <sl-details summary="Code View">
+                                <pre><code class="language-markup">
 &lt;div class=&quot;animation-sandbox&quot; style=&quot;margin-top: 3rem;&quot;&gt;
     &lt;sl-animation name=&quot;bounce&quot; easing=&quot;ease-in-out&quot; duration=&quot;2000&quot; play&gt;
     &lt;div class=&quot;blue-box&quot;&gt;&lt;/div&gt;
@@ -460,29 +586,43 @@
     })
 &lt;/script&gt;
                         </code></pre>
-                    </sl-details>
+                            </sl-details>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <div class="viewPart">
-                        <h5>애니메이션 동작하는 시점 정하기<br/><br/>sl-animation의 반복횟수를 정하는 'iterations' 속성을 '1'로 설정하고<br/>sl-animation의 play 속성을 true로 변경해주면 반복횟수만큼 재생된다.</h5>
+                    <div>
+                        <div class="viewPart">
+                            <h5>
+                                애니메이션 동작하는 시점 정하기<br /><br />sl-animation의
+                                반복횟수를 정하는 'iterations' 속성을 '1'로
+                                설정하고<br />sl-animation의 play 속성을 true로
+                                변경해주면 반복횟수만큼 재생된다.
+                            </h5>
 
-                        <sl-animation id="buttonAnimation" name="rubberBand" duration="1000" iterations="1">
-                            <sl-button id="button" variant="primary">Click me</sl-button>
-                        </sl-animation>
-                        
-                        <script>
-                            const buttonAnimation = document.getElementById('buttonAnimation');
-                            const button = document.getElementById('button');
-                        
-                            button.addEventListener('click', () => {
-                                buttonAnimation.play = true;
-                            });
-                        </script>
-                    </div>
-                    <div class="codePart">
-                        <pre><code class="language-markup">
+                            <sl-animation
+                                id="buttonAnimation"
+                                name="rubberBand"
+                                duration="1000"
+                                iterations="1"
+                            >
+                                <sl-button id="button" variant="primary"
+                                    >Click me</sl-button
+                                >
+                            </sl-animation>
+
+                            <script>
+                                const buttonAnimation =
+                                    document.getElementById('buttonAnimation');
+                                const button =
+                                    document.getElementById('button');
+
+                                button.addEventListener('click', () => {
+                                    buttonAnimation.play = true;
+                                });
+                            </script>
+                        </div>
+                        <div class="codePart">
+                            <pre><code class="language-markup">
 &lt;sl-animation id=&quot;buttonAnimation&quot; name=&quot;rubberBand&quot; duration=&quot;1000&quot; iterations=&quot;1&quot;&gt;
     &lt;sl-button id=&quot;button&quot; variant=&quot;primary&quot;&gt;Click me&lt;/sl-button&gt;
 &lt;/sl-animation&gt;
@@ -496,13 +636,12 @@
     });
 &lt;/script&gt;
                         </code></pre>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="/js/darkmode.js"></script>
-</body>
+        <script src="/js/darkmode.js"></script>
+    </body>
 </html>

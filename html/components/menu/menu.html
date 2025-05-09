@@ -18,22 +18,23 @@
         <!-- shoelace Light & Dark Theme -->
         <link
             rel="stylesheet"
-            media="(prefers-color-scheme:light)"
             href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css"
         />
         <link
             rel="stylesheet"
-            media="(prefers-color-scheme:dark)"
             href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css"
         />
 
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/index.css" />
-        <link rel="stylesheet" href="/css/component.css">
+        <link rel="stylesheet" href="/css/component.css" />
 
         <!-- CodeViewer -->
         <!-- Prism CSS (예쁘게 보이게 하기 위해) -->
-        <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+            rel="stylesheet"
+        />
 
         <!-- Prism.js -->
         <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
@@ -51,125 +52,144 @@
                         <li class="navLi">
                             <h4>버튼</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                       <sl-button 
-                                       href="/components/button/button.html"
-                                       size="large"
-                                       class="navButton"
-                                       >
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/button/button.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
                                         Default Button
-                                       </sl-button>
-                                    
-                                       <sl-button 
-                                       href="/components/button/buttonGroup.html"
-                                       size="large"
-                                       class="navButton"
-                                       >
+                                    </sl-button>
+
+                                    <sl-button
+                                        href="/components/button/buttonGroup.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
                                         Group Button
-                                       </sl-button>
+                                    </sl-button>
 
-                                       <sl-button 
-                                       href="/components/button/switch.html"
-                                       size="large"
-                                       class="navButton"
-                                       >
+                                    <sl-button
+                                        href="/components/button/switch.html"
+                                        size="large"
+                                        class="navButton"
+                                    >
                                         Switch
-                                       </sl-button>
-
+                                    </sl-button>
                                 </sl-menu>
                             </div>
                         </li>
                         <li class="navLi">
                             <h4>셀렉트 & 인풋</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                    <sl-button 
-                                    href="/components/select/select.html"
-                                    size="large"
-                                    class="navButton"
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/select/select.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Select
+                                        Select
                                     </sl-button>
 
-                                    <sl-button 
-                                    href="/components/select/input.html"
-                                    size="large"
-                                    class="navButton"
+                                    <sl-button
+                                        href="/components/select/input.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Input
+                                        Input
                                     </sl-button>
 
-                                    <sl-button 
-                                    href="/components/select/textarea.html"
-                                    size="large"
-                                    class="navButton"
+                                    <sl-button
+                                        href="/components/select/textarea.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Textarea
+                                        Textarea
                                     </sl-button>
-                             </sl-menu>
+                                </sl-menu>
                             </div>
                         </li>
 
                         <li class="navLi">
                             <h4>체크박스 & 라디오</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                    <sl-button 
-                                    href="/components/checkbox/checkbox.html"
-                                    size="large"
-                                    class="navButton"
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/checkbox/checkbox.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     CheckBox
+                                        CheckBox
                                     </sl-button>
 
-                                    <sl-button 
-                                    href="/components/checkbox/radio.html"
-                                    size="large"
-                                    class="navButton"
+                                    <sl-button
+                                        href="/components/checkbox/radio.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Radio
+                                        Radio
                                     </sl-button>
-                             </sl-menu>
+                                </sl-menu>
                             </div>
                         </li>
 
                         <li class="navLi">
                             <h4>모달 ~ 아코디언</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-                                    <sl-button 
-                                    href="/components/modal/modal.html"
-                                    size="large"
-                                    class="navButton"
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
+                                    <sl-button
+                                        href="/components/modal/modal.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         모달
                                     </sl-button>
                                     <sl-button
-                                    href="/components/modal/drawer.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/drawer.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         Drawer
                                     </sl-button>
                                     <sl-button
-                                    href="/components/modal/alert.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/alert.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         Alert
                                     </sl-button>
                                     <sl-button
-                                    href="/components/modal/tooltip.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/tooltip.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         Tooltip
                                     </sl-button>
 
                                     <sl-button
-                                    href="/components/modal/details.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/modal/details.html"
+                                        size="large"
+                                        class="navButton"
                                     >
                                         아코디언
                                     </sl-button>
@@ -180,20 +200,25 @@
                         <li class="navLi">
                             <h4>Menu & Tab</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
                                     <sl-button
-                                    href="/components/menu/menu.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/menu/menu.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Menu
+                                        Menu
                                     </sl-button>
                                     <sl-button
-                                    href="/components/menu/tab.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/menu/tab.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Tab
+                                        Tab
                                     </sl-button>
                                 </sl-menu>
                             </div>
@@ -202,101 +227,120 @@
                         <li class="navLi">
                             <h4>UI - UX</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
                                     <sl-button
-                                    href="/components/uiux/uxInput.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/uxInput.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     UX-Input
+                                        UX-Input
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/breadcrumb.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/breadcrumb.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Breadcrumb
+                                        Breadcrumb
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/badge.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/badge.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Badge & Tag
+                                        Badge & Tag
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/dropdown.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/dropdown.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Dropdown
+                                        Dropdown
                                     </sl-button>
                                     <sl-button
-                                    href="/components/uiux/icon.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/uiux/icon.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Icon
+                                        Icon
                                     </sl-button>
-
                                 </sl-menu>
                             </div>
                         </li>
                         <li class="navLi">
                             <h4>애니메이션</h4>
                             <div class="navMenu">
-                                <sl-menu style="display: flex;flex-direction: column;">
-
+                                <sl-menu
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                    "
+                                >
                                     <sl-button
-                                    href="/components/animation/animation.html"
-                                    size="large"
-                                    class="navButton"
+                                        href="/components/animation/animation.html"
+                                        size="large"
+                                        class="navButton"
                                     >
-                                     Animation
+                                        Animation
                                     </sl-button>
                                 </sl-menu>
                             </div>
                         </li>
                     </ul>
-
                 </div>
                 <div class="mode">
-                    <sl-icon-button 
-                    name="github" 
-                    href="https://github.com/shoelace-style/shoelace" 
-                    target="_blank"
-                    class="linkIconButton"
+                    <sl-icon-button
+                        name="github"
+                        href="https://github.com/shoelace-style/shoelace"
+                        target="_blank"
+                        class="linkIconButton"
                     ></sl-icon-button>
 
-                    <sl-icon-button 
-                    name="book" 
-                    href="https://shoelace.style/" 
-                    target="_blank"
-                    class="linkIconButton"
+                    <sl-icon-button
+                        name="book"
+                        href="https://shoelace.style/"
+                        target="_blank"
+                        class="linkIconButton"
                     ></sl-icon-button>
-                    
+
                     <sl-switch id="darkModeSwitch">Dark Mode</sl-switch>
                 </div>
             </div>
-            
+
             <div class="section">
                 <h3 class="componentTitle">Menu</h3>
                 <div class="componentWrap">
                     <div>
                         <div class="viewPart">
-                            <h5>기초적인 Menu - 길이는 부모Div의 width를 따라갑니다.</h5>
+                            <h5>
+                                기초적인 Menu - 길이는 부모Div의 width를
+                                따라갑니다.
+                            </h5>
                             <p>width : 300px</p>
-    
-                            <div style="width: 300px;">
+
+                            <div style="width: 300px">
                                 <sl-menu>
-                                    <sl-menu-item value="undo">Undo</sl-menu-item>
-                                    <sl-menu-item value="redo">Redo</sl-menu-item>
+                                    <sl-menu-item value="undo"
+                                        >Undo</sl-menu-item
+                                    >
+                                    <sl-menu-item value="redo"
+                                        >Redo</sl-menu-item
+                                    >
                                     <sl-divider></sl-divider>
                                     <sl-menu-item value="cut">Cut</sl-menu-item>
-                                    <sl-menu-item value="copy">Copy</sl-menu-item>
-                                    <sl-menu-item value="paste">Paste</sl-menu-item>
-                                    <sl-menu-item value="delete">Delete</sl-menu-item>
+                                    <sl-menu-item value="copy"
+                                        >Copy</sl-menu-item
+                                    >
+                                    <sl-menu-item value="paste"
+                                        >Paste</sl-menu-item
+                                    >
+                                    <sl-menu-item value="delete"
+                                        >Delete</sl-menu-item
+                                    >
                                 </sl-menu>
                             </div>
                         </div>
@@ -319,7 +363,7 @@
                         <div class="viewPart">
                             <h5>Sub Menu를 포함하는 Menu</h5>
 
-                            <sl-menu style="max-width: 200px;">
+                            <sl-menu style="max-width: 200px">
                                 <sl-menu-item value="undo">Undo</sl-menu-item>
                                 <sl-menu-item value="redo">Redo</sl-menu-item>
                                 <sl-divider></sl-divider>
@@ -328,20 +372,32 @@
                                 <sl-menu-item value="paste">Paste</sl-menu-item>
                                 <sl-divider></sl-divider>
                                 <sl-menu-item>
-                                  Find
-                                  <sl-menu slot="submenu">
-                                    <sl-menu-item value="find">Find…</sl-menu-item>
-                                    <sl-menu-item value="find-previous">Find Next</sl-menu-item>
-                                    <sl-menu-item value="find-next">Find Previous</sl-menu-item>
-                                  </sl-menu>
+                                    Find
+                                    <sl-menu slot="submenu">
+                                        <sl-menu-item value="find"
+                                            >Find…</sl-menu-item
+                                        >
+                                        <sl-menu-item value="find-previous"
+                                            >Find Next</sl-menu-item
+                                        >
+                                        <sl-menu-item value="find-next"
+                                            >Find Previous</sl-menu-item
+                                        >
+                                    </sl-menu>
                                 </sl-menu-item>
                                 <sl-menu-item>
-                                  Transformations
-                                  <sl-menu slot="submenu">
-                                    <sl-menu-item value="uppercase">Make uppercase</sl-menu-item>
-                                    <sl-menu-item value="lowercase">Make lowercase</sl-menu-item>
-                                    <sl-menu-item value="capitalize">Capitalize</sl-menu-item>
-                                  </sl-menu>
+                                    Transformations
+                                    <sl-menu slot="submenu">
+                                        <sl-menu-item value="uppercase"
+                                            >Make uppercase</sl-menu-item
+                                        >
+                                        <sl-menu-item value="lowercase"
+                                            >Make lowercase</sl-menu-item
+                                        >
+                                        <sl-menu-item value="capitalize"
+                                            >Capitalize</sl-menu-item
+                                        >
+                                    </sl-menu>
                                 </sl-menu-item>
                             </sl-menu>
                         </div>
@@ -376,30 +432,46 @@
                                 </code></pre>
                             </sl-details>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
                             <h5>Prefix & Suffix</h5>
 
-                            <sl-menu style="max-width: 200px;">
+                            <sl-menu style="max-width: 200px">
                                 <sl-menu-item>
-                                  <sl-icon slot="prefix" name="house" style="margin-right: 0.5rem;"></sl-icon>
-                                  Home
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="house"
+                                        style="margin-right: 0.5rem"
+                                    ></sl-icon>
+                                    Home
                                 </sl-menu-item>
-                              
+
                                 <sl-menu-item>
-                                  <sl-icon slot="prefix" name="envelope" style="margin-right: 0.5rem;"></sl-icon>
-                                  Messages
-                                  <sl-badge slot="suffix" variant="primary" pill>12</sl-badge>
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="envelope"
+                                        style="margin-right: 0.5rem"
+                                    ></sl-icon>
+                                    Messages
+                                    <sl-badge
+                                        slot="suffix"
+                                        variant="primary"
+                                        pill
+                                        >12</sl-badge
+                                    >
                                 </sl-menu-item>
-                              
+
                                 <sl-divider></sl-divider>
-                              
+
                                 <sl-menu-item>
-                                  <sl-icon slot="prefix" name="gear" style="margin-right: 0.5rem;"></sl-icon>
-                                  Settings
+                                    <sl-icon
+                                        slot="prefix"
+                                        name="gear"
+                                        style="margin-right: 0.5rem"
+                                    ></sl-icon>
+                                    Settings
                                 </sl-menu-item>
                             </sl-menu>
                         </div>
@@ -426,14 +498,13 @@
     &lt;/sl-menu&gt;     
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
                             <h5>Disabled - disabled 속성 사용</h5>
 
-                            <sl-menu style="max-width: 200px;">
+                            <sl-menu style="max-width: 200px">
                                 <sl-menu-item>Option 1</sl-menu-item>
                                 <sl-menu-item disabled>Option 2</sl-menu-item>
                                 <sl-menu-item>Option 3</sl-menu-item>
@@ -448,14 +519,13 @@
     &lt;/sl-menu&gt;         
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
                             <h5>Loading - loading 속성 사용</h5>
-                        
-                            <sl-menu style="max-width: 200px;">
+
+                            <sl-menu style="max-width: 200px">
                                 <sl-menu-item>Option 1</sl-menu-item>
                                 <sl-menu-item loading>Option 2</sl-menu-item>
                                 <sl-menu-item>Option 3</sl-menu-item>
@@ -470,17 +540,22 @@
     &lt;/sl-menu&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
                             <h5>CheckBox Menu - type="checkbox" 사용</h5>
 
-                            <sl-menu style="max-width: 200px;">
-                                <sl-menu-item type="checkbox">Autosave</sl-menu-item>
-                                <sl-menu-item type="checkbox" checked>Check Spelling</sl-menu-item>
-                                <sl-menu-item type="checkbox">Word Wrap</sl-menu-item>
+                            <sl-menu style="max-width: 200px">
+                                <sl-menu-item type="checkbox"
+                                    >Autosave</sl-menu-item
+                                >
+                                <sl-menu-item type="checkbox" checked
+                                    >Check Spelling</sl-menu-item
+                                >
+                                <sl-menu-item type="checkbox"
+                                    >Word Wrap</sl-menu-item
+                                >
                             </sl-menu>
                         </div>
                         <div class="codePart">
@@ -492,23 +567,32 @@
     &lt;/sl-menu&gt;   
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
                             <h5>Label을 가지는 Menu - sl-menu-label</h5>
 
-                            <sl-menu style="max-width: 200px;">
+                            <sl-menu style="max-width: 200px">
                                 <sl-menu-label>Fruits</sl-menu-label>
                                 <sl-menu-item value="apple">Apple</sl-menu-item>
-                                <sl-menu-item value="banana">Banana</sl-menu-item>
-                                <sl-menu-item value="orange">Orange</sl-menu-item>
+                                <sl-menu-item value="banana"
+                                    >Banana</sl-menu-item
+                                >
+                                <sl-menu-item value="orange"
+                                    >Orange</sl-menu-item
+                                >
                                 <sl-divider></sl-divider>
                                 <sl-menu-label>Vegetables</sl-menu-label>
-                                <sl-menu-item value="broccoli">Broccoli</sl-menu-item>
-                                <sl-menu-item value="carrot">Carrot</sl-menu-item>
-                                <sl-menu-item value="zucchini">Zucchini</sl-menu-item>
+                                <sl-menu-item value="broccoli"
+                                    >Broccoli</sl-menu-item
+                                >
+                                <sl-menu-item value="carrot"
+                                    >Carrot</sl-menu-item
+                                >
+                                <sl-menu-item value="zucchini"
+                                    >Zucchini</sl-menu-item
+                                >
                             </sl-menu>
                         </div>
                         <div class="codePart">
@@ -526,42 +610,70 @@
     &lt;/sl-menu&gt;
                             </code></pre>
                         </div>
-                        
                     </div>
 
                     <div>
                         <div class="viewPart">
                             <h5>Value 를 가지는 Menu - value 속성 사용</h5>
-                            <div style="display: flex; gap: 0.5rem; margin: 0.5rem;">
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 0.5rem;
+                                    margin: 0.5rem;
+                                "
+                            >
                                 <span>선택 값 :</span>
                                 <span id="value"></span>
                             </div>
-    
-                            <sl-menu class="menu-value" style="max-width: 200px;">
+
+                            <sl-menu
+                                class="menu-value"
+                                style="max-width: 200px"
+                            >
                                 <sl-menu-label>option</sl-menu-label>
-                                <sl-menu-item value="opt-1">Option 1</sl-menu-item>
-                                <sl-menu-item value="opt-2">Option 2</sl-menu-item>
-                                <sl-menu-item value="opt-3">Option 3</sl-menu-item>
+                                <sl-menu-item value="opt-1"
+                                    >Option 1</sl-menu-item
+                                >
+                                <sl-menu-item value="opt-2"
+                                    >Option 2</sl-menu-item
+                                >
+                                <sl-menu-item value="opt-3"
+                                    >Option 3</sl-menu-item
+                                >
                                 <sl-divider></sl-divider>
                                 <sl-menu-label>checkbox</sl-menu-label>
-                                <sl-menu-item type="checkbox" value="opt-4">Checkbox 4</sl-menu-item>
-                                <sl-menu-item type="checkbox" value="opt-5">Checkbox 5</sl-menu-item>
-                                <sl-menu-item type="checkbox" value="opt-6">Checkbox 6</sl-menu-item>
+                                <sl-menu-item type="checkbox" value="opt-4"
+                                    >Checkbox 4</sl-menu-item
+                                >
+                                <sl-menu-item type="checkbox" value="opt-5"
+                                    >Checkbox 5</sl-menu-item
+                                >
+                                <sl-menu-item type="checkbox" value="opt-6"
+                                    >Checkbox 6</sl-menu-item
+                                >
                             </sl-menu>
-                              
+
                             <script>
-                                const menu = document.querySelector('.menu-value');
-                                const menuValue = document.getElementById('value')
-                              
-                                menu.addEventListener('sl-select', event => {
-                                  const item = event.detail.item;
-                              
-                                  // Log value
-                                  if (item.type === 'checkbox') {
-                                    menuValue.innerText = (`Selected value: ${item.value} (${item.checked ? 'checked' : 'unchecked'})`);
-                                  } else {
-                                    menuValue.innerText = (`Selected value: ${item.value}`);
-                                  }
+                                const menu =
+                                    document.querySelector('.menu-value');
+                                const menuValue =
+                                    document.getElementById('value');
+
+                                menu.addEventListener('sl-select', (event) => {
+                                    const item = event.detail.item;
+
+                                    // Log value
+                                    if (item.type === 'checkbox') {
+                                        menuValue.innerText = `Selected value: ${
+                                            item.value
+                                        } (${
+                                            item.checked
+                                                ? 'checked'
+                                                : 'unchecked'
+                                        })`;
+                                    } else {
+                                        menuValue.innerText = `Selected value: ${item.value}`;
+                                    }
                                 });
                             </script>
                         </div>
@@ -603,12 +715,11 @@
                                 </code></pre>
                             </sl-details>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <script src="/js/darkmode.js"></script>
     </body>
 </html>
