@@ -15,12 +15,12 @@ import '@shoelace-style/shoelace/dist/themes/dark.css';
 import '@shoelace-style/shoelace/dist/shoelace.js';
 
 /* Provider */
-import ModeContext from '@/provider/ModeContext.jsx';
+import ModeProvider from '@/provider/ModeContext.jsx';
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
-        <ModeContext>
+        <ModeProvider>
             <App />
-        </ModeContext>
+        </ModeProvider>
     </BrowserRouter>,
 );

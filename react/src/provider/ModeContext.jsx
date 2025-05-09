@@ -7,7 +7,7 @@ export function useMode() {
     return useContext(ModeContext);
 }
 
-function ModeProvide({ children }) {
+function ModeProvider({ children }) {
     /* useState */
     const [darkMode, setDarkMode] = useState('');
 
@@ -62,4 +62,4 @@ function ModeProvide({ children }) {
     );
 }
 
-export default ModeProvide;
+export default ModeProvider;
