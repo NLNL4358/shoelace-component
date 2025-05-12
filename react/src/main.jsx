@@ -11,9 +11,6 @@ import '@/css/shoelace.css';
 import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace/dist/themes/dark.css';
 
-/* Shoelace 컴포넌트 */
-import '@shoelace-style/shoelace/dist/shoelace.js';
-
 /* Shoelace Icon 라이브러리 */
 import { registerIconLibrary } from '@shoelace-style/shoelace/dist/utilities/icon-library.js';
 
@@ -23,14 +20,17 @@ registerIconLibrary('default', {
 });
 
 /* Provider */
-import ModeProvider from '@/provider/ModeProvider.jsx';
-import NavigationProvider from './provider/NavigationProvider.jsx';
+import ModeProvider from '@/provider/ModeProvider.jsx'; /* 다크모드 */
+import NavigationProvider from './provider/NavigationProvider.jsx'; /* 네비게이션 */
+import CodeViewerProvider from './provider/CodeViewerProvider.jsx'; /* 코드뷰어 */
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <ModeProvider>
             <NavigationProvider>
-                <App />
+                <CodeViewerProvider>
+                    <App />
+                </CodeViewerProvider>
             </NavigationProvider>
         </ModeProvider>
     </BrowserRouter>,

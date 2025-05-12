@@ -49,7 +49,7 @@
     background-color: transparent;
 }
 .logoButton img {
-    width: 100%;
+    width: 10rem;
     height: auto;
     justify-self: center;
     align-self: center;
@@ -98,6 +98,11 @@
     height: 0.5rem;
     border-radius: 50%;
     background-color: var(--text-title-color);
+}
+.viewPart .wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .section {
