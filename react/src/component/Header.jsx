@@ -1,7 +1,8 @@
 import React from 'react';
 
 /* Provider */
-import { useMode } from '../provider/ModeContext';
+import { useMode } from '../provider/ModeProvider';
+import { useNavigation } from '../provider/NavigationProvider';
 
 /* Component */
 import {
@@ -16,12 +17,18 @@ import logo from '@/assets/img/logo.svg';
 
 export const Header = () => {
     const { darkMode, setTheme } = useMode();
+    const { goTo } = useNavigation();
 
     return (
         <div className="header">
-            <a className="logoButton" href="/">
+            <SlButton
+                className="logoButton"
+                onClick={() => {
+                    goTo('/');
+                }}
+            >
                 <img src={logo} alt="" />
-            </a>
+            </SlButton>
             <div className="navWrap">
                 <ul className="navTitle">
                     <li className="navLi">
@@ -29,7 +36,9 @@ export const Header = () => {
                         <div className="navMenu">
                             <SlMenu>
                                 <SlButton
-                                    href="/button/button"
+                                    onClick={() => {
+                                        goTo('/button/button');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -37,7 +46,9 @@ export const Header = () => {
                                 </SlButton>
 
                                 <SlButton
-                                    href="/button/group-button"
+                                    onClick={() => {
+                                        goTo('/button/group-button');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -45,7 +56,9 @@ export const Header = () => {
                                 </SlButton>
 
                                 <SlButton
-                                    href="/button/switch"
+                                    onClick={() => {
+                                        goTo('/button/switch');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -59,7 +72,9 @@ export const Header = () => {
                         <div className="navMenu">
                             <SlMenu>
                                 <SlButton
-                                    href="/select/select"
+                                    onClick={() => {
+                                        goTo('/select/select');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -67,7 +82,9 @@ export const Header = () => {
                                 </SlButton>
 
                                 <SlButton
-                                    href="/select/input"
+                                    onClick={() => {
+                                        goTo('/select/input');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -75,7 +92,9 @@ export const Header = () => {
                                 </SlButton>
 
                                 <SlButton
-                                    href="/select/textarea"
+                                    onClick={() => {
+                                        goTo('/select/textarea');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -90,7 +109,9 @@ export const Header = () => {
                         <div className="navMenu">
                             <SlMenu>
                                 <SlButton
-                                    href="/checkbox/checkbox"
+                                    onClick={() => {
+                                        goTo('/checkbox/checkbox');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -98,7 +119,9 @@ export const Header = () => {
                                 </SlButton>
 
                                 <SlButton
-                                    href="/checkbox/radio"
+                                    onClick={() => {
+                                        goTo('/checkbox/radio');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -113,28 +136,36 @@ export const Header = () => {
                         <div className="navMenu">
                             <SlMenu>
                                 <SlButton
-                                    href="/modal/modal"
+                                    onClick={() => {
+                                        goTo('/modal/modal');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     모달
                                 </SlButton>
                                 <SlButton
-                                    href="/modal/drawer"
+                                    onClick={() => {
+                                        goTo('/modal/drawer');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     Drawer
                                 </SlButton>
                                 <SlButton
-                                    href="/modal/alert"
+                                    onClick={() => {
+                                        goTo('/modal/alert');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     Alert
                                 </SlButton>
                                 <SlButton
-                                    href="/modal/tooltip"
+                                    onClick={() => {
+                                        goTo('/modal/tooltip');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -142,7 +173,9 @@ export const Header = () => {
                                 </SlButton>
 
                                 <SlButton
-                                    href="/modal/accordion"
+                                    onClick={() => {
+                                        goTo('/modal/accordion');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -157,14 +190,18 @@ export const Header = () => {
                         <div className="navMenu">
                             <SlMenu>
                                 <SlButton
-                                    href="/menu/menu"
+                                    onClick={() => {
+                                        goTo('/menu/menu');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     Menu
                                 </SlButton>
                                 <SlButton
-                                    href="/menu/tab"
+                                    onClick={() => {
+                                        goTo('/menu/tab');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -179,35 +216,45 @@ export const Header = () => {
                         <div className="navMenu">
                             <SlMenu>
                                 <SlButton
-                                    href="/uiux/ux-input"
+                                    onClick={() => {
+                                        goTo('/uiux/ux-input');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     UX-Input
                                 </SlButton>
                                 <SlButton
-                                    href="/uiux/breadcrumb"
+                                    onClick={() => {
+                                        goTo('/uiux/breadcrumb');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     Breadcrumb
                                 </SlButton>
                                 <SlButton
-                                    href="/uiux/badge-tag"
+                                    onClick={() => {
+                                        goTo('/uiux/badge-tag');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     Badge & Tag
                                 </SlButton>
                                 <SlButton
-                                    href="/uiux/dropdown"
+                                    onClick={() => {
+                                        goTo('/uiux/dropdown');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
                                     Dropdown
                                 </SlButton>
                                 <SlButton
-                                    href="/uiux/icon"
+                                    onClick={() => {
+                                        goTo('/uiux/icon');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
@@ -221,7 +268,9 @@ export const Header = () => {
                         <div className="navMenu">
                             <SlMenu>
                                 <SlButton
-                                    href="/animation/animation"
+                                    onClick={() => {
+                                        goTo('/animation/animation');
+                                    }}
                                     size="large"
                                     className="navButton"
                                 >
