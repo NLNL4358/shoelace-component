@@ -9,6 +9,9 @@ sl-button::part(label) {
     justify-content: center;
     align-items: center;
 }
+sl-button.customButton {
+    min-width: fit-content;
+}
 
 /* Radio */
 sl-radio {
