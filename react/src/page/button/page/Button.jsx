@@ -110,6 +110,9 @@ function ButtonComponent(props) {
                             ></SlInput>
                             <SlInput
                                 label="variant 입력"
+                                help-text={
+                                    ' ex) default , primary, success, neutral, warning, danger'
+                                }
                                 value={custom?.variant}
                                 onSlInput={(e) => {
                                     customChanger('variant', e.target.value);
@@ -126,7 +129,7 @@ function ButtonComponent(props) {
                             <SlInput
                                 label="iconName 입력"
                                 value={custom?.iconName}
-                                placeholder={'ex) gear , github'}
+                                help-text={'ex) gear , github'}
                                 onSlInput={(e) => {
                                     customChanger('iconName', e.target.value);
                                 }}
