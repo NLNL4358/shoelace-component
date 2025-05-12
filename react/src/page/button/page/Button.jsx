@@ -25,7 +25,9 @@ function Button() {
                     <div className="codePart">
                         <pre>
                             <code className="language-markup">
-                                {`<SlButton>Simple</SlButton>`}
+                                {`
+    <SlButton>Simple</SlButton>
+                                `}
                             </code>
                         </pre>
                     </div>
@@ -46,12 +48,14 @@ function Button() {
                     <div className="codePart">
                         <pre>
                             <code className="language-markup">
-                                {`<SlButton variant="default">Default</SlButton>
-<SlButton variant="primary">Primary</SlButton>
-<SlButton variant="success">Success</SlButton>
-<SlButton variant="neutral">Neutral</SlButton>
-<SlButton variant="warning">Warning</SlButton>
-<SlButton variant="danger">Danger</SlButton>`}
+                                {`
+    <SlButton variant="default">Default</SlButton>
+    <SlButton variant="primary">Primary</SlButton>
+    <SlButton variant="success">Success</SlButton>
+    <SlButton variant="neutral">Neutral</SlButton>
+    <SlButton variant="warning">Warning</SlButton>
+    <SlButton variant="danger">Danger</SlButton>
+                                `}
                             </code>
                         </pre>
                     </div>
@@ -84,12 +88,14 @@ function Button() {
                     <div className="codePart">
                         <pre>
                             <code className="language-markup">
-                                {`<SlButton variant="default" outline>Default</SlButton>
-<SlButton variant="primary" outline>Primary</SlButton>
-<SlButton variant="success" outline>Success</SlButton>
-<SlButton variant="neutral" outline>Neutral</SlButton>
-<SlButton variant="warning" outline>Warning</SlButton>
-<SlButton variant="danger" outline>Danger</SlButton>`}
+                                {`
+    <SlButton variant="default" outline>Default</SlButton>
+    <SlButton variant="primary" outline>Primary</SlButton>
+    <SlButton variant="success" outline>Success</SlButton>
+    <SlButton variant="neutral" outline>Neutral</SlButton>
+    <SlButton variant="warning" outline>Warning</SlButton>
+    <SlButton variant="danger" outline>Danger</SlButton>
+                                `}
                             </code>
                         </pre>
                     </div>
@@ -108,10 +114,12 @@ function Button() {
                     <div className="codePart">
                         <pre>
                             <code className="language-markup">
-                                {`<SlButton pill>pill</SlButton>
-<SlButton variant="default" circle>
-    <SlIcon name="gear" label="Settings"></SlIcon>
-</SlButton>`}
+                                {`
+    <SlButton pill>pill</SlButton>
+    <SlButton variant="default" circle>
+        <SlIcon name="gear" label="Settings"></SlIcon>
+    </SlButton>
+                                `}
                             </code>
                         </pre>
                     </div>
@@ -135,9 +143,11 @@ function Button() {
                     <div className="codePar">
                         <pre>
                             <code className="language-markup">
-                                {`<SlButton variant="text" size="small">Text</SlButton>
-<SlButton variant="text" size="medium">Text</SlButton>
-<SlButton variant="text" size="large">Text</SlButton>`}
+                                {`
+    <SlButton variant="text" size="small">Text</SlButton>
+    <SlButton variant="text" size="medium">Text</SlButton>
+    <SlButton variant="text" size="large">Text</SlButton>
+                                `}
                             </code>
                         </pre>
                     </div>
@@ -173,28 +183,30 @@ function Button() {
                     </div>
                     <div className="codePart">
                         <pre>
-                            <code className="language-markup">{`<SlButton
-                                href="https://www.naver.com/"
-                                variant="success"
-                            >
-    Naver
-</SlButton>
-<SlButton
-    href="https://www.google.com/"
-    variant="primary"
-    target="_blank"
->
-    Google
-</SlButton>
-<SlButton
-    href="/assets/images/wordmark.svg"
-    download="shoelace.svg"
->
-    Download
-</SlButton>
-<SlButton href="https://example.com/" disabled>
-    Disabled
-</SlButton>`}</code>
+                            <code className="language-markup">{`
+    <SlButton
+        href="https://www.naver.com/"
+        variant="success"
+    >
+        Naver
+    </SlButton>
+    <SlButton
+        href="https://www.google.com/"
+        variant="primary"
+        target="_blank"
+    >
+        Google
+    </SlButton>
+    <SlButton
+        href="/assets/images/wordmark.svg"
+        download="shoelace.svg"
+    >
+        Download
+    </SlButton>
+    <SlButton href="https://example.com/" disabled>
+        Disabled
+    </SlButton>
+                            `}</code>
                         </pre>
                     </div>
                 </div>
@@ -222,20 +234,22 @@ function Button() {
                     </div>
                     <div className="codePart">
                         <pre>
-                            <code className="language-markup">{`<SlCopyButton value="복사할 값을 이곳에 넣는다">
-    <SlIcon
-        slot="copy-icon"
-        name="clipboard"
-    ></SlIcon>
-    <SlIcon
-        slot="success-icon"
-        name="clipboard-check"
-    ></SlIcon>
-    <SlIcon
-        slot="error-icon"
-        name="clipboard-x"
-    ></SlIcon>
-</SlCopyButton>`}</code>
+                            <code className="language-markup">{`
+    <SlCopyButton value="복사할 값을 이곳에 넣는다">
+        <SlIcon
+            slot="copy-icon"
+            name="clipboard"
+        ></SlIcon>
+        <SlIcon
+            slot="success-icon"
+            name="clipboard-check"
+        ></SlIcon>
+        <SlIcon
+            slot="error-icon"
+            name="clipboard-x"
+        ></SlIcon>
+    </SlCopyButton>
+                            `}</code>
                         </pre>
                     </div>
                 </div>

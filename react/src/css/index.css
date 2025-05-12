@@ -102,6 +102,7 @@
 .viewPart .wrap {
     display: flex;
     align-items: center;
+    margin: 0.7rem 0px;
     gap: 0.5rem;
 }
 
