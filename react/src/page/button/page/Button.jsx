@@ -7,6 +7,8 @@ import {
     SlDivider,
     SlDetails,
     SlInput,
+    SlSelect,
+    SlOption,
     SlSwitch,
 } from '@shoelace-style/shoelace/dist/react';
 
@@ -56,6 +58,84 @@ function Button() {
                                 link={custom.link}
                                 iconName={custom.iconName}
                             />
+                            <SlDivider />
+                            <div className="wrap">
+                                <SlInput
+                                    label="Text 입력"
+                                    value={custom?.text}
+                                    onSlInput={(e) => {
+                                        customChanger('text', e.target.value);
+                                    }}
+                                ></SlInput>
+                            </div>
+                            <div className="wrap">
+                                <SlSelect
+                                    label="variant 선택"
+                                    value={custom?.variant}
+                                    onSlChange={(e) => {
+                                        customChanger(
+                                            'variant',
+                                            e.target.value,
+                                        );
+                                    }}
+                                >
+                                    <SlOption value="default">default</SlOption>
+                                    <SlOption value="primary">primary</SlOption>
+                                    <SlOption value="success">success</SlOption>
+                                    <SlOption value="neutral">neutral</SlOption>
+                                    <SlOption value="warning">warning</SlOption>
+                                    <SlOption value="danger">danger</SlOption>
+                                    <SlOption value="text">text</SlOption>
+                                </SlSelect>
+                            </div>
+                            <div className="wrap">
+                                <SlSelect
+                                    label="link 선택"
+                                    onSlChange={(e) => {
+                                        customChanger('link', e.target.value);
+                                    }}
+                                >
+                                    <SlOption value="">None</SlOption>
+                                    <SlOption value="https://www.naver.com">
+                                        naver
+                                    </SlOption>
+                                    <SlOption value="https://www.google.com">
+                                        google
+                                    </SlOption>
+                                </SlSelect>
+                            </div>
+                            <div className="wrap">
+                                <SlInput
+                                    label="iconName 입력"
+                                    value={custom?.iconName}
+                                    help-text={'ex) gear , github'}
+                                    onSlInput={(e) => {
+                                        customChanger(
+                                            'iconName',
+                                            e.target.value,
+                                        );
+                                    }}
+                                ></SlInput>
+                            </div>
+                            <div className="wrap">
+                                <SlSwitch
+                                    help-text="outline 변경"
+                                    value={custom?.outline}
+                                    onSlInput={(e) => {
+                                        customChanger(
+                                            'outline',
+                                            e.target.checked,
+                                        );
+                                    }}
+                                ></SlSwitch>
+                                <SlSwitch
+                                    help-text="pill 변경"
+                                    value={custom?.pill}
+                                    onSlInput={(e) => {
+                                        customChanger('pill', e.target.checked);
+                                    }}
+                                ></SlSwitch>
+                            </div>
                         </div>
                         <div className="codePart">
                             <SlDetails summary="Code View">
@@ -99,55 +179,6 @@ function ButtonComponent(props) {
                             `}</code>
                                 </pre>
                             </SlDetails>
-                        </div>
-                        <div className="customPart">
-                            <SlInput
-                                label="Text 입력"
-                                value={custom?.text}
-                                onSlInput={(e) => {
-                                    customChanger('text', e.target.value);
-                                }}
-                            ></SlInput>
-                            <SlInput
-                                label="variant 입력"
-                                help-text={
-                                    ' ex) default , primary, success, neutral, warning, danger'
-                                }
-                                value={custom?.variant}
-                                onSlInput={(e) => {
-                                    customChanger('variant', e.target.value);
-                                }}
-                            ></SlInput>
-                            <SlInput
-                                label="link 입력 -> 클릭시 외부"
-                                value={custom?.link}
-                                placeholder={'https://...'}
-                                onSlInput={(e) => {
-                                    customChanger('link', e.target.value);
-                                }}
-                            ></SlInput>
-                            <SlInput
-                                label="iconName 입력"
-                                value={custom?.iconName}
-                                help-text={'ex) gear , github'}
-                                onSlInput={(e) => {
-                                    customChanger('iconName', e.target.value);
-                                }}
-                            ></SlInput>
-                            <SlSwitch
-                                help-text="outline 변경"
-                                value={custom?.outline}
-                                onSlInput={(e) => {
-                                    customChanger('outline', e.target.checked);
-                                }}
-                            ></SlSwitch>
-                            <SlSwitch
-                                help-text="pill 변경"
-                                value={custom?.pill}
-                                onSlInput={(e) => {
-                                    customChanger('pill', e.target.checked);
-                                }}
-                            ></SlSwitch>
                         </div>
                     </div>
                 </div>
