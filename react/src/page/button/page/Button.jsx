@@ -57,6 +57,9 @@ function Button() {
                                 pill={custom.pill}
                                 link={custom.link}
                                 iconName={custom.iconName}
+                                eventFunction={() => {
+                                    alert('클릭');
+                                }}
                             />
                             <SlDivider />
                             <div className="wrap">
@@ -161,6 +164,7 @@ function Button() {
             pill = false,
             link = null,
             iconName = '',
+            eventFunction = () => {},
         } = props;
 
         return (
@@ -172,6 +176,9 @@ function Button() {
                 pill={pill}
                 href={link}
                 target={link && '_blank'}
+                onClick={() => {
+                    eventFunction();
+                }}
             >
                 {iconName !== '' ? (
                     <SlIcon

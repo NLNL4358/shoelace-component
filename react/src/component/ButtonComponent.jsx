@@ -18,6 +18,7 @@ function ButtonComponent(props) {
         pill = false,
         link = null,
         iconName = '',
+        eventFunction = () => {},
     } = props;
 
     return (
@@ -29,6 +30,9 @@ function ButtonComponent(props) {
             pill={pill}
             href={link}
             target={link && '_blank'}
+            onClick={() => {
+                eventFunction();
+            }}
         >
             {iconName !== '' ? (
                 <SlIcon
