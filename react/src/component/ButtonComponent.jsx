@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    SlButton,
-    SlIcon,
-    SlCopyButton,
-    SlDivider,
-} from '@shoelace-style/shoelace/dist/react';
+import { SlButton, SlIcon } from '@shoelace-style/shoelace/dist/react';
 
 function ButtonComponent(props) {
     /**
