@@ -4,6 +4,7 @@ import { SlSelect, SlOption } from '@shoelace-style/shoelace/dist/react';
 
 function SelectComponent(props) {
     const {
+        style = {},
         initValue = '',
         options = [
             {
@@ -19,6 +20,7 @@ function SelectComponent(props) {
 
     return (
         <SlSelect
+            style={style}
             defaultValue={initValue}
             label={label ? label : false}
             help-text={helpText ? helpText : false}

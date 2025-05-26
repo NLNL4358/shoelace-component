@@ -112,6 +112,7 @@ function Select() {
     
     function SelectComponent(props) {
         const {
+            style = {},
             initValue = '',
             options = [
                 {
@@ -127,6 +128,7 @@ function Select() {
     
         return (
             <SlSelect
+                style={style}
                 defaultValue={initValue}
                 label={label ? label : false}
                 help-text={helpText ? helpText : false}
