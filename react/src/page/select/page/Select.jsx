@@ -7,6 +7,7 @@ import {
     SlDivider,
     SlDetails,
     SlInput,
+    SlIcon,
 } from '@shoelace-style/shoelace/dist/react';
 
 import SelectComponent from '../../../component/SelectComponent';
@@ -33,6 +34,21 @@ function Select() {
     useEffect(() => {
         highlight();
     }, [highlight]);
+
+    const RedSelectStyle = () => (
+        <style>
+            {`
+            .red-select sl-option::part(base):hover{
+                /* hover된 option */
+                background-color: var(--sl-color-red-200);
+            }
+            .red-select sl-option[tabindex="0"]::part(base),
+            .red-select sl-option[tabindex="0"]::part(base):hover {
+                /* 선택된 option */
+                background-color: var(--sl-color-red-500);
+            }`}
+        </style>
+    );
 
     return (
         <>
@@ -137,6 +153,219 @@ function Select() {
                 </div>
             </div>
             <SlDivider></SlDivider>
+
+            <div className="section">
+                <h3 className="componentTItle">셀렉트 - 옵션</h3>
+                <div className="componentWrap">
+                    <div className="">
+                        <div className="viewPart">
+                            <h5>기초적인 Select</h5>
+                            <SlSelect>
+                                <SlOption value="option-1">option-1</SlOption>
+                                <SlOption value="option-2">option-2</SlOption>
+                                <SlOption value="option-3">option-3</SlOption>
+                            </SlSelect>
+                        </div>
+                        <div className="codePart">
+                            <pre>
+                                <code className="language-markup">{`
+    <SlSelect>
+        <SlOption value="option-1">option-1</SlOption>
+        <SlOption value="option-2">option-2</SlOption>
+        <SlOption value="option-3">option-3</SlOption>
+    </SlSelect>
+                            `}</code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div className="">
+                        <div className="viewPart">
+                            <h5>라벨</h5>
+                            <SlSelect label="input label here">
+                                <SlOption value="option-1">option-1</SlOption>
+                                <SlOption value="option-2">option-2</SlOption>
+                                <SlOption value="option-3">option-3</SlOption>
+                            </SlSelect>
+                        </div>
+                        <div className="codePart">
+                            <pre>
+                                <code className="language-markup">{`
+    <SlSelect label="input label here">
+        <SlOption value="option-1">option-1</SlOption>
+        <SlOption value="option-2">option-2</SlOption>
+        <SlOption value="option-3">option-3</SlOption>
+    </SlSelect>
+                            `}</code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div className="">
+                        <div className="viewPart">
+                            <h5>하단 도움 문구 (help-text)</h5>
+                            <SlSelect
+                                label="Experience"
+                                help-text="Please tell us your skill level."
+                            >
+                                <SlOption value="option-1">option-1</SlOption>
+                                <SlOption value="option-2">option-2</SlOption>
+                                <SlOption value="option-3">option-3</SlOption>
+                            </SlSelect>
+                        </div>
+                        <div className="codePart">
+                            <pre>
+                                <code className="language-markup">{`
+    <SlSelect label="Experience" help-text="Please tell us your skill level.">
+        <SlOption value="option-1">option-1</SlOption>
+        <SlOption value="option-2">option-2</SlOption>
+        <SlOption value="option-3">option-3</SlOption>
+    </SlSelect>
+                            `}</code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div className="">
+                        <div className="viewPart">
+                            <h5>플레이스홀더 (placeholder)</h5>
+                            <SlSelect placeholder="플레이스홀더">
+                                <SlOption value="option-1">option-1</SlOption>
+                                <SlOption value="option-2">option-2</SlOption>
+                                <SlOption value="option-3">option-3</SlOption>
+                            </SlSelect>
+                        </div>
+                        <div className="codePart">
+                            <pre>
+                                <code className="language-markup">{`
+    <SlSelect placeholder="플레이스홀더">
+        <SlOption value="option-1">option-1</SlOption>
+        <SlOption value="option-2">option-2</SlOption>
+        <SlOption value="option-3">option-3</SlOption>
+    </SlSelect>
+                            `}</code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div className="">
+                        <div className="viewPart">
+                            <h5>아이콘 prefix & suffix</h5>
+                            <SlSelect>
+                                <SlOption value="option-1">
+                                    <SlIcon
+                                        slot="prefix"
+                                        name="envelope"
+                                        style={{ 'padding-right': '0.7rem' }}
+                                    ></SlIcon>
+                                    Email
+                                    <SlIcon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></SlIcon>
+                                </SlOption>
+
+                                <SlOption value="option-2">
+                                    <SlIcon
+                                        slot="prefix"
+                                        name="telephone"
+                                        style={{ 'padding-right': '0.7rem' }}
+                                    ></SlIcon>
+                                    Phone
+                                    <SlIcon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></SlIcon>
+                                </SlOption>
+
+                                <SlOption value="option-3">
+                                    <SlIcon
+                                        slot="prefix"
+                                        name="chat-dots"
+                                        style={{ 'padding-right': '0.7rem' }}
+                                    ></SlIcon>
+                                    Chat
+                                    <SlIcon
+                                        slot="suffix"
+                                        name="patch-check"
+                                    ></SlIcon>
+                                </SlOption>
+                            </SlSelect>
+                        </div>
+                        <div className="codePart">
+                            <SlDetails summary="Code View">
+                                <pre>
+                                    <code className="language-markup">{`
+    <SlSelect>
+        <SlOption value="option-1">
+            <SlIcon slot="prefix" name="envelope" style={{ 'padding-right': '0.7rem' }}></SlIcon>
+                Email
+            <SlIcon slot="suffix" name="patch-check"></SlIcon>
+        </SlOption>
+
+        <SlOption value="option-2">
+            <SlIcon slot="prefix" name="telephone" style={{ 'padding-right': '0.7rem' }}></SlIcon>
+                Phone
+            <SlIcon slot="suffix" name="patch-check"></SlIcon>
+        </SlOption>
+
+        <SlOption value="option-3">
+            <SlIcon slot="prefix" name="chat-dots" style={{ 'padding-right': '0.7rem' }}></SlIcon>
+                Chat
+            <SlIcon slot="suffix" name="patch-check"></SlIcon>
+        </SlOption>
+    </SlSelect>
+                            `}</code>
+                                </pre>
+                            </SlDetails>
+                        </div>
+                    </div>
+                    <div className="">
+                        <div className="viewPart">
+                            <h5>Select Color 바꾸기</h5>
+                            <RedSelectStyle />
+                            <SlSelect
+                                className="red-select"
+                                label="Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! "
+                            >
+                                <SlOption value="option-1">Option 1</SlOption>
+                                <SlOption value="option-2">Option 2</SlOption>
+                                <SlOption value="option-3">Option 3</SlOption>
+                            </SlSelect>
+                        </div>
+
+                        <div className="codePart">
+                            <SlDetails summary="Code View">
+                                <pre>
+                                    <code className="language-markup">{`
+    /* CSS */
+    <style>
+        .red-select sl-option::part(base):hover{
+            /* hover된 option */
+            background-color: var(--sl-color-red-200);
+        }
+        .red-select sl-option[tabindex="0"]::part(base),
+        .red-select sl-option[tabindex="0"]::part(base):hover {
+            /* 선택된 option */
+            background-color: var(--sl-color-red-500);
+        }
+    </style>
+    --------------------------------------------------------------------------------
+    <SlSelect
+        className="red-select"
+        label="Select의 색바꾸기 CSS의 속성 선택자 문법을 이용해 [tabindex='0']::part(base) 로 가능!! ">
+        <SlOption value="option-1">Option 1</SlOption>
+        <SlOption value="option-2">Option 2</SlOption>
+        <SlOption value="option-3">Option 3</SlOption>
+    </SlSelect>
+        
+                                `}</code>
+                                </pre>
+                            </SlDetails>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
