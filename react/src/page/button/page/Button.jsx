@@ -19,6 +19,7 @@ function Button() {
 
     /* useState */
     const [custom, setCustom] = useState({
+        className: '',
         text: '커스텀 버튼',
         style: { width: '10rem' },
         variant: 'primary',
@@ -50,6 +51,7 @@ function Button() {
                     <div className="">
                         <div className="viewPart">
                             <ButtonComponent
+                                className={custom.className}
                                 text={custom.text}
                                 style={custom.style}
                                 variant={custom.variant}
@@ -62,6 +64,18 @@ function Button() {
                                 }}
                             />
                             <SlDivider />
+                            <div className="wrap">
+                                <SlInput
+                                    label="className 입력"
+                                    value={custom?.className}
+                                    onSlInput={(e) => {
+                                        customChanger(
+                                            'className',
+                                            e.target.value,
+                                        );
+                                    }}
+                                ></SlInput>
+                            </div>
                             <div className="wrap">
                                 <SlInput
                                     label="Text 입력"
@@ -150,6 +164,7 @@ function Button() {
     function ButtonComponent(props) {
         /**
          * text : 버튼에 들어갈 Text
+         * className : 컴포넌트에 들어갈 ClassName Text
          * style : 커스텀 style이 필요할때 사용
          * outline : outline 버튼인가?
          * pill : 동그란 버튼인가?
@@ -158,6 +173,7 @@ function Button() {
          */
         const {
             text = '',
+            className = '',
             style = {},
             variant = 'default',
             outline = false,
@@ -169,7 +185,7 @@ function Button() {
 
         return (
             <SlButton
-                className="customButton"
+                className={\`customButton \${className}\`}
                 style={style}
                 variant={variant}
                 outline={outline}

@@ -4,6 +4,7 @@ import { SlButton, SlIcon } from '@shoelace-style/shoelace/dist/react';
 function ButtonComponent(props) {
     /**
      * text : 버튼에 들어갈 Text
+     * className : 컴포넌트에 들어갈 ClassName Text
      * style : 커스텀 style이 필요할때 사용
      * outline : outline 버튼인가?
      * pill : 동그란 버튼인가?
@@ -12,6 +13,7 @@ function ButtonComponent(props) {
      */
     const {
         text = '',
+        className = '',
         style = {},
         variant = 'default',
         outline = false,
@@ -23,7 +25,7 @@ function ButtonComponent(props) {
 
     return (
         <SlButton
-            className="customButton"
+            className={`customButton ${className}`}
             style={style}
             variant={variant}
             outline={outline}
