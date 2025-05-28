@@ -113,6 +113,13 @@ sl-radio-button sl-icon {
     color: currentColor;
 }
 
+/* input */
+sl-input[readonly]::part(input),
+sl-input[disabled]::part(input) {
+    caret-color: transparent;
+    pointer-events: none;
+}
+
 /* switch */
 sl-switch::part(form-control-help-text) {
     margin-top: 0.5rem;

@@ -115,7 +115,7 @@ function Select() {
                         </div>
 
                         <div className="codePart">
-                            <SlDetails summary="Code View">
+                            <SlDetails summary="Component Code">
                                 <pre>
                                     <code className="language-js">{`
     import React from 'react';
