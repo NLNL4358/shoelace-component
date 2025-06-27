@@ -1,0 +1,17 @@
+/**
+    Shoelace 컴포넌트의 커스텀 CSS를 위한 css
+*/
+.redRadioGroup sl-radio::part(control--checked) {
+    background-color: red;
+    border-color: red;
+}
+
+.red-select sl-option::part(base):hover {
+    /* hover된 option */
+    background-color: var(--sl-color-red-200);
+}
+.red-select sl-option[tabindex='0']::part(base),
+.red-select sl-option[tabindex='0']::part(base):hover {
+    /* 선택된 option */
+    background-color: var(--sl-color-red-500);
+}

@@ -6,6 +6,7 @@ import App from './App.jsx';
 import '@/css/index.css';
 import '@/css/reset.css';
 import '@/css/shoelace.css';
+import '@/css/customShoelace.css';
 
 /* Shoelace CSS */
 import '@shoelace-style/shoelace/dist/themes/light.css';
