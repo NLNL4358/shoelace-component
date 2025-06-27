@@ -49,7 +49,6 @@ function ModeProvider({ children }) {
 
     const value = {
         darkMode,
-        setDarkMode,
         setTheme,
     };
 

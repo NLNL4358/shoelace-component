@@ -218,7 +218,7 @@ function MainPage() {
     import '@shoelace-style/shoelace/dist/themes/dark.css';
                         `}</code>
                     </pre>
-
+                    <SlDivider />
                     <h5>
                         <SlIcon
                             name="2-circle"
@@ -229,10 +229,9 @@ function MainPage() {
                         Light-Theme일때의 색상과 Dark-Theme일때의 색상을
                         명시해준다
                     </h5>
-                    <pre>
-                        <code className="language-css">{`
-    reset.css
-        
+                    <SlDetails summary="reset.css">
+                        <pre>
+                            <code className="language-css">{`
     /* 라이트 모드 컬러 */
     .sl-theme-light {
         /* background - color */
@@ -273,8 +272,9 @@ function MainPage() {
         --icon-color: var(--sl-color-neutral-900);
     }
                     `}</code>
-                    </pre>
-
+                        </pre>
+                    </SlDetails>
+                    <SlDivider />
                     <h5>
                         <SlIcon
                             name="3-circle"
@@ -285,10 +285,9 @@ function MainPage() {
                         reset.css에서 아래와같이 기본 html 요소들에 스타일을
                         적용시킨다.
                     </h5>
-                    <pre>
-                        <code className="language-css">{`
-    reset.css
-
+                    <SlDetails summary="reset.css">
+                        <pre>
+                            <code className="language-css">{`
     /* 실제 적용되는 부분 */
     body {
         background-color: var(--bg-color);
@@ -300,8 +299,9 @@ function MainPage() {
         color: var(--text-title-color);
     }
                         `}</code>
-                    </pre>
-
+                        </pre>
+                    </SlDetails>
+                    <SlDivider />
                     <h5>
                         <SlIcon
                             name="4-circle"
@@ -312,6 +312,168 @@ function MainPage() {
                         JS가 필요하다. React에서는 Provider.jsx 를 이용하여
                         dark-mode를 구현할 것 이다.
                     </h5>
+                    <SlDetails summary="ModeProvider.jsx">
+                        <pre>
+                            <code className="language-js">{`
+    /* 프로바이더 코드 ModeProvider.jsx */
+
+    import React, { createContext, useContext } from 'react';
+    import { useState, useEffect } from 'react';
+    
+    const ModeContext = createContext();
+    
+    export function useMode() {
+        return useContext(ModeContext);
+    }
+    
+    function ModeProvider({ children }) {
+        /* useState */
+        const [darkMode, setDarkMode] = useState('');
+    
+        /* useEffect */
+        useEffect(() => {
+            let mode = window.localStorage.getItem('isDarkMode');
+            if (mode === null) {
+                //localStorage가 없다 = 첫 방문
+    
+                /* 초기 테마 설정 (시스템 테마 감지) */
+                mode =
+                    window.matchMedia &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches
+                        ? 'dark'
+                        : 'light';
+            }
+    
+            const html = document.documentElement;
+    
+            html.classList.remove('sl-theme-light', 'sl-theme-dark');
+            html.classList.add(\`sl-theme-\${mode}\`);
+    
+            window.localStorage.setItem('isDarkMode', mode);
+    
+            setDarkMode(mode);
+        }, []);
+    
+        /* function */
+        const setTheme = (mode) => {
+            const html = document.documentElement;
+    
+            html.classList.remove('sl-theme-light', 'sl-theme-dark');
+            html.classList.add(\`sl-theme-\${mode}\`);
+    
+            window.localStorage.setItem('isDarkMode', mode);
+    
+            setDarkMode(mode);
+        };
+    
+        const value = {
+            darkMode,
+            setTheme,
+        };
+    
+        return (
+            <>
+                <ModeContext.Provider value={value}>
+                    {children}
+                </ModeContext.Provider>
+            </>
+        );
+    }
+    
+    export default ModeProvider;
+                    `}</code>
+                        </pre>
+                    </SlDetails>
+                    <SlDivider />
+                    <h5>
+                        <SlIcon
+                            name="5-circle"
+                            aria-hidden="true"
+                            library="default"
+                        ></SlIcon>
+                        생성한 Provider를 React의 경우 index.js, Vite로
+                        제작한경우 main.jsx에서 불러와준다.
+                    </h5>
+                    <SlDetails summary="index.js or main.jsx">
+                        <pre>
+                            <code className="language-js">
+                                {`
+    import { createRoot } from 'react-dom/client';
+    import { BrowserRouter } from 'react-router-dom';
+    
+    ...
+
+    
+    /* Provider */
+    import ModeProvider from '@/provider/ModeProvider.jsx'; /* 다크모드 */
+
+    ...
+    
+    createRoot(document.getElementById('root')).render(
+        <BrowserRouter>
+            <ModeProvider>
+                <App />
+            </ModeProvider>
+        </BrowserRouter>,
+    );
+                        
+                    `}
+                            </code>
+                        </pre>
+                    </SlDetails>
+                    <SlDivider />
+
+                    <h5>
+                        <SlIcon
+                            name="6-circle"
+                            aria-hidden="true"
+                            library="default"
+                        ></SlIcon>
+                        DarkMode
+                        <SlIcon
+                            name="arrows"
+                            aria-hidden="true"
+                            library="default"
+                        />
+                        LightMode 변경을 위해 ModeProvider에서 상속해주는
+                        'setTheme'를 이용한 Header를 만들어준다. ※꼭 header에서
+                        동작할 필요는 없다.
+                    </h5>
+                    <SlDetails summary="모드 변경기능이 가능한 Header.jsx">
+                        <pre>
+                            <code className="language-js">{`
+    import React from 'react';
+
+    /* Provider */
+    import { useMode } from '../provider/ModeProvider';
+
+    ...
+
+    
+
+    export const Header = () => {
+        const { darkMode, setTheme } = useMode();
+
+        return (
+            <div className="header">
+                    ...
+                <div className="mode">
+                    <SlSwitch
+                        id="darkModeSwitch"
+                        checked={darkMode === 'dark' ? true : false}
+                        onSlChange={(e) => {
+                            setTheme(e.target.checked ? 'dark' : 'light');
+                        }}
+                    >
+                        Dark Mode
+                    </SlSwitch>
+                </div>
+            </div>
+        );
+    };
+                        `}</code>
+                        </pre>
+                    </SlDetails>
                 </SlDetails>
             </div>
             1. shoelace 설치하는법 2. shoelace 컴포넌트의 CSS Style 적용법 3.
