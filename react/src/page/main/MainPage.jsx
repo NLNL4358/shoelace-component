@@ -476,10 +476,58 @@ function MainPage() {
                     </SlDetails>
                 </SlDetails>
             </div>
-            1. shoelace 설치하는법 2. shoelace 컴포넌트의 CSS Style 적용법 3.
-            다크모드 사용법 4. 왜 shoelace의 컴포넌트를 리액트식으로
-            바꿔야하는지 - props나 상태관리를 위해서 5. react에서 shoelace를
-            사용할때 Icon라이브러리를 사용하려면 import해야함
+            <div className="component">
+                <h3>
+                    <SlIcon name="filetype-jsx"></SlIcon>왜 Shoelace의
+                    컴포넌트를 '리액트'식으로 바꿔야하는가? ex)
+                    {`<sl-button/>`}
+                    <SlIcon name="arrow-right"></SlIcon>
+                    {`<SlButton/>`}
+                </h3>
+                <SlDetails summary="why use react component">
+                    <h5>
+                        1. {`<sl-button/>`}이 아닌 {`<SlButton/>`}와 같은 리액트
+                        컴포넌트를 사용해야 상태관리가 가능하기 때문!
+                    </h5>
+                    <h5>
+                        2. Shoelace를 이용한 컴포넌트를 생성하고 활용할때 props
+                        전달에 용이하기 때문
+                    </h5>
+                </SlDetails>
+            </div>
+            <div className="icon">
+                <h3>
+                    <SlIcon name="emoji-sunglasses" />
+                    React에서 Shoelace - ICon 사용하는 방법
+                </h3>
+                <SlDetails summary="install SlIcon Library">
+                    <h3>
+                        npm을 이용해 shoelace를 install한 후 별도로 library를
+                        Import 해줘야한다!
+                    </h3>
+                    <h5>
+                        React의 경우 index.js , vite의 경우 main.jsx의
+                        상단부에서 import 한다.
+                    </h5>
+                    <pre>
+                        <code className="language-js">{`
+    ...
+
+    /* Shoelace Icon 라이브러리 */
+    import { registerIconLibrary } from '@shoelace-style/shoelace/dist/utilities/icon-library.js';
+
+    registerIconLibrary('default', {
+        resolver: (name) =>
+            \`https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/dist/assets/icons/${name}.svg\`,
+    });
+
+    createRoot(document.getElementById('root')).render(
+        ...
+    );
+                    `}</code>
+                    </pre>
+                </SlDetails>
+            </div>
         </div>
     );
 }
