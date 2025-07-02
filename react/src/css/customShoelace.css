@@ -15,3 +15,21 @@
     /* 선택된 option */
     background-color: var(--sl-color-red-500);
 }
+
+.red-color-radio ::part(control--checked) {
+    /* 선택된 Radio */
+    background-color: var(--sl-color-red-500);
+    border-color: var(--sl-color-red-500);
+}
+
+.red-color-radio sl-radio-button:hover::part(button) {
+    /* hover된 Radio Button */
+    background-color: var(--sl-color-red-500);
+    border-color: var(--sl-color-red-500);
+}
+.red-color-radio ::part(button--checked),
+.red-color-radio sl-radio-button:hover::part(button--checked) {
+    /* 선택된 Radio Button */
+    background-color: var(--sl-color-red-500);
+    border-color: var(--sl-color-red-500);
+}
