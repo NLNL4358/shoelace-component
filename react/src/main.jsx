@@ -24,13 +24,16 @@ registerIconLibrary('default', {
 import ModeProvider from '@/provider/ModeProvider.jsx'; /* 다크모드 */
 import NavigationProvider from './provider/NavigationProvider.jsx'; /* 네비게이션 */
 import CodeViewerProvider from './provider/CodeViewerProvider.jsx'; /* 코드뷰어 */
+import ModalProvider from '@/provider/ModalProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <ModeProvider>
             <NavigationProvider>
                 <CodeViewerProvider>
-                    <App />
+                    <ModalProvider>
+                        <App />
+                    </ModalProvider>
                 </CodeViewerProvider>
             </NavigationProvider>
         </ModeProvider>

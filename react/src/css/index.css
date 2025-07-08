@@ -99,6 +99,9 @@
     border-radius: 50%;
     background-color: var(--text-title-color);
 }
+.componentWrap > div > .viewPart > p {
+    text-wrap: wrap;
+}
 .viewPart .wrap {
     display: flex;
     align-items: center;
@@ -246,4 +249,11 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.providerNotice {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3rem;
 }
