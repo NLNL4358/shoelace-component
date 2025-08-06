@@ -62,6 +62,13 @@ function Modal() {
                                                     <h5>
                                                         Provider로 생성된 Modal
                                                     </h5>
+                                                    <SlDivider />
+                                                    <p>
+                                                        영역 밖 클릭시
+                                                        Close되는것을 막습니다.
+                                                        <br />
+                                                        overlayCloseBlock: true
+                                                    </p>
                                                 </>
                                             ),
                                             goText: '확인',

@@ -50,6 +50,20 @@ function MainPage() {
                     <pre>
                         <code className="language-bash">{`npm install @shoelace-style/shoelace`}</code>
                     </pre>
+
+                    <h5>그런다음 최상단 .jsx 에서 setBasePath를 설정해준다</h5>
+                    <pre>
+                        <code className="language-js">
+                            {`
+    ...
+    import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
+
+    ...
+    setBasePath('/node_modules/@shoelace-style/shoelace/dist/');
+    ...
+                            `}
+                        </code>
+                    </pre>
                 </SlDetails>
             </div>
             <div className="style">
@@ -518,7 +532,7 @@ function MainPage() {
 
     registerIconLibrary('default', {
         resolver: (name) =>
-            \`https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/dist/assets/icons/${name}.svg\`,
+            \`https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/dist/assets/icons/\${name}.svg\`,
     });
 
     createRoot(document.getElementById('root')).render(
